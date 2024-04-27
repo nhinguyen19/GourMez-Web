@@ -1,0 +1,53 @@
+.sidebar_menu {
+    width: 280px;
+    height: 100%;
+    background-color: #F5EAD7; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CSS cho liên kết trong sidebar */
+.sidebar_menu a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #E95002;
+    display: block;
+    font-family: 'Lalezar';
+}
+
+/* CSS cho liên kết được chọn */
+.sidebar_menu a.active {
+    color: #E95002;
+}
+
+/* CSS khi rê chuột qua liên kết */
+.sidebar_menu a:hover:not(.active) {
+    background-color: #E95002;
+    color: white;
+}
+
+/* CSS cho ảnh */
+.sidebar_menu img {
+    max-width: 100%;
+    height: auto;
+    margin-top: auto; 
+    margin-bottom: 10px; 
+}
+
+/* CSS cho thẻ hr */
+.sidebar_menu hr {
+    width: 80%; 
+    background-color: #ffff; 
+    height: 1px; 
+    border: none; 
+    margin: 0 auto; 
+    margin-top: auto; 
+    margin-bottom: auto; 
+}
