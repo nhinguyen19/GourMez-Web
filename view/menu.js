@@ -1,37 +1,38 @@
 function hienThiMonAnTheoCategory(category) {
-  // Lấy danh sách tất cả các món ăn
-  var monAnList = document.getElementsByClassName("food-item");
+  // Lấy tất cả các món ăn có thuộc tính data-category giống với danh mục được chọn
+  var monAnElements = document.querySelectorAll('.Thucdon_mon[data-category="' + category + '"]');
 
   // Ẩn tất cả các món ăn
-  for (var i = 0; i < monAnList.length; i++) {
-    monAnList[i].style.display = "none";
-  }
+  var allMonAnElements = document.querySelectorAll('.Thucdon_mon');
+  allMonAnElements.forEach(function(element) {
+    element.style.display = 'none';
+  });
 
-  // Hiển thị các món ăn thuộc category được chọn
-  var monAnCategoryList = document.querySelectorAll("[data-category=['" + category + "']");
-  for (var j = 0; j < monAnCategoryList.length; j++) {
-    monAnCategoryList[j].style.display = "block";
-  }
-}
-var monAnList = document.getElementsByClassName("Thucdon_mon");
-console.log( monAnList.length);
-console.log( monAnList);
-for (var i = 0; i < monAnList.length; i++) {
-  
-  console.log(monAnList[i]);
+  // Hiển thị các món ăn thuộc danh mục được chọn
+  monAnElements.forEach(function(element) {
+    element.style.display = 'block';
+  });
+
+  var thucdonTitleElement = document.querySelector('.title_thucdon');
+  var categoryName = getCategoryName(category);
+  thucdonTitleElement.innerText = categoryName;
 }
 
-// Gán sự kiện cho các thẻ <a> trong sidebar menu
-// var sidebarMenuItems = document.getElementsByClassName("sidebar_menu")[0].getElementsByTagName("a");
-// for (var k = 0; k < sidebarMenuItems.length; k++) {
-//   sidebarMenuItems[k].addEventListener("click", function() {
-//     var category = this.getAttribute("data-category");
-//     hienThiMonAnTheoCategory(category);
-//   });
-// }
-// var btnChuyenTrangList = document.getElementsByClassName("btn_chuyentrang");
-// for (var k = 0; k < btnChuyenTrangList.length; k++) {
-//   btnChuyenTrangList[k].addEventListener("click", function() {
-//     hienThiMonAnTheoButton(this);
-//   });
-// }
+function getCategoryName(category) {
+  switch (category) {
+    case 'category_ga':
+      return 'Các món gà';
+    case 'category_combo':
+      return 'Combo tiết kiệm';
+    case 'category_burger':
+      return 'Burger';
+    case 'category_snack':
+      return 'Các món ăn kèm';
+    case 'category_Noodle':
+      return 'Mỳ ý';
+    case 'category_drink':
+      return 'Nước giải khát';
+    default:
+      return '';
+  }}
+   
