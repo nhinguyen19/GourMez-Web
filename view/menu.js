@@ -16,6 +16,9 @@ function hienThiMonAnTheoCategory(category) {
   var thucdonTitleElement = document.querySelector('.title_thucdon');
   var categoryName = getCategoryName(category);
   thucdonTitleElement.innerText = categoryName;
+
+  anCacNutChuyenTrang();
+  annutDatngaynao();
 }
 
 function getCategoryName(category) {
@@ -35,4 +38,31 @@ function getCategoryName(category) {
     default:
       return '';
   }}
+  
+  function anCacNutChuyenTrang() {
+    var nutChuyenTrangElements = document.querySelectorAll('.btn_chuyentrang');
+  
+    nutChuyenTrangElements.forEach(function(element) {
+      element.style.display = 'none';
+    });
+  }
+  function annutDatngaynao() {
+    var nutDatngaynao = document.querySelectorAll('.btn_datngaynao');
+    nutDatngaynao.forEach(function(element) {
+      element.style.display = 'none';
+    });
+  }
    
+  function hienThiChiTietMonAn(button) {
+    var chitietMonAn = button.parentNode.querySelector(".Chitiet_monan");
+    chitietMonAn.style.display = "block";
+
+    // Ẩn tất cả các mục món ăn khác
+    var danhSachMonAn = document.querySelectorAll(".Thucdon_mon");
+    danhSachMonAn.forEach(function (monAn) {
+        if (monAn !== button.parentNode) {
+            monAn.style.display = "none";
+        }
+    });
+
+}
