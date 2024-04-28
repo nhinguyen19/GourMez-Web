@@ -8,19 +8,17 @@
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <script src="menu.js"></script>
     <link rel = "stylesheet" href = "menu.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            // Nạp nội dung từ sidebar.html và chèn vào phần tử có id "sidebar"
+            $("#sidebar").load("sidebar.html");
+        });
+    </script>
 </head>
 <body>
-    <div class="sidebar_menu">
-        <a href="#" onclick="hienThiMonAnTheoCategory('category_ga')">Các món gà</a><hr> 
-        <a href="#" onclick="hienThiMonAnTheoCategory('category_combo')">Combo tiết kiệm</a><hr>
-        <a href="#" onclick="hienThiMonAnTheoCategory('category_burger')">Burger</a><hr>
-        <a href="#" onclick="hienThiMonAnTheoCategory('category_snack')">Các món ăn kèm</a><hr>
-        <a href="#" onclick="hienThiMonAnTheoCategory('category_Noodle')">Mỳ ý</a><hr>
-        <a href="#" onclick="hienThiMonAnTheoCategory('category_drink')">Nước giải khát</a><br>
-        <img src="img/menu_1.png">
-    </div>
-
-    <div class="all_dishes">
+    <div id="sidebar"></div>
+    <div id="all_dishes">
         <h1 class="title_thucdon">Thực đơn</h1>
         <div class="food-item">
             <div class="Thucdon_mon" name="category_ga"  data-category="category_ga"> 
@@ -30,23 +28,7 @@
                     <span class="label">Giá bán:</span> 
                     <span class="price">119.000đ</span>
                 </p>
-                <button class="btn_xemchitiet" onclick="hienThiChiTietMonAn(this)">Xem chi tiết</button>
-                <div class="Chitiet_monan" style="display: none;">
-                    <h1 class="tenmon">Gà sốt 8 vị cay</h1><hr>
-                    <img src="img/Gacay8vi.1.jpg" alt="gacay8vi" style="width: 165px; height: 150px;">
-                    <p>
-                        <span class="label">Giá bán:</span> 
-                        <span class="price">119.000đ</span>
-                        <span class="f_price"> 250.000đ</span>
-                    </p>
-                    <p>Mô tả:</p>
-                    <p>Combo bao gồm:</p>
-                    <ul>2 Miếng gà sốt bơ tỏi và thảo mộc</ul>
-                    <ul>2 Miếng gà có xương (lựa chọn vị cay/ không cay)</ul>
-                    <ul>1 Món ăn kèm cỡ vừa tùy chọn (Bắp cải trộn/ Khoai tây nghiền/Khoai tây chiên) </ul>
-                    <ul>2 Nước ngọt</ul>
-                    <ul>3 Tương ớt + 1 tương cà</ul>
-                </div>
+                <button class="btn_xemchitiet" onclick="dieuhuong()">Xem chi tiết</button>
             </div>
 
             <div class="Thucdon_mon" name="category_combo"  data-category="category_ga">
@@ -247,8 +229,9 @@
             <button class="btn_chuyentrang">2</button>
             <button class="btn_chuyentrang">3</button>
         </div>
-        <button class="btn_datngaynao">Đặt ngay nào</button>
+        <button class="btn_datngaynao">Đặt ngay nào</button>    
     </div>
-
+    
+    
 </body>
 </html>
