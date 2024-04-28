@@ -1,5 +1,5 @@
 .sidebar_menu {
-    width: 280px;
+    width: 240px;
     height: 100%;
     background-color: #F5EAD7; 
     position: fixed;
@@ -9,28 +9,29 @@
     padding-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 /* CSS cho liên kết trong sidebar */
 .sidebar_menu a {
-    padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
     color: #E95002;
-    display: block;
     font-family: 'Lalezar';
+    padding: 6px 8px 6px 16px;
+    display: block; 
+    text-align: left;
+    padding-left: 25px;
+    padding-top: 20px;
 }
 
 /* CSS cho liên kết được chọn */
 .sidebar_menu a.active {
-    color: #E95002;
+    color: #FFA629;
 }
 
 /* CSS khi rê chuột qua liên kết */
 .sidebar_menu a:hover:not(.active) {
-    background-color: #E95002;
-    color: white;
+    color: #FFA629;
 }
 
 /* CSS cho ảnh */
@@ -45,9 +46,102 @@
 .sidebar_menu hr {
     width: 80%; 
     background-color: #ffff; 
-    height: 1px; 
+    height: 0.5px; 
     border: none; 
     margin: 0 auto; 
     margin-top: auto; 
     margin-bottom: auto; 
+}
+
+.all_dishes{
+    margin-left: 250px;
+}
+.title_thucdon{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #E26A2C;
+    font-family: 'Lalezar';
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+.Thucdon_mon{
+    background-color: #F5EAD7;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.09);
+    display: inline-block;
+    max-width: fit-content;
+    padding: 15px;
+    justify-content: center;
+    text-align: center;
+}
+.Ten_mon{
+    color: #E95002;
+    font-weight: bold;
+}
+.label {
+    color: black;
+    font-weight: bold;
+}
+
+.price {
+    color: #f98324;
+    font-weight: bold;
+}
+.btn_xemchitiet{
+    background-color: #E26A2C;
+    border: none;
+    border-radius: 10px;
+    width: 133px;
+    height: 23px;
+    color: #ffff;
+    font-family: 'Lalezar';
+    font-size: 16px;
+}
+.food-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+.button_group {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.btn_chuyentrang {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ef9348;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn_chuyentrang:last-child {
+    margin-right: 0;
+}
+.btn_chuyentrang.active {
+    color: #E26A2C;
+}
+.btn_chuyentrang:hover:not(.active) {
+    background-color: #E26A2C;
+}
+.btn_datngaynao{
+    width: 220px;
+    height: 40px;
+    border-radius: 20px;
+    color: #ffff;
+    background-color: #E26A2C;
+    border: none;
+    font-size: 25px;
+    display: block;
+    margin: 20px auto 0;
+    font-family: 'Lalezar';
 }
