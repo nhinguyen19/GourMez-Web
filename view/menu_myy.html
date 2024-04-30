@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mỳ ý</title>
+    <link rel="stylesheet" href="menu.css">
+    <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="menu.js"></script>
+    <script>
+        $(function() {
+            // Nạp nội dung từ sidebar.html và chèn vào phần tử có id "sidebar"
+            $("#sidebar").load("sidebar.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="sidebar"></div>
+    <div id="all_dishes">
+        <h1 class="title_thucdon">Mỳ ý</h1>
+        <div class="food-item">
+            <div class="Thucdon_mon" name="category_Noodle"  data-category="category_Noodle">
+                <img src="img/Mì ý sốt bò bằm.8.webp" alt="Mỳ ý" style="width: 165px; height: 150px;">
+                <p class="Ten_mon">Mỳ ý sốt bò bằm</p>
+                <p>
+                    <span class="label">Giá bán:</span> 
+                    <span class="price">45.000đ</span>
+                </p>
+                <button class="btn_xemchitiet" onclick="dieuhuong()">Xem chi tiết</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
