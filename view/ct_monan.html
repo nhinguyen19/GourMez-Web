@@ -12,10 +12,35 @@
         $(function() {
             $("#sidebar").load("sidebar.html");
         });
-
     </script>
 </head>
 <body>
     <div id="sidebar"></div>
+    <div id="chitiet_mon1">
+        <p>túdfsdfs</p>
+        <p>túdfsdfs</p>
+    </div>
+    <div id="chitiet_mon2">
+        <p>túdfsdfs</p>
+        <p>túdfsdfs</p>
+    </div>
+    <script>
+        // Lấy tham số "id" từ URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var monAnId = urlParams.get('id');
+
+        // Ẩn tất cả các thẻ div chi tiết món ăn
+        var chiTietMonAnElements = document.querySelectorAll('[id^="chitiet_mon"]');
+        for (var i = 0; i < chiTietMonAnElements.length; i++) {
+            chiTietMonAnElements[i].style.display = 'none';
+        }
+
+        // Hiển thị thẻ div chi tiết món ăn tương ứng
+        var chiTietMonAnElement = document.getElementById(monAnId);
+        if (chiTietMonAnElement) {
+            chiTietMonAnElement.style.display = 'block';
+        }
+    </script>
+
 </body>
 </html>

@@ -14,7 +14,13 @@ function annutDatngaynao() {
   
 function dieuhuong()
 {
-    location.assign("ct_monan.html");
+  $(document).ready(function() {
+      $(".btn_xemchitiet").click(function() {
+          var monAnId = $(this).data("mon-id");
+          var url = "ct_monan.html?id=" + monAnId;
+          window.location.href = url;
+      });
+  });
 }
 
 
