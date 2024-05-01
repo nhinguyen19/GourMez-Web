@@ -8,10 +8,12 @@
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="menu.js"></script>
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <script src="../sidebar/sidebar.js"></script>
     <script>
         $(function() {
             // Nạp nội dung từ sidebar.html và chèn vào phần tử có id "sidebar"
-            $("#sidebar").load("sidebar.html");
+            $("#sidebar").load("../sidebar/sidebar.html");
         });
     </script>
 </head>
@@ -21,7 +23,7 @@
         <h1 class="title_thucdon">Nước giải khát</h1>
         <div class="food-item">
             <div class="Thucdon_mon" name="category_drink"  data-category="category_drink">
-                <img src="img/Milo.jpg.webp" alt="Milo" style="width: 165px; height: 150px;">
+                <img src="../img/Milo.jpg.webp" alt="Milo" style="width: 165px; height: 150px;">
                 <p class="Ten_mon">Milo</p>
                 <p>
                     <span class="label">Giá bán:</span> 
@@ -30,7 +32,7 @@
                 <button class="btn_xemchitiet" onclick="dieuhuong()">Xem chi tiết</button>
             </div>
             <div class="Thucdon_mon" name="category_drink"  data-category="category_drink">
-                <img src="img/Pepsi.jpg" alt="Pepsi" style="width: 165px; height: 150px;">
+                <img src="../img/Pepsi.jpg" alt="Pepsi" style="width: 165px; height: 150px;">
                 <p class="Ten_mon">Pepsi</p>
                 <p>
                     <span class="label">Giá bán:</span> 

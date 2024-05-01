@@ -8,10 +8,12 @@
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="menu.js"></script>
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <script src="../sidebar/sidebar.js"></script>
     <script>
         $(function() {
             // Nạp nội dung từ sidebar.html và chèn vào phần tử có id "sidebar"
-            $("#sidebar").load("sidebar.html");
+            $("#sidebar").load("../sidebar/sidebar.html");
         });
     </script>
 </head>
@@ -21,7 +23,7 @@
         <h1 class="title_thucdon">Mỳ ý</h1>
         <div class="food-item">
             <div class="Thucdon_mon" name="category_Noodle"  data-category="category_Noodle">
-                <img src="img/Mì ý sốt bò bằm.8.webp" alt="Mỳ ý" style="width: 165px; height: 150px;">
+                <img src="../img/Mì ý sốt bò bằm.8.webp" alt="Mỳ ý" style="width: 165px; height: 150px;">
                 <p class="Ten_mon">Mỳ ý sốt bò bằm</p>
                 <p>
                     <span class="label">Giá bán:</span> 

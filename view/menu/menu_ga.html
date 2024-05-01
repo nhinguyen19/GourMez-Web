@@ -8,10 +8,12 @@
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="menu.js"></script>
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <script src="../sidebar/sidebar.js"></script>
     <script>
         $(function() {
             // Nạp nội dung từ sidebar.html và chèn vào phần tử có id "sidebar"
-            $("#sidebar").load("sidebar.html");
+            $("#sidebar").load("../sidebar/sidebar.html");
         });
     </script>
 </head>
@@ -21,7 +23,7 @@
         <h1 class="title_thucdon">Các món gà</h1>
         <div class="food-item">
             <div class="Thucdon_mon" name="category_ga"  data-category="category_ga"> 
-                <img src="img/Gacay8vi.1.jpg" alt="gacay8vi" style="width: 165px; height: 150px;">
+                <img src="../img/Gacay8vi.1.jpg" alt="gacay8vi" style="width: 165px; height: 150px;">
                 <p class="Ten_mon">Gà sốt 8 vị cay</p>
                 <p>
                     <span class="label">Giá bán:</span> 
@@ -30,7 +32,7 @@
                 <button class="btn_xemchitiet" onclick="dieuhuong()">Xem chi tiết</button>
             </div>
             <div class="Thucdon_mon" name="category_ga"  data-category="category_ga">
-                    <img src="img/MiengGaGion.png" alt="Ga" style="width: 165px; height: 150px;">
+                    <img src="../img/MiengGaGion.png" alt="Ga" style="width: 165px; height: 150px;">
                     <p class="Ten_mon">Miếng gà giòn</p>
                     <p>
                         <span class="label">Giá bán:</span> 
@@ -39,7 +41,7 @@
                     <button class="btn_xemchitiet" onclick="dieuhuong()">Xem chi tiết</button>
                 </div>
             <div class="Thucdon_mon" name="category_ga"  data-category="category_ga">
-                    <img src="img/cơm gà giòn.jpg" alt="Comga" style="width: 165px; height: 150px;">
+                    <img src="../img/cơm gà giòn.jpg" alt="Comga" style="width: 165px; height: 150px;">
                     <p class="Ten_mon">Cơm gà giòn</p>
                     <p>
                         <span class="label">Giá bán:</span> 
@@ -48,7 +50,7 @@
                     <button class="btn_xemchitiet" onclick="dieuhuong()">Xem chi tiết</button>
                 </div>
             <div class="Thucdon_mon" name="category_ga"  data-category="category_ga">
-                    <img src="img/Gà mắm tỏi.png" alt="Gamamtoi" style="width: 165px; height: 150px;">
+                    <img src="../img/Gà mắm tỏi.png" alt="Gamamtoi" style="width: 165px; height: 150px;">
                     <p class="Ten_mon">Gà mắm tỏi</p>
                     <p>
                         <span class="label">Giá bán:</span> 
