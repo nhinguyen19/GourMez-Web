@@ -20,5 +20,6 @@ function hienThiMonAnTheoCategory(category) {
       break;
     default:
       break;
+      
   }
 }
