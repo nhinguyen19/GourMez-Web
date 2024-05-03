@@ -1,27 +1,41 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     var menuLinks = document.querySelectorAll("#sidebar a");
+ // Lấy thông tin từ URL
+ function getParameterByName(name) {
+    var url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+// Sử dụng thông tin từ URL để hiển thị chi tiết món ăn
+document.addEventListener('DOMContentLoaded', function() {
+    var chitietId = getParameterByName('id');
+    var allChitietMon = document.querySelectorAll('[id^="chitiet_mon"]');
+    for (var i = 0; i < allChitietMon.length; i++) {
+        if (allChitietMon[i].id === chitietId) {
+            // Hiển thị chi tiết món ăn tương ứng
+            allChitietMon[i].style.display = 'block';
+        } else {
+            // Ẩn các chi tiết món ăn khác
+            allChitietMon[i].style.display = 'none';
+        }
+    }
+});
+    function decreaseQuantity() {
+        var quantityElement = document.getElementById('quantity');
+        var quantity = parseInt(quantityElement.innerText);
 
-//     // Xử lý sự kiện click cho mỗi liên kết trong sidebar
-//     menuLinks.forEach(function(link) {
-//         link.addEventListener("click", function(event) {
-//             event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+        if (quantity > 1) {
+            quantity--;
+            quantityElement.innerText = quantity;
+        }
+    }
 
-//             var categoryName = this.getAttribute("data-category"); // Lấy tên loại món ăn từ thuộc tính data-category
+    function increaseQuantity() {
+        var quantityElement = document.getElementById('quantity');
+        var quantity = parseInt(quantityElement.innerText);
 
-//             // Thay đổi URL bằng cách thêm tham số query "?category=<tên-loại-món-ăn>"
-//             var newURL = "menu.html?category=" + encodeURIComponent(categoryName);
-//             window.location.href = newURL; // Điều hướng trang đến URL mới
-//         });
-//     });
-// });
-// document.addEventListener("DOMContentLoaded", function() {
-//     var urlParams = new URLSearchParams(window.location.search);
-//     var categoryName = urlParams.get("category");
-
-//     // Kiểm tra nếu có tham số query "category" trong URL
-//     if (categoryName) {
-//         // Hiển thị danh sách món ăn tương ứng với loại món ăn
-//         console.log("Đang hiển thị danh sách món ăn cho loại: " + categoryName);
-//         // Thực hiện các thao tác khác để hiển thị danh sách món ăn theo loại
-//     }
-// });
+        quantity++;
+        quantityElement.innerText = quantity;
+    }
