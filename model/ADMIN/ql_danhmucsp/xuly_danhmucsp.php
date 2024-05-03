@@ -8,4 +8,4 @@
         mysqli_query($mysqli,$sql_them);
     }
     header('Location')
-?>ưewrewrwr
+?>
