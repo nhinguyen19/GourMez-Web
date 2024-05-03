@@ -14,6 +14,5 @@
     include("footer_ad.php");
     include("sidebar_ad/sidebar_ad.html");
   ?>
-
 </body>
 </html>
