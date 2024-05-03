@@ -5,7 +5,7 @@
     if(isset($_POST['themdanhmuc']))
     {
         $sql_them = "INSERT INTO category(cate_id,cate_name) VALUE('".$tenloaisp."','".$thutu."')";
-        mysqli_query($mysqli,$sql_them)
+        mysqli_query($mysqli,$sql_them);
     }
     header('Location')
 ?>
