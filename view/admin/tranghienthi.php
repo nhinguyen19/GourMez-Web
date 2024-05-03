@@ -10,8 +10,8 @@
   <h3>Welcome to AdminCP</h3>
 
   <?php
-    include("header_ad.php");
-    include("footer_ad.php");
+    // include("../view/admin/header_ad.php");
+    // include("footer_ad.php");
     include("sidebar_ad/sidebar_ad.html");
   ?>
 </body>
