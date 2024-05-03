@@ -109,9 +109,6 @@ body
 .food_label
 {
   background-color: rgba(255, 242, 242, 1);
-  align-items: center;
-  text-align: center;
-  justify-content: center; /*căn giữa theo chiều ngang*/
   max-width: fit-content;
   padding-bottom: 50px;
 }
@@ -133,8 +130,13 @@ body
   display: grid;
   grid-template-columns: 500px 500px 500px;
   margin-top: 50px;
+  margin-block-end: 50px;
   font-size: 20px;
   font-family: 'Lalezar';
+  align-items: center;
+  text-align: center;
+  justify-content: center; /*căn giữa theo chiều ngang*/
+  
 }
 
 .full_menu img
@@ -142,18 +144,15 @@ body
   width: 350px;
   height: 350px;
   border-radius: 20px;
+  
 }
 
-.option1 p, .option2 p ,.option3 p
+.option p
 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
+  padding-left: 50px;
+  text-align: left;
+} 
 
-.option1 p:first-child .option2 p:first-child .option3 p:first-child 
-{
-  font-size: 35px;
-}
 
 .food_label button
 {
@@ -202,6 +201,7 @@ body
     border-radius: 5px;
     margin-bottom: 15px;
     padding-left: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   .info input:focus
@@ -220,11 +220,19 @@ body
     margin-top: 20px;
   }
   
-  #datepicker
+  #birthday
   {
     width: 350px;
+    color: white;
+    padding-right: 20px;
+    margin-bottom: 0;
   }
   
+  #party_date
+  {
+    padding-right: 20px;
+    font-size: 15px;
+  }
   #gender
   {
     margin-left: 18px;
@@ -305,11 +313,34 @@ body
     height: 40px;
     padding: 5px;
   }
+
+  #reset
+  {
+    background-color: rgba(252, 47, 19, 1);
+    border-radius: 30px;
+    border: none; 
+    color: white;
+    font-family: 'Lalezar';
+    font-size: 25px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    margin-left: 50px;
+  }
   
-  .button_send
+  .button
   {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 0 20px 0;
+    padding: 20px 0 20px 100px;
   }
+
+  #name_birthday
+  {
+    margin-bottom: 0;
+  }
+  
+  label
+  {
+    padding: 5px 0 5px 0;
+  }
+
