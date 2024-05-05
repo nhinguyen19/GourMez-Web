@@ -1,9 +1,8 @@
-.insert_cat{
+.insert_sp{
     display: flex;
     justify-content: center;
     padding-left: 240px;
-    /* padding-top: 100px; */
-}
+ }
 table,tr,th,td{
     border: 1px solid black;
     background-color: #f0ac74;
@@ -11,13 +10,13 @@ table,tr,th,td{
     padding: 10px;
 }
 table{
-    width: 90%;
+    width: 70%;
 }
-h2{
-    padding-left: 600px;
+.title{
+    padding-left: 650px;
     padding-top: 30px;
     font-family: Lalezar;
     text-transform: uppercase;
     color: #E26A2C;
-}
+} 
 

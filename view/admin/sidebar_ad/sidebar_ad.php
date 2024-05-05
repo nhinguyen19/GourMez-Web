@@ -18,18 +18,14 @@
         <hr> 
         <a href="#">Quản lý món ăn</a>
         <div class="submenu">
-            <a href="#">Tất cả</a>
-            <a href="#">Thêm món ăn</a>
-            <a href="#">Sửa món ăn</a>
-            <a href="#">Xóa món ăn</a>
+            <a href="tranghienthi.php?quanly=tatcasp">Tất cả</a>
+            <a href="tranghienthi.php?quanly=themsanpham">Thêm món ăn</a>
         </div>
         <hr>
         <a href="#">Quản lý danh mục sản phẩm</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatca">Tất cả</a>
             <a href="tranghienthi.php?quanly=themdanhmuc">Thêm danh mục</a>
-            <!-- <a href="tranghienthi.php?quanly=sua">Sửa danh mục</a> -->
-            <!-- <a href="tranghienthi.php?quanly=xoa">Xóa danh mục</a> -->
         </div>
         <hr>
         <a href="#">Khuyến mãi</a>
