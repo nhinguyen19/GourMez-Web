@@ -26,10 +26,10 @@
         <hr>
         <a href="#">Quản lý danh mục sản phẩm</a>
         <div class="submenu">
-            <a href="#">Tất cả</a>
-            <a href="ql_danhmucsp/them_danhmuc.php">Thêm danh mục</a>
-            <a href="#">Sửa danh mục</a>
-            <a href="#">Xóa danh mục</a>
+            <a href="tranghienthi.php?quanly=tatca">Tất cả</a>
+            <a href="tranghienthi.php?quanly=themdanhmuc">Thêm danh mục</a>
+            <!-- <a href="tranghienthi.php?quanly=sua">Sửa danh mục</a> -->
+            <!-- <a href="tranghienthi.php?quanly=xoa">Xóa danh mục</a> -->
         </div>
         <hr>
         <a href="#">Khuyến mãi</a>
