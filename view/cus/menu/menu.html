@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nước giải khát</title>
+    <title>Thực đơn</title>
     <link rel="stylesheet" href="menu.css">
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -12,7 +12,6 @@
     <script src="../sidebar/sidebar.js"></script>
     <script>
         $(function() {
-            // Nạp nội dung từ sidebar.html và chèn vào phần tử có id "sidebar"
             $("#sidebar").load("../sidebar/sidebar.html");
         });
     </script>
@@ -22,16 +21,16 @@
     <div id="all_dishes">
         <h1 class="title_thucdon">Thực đơn</h1>
         <div class="food-item">
-            <div class="Thucdon_mon" name="category_ga"  data-category="category_ga" id="food1"> 
+            <div class="Thucdon_mon" name="category_ga" data-category="category_ga" id="food1" data-chitiet-id="chitiet_mon1"> 
                 <img src="../img/Gacay8vi.1.jpg" alt="gacay8vi" style="width: 165px; height: 150px;">
                 <p class="Ten_mon">Gà sốt 8 vị cay</p>
                 <p>
                     <span class="label">Giá bán:</span> 
                     <span class="price">119.000đ</span>
                 </p>
-                <button class="btn_xemchitiet" data-mon-id="chitiet_mon1" onclick="dieuhuong()">Xem chi tiết</button>
+                <button class="btn_xemchitiet" onclick="dieuhuong()">Xem chi tiết</button>
             </div>
-            <div class="Thucdon_mon" name="category_combo"  data-category="category_combo" id="food2">
+            <div class="Thucdon_mon" name="category_combo"  data-category="category_combo" id="food2" data-chitiet-id="chitiet_mon2">
                 <img src="../img/Combo 5 miếng gà không xương.7.webp" alt="Gakhongxuong" style="width: 165px; height: 150px;">
                 <p class="Ten_mon">Combo 5 miếng gà </p>
                 <p>

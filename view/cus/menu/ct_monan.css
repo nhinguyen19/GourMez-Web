@@ -1,0 +1,95 @@
+body{
+    background-color: #FBF5F5;
+}
+#chitiet_mon1 {
+    margin-left: 180px;
+    height: 100vh;
+}
+.Chitiet{
+    margin-left: 20vw;
+    margin-top: 30px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 20px;
+}
+#tenmon{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #E26A2C;
+    font-family: 'Lalezar';
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+#mota {
+    max-width: 300px;
+    margin-left: 50px;
+}
+.picture{
+    background-color: #F5EAD7;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.09);
+    display: inline-block;
+    max-width: fit-content;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+}
+.image-container_2 {
+    filter: blur(1px);
+    padding-top: 15px;
+}
+.quantity-wrapper {
+    display: inline-block;
+    background-color: #f08955;
+    border-radius: 20px;
+    height: 30.5px;
+}
+.quantity-button_1 {
+    background-color: #ed7a41;
+    border: none;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    color: #ffff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.quantity-button_2 {
+    background-color: #ed7a41;
+    border: none;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    color: #ffff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#quantity {
+    font-size: 20px;
+    padding: 15px;
+    color: #ffff;
+    font-family: Lalezar;
+}
+.quantity-button_2:hover:not(.active) {
+    background-color: #E26A2C;
+}
+.quantity-button_1:hover:not(.active) {
+    background-color: #E26A2C;
+}
+#add_cart {
+    background-color:  #ed7a41;
+    border-radius: 20px;
+    padding: 5px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: Lalezar;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+#add_cart:hover:not(.active) {
+    background-color: #E26A2C;
+    font-family: Lalezar;
+}

@@ -11,17 +11,14 @@ function annutDatngaynao() {
     element.style.display = 'none';
   });
 }
-  
-function dieuhuong()
-{
-  $(document).ready(function() {
-      $(".btn_xemchitiet").click(function() {
-          var monAnId = $(this).data("mon-id");
-          var url = "ct_monan.html?id=" + monAnId;
-          window.location.href = url;
-      });
-  });
+function dieuhuong() {
+  // Lấy giá trị data-chitiet-id
+  var chitietId = $(event.target).closest('.Thucdon_mon').data('chitiet-id');
+
+  // Tạo đường dẫn đến trang chi tiết món ăn
+  var path = "ct_monan.html?id=" + chitietId;
+
+  // Chuyển hướng sang trang chi tiết món ăn
+  window.location.href = path;
 }
 
-
-  
