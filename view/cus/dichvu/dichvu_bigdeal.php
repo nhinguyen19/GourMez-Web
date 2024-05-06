@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dịch vụ sinh nhật</title>
-    <link rel = "stylesheet" href = "style_sn.css">
+    <link rel = "stylesheet" href = "bigdeal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
-    <script src = "sinhnhat.js"></script>
+    <script src = "bigdeal.js"></script>
 
 
 </head>
 
 <body>
-    <div class="food_order">
-        <img src = "../img/sn_banner.png" class = "banner_sn">
+    
+        <img src = "../img/banner_bigdeal.png" class = "banner_bigdeal">
         <!-- Thanh đặt món -->
+        <div class="food_order">
         <div class="food_label">
             <h1>ĐẶT MÓN ĂN</h1>
 
@@ -23,7 +24,7 @@
                 <?php
                     require("../../../model/connect.php");
 
-                    $sql = "SELECT comboname, price,img FROM combo_for_birthday";
+                    $sql = "SELECT NameFood, Price,image FROM food_for_bigdeal";
                     $result = mysqli_query($conn, $sql);
 
                     if(!$result)
@@ -36,11 +37,11 @@
                         while ($row = mysqli_fetch_assoc($result)) {
                             $counter++;
                             echo '<div class="option1">';
-                            echo '<img name = "image" src="' . $row['img'] . '">';
+                            echo '<img name = "image" src="' . $row['image'] . '">';
                             echo '<div class="text">';
-                            echo '<p name="name_of_food">'. $row['comboname'] .  '</p>';
-                            echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
-                            echo 'Số lượng: <input type="number" name="quantity" value = "10" id = "quantity"  placeholder="10" min="10" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
+                            echo '<p name="name_of_food">'. $row['NameFood'] .  '</p>';
+                            echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['Price']. '">' . number_format($row['Price'], 0, ',', '.') . 'đ</p><br>';
+                            echo 'Số lượng: <input type="number" name="quantity" id = "quantity"  placeholder="1" min="1" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
                             echo 'Chọn <input type="radio" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
                             echo '</div>';
                             echo '</div>';
@@ -54,28 +55,19 @@
         <div class = "cus_info">
             
                 
-                <form id="form_customer" action="../../../controller/cus/xuli.php" method="post">
+                <form id="form_customer" action="../../../controller/cus/xuli_bigdeal.php" method="post">
                 <div class = "info">
-                    <h2>THÔNG TIN KHÁCH HÀNG ĐẶT TIỆC</h2>
+                    <h2>THÔNG TIN KHÁCH HÀNG</h2>
 
                     <input type = "text" name = "cusname" id = "customer_name" placeholder="Họ và tên*" title="Vui lòng nhập tên người đặt tiệc." > <br>
                     <input type = "tel" name = "tel" id = "phone_number" placeholder="Số điện thoại*" required pattern="[0-9]{10}" title="Số điện thoại phải là số, có 10 chữ số!"> <br>
                     <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
-                    <input type="text" name ="name_birthday" id = "name_birthday" placeholder="Tên đặt tiệc sinh nhật*" title="Vui lòng nhập tên người sinh nhật. " lang="vi" required> <br>
-
                     
 
-                    <label>Chọn ngày đặt tiệc</label> <br>
-                    <input type="date" style="font-size: 15px; width:350px" name = "party_date" value = "12-5-2004" id = "party_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required>
+                    <label>Chọn ngày giao hàng</label> <br>
+                    <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required>
 
-                    <select name = "gender" id = "gender">  
-                        <option value="" hidden>Giới tính*</option>
-                        <option value="Nữ">Nữ</option>
-                        <option value="Nam">Nam</option>
-                        <option value="Khác">Khác</option>
-                    </select> <br>
-
-                    <input type="text" name = "address" id="address" placeholder="Địa chỉ khách hàng"> <br>
+                    <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
                     <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
                     <div class = "button">
                         <input type ="submit" name = "send" id = "send_order" value="Gửi đơn hàng">
@@ -89,10 +81,7 @@
                     <div class = "info_payment">
                         <h2>CHI TIẾT ĐƠN HÀNG</h2>
                         <div class = "total_box" id = "totalBox">
-                        
-
-                            <p style="display: inline;">Tổng cộng</p>
-                            <p style="display: inline;" id = "total">0đ</p>
+                            <p style="display: inline;" id = "total">Tổng cộng: 0đ</p>
                         </div>
                         
                      </div>
