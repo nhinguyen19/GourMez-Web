@@ -39,36 +39,41 @@
     {
         $conn = connectdb();
 
-        // Kiểm tra xem ID sản phẩm có được truyền vào không
         if (isset($_GET['idsanpham'])) {
             $id = $_GET['idsanpham'];
 
-            // Lấy thông tin sản phẩm cần xóa
             $sql = "SELECT * FROM food WHERE food_id = '$id' LIMIT 1";
             $query = mysqli_query($conn, $sql);
-            
-            // Kiểm tra xem sản phẩm có tồn tại hay không
+
             if (mysqli_num_rows($query) > 0) {
-                // Xóa sản phẩm
+                // Fetch the image filename from the database
+                $row = mysqli_fetch_assoc($query);
+                $imageName = $row['image'];
+
+                // Delete the image file from the "uploads" folder
+                $imagePath = "uploads/" . $imageName;
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
+                }
+
+                // Delete the record from the database
                 $sql_xoa = "DELETE FROM food WHERE food_id = '$id'";
                 mysqli_query($conn, $sql_xoa);
 
-                // Cập nhật lại các giá trị ID của danh mục còn lại
+                // Update the food_id values
                 $sql_capnhat = "SET @count = 0";
                 mysqli_query($conn, $sql_capnhat);
 
                 $sql_capnhat = "UPDATE food SET food_id = @count:= @count + 1";
                 mysqli_query($conn, $sql_capnhat);
 
-                // Thiết lập lại giá trị tự động tăng cho trường ID
+                // Reset the auto-increment value
                 $sql_reset_auto_increment = "ALTER TABLE food AUTO_INCREMENT = 1";
                 mysqli_query($conn, $sql_reset_auto_increment);
 
-                // Chuyển hướng về trang hiển thị danh sách sản phẩm sau khi xóa thành công
                 header('Location: tranghienthi.php?quanly=tatcasp');
                 exit();
             } else {
-                // Sản phẩm không tồn tại, hiển thị thông báo bằng JavaScript
                 echo "<script>alert('Sản phẩm không tồn tại.'); window.location='tranghienthi.php?quanly=tatcasp';</script>";
             }
         }
