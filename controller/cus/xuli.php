@@ -16,21 +16,27 @@
 
    
     if (isset($_POST["send"]) && ($_POST["send"] == "Gửi đơn hàng")) {
-        // if ($food == "" || $quantity == 0 || $Total_price == null)
-        // {
-        //     echo"vui lòng chọn món 
-        // }
-        // {
+        if ($food == "" || $quantity == 0 || $Total_price == null)
+        {
+            header('Location: ../../view/cus/dichvu/dichvu_sn.php?alert=empty'); //flag = empty -> chưa chọn món
+        }
+        else
+        {
             $sql = "INSERT INTO birthday_service (name_food, quantity, customer_name, phone, email, name_order_party, booking_date, gender, address, note, total_price, status) 
             VALUES ('$food', '$quantity','$name', '$tele', '$email', '$name_birthday', STR_TO_DATE('$party', '%d/%m/%Y'), '$gender', '$address', '$note', '$Total_price', NULL)";
             if(mysqli_query($conn,$sql)) {
-                echo "Thêm thành công";
-            } else {
+                header('Location: ../../view/cus/dichvu/dichvu_sn.php?alert=success'); //flag = success
+                exit();
+            } 
+            else 
+            {
+                header('Location: ../../view/cus/dichvu/dichvu_sn.php?alert = "unsuccess');  //flag = unsuccess
                 echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+            
             }
             mysqli_close($conn);
 
         // }
          }
-    
+        }
 ?>

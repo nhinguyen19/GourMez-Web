@@ -43,7 +43,7 @@
                             echo '<div class="text">';
                             echo '<p name="name_of_food">'. $row['comboname'] .  '</p>';
                             echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
-                            echo 'Số lượng: <input type="number" name="quantity" value = "10" id = "quantity"  placeholder="10" min="10" step="1" max="50" title="Vui lòng nhập số lượng" required ><br>';
+                            echo 'Số lượng: <input type="number" name="quantity" value = "10" id = "quantity"  placeholder="10" min="10" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
                             echo 'Chọn <input type="radio" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
                             echo '</div>';
                             echo '</div>';
@@ -81,9 +81,9 @@
                     <input type="text" name = "address" id="address" placeholder="Địa chỉ khách hàng"> <br>
                     <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
                     <div class = "button">
-                        <input type ="button" name = "send" id = "send_order" value="Gửi đơn hàng" onclick = "submit_form()">
+                        <input type ="submit" name = "send" id = "send_order" value="Gửi đơn hàng">
                         <div class = "button_reset">
-                            <input type="reset" id = "reset" value = "Reset">
+                            <input type="reset" id = "reset" value = "Reset" onclick = "reset_quantity()">
                         </div>
                     </div>
 
@@ -111,7 +111,19 @@
         </div>
 
  
-       
+        <?php
+if(isset($_GET['alert']) && $_GET['alert'] == 'success') {
+    echo '<script>alert("Đơn hàng đã được ghi nhận. Nhân viên sẽ liên hệ với bạn.");</script>';
+}
+else if (isset($_GET['alert']) && $_GET['alert'] == 'empty')
+{
+    echo '<script>alert("Vui lòng chọn món ăn.");</script>';
+}
+else if (isset($_GET['alert']) && $_GET['alert'] == 'unsuccess')
+{
+    echo '<script>alert("Đơn hàng bị lỗi. Vui lòng nhập lại.");</script>';
+}
+?>
 
 
 </body>
