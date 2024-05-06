@@ -1,16 +1,16 @@
-<p>Thêm danh mục sản phẩm </p>
-<table boder="1" width="50%" style="border-collapse: collapse;">
-    <form method="POST" action="xuly_danhmucsp.php">
-        <tr>
-            <td>Tên danh mục </td>
-            <td><input type="text" name="tendanhmuc"></td>
-        </tr>
-        <tr>
-            <td>Thứ tự </td>
-            <td><input type="text" name="thutu"></td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" name="themdanhmuc" value="Thêm danh mục sản phẩm"></td>
-        </tr>
-    </form>
-</table>
+<div class="insert_cat" >
+    <table>
+        <form method="POST" action="tranghienthi.php?quanly=themdanhmuc">
+            <tr >
+                <th style="text-align: center;" colspan ="2">Thêm danh mục sản phẩm</th>
+            </tr>
+            <tr>
+                <td>Tên danh mục </td>
+                <td><input type="text" name="tendanhmuc" style="width: 350px;"></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="themdanhmuc" value="Thêm danh mục sản phẩm"></td>
+            </tr>
+        </form>
+    </table>
+</div>
