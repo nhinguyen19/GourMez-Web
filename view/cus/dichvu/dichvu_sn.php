@@ -137,25 +137,7 @@
             </div>
         
         </div>
-        
-       
-
-
         </div>
 
-       
-
-        <script>
-            function add_food()
-{
-  let img = document.getElementsByTagName(img);
-  let name = document.getElementsByName("name_of_food");
-  let price = document.getElementsByName("price");
-  let quantity = document.getElementsByName("quantity");
-
-  window.open("","_blank");
-
-}
-        </script>
 </body>
 </html>
