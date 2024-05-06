@@ -1,0 +1,39 @@
+.footer
+{
+    background-color: rgba(174, 33, 8, 1);
+    display: grid;
+    grid-template-columns: 350px 350px 350px 350px;
+    font-size: 20px;
+    padding-inline: 50px;
+    padding: 10px 50px 30px 50px; 
+
+}
+label, a
+{
+    color: white;
+}
+img
+{
+    padding-left: 40px;
+    width: 200px;
+    height: 200px;
+}
+
+.Contact
+{
+    padding-left: 100px;
+}
+
+.nav a
+{
+    line-height: 30px;
+}
+
+.address label
+{
+    line-height: 30px;
+}
+
+.nav a:hover {
+    color: black;
+}
