@@ -18,18 +18,14 @@
         <hr> 
         <a href="#">Quản lý món ăn</a>
         <div class="submenu">
-            <a href="#">Tất cả</a>
-            <a href="#">Thêm món ăn</a>
-            <a href="#">Sửa món ăn</a>
-            <a href="#">Xóa món ăn</a>
+            <a href="tranghienthi.php?quanly=tatcasp">Tất cả</a>
+            <a href="tranghienthi.php?quanly=themsanpham">Thêm món ăn</a>
         </div>
         <hr>
         <a href="#">Quản lý danh mục sản phẩm</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatca">Tất cả</a>
             <a href="tranghienthi.php?quanly=themdanhmuc">Thêm danh mục</a>
-            <!-- <a href="tranghienthi.php?quanly=sua">Sửa danh mục</a> -->
-            <!-- <a href="tranghienthi.php?quanly=xoa">Xóa danh mục</a> -->
         </div>
         <hr>
         <a href="#">Khuyến mãi</a>
@@ -37,6 +33,18 @@
             <a href="#">Tất cả</a>
             <a href="#">Tạo Deal</a>
             <a href="#">Quản lý mã giảm</a>
+        </div>
+        <hr>
+        <a href="#">Quản lý dịch vụ</a>
+        <div class="submenu">
+            <a href="#">Tất cả</a>
+            <a href="#">Thêm dịch vụ</a>
+        </div>
+        <hr>
+        <a href="#">Quản lý tin tức</a>
+        <div class="submenu">
+            <a href="#">Tất cả</a>
+            <a href="#">Thêm tin tức</a>
         </div>
         <hr>
     </div>
