@@ -26,5 +26,12 @@
         <?php
             }
         ?>
+        <tr>
+            <td style="text-align: center" colspan="3">
+                <form action="../admin/tranghienthi.php?quanly=themdanhmuc" method="post">
+                    <input type="submit" value="Thêm danh mục sản phẩm">
+                </form>
+            </td>
+        </tr>
     </table>
 </div>

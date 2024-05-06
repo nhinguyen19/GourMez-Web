@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="danhmuc.css">
-<h2>Sửa sản phẩm</h2>
+<link rel="stylesheet" href="sanpham.css">
+<h2 class="title">Sửa sản phẩm</h2>
 <div class="insert_sp">
     <table>
         <form method="POST" action="tranghienthi.php?quanly=suasp&idsanpham=<?php echo $_GET['idsanpham'] ?>" enctype="multipart/form-data">
@@ -28,7 +28,7 @@
             <td><textarea rows = "7"  name="mota" style="width: 350px; background-color: #FFECCB; color: black;"></textarea></td>
         </tr>
         <tr>
-                <td style="text-align: center;" colspan="2"><input type="submit" name="suaspham" value="Sửa sản phẩm"></td>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="suaspham" value="Cập nhật"></td>
             </tr>
         </form>
     </table>

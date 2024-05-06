@@ -4,7 +4,7 @@
     $sql_lietke_sanpham = "SELECT * FROM food ORDER BY food_id ASC";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
 ?>
-<h2>Tất cả sản phẩm</h2>
+<h2 class="title">Tất cả sản phẩm</h2>
 <div class="insert_sp">
     <table>
         <tr>
@@ -14,6 +14,7 @@
             <th style="text-align: center">Giá bán</th>
             <th style="text-align: center">Mô tả</th>
             <th style="text-align: center">Hình ảnh</th>
+            <th style="text-align: center">Quản lý</th>
         </tr>
         <?php
             $i = 0;
@@ -34,5 +35,12 @@
         <?php
             }
         ?>
+        <tr>
+            <td style="text-align: center" colspan="7">
+                <form action="../admin/tranghienthi.php?quanly=themsanpham" method="post">
+                    <input type="submit" value="Thêm sản phẩm">
+                </form>
+            </td>
+        </tr>
     </table>
 </div>

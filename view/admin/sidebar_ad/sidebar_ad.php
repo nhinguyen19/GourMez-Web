@@ -35,6 +35,18 @@
             <a href="#">Quản lý mã giảm</a>
         </div>
         <hr>
+        <a href="#">Quản lý dịch vụ</a>
+        <div class="submenu">
+            <a href="#">Tất cả</a>
+            <a href="#">Thêm dịch vụ</a>
+        </div>
+        <hr>
+        <a href="#">Quản lý tin tức</a>
+        <div class="submenu">
+            <a href="#">Tất cả</a>
+            <a href="#">Thêm tin tức</a>
+        </div>
+        <hr>
     </div>
 </body>
 </html>

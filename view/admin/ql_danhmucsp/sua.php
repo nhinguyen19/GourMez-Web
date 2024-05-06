@@ -13,7 +13,7 @@
             </tr>
             
             <tr>
-                <td style="text-align: center;" colspan="2"><input type="submit" name="sua" value="Sửa danh mục sản phẩm"></td>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="sua" value="Cập nhật"></td>
             </tr>
         </form>
     </table>
