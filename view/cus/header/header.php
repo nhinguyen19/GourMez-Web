@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
     <link rel="stylesheet" href="../view/cus/header/style.css">
+   
     <link rel="stylesheet" href="../view/LIB/bootstrap/css/bootstrap.min.css">
     <script src="../view/LIB/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
@@ -22,7 +23,7 @@
 <body>
 <div class="header1">
         <div class="hleft">
-            <img class="logo" src="../VIEW/img/logocus.png"/>
+            <img class="logo" src="../view/cus/img/logocus.png"/>
         </div>
         <div class="bar">
             <nav class="navigation">

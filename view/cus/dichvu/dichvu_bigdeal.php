@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dịch vụ sinh nhật</title>
-    <link rel = "stylesheet" href = "bigdeal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
+
+    <link rel = "stylesheet" href = "../view/cus/dichvu/bigdeal.css">
     <script src = "bigdeal.js"></script>
-
-
-</head>
-
-<body>
-    
-        <img src = "../img/banner_bigdeal.png" class = "banner_bigdeal">
+        <img src = "..view/cus/img/banner_bigdeal.png" class = "banner_bigdeal">
         <!-- Thanh đặt món -->
         <div class="food_order">
         <div class="food_label">
@@ -22,7 +9,7 @@
 
             <div class="full_menu">
                 <?php
-                    require("../../../model/connect.php");
+                    require("../model/connect.php");
 
                     $sql = "SELECT NameFood, Price,image FROM food_for_bigdeal";
                     $result = mysqli_query($conn, $sql);
@@ -55,7 +42,7 @@
         <div class = "cus_info">
             
                 
-                <form id="form_customer" action="../../../controller/cus/xuli_bigdeal.php" method="post">
+                <form id="form_customer" action="xuli_bigdeal.php" method="post">
                 <div class = "info">
                     <h2>THÔNG TIN KHÁCH HÀNG</h2>
 
