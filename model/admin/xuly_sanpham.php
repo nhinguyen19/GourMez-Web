@@ -48,10 +48,10 @@
             if (mysqli_num_rows($query) > 0) {
                 // Fetch the image filename from the database
                 $row = mysqli_fetch_assoc($query);
-                $imageName = $row['image'];
+                $imageName = $row['img'];
 
                 // Delete the image file from the "uploads" folder
-                $imagePath = "uploads/" . $imageName;
+                $imagePath = "../../view/admin/ql_sanpham/uploads/" . $imageName;
                 if (file_exists($imagePath)) {
                     unlink($imagePath);
                 }
@@ -75,6 +75,38 @@
                 exit();
             } else {
                 echo "<script>alert('Sản phẩm không tồn tại.'); window.location='tranghienthi.php?quanly=tatcasp';</script>";
+            }
+        }
+    }
+    function suaSanPham()
+    {
+        $conn = connectdb();
+        if(isset($_POST['suaspham'])) 
+        {
+            $id = $_GET['idsanpham'];
+            $tensp = $_POST['tensanpham'];
+            $giaban = $_POST['giasanpham'];
+            $giagoc = $_POST['giagoc_sanpham'];
+            $mota = $_POST['mota'];
+            $hinhanh = $_FILES['hinhanh']['name'];
+            $hinhanh_tmp = $_FILES['hinhanh']['tmp_name']; 
+            $hinhanh = time().'_'.$hinhanh;
+            
+            if($_FILES['hinhanh'])
+            {
+                $sql_sua = "UPDATE food SET food_name = '$tensp', selling_price = '$giaban',original_price='$giagoc',small_descr='$mota',img='$hinhanh' WHERE food_id = '$id'";
+                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_sanpham/uploads/'.$hinhanh); 
+            }
+            else{
+                $sql_sua = "UPDATE food SET food_name = '$tensp', selling_price = '$giaban',original_price='$giagoc',small_descr='$mota' WHERE food_id = '$id'";
+            }
+    
+            
+            if(mysqli_query($conn, $sql_sua)) {
+                header('Location: tranghienthi.php?quanly=tatcasp');
+                exit();
+            } else {
+                echo "Lỗi: " . mysqli_error($conn);
             }
         }
     }

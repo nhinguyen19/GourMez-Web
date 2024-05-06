@@ -50,6 +50,10 @@
         case 'xoasp':
           xoaSanPham();
           break;
+        case 'suasp':
+          include("ql_sanpham/sua.php");
+          suaSanPham();
+          break;
         default :
           include ('tranghienthi.php');
           break;

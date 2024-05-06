@@ -8,7 +8,7 @@
                 <td><input type="text" name="tensanpham" style="width: 350px; background-color: #FFECCB; color: black;border:none"></td>
             </tr>
             <tr>
-                <th style="text-align: center">Giá sản phẩm </th>
+                <th style="text-align: center">Giá bán </th>
                 <td><input type="text" name="giasanpham" style="width: 350px; background-color: #FFECCB; color: black;border:none"></td>
             </tr>
             <tr>
