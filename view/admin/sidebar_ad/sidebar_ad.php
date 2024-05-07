@@ -28,10 +28,10 @@
             <a href="tranghienthi.php?quanly=themdanhmuc">Thêm danh mục</a>
         </div>
         <hr>
-        <a href="#">Khuyến mãi</a>
+        <a href="#">Quản lí khuyến mãi</a>
         <div class="submenu">
-            <a href="#">Tất cả</a>
-            <a href="#">Tạo Deal</a>
+            <a href="tranghienthi.php?quanly=tatcakm">Tất cả</a>
+            <a href="#">Tạo mã khuyến mãi</a>
             <a href="#">Quản lý mã giảm</a>
         </div>
         <hr>

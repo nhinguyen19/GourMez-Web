@@ -18,6 +18,7 @@
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
+    include_once ("../../model/admin/xuly_khuyenmai.php");
     include("sidebar_ad/sidebar_ad.php");
     
   ?>
@@ -40,6 +41,8 @@
           include("ql_danhmucsp/sua.php");
           suaDanhMuc();
           break;
+
+
         case 'themsanpham':
           include ('ql_sanpham/them_sanpham.php');
           themSanPham();
@@ -53,6 +56,11 @@
         case 'suasp':
           include("ql_sanpham/sua.php");
           suaSanPham();
+          break;
+
+        case 'tatcakm' :
+          $kq=getall_discountnews();
+          include ('ql_khuyenmai/tatcakm.php');
           break;
         default :
           include ('tranghienthi.php');
