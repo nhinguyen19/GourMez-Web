@@ -30,7 +30,7 @@ function get_info_food() {
 
       
       
-      totalBox.innerHTML = '<img src = "'+ img_src + '"'+ 'style = "display:inline; width: 80px; height: 80px; margin-left: 20px">' + '<p name="name_food" style="display:inline; margin-right: 40px; margin-left: 15px">' + name_food + '</p>' + '<p style = "display:inline; margin-left:30px">x</p>' + '<p style="display:inline; name = "Last_quantity">' + quantity + '</p>' + '<p style="display:inline; margin-left: 30px">' + formatted_total_price + '</p>';
+      totalBox.innerHTML = '<img src = "'+ img_src + '"'+ 'style = "display:inline; width: 100px; height: 100px; margin-left: 50px">' + '<p name="name_food" style="display:inline; margin-right: 40px; margin-left: 15px">' + name_food + '</p>' + '<p style = "display:inline; margin-left:30px">x</p>' + '<p style="display:inline; name = "Last_quantity">' + quantity + '</p>' + '<p style="display:inline; margin-left: 30px">' + formatted_total_price + '</p>';
       
       let text = document.createElement("p");
       let line = document.createElement("hr");

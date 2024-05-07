@@ -1,21 +1,4 @@
-*{box-sizing:border-box}
-body
-{
-  font-family:'Lalezar';
-  padding: 10px;
-}
-.banner_bigdeal
-{
-    margin-top: 50px;
-    width: 1485px;
-    height: 700px;
-}
 
-.food_order
-{
-  background-color: rgba(255, 236, 203, 1) ;
-  margin-top: -40px;
-}
 /* Thanh đặt món */
 .food_label
 {

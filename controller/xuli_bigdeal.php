@@ -1,5 +1,6 @@
 <?php
-    require("../../model/connect.php");
+    require("../model/connect.php");
+    $conn = connectdb();
     $name = $_POST["cusname"];
     $tele = $_POST["tel"];
     $email = $_POST["email"];

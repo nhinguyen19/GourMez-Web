@@ -46,7 +46,6 @@ label, a
 .nav
 {
     display:list-item;
-    padding-left: 50px;
 }
 .nav a
 {
