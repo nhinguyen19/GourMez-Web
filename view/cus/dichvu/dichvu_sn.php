@@ -1,7 +1,64 @@
 
-    <link rel = "stylesheet" href = "../view/cus/dichvu/style_sn.css">
    
+<style>
+.banner_sn
+{
+    margin-top: 50px;
+    width: 1500px;
+    height: 700px;
+}
 
+    .food_label
+{
+  background-color: rgba(255, 242, 242, 1);
+  padding-bottom: 20px;
+}
+
+.food_label h1
+{
+    text-align: center;
+    font-family: 'Lalezar';
+    align-items: center;
+    background-color: rgba(174, 33, 8, 1);
+    color: white;
+    padding: 10px 0 5px 0;
+}
+
+.full_menu
+{
+    display: grid;
+  grid-template-columns: 500px 500px 500px;
+  margin-top: 50px;
+  margin-block-end: 50px;
+  font-size: 20px;
+  /* font-family: 'Lalezar';
+  align-items: center;
+  text-align: center;
+  justify-content: center; căn giữa theo chiều ngang */
+  
+}
+
+.full_menu img
+{
+  width: 350px;
+  height: 350px;
+  margin-bottom: 10px;
+  
+}
+
+.option
+{
+    text-align: justify;
+    padding: 40px;
+}
+
+.text
+{
+    padding-left: 120px;
+}
+
+
+</style>
 
 
     <div class="food_order">
@@ -27,7 +84,7 @@
                             $counter = 0; // Counter to generate unique identifiers for radio buttons
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $counter++;
-                                echo '<div class="option1">';
+                                echo '<div class="option">';
                                 echo '<img name = "image" src="' . $row['img'] . '">';
                                 echo '<div class="text">';
                                 echo '<p name="name_of_food">'. $row['comboname'] .  '</p>';
