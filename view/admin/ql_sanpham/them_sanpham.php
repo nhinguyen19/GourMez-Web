@@ -16,6 +16,25 @@
                 <td><input type="text" name="giagoc_sanpham" style="width: 350px; background-color: #FFECCB; color: black;border:none"></td>
             </tr>
             <tr>
+                <th style="text-align: center">Danh mục sản phẩm </th>
+                <td>
+                <select name="danhmuc">
+                    <?php
+                    $conndb = connectdb();
+                    $sql_danhmuc = "SELECT cate_id, cate_name FROM category ORDER BY cate_id ASC";
+                    $query_danhmuc = mysqli_query($conndb, $sql_danhmuc);
+                    while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)) {
+                        $cate_id = $row_danhmuc['cate_id'];
+                        $cate_name = $row_danhmuc['cate_name'];
+                    ?>
+                        <option value="<?php echo $cate_id; ?>"><?php echo $cate_name; ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                </td>
+            </tr>
+            <tr>
                 <th style="text-align: center">Hình ảnh</th>
                 <td><input type="file" name="hinhanh" style="width: 350px"></td>
             </tr>

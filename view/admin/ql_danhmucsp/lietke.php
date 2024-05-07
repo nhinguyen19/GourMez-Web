@@ -21,7 +21,7 @@
         <tr>
             <td style="text-align: center"><?php echo $row['cate_id'] ?></td>
             <td style="text-align: center"><?php echo $row['cate_name']?></td>
-            <td style="text-align: center"><a href="xoa.php?iddanhmuc=<?php echo $row['cate_id']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=sua&id=<?php echo $row['cate_id']; ?>">Sửa</a></td>     
+            <td style="text-align: center"><a href="tranghienthi.php?quanly=xoa&iddanhmuc=<?php echo $row['cate_id']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=sua&id=<?php echo $row['cate_id']; ?>">Sửa</a></td>     
         </tr>
         <?php
             }

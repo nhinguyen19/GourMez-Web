@@ -4,16 +4,16 @@
     padding-left: 240px;
  }
 table,tr,th,td{
-    border: 1px solid black;
+    border: 1px solid  #754E39;
     background-color: #f0ac74;
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     padding: 10px;
 }
 table{
     width: 90%;
 }
 .title{
-    padding-left: 700px;
+    padding-left: 650px;
     padding-top: 30px;
     font-family: Lalezar;
     text-transform: uppercase;
