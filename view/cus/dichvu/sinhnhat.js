@@ -1,57 +1,55 @@
-let slideIndex = 0;
-showSlides();
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 5000); // Change image every 2 seconds
+
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 
+function get_info_food() {
+  let names = document.getElementsByName("name_of_food");
+  let prices = document.getElementsByName("price");
+  let quantities = document.getElementsByName("quantity");
+  let img = document.querySelectorAll(".option1 img");
+  let checks = document.getElementsByName("choose");
 
+  for (let i = 0; i < checks.length; i++) {
+    if (checks[i].checked) 
+      {
+      let name_food = names[i].innerText;
+      let quantity = parseInt(quantities[i].value);
+      // Remove non-numeric characters (like comma) from the price
+      let price = parseInt(prices[i].innerText.replace(/\D/g, ''));
+      let img_src = img[i].getAttribute("src");
+      
+      // Update the content of the div with class "total_box"
+      let totalBox = document.querySelector('.total_box');
+      let total_price = quantity * price;
+      
+      // Format total_price as desired
+      let formatted_total_price = formatNumber(total_price);
 
-// // Lấy ra các nút "Prev" và "Next"
-// let prevButton = document.querySelector('.prev');
-// let nextButton = document.querySelector('.next');
+      
+      
+      totalBox.innerHTML = '<img src = "'+ img_src + '"'+ 'style = "display:inline; width: 80px; height: 80px; margin-left: 20px">' + '<p name="name_food" style="display:inline; margin-right: 40px; margin-left: 15px">' + name_food + '</p>' + '<p style = "display:inline; margin-left:30px">x</p>' + '<p style="display:inline; name = "Last_quantity">' + quantity + '</p>' + '<p style="display:inline; margin-left: 30px">' + formatted_total_price + '</p>';
+      
+      let text = document.createElement("p");
+      let line = document.createElement("hr");
 
-// // Gán sự kiện click cho nút "Prev"
-// prevButton.addEventListener('click', function() {
-//     plusSlides(-1); // Di chuyển đến slide trước đó
-//     automaticMode = false; // Tắt chế độ tự động
-// });
+      text.classList.add("text_price");
+      text.setAttribute("name","Last_price");
+      text.innerHTML = "Tổng cộng: " + formatted_total_price;
+      totalBox.appendChild(line);
+      totalBox.appendChild(text);
 
-// // Gán sự kiện click cho nút "Next"
-// nextButton.addEventListener('click', function() {
-//     plusSlides(1); // Di chuyển đến slide tiếp theo
-//     automaticMode = false; // Tắt chế độ tự động
-// });
+      //add value for input hidden -> to get value to insert into
+      document.getElementById('name_food_input').value = name_food;
+      document.getElementById('quantity_input').value = quantity;
+      document.getElementById('price_input').value = total_price;
 
-// // Hàm tự động chuyển slide
-// function showSlides_automatic() {
-//     let i;
-//     let slides = document.getElementsByClassName("mySlides");
-//     let dots = document.getElementsByClassName("dot");
-//     for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";  
-//     }
-//     slideIndex++;
-//     if (slideIndex > slides.length) {slideIndex = 1}    
-//     for (i = 0; i < dots.length; i++) {
-//       dots[i].className = dots[i].className.replace(" active", "");
-//     }
-//     slides[slideIndex-1].style.display = "block";  
-//     dots[slideIndex-1].className += " active";
-//     if (automaticMode) {
-//         setTimeout(showSlides_automatic, 4000); // Tự động chuyển slide sau 4 giây
-//     }
-// }
+      // Exit the loop after finding the checked radio button
+      break;
+    }
+  }
+}
 
-// // Bắt đầu chuyển slide tự động khi trang được tải
-// showSlides_automatic();
-
+  

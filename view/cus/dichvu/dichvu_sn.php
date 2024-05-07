@@ -1,8 +1,11 @@
 
     <link rel = "stylesheet" href = "../view/cus/dichvu/style_sn.css">
-    <script src = "../view/cus/dichvu/sinhnhat.js"></script>
+   
+
+
+
     <div class="food_order">
-        <img src = "../img/sn_banner.png" class = "banner_sn">
+        <img src = "../view/cus/img/sn_banner.png" class = "banner_sn">
         <!-- Thanh đặt món -->
         <div class="food_label">
             <h1>ĐẶT MÓN ĂN</h1>
@@ -10,7 +13,7 @@
             <div class="full_menu">
                 <?php
                     require("../model/connect.php");
-
+                    $conn = connectdb();
                     $sql = "SELECT comboname, price,img FROM combo_for_birthday";
                     $result = mysqli_query($conn, $sql);
 
@@ -18,22 +21,27 @@
                     {
                         die("Lỗi". mysqli_error($conn));
                     }
-
-                    if (mysqli_num_rows($result) > 0) {
-                        $counter = 0; // Counter to generate unique identifiers for radio buttons
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            $counter++;
-                            echo '<div class="option1">';
-                            echo '<img name = "image" src="' . $row['img'] . '">';
-                            echo '<div class="text">';
-                            echo '<p name="name_of_food">'. $row['comboname'] .  '</p>';
-                            echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
-                            echo 'Số lượng: <input type="number" name="quantity" value = "10" id = "quantity"  placeholder="10" min="10" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
-                            echo 'Chọn <input type="radio" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
-                            echo '</div>';
-                            echo '</div>';
-                        }
+                    else
+                    {
+                        if (mysqli_num_rows($result) > 0) {
+                            $counter = 0; // Counter to generate unique identifiers for radio buttons
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $counter++;
+                                echo '<div class="option1">';
+                                echo '<img name = "image" src="' . $row['img'] . '">';
+                                echo '<div class="text">';
+                                echo '<p name="name_of_food">'. $row['comboname'] .  '</p>';
+                                echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
+                                echo 'Số lượng: <input type="number" name="quantity" value = "10" id = "quantity"  placeholder="10" min="10" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
+                                echo 'Chọn <input type="radio" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
+                                echo '</div>';
+                                echo '</div>';
+                            }
                     }
+                }
+
+                   
+                    
                 ?>
             
             </div>
