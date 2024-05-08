@@ -5,13 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to AdminCP</title>
   <link rel="stylesheet" href="sidebar_ad/sidebar_ad.css">
-  <link rel="stylesheet" href="ql_danhmucsp/danhmuc.css">
-  <style>
-    body {
-      background-color: #FFECCB;
-    }
-    
-  </style>
+  <link rel="stylesheet" href="tranghienthi.css">
 </head>
 <body>
   <?php

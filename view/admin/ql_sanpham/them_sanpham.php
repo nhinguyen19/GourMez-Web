@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../ql_danhmucsp/danhmuc.css">
 <h2 class="title"> Thêm sản phẩm </h2>
 <div class="insert" >
     <table>

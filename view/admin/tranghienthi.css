@@ -20,4 +20,6 @@ table{
     text-transform: uppercase;
     color: #E26A2C;
 }
-
+body {
+    background-color: #FFECCB;
+  }

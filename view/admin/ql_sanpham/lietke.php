@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../ql_danhmucsp/danhmuc.css">
 <?php
     $conn = connectdb();
     $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id ORDER BY food_id ASC";
