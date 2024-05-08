@@ -20,19 +20,24 @@
     if (isset($_POST["send"]) && ($_POST["send"] == "Gửi đơn hàng")) {
         if ($food == "" || $quantity == 0 || $Total_price == null)
         {
-            header('Location: ../../view/cus/dichvu/dichvu_sn.php?alert=empty'); //flag = empty -> chưa chọn món
+            echo"<script>alert('Vui lòng chọn món ăn')</script>"; header('Location: tranghienthi.php?quanly=dichvu_sn');
+           
+            
         }
         else
         {
             $sql = "INSERT INTO birthday_service (customer_name, phone, email,name_order_party, booking_date, gender, address, note, name_food, quantity, total_price, status)
             VALUES ('$name', '$tele', '$email', '$name_birthday', STR_TO_DATE('$party', '%d/%m/%Y'), '$name_gender', '$address', '$note', '$food', '$quantity', '$Total_price', null)";
             if(mysqli_query($conn,$sql)) {
-                header('Location: ../../view/cus/dichvu/dichvu_sn.php?alert=success'); //flag = success
+                echo "<script>alert('Đơn hàng của bạn đã được ghi nhận. Nhân viên cửa hàng sẽ sớm liên hệ'); </script>";
+                header('Location: tranghienthi.php?quanly=dichvu_sn');
                 exit();
+               
             } 
             else 
             {
-                header('Location: ../../view/cus/dichvu/dichvu_sn.php?alert = "unsuccess');  //flag = unsuccess
+                echo '<script>alert("Đơn hàng bị lỗi, vui lòng nhập lại")</script>';
+                header('Location: tranghienthi.php?quanly=dichvu_sn');
                 echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
             
             }

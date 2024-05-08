@@ -4,6 +4,7 @@
     .insert_service{
     display: flex;
     justify-content: center;
+    padding-left: 50px;
 
 
 }
@@ -20,9 +21,10 @@ table{
     width: fit-content;
 }
 h2{
-    padding-left: 600px;
+    padding-left: 700px;
     padding-top: 30px;
     font-family: Lalezar;
+    font-size: 30px;
     text-transform: uppercase;
     color: #E26A2C;
 }
@@ -30,7 +32,7 @@ h2{
 <h2> Thêm dịch vụ </h2>
 <div class="insert_service" >
     <table>
-        <form method="POST" action="tranghienthi.php?quanly=themdv">
+    <form method="POST" action="tranghienthi.php?quanly=themdichvu" enctype="multipart/form-data">
             <tr>
                 <th style="text-align: center">Tên dịch vụ </th>
                 <td><input type="text" name="tendichvu" style="width: 400px; background-color: #FFECCB; color: black;border:none"></td>
@@ -48,7 +50,7 @@ h2{
                 </td>
             </tr>
             <tr>
-                <td style="text-align: center;" colspan="2"><input type="submit" name="themdichvu" value="Thêm danh mục sản phẩm"></td>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="themdichvu" value="Thêm dịch vụ"></td>
             </tr>
         </form>
     </table>

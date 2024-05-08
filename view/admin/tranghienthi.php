@@ -19,7 +19,10 @@
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
     include_once ("../../model/admin/xuly_khuyenmai.php");
+    include_once ("../../model/admin/xuly_dichvu.php");
     include("sidebar_ad/sidebar_ad.php");
+
+    
     
   ?>
   <?php 
@@ -64,10 +67,11 @@
           include ('ql_khuyenmai/tatcakm.php');
           break;
 
-        case 'themdv' :
+        case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
+          themDichVu();
           break;
-          
+
         default :
           include ('tranghienthi.php');
           break;

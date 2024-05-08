@@ -263,7 +263,7 @@
         <div class = "cus_info">
             
         <div class = "info">
-                <form id="form_customer" action="tranghienthi.php?quanly=dichvu_sn" method="post">
+                <form id="form_customer" action="../controller/xuli_sn.php" method="post">
                 
                     <h2>THÔNG TIN KHÁCH HÀNG ĐẶT TIỆC</h2>
 
@@ -370,6 +370,7 @@ function formatNumber(number) {
       }
     }
   }
+  </script>
   
   
   
@@ -378,28 +379,4 @@ function formatNumber(number) {
     
   
   
-</script>
- 
-        <?php
-if(isset($_GET['alert']) && $_GET['alert'] == 'success') {
-    echo '<script>alert("Đơn hàng đã được ghi nhận. Nhân viên sẽ liên hệ với bạn.");</script>';
-}
-else if (isset($_GET['alert']) && $_GET['alert'] == 'empty')
-{
-    echo '<script>alert("Vui lòng chọn món ăn.");</script>';
-}
-else if (isset($_GET['alert']) && $_GET['alert'] == 'unsuccess')
-{
-    echo '<script>alert("Đơn hàng bị lỗi. Vui lòng nhập lại.");</script>';
-}
-?>
 
-
-  
-  
-
-  
-    
-  
-  
-</script>
