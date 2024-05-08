@@ -35,7 +35,7 @@ h2{
     <form method="POST" action="tranghienthi.php?quanly=themdichvu" enctype="multipart/form-data">
             <tr>
                 <th style="text-align: center">Tên dịch vụ </th>
-                <td><input type="text" name="tendichvu" style="width: 400px; background-color: #FFECCB; color: black;border:none"></td>
+                <td><input type="text" name="tendichvu" style="width: 400px; height: 30px; background-color: #FFECCB; color: black;border:none"></td>
             </tr>
             <tr>
                 <th>Mô tả</th>
@@ -50,7 +50,7 @@ h2{
                 </td>
             </tr>
             <tr>
-                <td style="text-align: center;" colspan="2"><input type="submit" name="themdichvu" value="Thêm dịch vụ"></td>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="themdichvu" value="Thêm dịch vụ" style = "font-size: 18px"></td>
             </tr>
         </form>
     </table>

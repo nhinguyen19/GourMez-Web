@@ -21,7 +21,7 @@
         <tr>
             <td style="text-align: center"><?php echo $row['id_service'] ?></td>
             <td style="text-align: center"><?php echo $row['service_name']?></td>
-            <td style="text-align: center"><a href="tranghienthi.php?quanly=xoaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suaDichVu&id=<?php echo $row['id_service']; ?>">Sửa</a></td>     
+            <td style="text-align: center"><a href="tranghienthi.php?quanly=xoaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Sửa</a></td>     
         </tr>
         <?php
             }
@@ -29,7 +29,7 @@
         <tr>
             <td style="text-align: center" colspan="3">
                 <form action="../admin/tranghienthi.php?quanly=themdichvu" method="post">
-                    <input type="submit" value="Thêm dịch vụ" style="font-size: 15px">
+                    <input type="submit" value="Thêm dịch vụ" style="font-size: 18px">
                 </form>
             </td>
         </tr>
