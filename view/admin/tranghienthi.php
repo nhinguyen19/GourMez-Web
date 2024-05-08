@@ -67,6 +67,11 @@
           include ('ql_khuyenmai/themkmnews.php');
           
           break;
+          
+        case 'themdv' :
+          include ('ql_dichvu/them_dv.php');
+          break;
+          
         default :
           include ('tranghienthi.php');
           break;
