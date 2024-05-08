@@ -62,6 +62,11 @@
           $kq=getall_discountnews();
           include ('ql_khuyenmai/tatcakm.php');
           break;
+        case 'themkmnews' :
+          insertdiscountnews();
+          include ('ql_khuyenmai/themkmnews.php');
+          
+          break;
         default :
           include ('tranghienthi.php');
           break;

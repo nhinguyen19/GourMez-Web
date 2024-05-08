@@ -31,7 +31,7 @@
         <a href="#">Quản lí khuyến mãi</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatcakm">Tất cả</a>
-            <a href="#">Tạo mã khuyến mãi</a>
+            <a href="tranghienthi.php?quanly=themkmnews">Tạo mã khuyến mãi</a>
             <a href="#">Quản lý mã giảm</a>
         </div>
         <hr>

@@ -1,14 +1,9 @@
 <?php
-function delcategory($id) {
-    $conn= connectdb();
-    $sql = "DELETE FROM tbl_category WHERE id_category=".$id;
-    $conn->exec($sql);
 
-}
 function getall_discountnews()
 {
     $conn = connectdb();
-    $sql = "SELECT Id, discount_name, description FROM discount_news";
+    $sql = "SELECT Id, discount_name, description, img FROM discount_news";
     $result = $conn->query($sql);
     $kq = array();
 
@@ -21,34 +16,25 @@ function getall_discountnews()
     $conn->close();
     return $kq;
 }
-function getonecategory($id) {
-    $conn=connectdb();
-    $stmt = $conn->prepare("SELECT * FROM tbl_category WHERE id_category=".$id);
-    $stmt->execute();
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $kq=$stmt->fetchAll();
-    return $kq;
-    // mảng một phần tử
 
-}
-
-function updatecategory($id, $catename)
+function insertdiscountnews()
 {
-    $conn=connectdb();
-    $sql = "UPDATE tbl_category SET category_name='".$catename."' WHERE id_category =".$id;
+    if ((isset($_POST['themkmnews1'])) &&($_POST['themkmnews1']))
+    {
+        $conn=connectdb();
+        $tenkmnews =$_POST['namediscountnews'];
+        $mota =$_POST['description'];
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        if($_FILES['img']['name'] != "") $img=$_FILES['img']['name']; else $img="";
 
-    // Prepare statement
-    $stmt = $conn->prepare($sql);
-    // Execute the query
-    $stmt->execute();
-}
+        $conn=connectdb();
+        $sql = "INSERT INTO discount_news (discount_name, description, img)
+        VALUES ('$tenkmnews', ' $mota', '$img')";
+        $conn->query($sql);
 
-function addcategory($catename)
-{
-    $conn=connectdb();
-    $sql = "INSERT INTO tbl_category (category_name) 
-    VALUES ('".$catename."')";
-    // use exec() because no results are returned
-    $conn->exec($sql);
+
+
+    }
+
 }
-?>
