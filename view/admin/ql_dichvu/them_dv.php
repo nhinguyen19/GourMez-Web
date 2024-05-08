@@ -40,7 +40,7 @@ h2{
             <tr>
                 <th>Mô tả</th>
                 <td>
-                    <input type="text" name = "motadichvu" id = "motadichvu" style="width: 400px; height: 100px;background-color: #FFECCB; color: black;border:none">
+                    <textarea name = "motadichvu" id = "motadichvu" style="width: 400px; height: 100px;background-color: #FFECCB; color: black;border:none"> </textarea> 
                 </td>
             </tr>
             <tr>

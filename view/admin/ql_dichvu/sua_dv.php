@@ -1,15 +1,34 @@
-<link rel="stylesheet" href="danhmuc.css">
+<style>
+    .insert_dv
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    table
+    {
+        width: fit-content;
+    }
+    
+</style>
 <h2> Sửa dịch vụ </h2>
-<div class="insert_" >
+<div class="insert_dv" >
     <table>
-        <form method="POST" action="tranghienthi.php?quanly=sua&id=<?php echo $_GET['id'] ?>">
+        <form method="POST" action="tranghienthi.php?quanly=suaDichVu&id=<?php echo $_GET['id'] ?>">
             <tr>
-                <th style="text-align: center">Id</th>
+                <th style="text-align: center">ID</th>
                 <td name="id"><?php echo $_GET['id'] ?></td>
             </tr> 
             <tr>
-                <th style="text-align: center">Tên danh mục </th>
-                <td><input type="text" name="tendanhmuc" style="width: 350px"></td>
+                <th style="text-align: center">Tên dịch vụ </th>
+                <td><input type="text" name="tendichvu" style="width: 400px; background-color: #FFECCB; color: black;border:none"></td>
+            </tr>
+
+            <tr>
+                <th style="text-align: center">Mô tả </th>
+                <td>
+                <textarea name = "mota" style="width: 400px; background-color: #FFECCB; color: black;border:none"></textarea>
+                </td>
             </tr>
             
             <tr>
