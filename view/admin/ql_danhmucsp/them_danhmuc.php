@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="danhmuc.css">
-<h2> Thêm danh mục sản phẩm </h2>
-<div class="insert_cat" >
+<h2 class="title"> Thêm danh mục sản phẩm </h2>
+<div class="insert" >
     <table>
         <form method="POST" action="tranghienthi.php?quanly=themdanhmuc">
             <tr>

@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="sanpham.css">
 <h2 class="title">Sửa sản phẩm</h2>
-<div class="insert_sp">
+<div class="insert">
     <table>
         <form method="POST" action="tranghienthi.php?quanly=suasp&idsanpham=<?php echo $_GET['idsanpham'] ?>" enctype="multipart/form-data">
             <tr>

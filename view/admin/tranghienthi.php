@@ -5,13 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to AdminCP</title>
   <link rel="stylesheet" href="sidebar_ad/sidebar_ad.css">
-  <link rel="stylesheet" href="ql_danhmucsp/danhmuc.css">
-  <link rel="stylesheet" href="ql_sanpham/sanpham.css">
-  <style>
-    body {
-      background-color: #FFECCB;
-    }
-  </style>
+  <link rel="stylesheet" href="tranghienthi.css">
 </head>
 <body>
   <?php
@@ -37,16 +31,14 @@
         case 'tatca':
           include("ql_danhmucsp/lietke.php");
           break;
-        // case 'xoa':
-        //   include ('ql_danhmucsp/');
-        //   xoaDanhMuc();
-        //   break;
+        case 'xoa':
+          include ('ql_danhmucsp/');
+          xoaDanhMuc();
+          break;
         case 'sua':
           include("ql_danhmucsp/sua.php");
           suaDanhMuc();
           break;
-
-
         case 'themsanpham':
           include ('ql_sanpham/them_sanpham.php');
           themSanPham();

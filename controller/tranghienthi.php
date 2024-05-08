@@ -1,14 +1,13 @@
 <?php
    include("../view/cus/header/header.php")
-   ?>
-
-    <?php 
+?>
+<?php 
     if(isset($_GET['quanly']))
     { 
         switch($_GET['quanly'])
         {
         case 'thucdon':
-            include ('../view/cus/menu/menu.html');
+            include ('dieuhuong_menu.php');
             break;
         case 'khuyenmai':
             include ('../view/cus/khuyenmai/khuyenmai.php');

@@ -8,6 +8,7 @@
             $giasanpham = $_POST['giasanpham'];
             $giagoc = $_POST['giagoc_sanpham'];
             $mota = $_POST['mota'];
+            $danhmuc = $_POST['danhmuc'];
             $hinhanh = $_FILES['hinhanh']['name'];
             $hinhanh_tmp = $_FILES['hinhanh']['tmp_name']; 
             $hinhanh = time().'_'.$hinhanh;
@@ -23,11 +24,10 @@
                 echo "<script>alert('Không thể thêm sản phẩm. Sản phẩm đã tồn tại.'); window.location='tranghienthi.php?quanly=themsanpham';</script>";
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
-                $sql_them = "INSERT INTO food(food_name, original_price, selling_price, small_descr, img) VALUES ('$tensanpham', '$giagoc', '$giasanpham', '$mota', '$hinhanh')";
+                $sql_them = "INSERT INTO food(food_name, cate_id ,original_price, selling_price, small_descr, img) VALUES ('$tensanpham','$danhmuc', '$giagoc', '$giasanpham', '$mota', '$hinhanh')";
                 move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_sanpham/uploads/'.$hinhanh); 
     
                 if(mysqli_query($conn, $sql_them)) {
-                    header('Location: tranghienthi.php?quanly=themsanpham');
                     exit();
                 } else {
                     echo "Lỗi: " . mysqli_error($conn);
