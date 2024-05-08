@@ -269,7 +269,7 @@
             <div class = "cus_info">
                 
                     
-                    <form id="form_customer" action="xuli_bigdeal.php" method="post">
+                    <form id="form_customer" action="dichvu_bigdeal.php?quanly=dichvu_bigdeal" method="post">
                     <div class = "info">
                         <h2>THÔNG TIN KHÁCH HÀNG</h2>
 

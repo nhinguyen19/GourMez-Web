@@ -12,7 +12,11 @@
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
+    include_once ("../../model/admin/xuly_khuyenmai.php");
+    include_once ("../../model/admin/xuly_dichvu.php");
     include("sidebar_ad/sidebar_ad.php");
+
+    
     
   ?>
   <?php 
@@ -27,13 +31,16 @@
         case 'tatca':
           include("ql_danhmucsp/lietke.php");
           break;
-        case 'xoa':
-          xoaDanhMuc();
-          break;
+        // case 'xoa':
+        //   include ('ql_danhmucsp/');
+        //   xoaDanhMuc();
+        //   break;
         case 'sua':
           include("ql_danhmucsp/sua.php");
           suaDanhMuc();
           break;
+
+
         case 'themsanpham':
           include ('ql_sanpham/them_sanpham.php');
           themSanPham();
@@ -48,9 +55,26 @@
           include("ql_sanpham/sua.php");
           suaSanPham();
           break;
+
+        case 'tatcakm' :
+          $kq=getall_discountnews();
+          include ('ql_khuyenmai/tatcakm.php');
+          break;
+        case 'themkmnews' :
+          insertdiscountnews();
+          include ('ql_khuyenmai/themkmnews.php');
+          
+          break;
+          
+        case 'themdv' :
+          include ('ql_dichvu/them_dv.php');
+          break;
+          
         default :
           include ('tranghienthi.php');
           break;
+        
+          
       }
     }
   ?>
