@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="danhmuc.css">
-<h2> Sửa danh mục sản phẩm </h2>
-<div class="insert_cat" >
+<h2 class="title"> Sửa danh mục sản phẩm </h2>
+<div class="insert" >
     <table>
         <form method="POST" action="tranghienthi.php?quanly=sua&id=<?php echo $_GET['id'] ?>">
             <tr>

@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="sanpham.css">
+<link rel="stylesheet" href="../ql_danhmucsp/danhmuc.css">
 <h2 class="title"> Thêm sản phẩm </h2>
-<div class="insert_sp" >
+<div class="insert" >
     <table>
         <form method="POST" action="tranghienthi.php?quanly=themsanpham" enctype="multipart/form-data">
             <tr>

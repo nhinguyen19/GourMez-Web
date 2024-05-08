@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="sanpham.css">
+<link rel="stylesheet" href="../ql_danhmucsp/danhmuc.css">
 <?php
     $conn = connectdb();
     $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id ORDER BY food_id ASC";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
 ?>
 <h2 class="title">Tất cả sản phẩm</h2>
-<div class="insert_sp">
+<div class="insert">
     <table>
         <tr>
             <th style="text-align: center">Id</th>
@@ -38,7 +38,7 @@
             }
         ?>
         <tr>
-            <td style="text-align: center" colspan="7">
+            <td style="text-align: center" colspan="8">
                 <form action="../admin/tranghienthi.php?quanly=themsanpham" method="post">
                     <input type="submit" value="Thêm sản phẩm">
                 </form>

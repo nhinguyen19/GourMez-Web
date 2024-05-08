@@ -17,11 +17,11 @@
         <?php
             while ($row = mysqli_fetch_array($query_sidebar_danhmuc)) {
         ?>   
-        <a href="#" ><?php echo $row['cate_name']?></a><hr> 
+        <a href="dieuhuong_menu.php?quanly=danhmucsanpham&id=<?php echo $row['cate_id']?>"><?php echo $row['cate_name']?></a><hr> 
         <?php 
         } 
         ?>
-        <img src="../img/menu_1.png">
+        <img src="../view/cus/img/menu_1.png">
     </div>
 </body>
 </html>

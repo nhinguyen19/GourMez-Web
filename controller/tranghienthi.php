@@ -7,7 +7,7 @@
         switch($_GET['quanly'])
         {
         case 'thucdon':
-            include ('../view/cus/menu/menu.php');
+            include ('dieuhuong_menu.php');
             break;
         case 'khuyenmai':
             include ('../view/cus/khuyenmai/khuyenmai.php');

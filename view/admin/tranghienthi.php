@@ -6,11 +6,11 @@
   <title>Welcome to AdminCP</title>
   <link rel="stylesheet" href="sidebar_ad/sidebar_ad.css">
   <link rel="stylesheet" href="ql_danhmucsp/danhmuc.css">
-  <link rel="stylesheet" href="ql_sanpham/sanpham.css">
   <style>
     body {
       background-color: #FFECCB;
     }
+    
   </style>
 </head>
 <body>
