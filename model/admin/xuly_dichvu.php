@@ -4,6 +4,7 @@
         $conn = connectdb();
     
         if (isset($_POST['themdichvu'])) {
+            
             $tendichvu = $_POST['tendichvu'];
             $mota = $_POST['motadichvu'];
             $hinhanh = $_FILES['hinhanhdv']['name'];
@@ -22,7 +23,7 @@
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO service(service_name, small_descript, image) VALUES ('$tendichvu', '$mota', '$hinhanh')";
-                move_uploaded_file($hinhanh_tmp,'../../view/cus/img/'.$hinhanh); 
+                move_uploaded_file($hinhanh_tmp,'../../view/cus/ql_dichvu/image_dv/'.$hinhanh); 
     
                 if(mysqli_query($conn, $sql_them)) {
                     echo "<script>alert('Thêm dịch vụ thành công'); window.location='tranghienthi.php?quanly=themdichvu';</script>";
@@ -34,7 +35,58 @@
         }
     }
 
-    function xoaDichVu()
+    function suaDichVu()
     {
-        
+        $conn = connectdb();
+        if(isset($_POST['sua'])) 
+        {
+            $tendichvu = $_POST['tendichvu'];
+            $mota = $_POST['mota'];
+            $id = $_GET['id'];
+            
+
+            if($tendichvu == "" && $mota !="")
+            {
+                $sql_sua = "UPDATE service 
+                            SET small_descript= '$mota' 
+                            WHERE id_service = '$id'";
+            }
+            else if($tendichvu != ""&& $mota == "")
+            {
+                $sql_sua = "UPDATE service 
+                            SET service_name= '$tendichvu' 
+                            WHERE id_service = '$id'";
+            }
+            else
+            {
+                $sql_sua = "UPDATE service 
+                            SET service_name= '$tendichvu', small_descript = '$mota'
+                            WHERE id_service = '$id'";
+            }
+            
+            
+            if(mysqli_query($conn, $sql_sua)) {
+                echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                exit();
+            } else {
+                echo "Lỗi: " . mysqli_error($conn);
+            }
+        }
     }
+    function xoaDichVu($id)
+    {
+        $conn = connectdb();
+        
+        // Xóa danh mục khỏi bảng dịch vụ
+        $sql_xoa = "DELETE FROM service WHERE id_service = '$id'";
+        mysqli_query($conn, $sql_xoa);
+    
+    }
+
+    if(isset($_GET['quanly']) && $_GET['quanly'] == 'xoaDichVu' && isset($_GET['iddichvu'])) {
+        $id = $_GET['iddichvu'];
+        xoaDichVu($id);
+        header('Location: tranghienthi.php?quanly=tatcadichvu');
+        exit();
+    }
+?>

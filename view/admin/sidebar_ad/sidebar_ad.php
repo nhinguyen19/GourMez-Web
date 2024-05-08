@@ -36,7 +36,7 @@
         <hr>
         <a href="#">Quản lý dịch vụ</a>
         <div class="submenu">
-            <a href="#">Tất cả</a>
+            <a href="tranghienthi.php?quanly=tatcadichvu">Tất cả</a>
             <a href="tranghienthi.php?quanly=themdichvu">Thêm dịch vụ</a>
         </div>
         <hr>

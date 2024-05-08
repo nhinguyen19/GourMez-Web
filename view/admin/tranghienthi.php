@@ -71,7 +71,19 @@
           
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
+          themDichVu();
           break;
+        case 'tatcadichvu':
+          include('ql_dichvu/tatca_dichvu.php');
+          break;
+        case 'xoaDichVu':
+          xoaDichVu($id);
+          break;
+        case 'suaDichVu':
+        include ('ql_dichvu/sua_dv.php');
+        suaDichVu();
+        break;
+
           
         default :
           include ('tranghienthi.php');
