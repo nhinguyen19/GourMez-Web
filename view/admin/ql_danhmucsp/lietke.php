@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="danhmuc.css">
 <?php
     $conn = connectdb();
-    $sql_lietke_danhmucsp = "SELECT * FROM category ORDER BY cate_id ASC";
+    $sql_lietke_dichvu = "SELECT * FROM category ORDER BY cate_id ASC";
     $query_lietke_danhmucsp = mysqli_query($conn,$sql_lietke_danhmucsp);
 ?>
 <h2> Tất cả danh mục sản phẩm </h2>

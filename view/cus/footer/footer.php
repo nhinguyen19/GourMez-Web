@@ -111,5 +111,4 @@ footer
         </div>
     </div>
     <footer>Copyright 2024, All rights reserved</footer>
-</body>
-</html>
+</div>
