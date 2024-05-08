@@ -16,7 +16,7 @@
             <p class="Ten_mon"><?php echo $row['food_name'] ?></p>
             <p>
                 <span class="label">Giá bán:</span> 
-                <span class="price"><?php echo $row['selling_price'] ?></span>
+                <span class="price"><?php echo number_format($row['selling_price'],0,',','.').'vnđ' ?></span>
             </p>
             <button class="btn_xemchitiet">Xem chi tiết</button>
             <?php

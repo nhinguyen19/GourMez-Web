@@ -31,16 +31,14 @@
         case 'tatca':
           include("ql_danhmucsp/lietke.php");
           break;
-        // case 'xoa':
-        //   include ('ql_danhmucsp/');
-        //   xoaDanhMuc();
-        //   break;
+        case 'xoa':
+          include ('ql_danhmucsp/');
+          xoaDanhMuc();
+          break;
         case 'sua':
           include("ql_danhmucsp/sua.php");
           suaDanhMuc();
           break;
-
-
         case 'themsanpham':
           include ('ql_sanpham/them_sanpham.php');
           themSanPham();
