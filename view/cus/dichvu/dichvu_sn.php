@@ -30,10 +30,6 @@
   margin-top: 50px;
   margin-block-end: 50px;
   font-size: 20px;
-  /* font-family: 'Lalezar';
-  align-items: center;
-  text-align: center;
-  justify-content: center; căn giữa theo chiều ngang */
   
 }
 
@@ -267,7 +263,7 @@
         <div class = "cus_info">
             
         <div class = "info">
-                <form id="form_customer" action="xuli_sn.php" method="post">
+                <form id="form_customer" action="tranghienthi.php?quanly=dichvu_sn" method="post">
                 
                     <h2>THÔNG TIN KHÁCH HÀNG ĐẶT TIỆC</h2>
 

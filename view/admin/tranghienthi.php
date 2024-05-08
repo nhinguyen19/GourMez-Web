@@ -34,9 +34,10 @@
         case 'tatca':
           include("ql_danhmucsp/lietke.php");
           break;
-        case 'xoa':
-          xoaDanhMuc();
-          break;
+        // case 'xoa':
+        //   include ('ql_danhmucsp/');
+        //   xoaDanhMuc();
+        //   break;
         case 'sua':
           include("ql_danhmucsp/sua.php");
           suaDanhMuc();
@@ -62,9 +63,16 @@
           $kq=getall_discountnews();
           include ('ql_khuyenmai/tatcakm.php');
           break;
+
+        case 'themdv' :
+          include ('ql_dichvu/them_dv.php');
+          break;
+          
         default :
           include ('tranghienthi.php');
           break;
+        
+          
       }
     }
   ?>
