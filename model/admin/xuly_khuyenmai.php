@@ -97,3 +97,29 @@ function deldiscountnews()
 }
 
 
+function getone_discountnews($id)
+{
+    $conn=connectdb();
+    $sql = "SELECT id, discount_name, description, img FROM discount_news WHERE id='$id'";
+    $result = $conn->query($sql);
+    $kq = array();
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $kq[] = $row;
+        }
+    }
+
+    $conn->close();
+    return $kq;
+}
+
+
+function capnhatkmnews()
+{
+    if(isset($_GET['id']) &&($_GET['id']>0))
+    {
+        $id=$_GET['id'];
+        $kmnews1=getone_discountnews($id);
+    }
+}

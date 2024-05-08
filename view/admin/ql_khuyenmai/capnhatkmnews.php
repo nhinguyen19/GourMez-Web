@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="ql_khuyenmai/khuyenmai.css">
-<h2> Thêm tin tức khuyến mãi </h2>
+<h2> Cập nhật tin tức khuyến mãi </h2>
 <div class="tablekhuyenmai" >
     <table>
-    <form action="tranghienthi.php?quanly=themkmnews" method="post" enctype="multipart/form-data">
-                <th>Tên tin tức khuyến mãi </th>
-                <th><input type="text" name="namediscountnews" id=""></th>
+    <form action="tranghienthi.php?quanly=capnhatkmnews" method="post" enctype="multipart/form-data">
+                <th>Tên khuyến mãi </th>
+                <th><input type="text" name="namediscountnews" id="" value="<?=$kmnews1[0]['discount_name']?>"></th>
             </tr>
             <tr>
                 <th>Mô tả </th>
@@ -16,7 +16,7 @@
             </tr>
             
             <tr>
-                <th colspan="2"><input type="submit" name="themkmnews1" value="Thêm mới"></th>
+                <th colspan="2"><input type="submit" name="themkmnews1" value="Thêm khuyến mãi"></th>
             </tr>
         </form>
     </table>

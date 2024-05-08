@@ -68,7 +68,11 @@
           $kq=getall_discountnews();
           include ('ql_khuyenmai/tatcakm.php');
           break;
-          
+        case 'updatediscountnews' :
+            capnhatkmnews();
+            include ('ql_khuyenmai/capnhatkmnews.php');
+            break;
+            
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           themDichVu();
