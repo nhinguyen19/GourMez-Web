@@ -31,10 +31,10 @@
         case 'tatca':
           include("ql_danhmucsp/lietke.php");
           break;
-        case 'xoa':
-          include ('ql_danhmucsp/');
-          xoaDanhMuc();
-          break;
+        // case 'xoa':
+        //   include ('ql_danhmucsp/');
+        //   xoaDanhMuc();
+        //   break;
         case 'sua':
           include("ql_danhmucsp/sua.php");
           suaDanhMuc();
@@ -69,7 +69,7 @@
           include ('ql_khuyenmai/tatcakm.php');
           break;
           
-        case 'themdv' :
+        case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           break;
           

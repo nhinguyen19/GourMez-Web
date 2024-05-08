@@ -22,7 +22,7 @@
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO service(service_name, small_descript, image) VALUES ('$tendichvu', '$mota', '$hinhanh')";
-                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/image_dv/'.$hinhanh); 
+                move_uploaded_file($hinhanh_tmp,'../../view/cus/img/'.$hinhanh); 
     
                 if(mysqli_query($conn, $sql_them)) {
                     echo "<script>alert('Thêm dịch vụ thành công'); window.location='tranghienthi.php?quanly=themdichvu';</script>";
