@@ -71,6 +71,11 @@
           include ('ql_khuyenmai/themkmnews.php');
           
           break;
+        case 'deldiscountnews':
+          deldiscountnews();
+          $kq=getall_discountnews();
+          include ('ql_khuyenmai/tatcakm.php');
+          break;
           
         case 'themdv' :
           include ('ql_dichvu/them_dv.php');
