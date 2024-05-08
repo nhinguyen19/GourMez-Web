@@ -80,7 +80,7 @@ function deldiscountnews()
                 $sql_xoa = "DELETE FROM discount_news WHERE id = '$id'";
                 mysqli_query($conn, $sql_xoa);
 
-                // Update the food_id values
+                // Update  values
                 $sql_capnhat = "SET @count = 0";
                 mysqli_query($conn, $sql_capnhat);
 
@@ -93,10 +93,7 @@ function deldiscountnews()
 
                 header('Location: tranghienthi.php?quanly=tatcakm');
                 exit();
-            } else {
-                echo "<script>alert('Sản phẩm không tồn tại.'); window.location='tranghienthi.php?quanly=tatcakm';</script>";
-            }
-    
-
-
+            } 
 }
+
+
