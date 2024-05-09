@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar</title>
-    <link rel = "stylesheet" href = "sidebar.css">
-    <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
 </head>
 <body>
     <?php
@@ -17,7 +10,7 @@
         <?php
             while ($row = mysqli_fetch_array($query_sidebar_danhmuc)) {
         ?>   
-        <a href="dieuhuong_menu.php?quanly=danhmucsanpham&id=<?php echo $row['cate_id']?>"><?php echo $row['cate_name']?></a><hr> 
+        <a href="hienthi_menu.php?quanly=danhmucsanpham&id=<?php echo $row['cate_id']?>"><?php echo $row['cate_name']?></a><hr> 
         <?php 
         } 
         ?>

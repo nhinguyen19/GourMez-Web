@@ -4,13 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gourmez</title>
-  <link rel="stylesheet" href="../view/cus/menu/menu.css">
-  <link rel="stylesheet" href="../view/cus/menu/sidebar.css">
-  <style>
-    body {
-      background-color: #FBF5F5;
-    }
-  </style>
+  <link rel="stylesheet" href="../view/cus/menu/hienthi_menu.css">
 </head>
 <body>
   <?php
@@ -24,6 +18,9 @@
       {
         case 'danhmucsanpham':
           include("../view/cus/menu/danhmuc.php");
+          break;
+        case 'chitiet_sp':
+          include("../view/cus/menu/chitiet_sp.php");
           break;
       }
     }
