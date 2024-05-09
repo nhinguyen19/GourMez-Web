@@ -1,18 +1,18 @@
+
 #sidebar_menu {
     width: 240px;
-    height: 100%;
-    background-color:#754E39; 
+    height: 600px;
+    background-color:#a16646; 
     position: fixed;
     left: 0;
-    top: 0;
     overflow-x: hidden;
+    overflow-y: auto; 
     padding-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Thay đổi thành justify-content: flex-start */
     align-items: flex-start; /* Thêm thuộc tính align-items */
   }
-  
   /* CSS cho liên kết trong sidebar */
   #sidebar_menu a {
     text-decoration: none;
