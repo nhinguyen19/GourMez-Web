@@ -42,7 +42,7 @@ h2{
             <tr>
                 <th>Giá</th>
                 <td>
-                    <input type = number name = "giamonan_dv" id = "giamonan_dv" style="width: 400px; height: 100px;background-color: #FFECCB; color: black;border:none">
+                    <input type = number name = "giamonan_dv" min = "10000" step = "1000" id = "giamonan_dv" style="width: 400px; height: 100px;background-color: #FFECCB; color: black;border:none">
                 </td>
             </tr>
             <tr>
@@ -54,6 +54,9 @@ h2{
             <tr>
                 <td style="text-align: center;" colspan="2"><input type="submit" name="themmonan" value="Thêm món ăn" style = "font-size: 18px"></td>
             </tr>
+
+            
+
         </form>
     </table>
 </div>

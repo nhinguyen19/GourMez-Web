@@ -23,7 +23,7 @@
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO service(service_name, small_descript, image) VALUES ('$tendichvu', '$mota', '$hinhanh')";
-                move_uploaded_file($hinhanh_tmp,'../../view/cus/ql_dichvu/image_dv/'.$hinhanh); 
+                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/image_dv/'.$hinhanh); 
     
                 if(mysqli_query($conn, $sql_them)) {
                     echo "<script>alert('Thêm dịch vụ thành công'); window.location='tranghienthi.php?quanly=themdichvu';</script>";
@@ -133,7 +133,7 @@
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO food_for_service(ID_service, food_combo, price, image) VALUES ('$id', '$tenmon_dv', '$giamon_dv','$hinhanh')";
-                move_uploaded_file($hinhanh_tmp,'../../view/cus/ql_dichvu/image_dv/'.$hinhanh); 
+                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/image_dv/'.$hinhanh); 
     
                 if(mysqli_query($conn, $sql_them)) {
                     echo "<script>alert('Thêm món thành công'); window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$id';</script>";
@@ -142,15 +142,86 @@
                     echo "Lỗi: " . mysqli_error($conn);
                 }
             }
-
-
-
-
-
-
-
-
-    
         }
     }
+
+    function SuaMonAn()
+    {
+        $conn = connectdb();
+        if(isset($_POST['suamonanDV'])) 
+        {
+            $id = $_GET['idmonan'];
+            $tenmonan_DV = $_POST['tenmonandv'];
+            $giamonan_DV = $_POST['giamonandv'];
+            $iddichvu = $_POST['iddichvu'];
+            $hinhanh = $_FILES['hinhanhmonandv']['name'];
+            $hinhanh_tmp = $_FILES['hinhanhmonandv']['tmp_name']; 
+            $hinhanh = time().'_'.$hinhanh;
+
+
+            if ($tenmonan_DV != " ")
+            {
+                $sql_sua = "UPDATE food_for_service 
+                        SET food_combo = '$tenmonan_DV'
+                        Where ID_food = '$id'";
+                if(mysqli_query($conn, $sql_sua)) 
+                    {
+                        echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=suamonandichvu&idmonan=$id' ;</script>";
+                    } else 
+                    {
+                        echo "Lỗi: " . mysqli_error($conn);
+                    }
+            }
+
+            if ($giamonan_DV != " ")
+            {
+                $sql_sua = "UPDATE food_for_service 
+                        SET price = '$giamonan_DV'
+                        Where ID_food = '$id'";
+                if(mysqli_query($conn, $sql_sua)) 
+                    {
+                        echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=suamonandichvu&idmonan=$id' ;</script>";
+                        exit();
+                    } else 
+                    {
+                        echo "Lỗi: " . mysqli_error($conn);
+                    }
+            }
+
+            if ($hinhanh != " ")
+            {
+                $sql_sua = "UPDATE food_for_service
+                            SET image = '$hinhanh'
+                            WHERE ID_food = '$id'";
+                if(mysqli_query($conn, $sql_sua)) 
+                {
+                    echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=suamonandichvu&idmonan=$id' ;</script>";
+                    exit();
+                } else 
+                {
+                    echo "Lỗi: " . mysqli_error($conn);
+                }
+
+            }
+
+        }
+    }  
+
+    function xoamonandichvu($id)
+    {
+        $conn = connectdb();
+        
+        // Xóa danh mục khỏi bảng dịch vụ
+        $sql_xoa = "DELETE FROM food_for_service WHERE ID_food = '$id'";
+        mysqli_query($conn, $sql_xoa);
+    
+    }
+
+    if(isset($_GET['quanly']) && $_GET['quanly'] == 'xoamonandichvu' && isset($_GET['idmonan'])) {
+        $id = $_GET['idmonan'];
+        xoaDichVu($id);
+        header('Location: tranghienthi.php?quanly=suamonandichvu');
+        exit();
+    }
+
 ?>

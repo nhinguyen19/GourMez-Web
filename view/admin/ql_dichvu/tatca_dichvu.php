@@ -6,7 +6,7 @@
 ?>
 <h2 class="title"> Tất cả dịch vụ </h2>
 <div class="insert" style="font-size: 20px;">
-    <table style = "border-collaspe:none">
+    <table style = "border-collaspe:collaspe">
         <tr>
             <th style="text-align: center">ID</th>
             <th style="text-align: center">Tên dịch vụ</th>

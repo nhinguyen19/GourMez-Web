@@ -89,6 +89,14 @@
           include ('ql_dichvu/themmonan.php');
           themmonanDV();
           break;
+        case 'suamonandichvu':
+          include ('ql_dichvu/suamonan.php');
+          suaMonAn();
+          break;
+        
+        case 'xoamonandichvu':
+          xoamonandichvu($id);
+          break;
 
           
         default :
