@@ -1,0 +1,23 @@
+.tablekhuyenmai{
+    display: flex;
+    justify-content: center;
+    padding-left: 240px;
+ }
+table,tr,th,td{
+    border: 1px solid black;
+    background-color: #d58d4a;
+    border-collapse: collapse;
+    padding: 10px;
+}
+table{
+    width: 90%;
+}
+
+.title{
+    padding-left: 700px;
+    padding-top: 30px;
+    font-family: Lalezar;
+    text-transform: uppercase;
+    color: #E26A2C;
+} 
+

@@ -1,15 +1,16 @@
 <?php
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "gourmez_web";
+    function connectdb()
+    {
+        $host = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "gourmez";
+        $conn = new mysqli($host, $username, $password, $database);
 
-    $conn = new mysqli($host, $username, $password, $database);
-    if ($conn->connect_error) {
-        die('Kết nối không thành công'. $conn->connect_error);
+        if ($conn->connect_error) {
+            die('Kết nối không thành công: ' . $conn->connect_error);
+        } 
+        return $conn;
     }
-    // echo"kết nối thành công";
-    
-       
-   
 ?>
+
