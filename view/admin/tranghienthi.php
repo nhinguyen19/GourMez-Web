@@ -68,7 +68,8 @@
           $kq=getall_discountnews();
           include ('ql_khuyenmai/tatcakm.php');
           break;
-          
+
+        //Dịch vụ  
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           themDichVu();
@@ -83,6 +84,11 @@
         include ('ql_dichvu/sua_dv.php');
         suaDichVu();
         break;
+
+        case 'themmonan':
+          include ('ql_dichvu/themmonan.php');
+          themmonanDV();
+          break;
 
           
         default :
