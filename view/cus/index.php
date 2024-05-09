@@ -1,3 +1,3 @@
 <?php
-   header('Location: ../../CONTROLLER/hienthi_menu.php');
+   header('Location: ../../CONTROLLER/tranghienthi.php');
 ?>
