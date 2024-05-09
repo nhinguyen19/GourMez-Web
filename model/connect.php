@@ -5,7 +5,6 @@
         $username = "root";
         $password = "";
         $database = "gourmez_web";
-
         $conn = new mysqli($host, $username, $password, $database);
 
         if ($conn->connect_error) {

@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="ql_khuyenmai/khuyenmai.css">
 <div class="main">
-    <h2> Quản lý khuyến mãi </h2>
+    <h2> Tất cả tin tức khuyến mãi </h2>
 <div class="tablekhuyenmai">
 <table>
     <tr>

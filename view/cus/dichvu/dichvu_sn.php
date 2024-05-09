@@ -227,7 +227,7 @@
                 <?php
                     require("../model/connect.php");
                     $conn = connectdb();
-                    $sql = "SELECT comboname, price,img FROM combo_for_birthday";
+                    $sql = "SELECT food_combo, price,image FROM food_for_service";
                     $result = mysqli_query($conn, $sql);
 
                     if(!$result)
@@ -241,9 +241,9 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $counter++;
                                 echo '<div class="option">';
-                                echo '<img name = "image" src="' . $row['img'] . '">';
+                                echo '<img name = "image" src="' . $row['image'] . '">';
                                 echo '<div class="text">';
-                                echo '<p name="name_of_food">'. $row['comboname'] .  '</p>';
+                                echo '<p name="name_of_food">'. $row['food_combo'] .  '</p>';
                                 echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
                                 echo 'Số lượng: <input type="number" name="quantity" value = "10" id = "quantity"  placeholder="10" min="10" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
                                 echo 'Chọn <input type="radio" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
