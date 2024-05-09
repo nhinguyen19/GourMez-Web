@@ -4,14 +4,14 @@
     $query_chitiet= mysqli_query($conn, $sql_chitiet);
     while($row_chitiet = mysqli_fetch_array($query_chitiet)){
 ?>
-<div class="noidung_chitiet" style=" margin-left: 16vw;">
-    <p class= "title_chitiet" style="text-align: center; font-size: 35px; margin: 10px"><?php echo $row_chitiet['food_name']?></p><hr id="duongke">
+<div class="noidung_chitiet" style=" margin-left: 19vw;">
+    <h1 class= "title_chitiet" style="text-align: center"><?php echo $row_chitiet['food_name']?></h1>
     <div class="content-wrapper">
         <div class="anhsp" >
             <img src="../view/admin/ql_sanpham/uploads/<?php echo $row_chitiet['img'] ?>" style="width: 200px; height: 200px; margin-bottom: 10px">
             <img src="../view/admin/ql_sanpham/uploads/<?php echo $row_chitiet['img'] ?>" style="width: 50px; height: 50px;  opacity: 0.7;">
         </div>
-        <div class="mota_sp" style="font-size:20px; width: fit-content;">
+        <div class="mota_sp" style="font-size:20px; width: fit-content; padding-left: 40px">
             <span class="label">Giá bán:</span> 
             <?php
             if ($row_chitiet['original_price'] > $row_chitiet['selling_price']) {
@@ -22,7 +22,7 @@
             }
             ?><br>
             <p style="line-height: 0.2; font-weight: bold;width: fit-content; ">Mô tả: </p>
-            <p class="descr" style="width:60%"><?php echo $row_chitiet['small_descr']?></p>
+            <p class="descr" style="width:90%"><?php echo $row_chitiet['small_descr']?></p>
         </div>
         <?php
         }
