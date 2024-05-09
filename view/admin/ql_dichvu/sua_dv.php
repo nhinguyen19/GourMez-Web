@@ -16,7 +16,7 @@
 </style>
 
 
-<h2 class = "title"> Sửa dịch vụ </h2>
+<h2 class = "title" style="padding-left: 0px"> Sửa dịch vụ </h2>
 <div class="insert_dv" >
     <table>
         <form method="POST" action="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $_GET['iddichvu']?>">
@@ -77,8 +77,8 @@
             <tr>
                 <td style = "text-align: center"><?php echo $row['food_combo']?></td>
                 <td style = "text-align: center"><?php echo $row['price']?></td>
-                <td style="text-align: center"><img src="<?php echo $row['image'] ?>" width="100" height="100"></td>
-                <td style="text-align: center"><a href="tranghienthi.php?quanly=xoamonandichvu&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suamonandichvu&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></td>     
+                <td style="text-align: center"><img src="../../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" width="100" height="100"></td>
+                <td style="text-align: center"><a href="tranghienthi.php?quanly=xoamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suamonandichvu&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></td>     
             
             </tr>
              

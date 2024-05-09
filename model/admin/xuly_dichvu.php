@@ -23,7 +23,7 @@
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO service(service_name, small_descript, image) VALUES ('$tendichvu', '$mota', '$hinhanh')";
-                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/image_dv/'.$hinhanh); 
+                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh); 
     
                 if(mysqli_query($conn, $sql_them)) {
                     echo "<script>alert('Thêm dịch vụ thành công'); window.location='tranghienthi.php?quanly=themdichvu';</script>";
@@ -117,8 +117,8 @@
             $id = $_POST['IDdichvu'];
             $tenmon_dv = $_POST['tenmon_dv'];
             $giamon_dv = $_POST['giamonan_dv'];
-            $hinhanh = $_FILES['hinhanh_mondv']['name'];
-            $hinhanh_tmp = $_FILES['hinhanh_mondv']['tmp_name']; 
+            $hinhanh = $_FILES['hinhanhmondv']['name'];
+            $hinhanh_tmp = $_FILES['hinhanhmondv']['tmp_name']; 
             $hinhanh = time().'_'.$hinhanh;
 
             // Kiểm tra xem tên món đã tồn tại hay chưa
@@ -133,9 +133,10 @@
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO food_for_service(ID_service, food_combo, price, image) VALUES ('$id', '$tenmon_dv', '$giamon_dv','$hinhanh')";
-                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/image_dv/'.$hinhanh); 
+                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh);
     
                 if(mysqli_query($conn, $sql_them)) {
+                    echo $hinhanh;
                     echo "<script>alert('Thêm món thành công'); window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$id';</script>";
                     exit();
                 } else {
@@ -207,21 +208,34 @@
         }
     }  
 
-    function xoamonandichvu($id)
+    function xoamonandichvu()
     {
         $conn = connectdb();
-        
-        // Xóa danh mục khỏi bảng dịch vụ
-        $sql_xoa = "DELETE FROM food_for_service WHERE ID_food = '$id'";
-        mysqli_query($conn, $sql_xoa);
+       
+        if (isset($_GET['idmonan']))
+        {
+            $idmonandv = $_GET['idmonan'];
+            $iddichvu =$_GET['iddichvu'];
+            $sql_xoa = "SELECT * FROM food_for_service WHERE ID_food = $idmonandv";
+            $query = mysqli_query($conn, $sql_xoa);
+            
+
+            if (mysqli_num_rows($query) > 0)
+            {
+                $sql_xoa = "DELETE FROM food_for_service WHERE ID_food = $idmonandv";
+                $query = mysqli_query($conn, $sql_xoa);
+                echo "<script>alert('Xóa thành công.');window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$iddichvu'</script>";
+                exit();
+            }
+            else
+            {
+                echo "<script>alert('Sản phẩm không tồn tại.');</script>";
+            }
+            
+        }
     
     }
 
-    if(isset($_GET['quanly']) && $_GET['quanly'] == 'xoamonandichvu' && isset($_GET['idmonan'])) {
-        $id = $_GET['idmonan'];
-        xoaDichVu($id);
-        header('Location: tranghienthi.php?quanly=suamonandichvu');
-        exit();
-    }
+   
 
 ?>

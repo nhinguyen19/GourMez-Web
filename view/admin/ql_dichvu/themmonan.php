@@ -32,7 +32,7 @@ h2{
 <h2> Thêm món ăn </h2>
 <div class="insert_foodservice" >
     <table>
-    <form method="POST">
+    <form method="POST" action = "tranghienthi.php?quanly=themmonan&iddichvu='<?php  echo $_GET['iddichvu'] ?>'" enctype="multipart/form-data">
 
             <input type="hidden" name = "IDdichvu" value = " <?php  echo $_GET['iddichvu'] ?>">
             <tr>
@@ -48,7 +48,7 @@ h2{
             <tr>
                 <th>Hình ảnh</th>
                 <td>
-                    <input type="file" name = "hinhanh_mondv" id ="hinhanh_mondv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
+                    <input type="file" name = "hinhanhmondv" id ="hinhanhmondv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
                 </td>
             </tr>
             <tr>
