@@ -1,27 +1,36 @@
-<div>
+<link rel="stylesheet" href="sua_tt.css">
+<link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
+
+<div id="container">
     <h2>Sửa tin tức</h2>
 
     <form action="submit_news.php" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>
-                   <div style="padding: 10px ; border : 3px solid;">
-                            Ảnh title
-                   </div>
-                   <input type="file" name="uploadfile" id="img" style="display:block;"/>
+                    <div id="imageDiv">
+                        <div>
+                            <b>Ảnh title</b>
+                        </div>
+                    </div>
+                    <div class="upload-btn-wrapper">
+                        <button class="btn">Thêm ảnh</button>
+                        <input type="file" name="myfile" />
+                    </div>
+
                 </td>
-                <td>
+                <td id="secondTd">
+                    <div class="textbox">
+                        <label for="title">Title</label> <br>
+                        <input type="text" name="title" size="30" required><br><br>
+                    </div>
+                    <div class="textbox">
+                        <label for="link">Link</label> <br>
+                        <input type="url" name="link" size="30" required><br><br>
+                    </div>
 
-                    <label for="title">Title</label> <br>
-                    <input type="text" id="title" name="title" required><br><br>
-
-                    <label for="link">Link</label> <br>
-                    <input type="url" id="link" name="link" required><br><br>
-
-
-
-                    <input type="submit" value="Thay dổi">
-                    <button name="subject" type="submit" value="CSS">Xóa</button>
+                    <button id="sua" name="subject" type="submit" value="CSS">Thay đổi</button>
+                    <button id="xoa" name="subject" type="submit" value="CSS">Xóa</button>
 
                 </td>
             </tr>

@@ -5,7 +5,7 @@
     $query_danhmuc1= mysqli_query($conn, $sql_danhmuc);
     $row_title = mysqli_fetch_array($query_danhmuc1);
 ?>
-<ul id="all_dishes">
+<ul id="all_dishes" style=" margin-left: 16vw;">
     <h1 class="title_thucdon"><?php echo $row_title['cate_name']?></h1>
     <div class="food-item">
          <?php

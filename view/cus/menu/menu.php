@@ -3,7 +3,7 @@
     $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id ORDER BY food_id ASC";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
 ?>
-<ul id="all_dishes">
+<ul id="all_dishes" style=" margin-left: 16vw;">
     <h1 class="title_thucdon">Thực đơn</h1>
     <div class="food-item">
          <?php

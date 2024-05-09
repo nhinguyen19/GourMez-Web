@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <th style="text-align: center">Mô tả</th>
-                <td><textarea rows = "7"  name="mota" style="width: 350px; background-color: #FFECCB; color: black;"></textarea></td>
+                <td style="width:400px"><textarea rows = "7"  name="mota" style="width: 350px; background-color: #FFECCB; color: black;"></textarea></td>
             </tr>
             <tr>
                 <td style="text-align: center;" colspan="2"><input type="submit" name="themsanpham" value="Thêm sản phẩm"></td>
