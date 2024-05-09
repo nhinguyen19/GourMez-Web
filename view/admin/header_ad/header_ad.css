@@ -1,0 +1,58 @@
+.logo
+{
+    width: 180px;
+    height : 180px;
+}
+
+.hleft {
+    float: left;
+    margin-top : -50px;
+    margin-left : 70px;
+}
+
+.header1
+{
+  background-color:#754E39;
+  height : 100px;
+  width : 100%;
+}
+.bar
+{
+    float : left;
+    display : flex;
+    margin-top : 20px;
+
+} 
+.headermenu li {
+    float: left;
+    width : 150px;
+    line-height: 40px;
+    border : 1px solid #000000;
+    margin : 5px;
+    font-size : 20px;
+  
+  
+  }
+    .headermenu ul {
+      list-style-type: none;
+      overflow: hidden;
+      width: 1220px;
+      padding : 0;
+      margin-left : 20px;
+      margin-top: 0px;
+  }
+  
+    .headermenu a
+    {
+      color: #FFFFFF;
+      text-decoration : none;
+      display : block;
+      text-align : center;
+  
+    }
+    .mainmenu
+{
+    width : 50%;
+    border : 1px solid #000000;
+    margin : 0 auto;
+}

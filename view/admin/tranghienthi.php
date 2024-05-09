@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to AdminCP</title>
-  <link rel="stylesheet" href="sidebar_ad/sidebar_ad.css">
-  <link rel="stylesheet" href="tranghienthi.css">
-</head>
-<body>
+
   <?php
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
     include_once ("../../model/admin/xuly_khuyenmai.php");
     include_once ("../../model/admin/xuly_dichvu.php");
+    include("header_ad/header_ad.php");
     include("sidebar_ad/sidebar_ad.php");
-
-    
-    
   ?>
   <?php 
     if(isset($_GET['quanly']))
