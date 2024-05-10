@@ -1,0 +1,17 @@
+.box-content{
+    margin: 0 auto;
+    width: 800px;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 20px;
+}
+#user_login form{
+    width: 300px;
+    margin: 40px auto;
+}
+#user_login form input{
+    margin: 5px 0;
+}
+.xinchao{
+    display: flex;
+}

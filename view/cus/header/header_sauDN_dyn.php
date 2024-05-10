@@ -14,7 +14,6 @@
             width: 100%;
             margin: 0px;
         }
-
     </style>
     
     
@@ -43,5 +42,3 @@
         </div>
     </nav>
     
-</body>
-</html> 
