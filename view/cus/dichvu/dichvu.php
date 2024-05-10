@@ -10,7 +10,7 @@
 {
     font-family: 'Lalezar';
 }
-.birthday
+.big
 {
     display: grid;
     width: 1360px;
@@ -20,14 +20,6 @@
     padding: 50px;
     border: 1px solid yellowgreen;
 }
-
-.birthday img
-{
-    width: 400px;
-    height: 400px;
-    padding-left: 30px;
-}
-
 .content
 {
     width: 480px ;
@@ -68,61 +60,39 @@ button
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif'
 }
 
-.big_order
-{
-    display: grid;
-    width: 1360px;
-    grid-template-columns: 500px 700px;
-    background-color: rgba(239, 255, 242, 1);
-    margin-left: 50px;
-    padding: 50px;
-    border: 1px solid yellowgreen;
-}
-
-.big_order img
-{
-    width: 400px;
-    height: 400px;
-    padding-left: 30px;
-}
-
-.big_order h1
-{
-    color: rgba(21, 156, 51, 1);
-    font-family: 'Lalezar';
-    font-size: 40px;
-}
-
-
 </style>
-<div class="container" style=" margin: 10px">
+
+<?php
+    require_once("C:/xampp/htdocs/project/GourMez-Web/model/connect.php");
+    $conn = connectdb();
+    $sql = "SELECT id_service,image,service_name, small_descript FROM service";
+    $query = mysqli_query($conn, $sql);
+?>
+
+
+<div class="container" style=" margin: 10px;">
     <img src="../view/cus/img/banner_dv.png" style="width:1400px; height: 700px;align-items: center; margin-left: 10px">
 
-    <form method="POST" action="tranghienthi.php?quanly=dichvu_sn" >
-        <div class="birthday">
-            <img src="../view/cus/img/sinhnhat_icon.png">
-            <div class="content">
-                <h3 style="color: orangered">ĐẶT TIỆC SINH NHẬT</h3>
-                <p>Bạn đang phân vân không biết tổ chức sinh nhật như thế nào? Chuyện gì khó có Gourméz lo, Gourméz sẽ mang lại trải nghiệm tuyệt vời, thú vị, đáng nhớ dành cho bạn.</p>
-                <button type="submit">Đặt hàng</button>
+    
+    <div class="container_dv">
+    <?php
+    $i = 0;
+    while ($row = mysqli_fetch_array($query)) {
+        $i++;
+    ?>
+        <form method="POST" action="tranghienthi.php?quanly=<?php echo $row['id_service'] ?>">
+            <div style="border: 1px solid green" class="big">
+                <img src="../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" style="width: 400px; height:400px;padding-left:30px;">
+                <div class="content">
+                    <h3 style="color: orangered"><?php echo $row['service_name'] ?></h3>
+                    <p><?php echo $row['small_descript'] ?></p>
+                    <button type="submit">Đặt hàng</button>
+                </div>
             </div>
-        </div>
-    </form>
-
-    <form method="POST" action="tranghienthi.php?quanly=dichvu_bigdeal">
-        <div class="big_order">
-            <img src="../view/cus/img/iconbigdeal.png">
-            <div class="content">
-                <h1>Đơn hàng lớn</h1>
-                <p>Để phục vụ sở thích quây quần cùng gia đình và bạn bè, chương trình chiết khấu hấp dẫn dành cho những đơn hàng lớn đã ra đời để đem đến những lựa chọn tiện lợi hơn cho bạn. Liên hệ ngay với cửa hàng gần nhất để được phục vụ.</p>
-                <button type="submit">Đặt hàng</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    <?php
+    }
+    ?>
 </div>
 
-<script>
-    function dieuhuong() {
-        window.location.href = "../view/cus/dichvu/dichvu_sn.php";
-    }
-</script>
+    

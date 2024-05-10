@@ -1,4 +1,9 @@
-
+<style>
+    .insert th,td
+    {
+        border: 1px solid black;
+    }
+</style>
 <?php
     $conn = connectdb();
     $sql_lietke_dichvu = "SELECT * FROM service ORDER BY id_service ASC";
@@ -10,7 +15,8 @@
         <tr>
             <th style="text-align: center">ID</th>
             <th style="text-align: center">Tên dịch vụ</th>
-            <th style="text-align: center">Hình ảnh</th>
+            <th style="text-align: center">Logo</th>
+            <th style="text-align: center">Banner</th>
             <th style="text-align: center">Quản lý</th>
         </tr>
         <?php
@@ -25,15 +31,18 @@
             <td style="text-align: center">
                 <img src = "../../view/admin/ql_dichvu/uploads/<?php echo $row['image']?>" style = "width: 150px; height: 150px;">
             </td>
+            <td style="text-align: center">
+                <img src = "../../view/admin/ql_dichvu/uploads/<?php echo $row['banner']?>" style = "width: 200px; height: 100px;">
+            </td>
             <td style="text-align: center"><a href="tranghienthi.php?quanly=xoaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Sửa</a></td>     
         </tr>
         <?php
             }
         ?>
         <tr>
-            <td style="text-align: center" colspan="3">
+            <td style="text-align: center" colspan="5">
                 <form action="../admin/tranghienthi.php?quanly=themdichvu" method="post">
-                    <input type="submit" value="Thêm dịch vụ" style="font-size: 18px">
+                    <input type="submit" value="Thêm dịch vụ" style="font-size: 18px;">
                 </form>
             </td>
         </tr>

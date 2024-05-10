@@ -10,7 +10,12 @@ img
     width: 200px;
     height: 200px;
 }
-
+.background
+{
+    background-color: rgba(174, 33, 8, 1);
+    width: fit-content;
+    margin-left: -10px;
+}
 .Contact
 {
     padding-left: 100px;
@@ -18,7 +23,6 @@ img
 
 .footer
 {
-    background-color: rgba(174, 33, 8, 1);
     display: grid;
     grid-template-columns: 350px 350px 350px 350px;
     font-size: 20px;
@@ -82,6 +86,7 @@ footer
 
 
 </style>
+<div class = "background">
  <div class = "footer">
         <div class = "logo">
             <img src = "../view/cus/img/logocus.png">
@@ -111,4 +116,5 @@ footer
         </div>
     </div>
     <footer>Copyright 2024, All rights reserved</footer>
+</div>
 </div>

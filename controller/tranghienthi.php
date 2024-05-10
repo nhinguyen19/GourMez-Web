@@ -16,10 +16,10 @@
         case 'dichvu':
             include ('../view/cus/dichvu/dichvu.php');
             break;
-        case 'dichvu_sn':
+        case '1':
             include ('../view/cus/dichvu/dichvu_sn.php');
             break;
-            case 'dichvu_bigdeal':
+            case '2':
                 include ('../view/cus/dichvu/dichvu_bigdeal.php');
                 break;
         case 'tintuc':

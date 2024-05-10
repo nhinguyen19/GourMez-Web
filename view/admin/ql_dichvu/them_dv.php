@@ -44,11 +44,19 @@ h2{
                 </td>
             </tr>
             <tr>
-                <th>Hình ảnh</th>
+                <th>Logo</th>
                 <td>
                     <input type="file" name = "hinhanhdv" id ="hinhanhdv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
                 </td>
             </tr>
+
+            <tr>
+                <th>Banner</th>
+                <td>
+                    <input type="file" name = "bannerdv" id ="bannerdv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
+                </td>
+            </tr>
+
             <tr>
                 <td style="text-align: center;" colspan="2"><input type="submit" name="themdichvu" value="Thêm dịch vụ" style = "font-size: 18px"></td>
             </tr>
