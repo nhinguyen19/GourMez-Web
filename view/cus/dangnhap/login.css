@@ -1,17 +1,40 @@
 .box-content{
     margin: 0 auto;
-    width: 800px;
-    border: 1px solid #ccc;
+    width: 700px;
+    border: 1px solid rgba(255, 236, 203, 1);
+    background-color: rgba(255, 236, 203, 1);
     text-align: center;
-    padding: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 30px;
 }
 #user_login form{
-    width: 300px;
-    margin: 40px auto;
+    width: 400px;
+    margin: 30px auto;
+}
+#user_login form table{
+    align-items: center;
+    justify-content: center;
 }
 #user_login form input{
     margin: 5px 0;
 }
 .xinchao{
     display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.bang_dn{
+    border: 1px solid rgba(255, 130, 67, 1);
+    background-color: rgba(255, 130, 67, 1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: left;
+}
+table tr{
+    width: 150px;
+    border-radius: 20px;
 }
