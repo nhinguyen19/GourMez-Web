@@ -73,7 +73,7 @@
           include('ql_dichvu/tatca_dichvu.php');
           break;
         case 'xoaDichVu':
-          xoaDichVu($id);
+          xoaDichVu();
           break;
         case 'suaDichVu':
         include ('ql_dichvu/sua_dv.php');

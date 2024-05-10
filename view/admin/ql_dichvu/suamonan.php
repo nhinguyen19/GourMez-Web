@@ -19,7 +19,7 @@
 <h2 class = "title"> Sửa món ăn </h2>
 <div class="insert_food" >
     <table>
-        <form method="POST" action="tranghienthi.php?quanly=suamonandichvu&idmonan=<?php echo $_GET['idmonan']?>">
+        <form method="POST" action="tranghienthi.php?quanly=suamonandichvu&idmonan=<?php echo $_GET['idmonan']?>" enctype="multipart/form-data">
             <tr>
                 <th style="text-align: center">ID</th>
                 <td name="idmonanDV"><?php echo $_GET['idmonan'] ?></td>
@@ -40,7 +40,7 @@
             <tr>
                 <th style="text-align: center">Hình ảnh</th>
                 <td>
-                    <input type="file" name = "hinhanhmonandv" id ="hinhanhmonandv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
+                    <input type="file" name = "hinhanhmonandvmoi" id ="hinhanhmonandvmoi" style="width: 400px; background-color: #FFECCB; color: black;border:none">
                 </td>
             </tr>
             <tr>
