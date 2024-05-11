@@ -1,7 +1,7 @@
 
 <link rel="stylesheet" href="ql_khuyenmai/khuyenmai.css">
 <div class="main">
-    <h2> Quản lý khuyến mãi </h2>
+    <h2> Tất cả tin tức khuyến mãi </h2>
 <div class="tablekhuyenmai">
 <table>
     <tr>
@@ -23,8 +23,8 @@ if (isset($kq)&&(count($kq)>0))
             <td>'.$i.' </td> 
             <td>'.$dis['discount_name'].' </td>
             <td> '.$dis['description'].'</td> 
-            <td> '.$dis['img'].' </td>
-             <td><a href="index.php?act=updatecategory&id='.$dis['Id'].'"> Sửa</a> | <a href="index.php?act=delcategory&id='.$dis['Id'].'"> Xóa</a>  </td> 
+            <td> <img src="'.$dis['img'].'" width="200px" </td>
+             <td><a href="tranghienthi.php?quanly=updatediscountnews&id='.$dis['id'].'"> Sửa</a> | <a href="tranghienthi.php?quanly=deldiscountnews&id='.$dis['id'].'"> Xóa</a>  </td> 
                 </tr> ';
         $i++;
     }

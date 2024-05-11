@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to AdminCP</title>
-  <link rel="stylesheet" href="sidebar_ad/sidebar_ad.css">
-  <link rel="stylesheet" href="tranghienthi.css">
-</head>
-<body>
+
   <?php
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
     include_once ("../../model/admin/xuly_khuyenmai.php");
     include_once ("../../model/admin/xuly_dichvu.php");
+    include("header_ad/header_ad.php");
     include("sidebar_ad/sidebar_ad.php");
-
-    
-    
   ?>
   <?php 
     if(isset($_GET['quanly']))
@@ -39,8 +28,6 @@
           include("ql_danhmucsp/sua.php");
           suaDanhMuc();
           break;
-
-
         case 'themsanpham':
           include ('ql_sanpham/them_sanpham.php');
           themSanPham();
@@ -65,10 +52,47 @@
           include ('ql_khuyenmai/themkmnews.php');
           
           break;
-          
-        case 'themdv' :
-          include ('ql_dichvu/them_dv.php');
+        case 'deldiscountnews':
+          deldiscountnews();
+          $kq=getall_discountnews();
+          include ('ql_khuyenmai/tatcakm.php');
           break;
+
+          case 'updatediscountnews' :
+            capnhatkmnews();
+            include ('ql_khuyenmai/capnhatkmnews.php');
+            break;
+
+
+        //Dịch vụ  
+        case 'themdichvu' :
+          include ('ql_dichvu/them_dv.php');
+          themDichVu();
+          break;
+        case 'tatcadichvu':
+          include('ql_dichvu/tatca_dichvu.php');
+          break;
+        case 'xoaDichVu':
+          xoaDichVu();
+          break;
+        case 'suaDichVu':
+        include ('ql_dichvu/sua_dv.php');
+        suaDichVu();
+        break;
+
+        case 'themmonan':
+          include ('ql_dichvu/themmonan.php');
+          themmonanDV();
+          break;
+        case 'suamonandichvu':
+          include ('ql_dichvu/suamonan.php');
+          suaMonAn();
+          break;
+        
+        case 'xoamonandichvu':
+          xoamonandichvu();
+          break;
+
           
         default :
           include ('tranghienthi.php');
