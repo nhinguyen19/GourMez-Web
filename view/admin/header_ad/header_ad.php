@@ -16,6 +16,7 @@
             width: 100%;
             background-color : #FFECCB;
             overflow-y : auto;
+            padding-bottom: 30px;
         }
     </style>
 </head>

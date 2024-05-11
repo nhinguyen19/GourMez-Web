@@ -30,7 +30,7 @@
             <td style="text-align: center"><?php echo number_format($row['selling_price'],0,',','.').'vnđ' ?></td>
             <td style="text-align: center; width: 200px"><?php echo $row['small_descr'] ?></td>
             <td style="text-align: center"><img src="ql_sanpham/uploads/<?php echo $row['img'] ?>" width="100" height="100"></td>
-            <td style="text-align: center; width: 70px">
+            <td style="text-align: center; width: 90px">
                 <a href="tranghienthi.php?quanly=xoasp&idsanpham=<?php echo $row['food_id']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suasp&idsanpham=<?php echo $row['food_id']; ?>">Sửa</a>
             </td> 
         </tr>

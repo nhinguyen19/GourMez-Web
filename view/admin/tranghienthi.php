@@ -20,7 +20,6 @@
           include("ql_danhmucsp/lietke.php");
           break;
         case 'xoa':
-          include ('ql_danhmucsp/');
           xoaDanhMuc();
           break;
         case 'sua':
