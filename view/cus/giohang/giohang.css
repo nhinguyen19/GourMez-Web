@@ -1,0 +1,42 @@
+body{
+    background-color: #FFECCB;
+}
+table{
+    background-color: #ffff;
+    padding: 25px; 
+    padding-right:30px;
+}
+.quantity-update {
+    display: flex;
+    align-items: center;
+  }
+  
+.quantity-update input {
+  margin-right: 10px;
+}
+.btn_thanhtoan{
+    background-color: #E26A2C;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height:25px;
+    color: #ffff;
+    font-family: 'Lalezar';
+    font-size: 16px;
+}
+.btn_update{
+  background-color: #14942c; 
+  color: white; 
+  border: 0.5px solid black;
+  border-radius: 10px;
+  font-family: 'Lalezar';
+  font-size: 12px;
+}
+.btn_delete{
+  background-color: #b32400; 
+  color: white; 
+  border: 0.5px solid black;
+  border-radius: 10px;
+  font-family: 'Lalezar';
+  font-size: 12px;
+}

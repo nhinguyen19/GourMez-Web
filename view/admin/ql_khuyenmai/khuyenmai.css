@@ -12,12 +12,3 @@ table,tr,th,td{
 table{
     width: 90%;
 }
-
-.title{
-    padding-left: 700px;
-    padding-top: 30px;
-    font-family: Lalezar;
-    text-transform: uppercase;
-    color: #E26A2C;
-} 
-

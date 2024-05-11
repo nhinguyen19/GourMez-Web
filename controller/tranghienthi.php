@@ -1,5 +1,5 @@
 <?php
-   include("../view/cus/header/header.php")
+   include("../view/cus/header/header_trcDN.php")
 ?>
 <?php 
     if(isset($_GET['quanly']))
@@ -7,7 +7,7 @@
         switch($_GET['quanly'])
         {
         case 'thucdon':
-            include ('dieuhuong_menu.php');
+            include ('hienthi_menu.php');
             break;
         case 'khuyenmai':
             include ('../view/cus/khuyenmai/khuyenmai.php');
