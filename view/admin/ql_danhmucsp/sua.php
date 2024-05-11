@@ -1,3 +1,4 @@
+<link rel ="stylesheet" href="tranghienthi.css">
 <h2 class="title"> Sửa danh mục sản phẩm </h2>
 <div class="insert" >
     <table>
