@@ -1,4 +1,3 @@
-
   <?php
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
@@ -20,10 +19,10 @@
         case 'tatca':
           include("ql_danhmucsp/lietke.php");
           break;
-        // case 'xoa':
-        //   include ('ql_danhmucsp/');
-        //   xoaDanhMuc();
-        //   break;
+        case 'xoa':
+          include ('ql_danhmucsp/');
+          xoaDanhMuc();
+          break;
         case 'sua':
           include("ql_danhmucsp/sua.php");
           suaDanhMuc();

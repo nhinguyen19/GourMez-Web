@@ -1,3 +1,4 @@
+<link rel ="stylesheet" href="tranghienthi.css">
 <?php
     $conn = connectdb();
     $idSanPham = $_GET['idsanpham'];
