@@ -13,9 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <style>
         body{
-            font-family: 'Lalezar';
             width: 100%;
-            margin: 0px;
             background-color : #FFECCB;
             overflow-y : auto;
         }
