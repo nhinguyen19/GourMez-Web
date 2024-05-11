@@ -48,5 +48,5 @@
     }
     ?>
     <?php 
-    include ('../view/cus/footer/footer.php');
-    ?>
+        include ('../view/cus/footer/footer.php');
+    ?> 

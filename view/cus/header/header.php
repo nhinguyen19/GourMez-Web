@@ -39,7 +39,7 @@
                     <li><a href="tranghienthi.php?quanly=giohang"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a></li>
         
-              </ul>
+              </ul> 
             </div>
 
         </nav>

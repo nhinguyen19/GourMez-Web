@@ -11,6 +11,7 @@
   <?php
     include_once("../model/connect.php");
     include("../view/cus/menu/sidebar.php");
+    include ("../view/cus/menu/menu.php");
   ?>
   <?php 
     if(isset($_GET['quanly']))
@@ -25,10 +26,10 @@
           break;
       }
     }
-    else
-    {
-      include ("../view/cus/menu/menu.php");
-    }
+    // else
+    // {
+    //   include ("../view/cus/menu/menu.php");
+    // } 
   ?>
 </body>
   

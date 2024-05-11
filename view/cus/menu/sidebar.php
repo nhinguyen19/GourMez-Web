@@ -17,4 +17,4 @@
         <img src="../view/cus/img/menu_1.png">
     </div>
 </body>
-</html>
+</html> 
