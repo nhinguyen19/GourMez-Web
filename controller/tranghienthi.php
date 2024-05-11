@@ -1,5 +1,5 @@
 <?php
-   include("../view/cus/header/header.php")
+   include("../view/cus/header/header_trcDN.php")
 ?>
 <?php 
     if(isset($_GET['quanly']))
