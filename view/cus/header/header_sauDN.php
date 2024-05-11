@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
-    
+    <script src="../view/LIB/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-    <link rel="stylesheet" href="./header.css">
-    <link rel="stylesheet" href="../dangnhap/login.css">
-    <script src="../dangnhap/hienthi_mk.js"></script>
+    <link rel="stylesheet" href="../view/cus/header/header.css">
+    <link rel="stylesheet" href="../view/cusdangnhap/login.css">
+    <script src="..view/cus/dangnhap/hienthi_mk.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <style>
         body{
@@ -25,7 +25,7 @@
         <!-- <div id="img"><img src="C:\xampp\htdocs\DoAn\Helene.png" style="height: 86.61px; width: 100px;"></div> -->
         
         <ul class="menu_header">
-            <li><a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../img/logocus.png" style="height: 150px; width: 150px;"></a></li>
+            <li><a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../view/cus/img/logocus.png" style="height: 150px; width: 150px;"></a></li>
             <li><a href="tranghienthi.php?quanly=thucdon" id="header">THỰC ĐƠN</a></li>
             <li><a href="tranghienthi.php?quanly=khuyenmai" id="header">KHUYẾN MÃI</a></li>
             <li><a href="tranghienthi.php?quanly=dichvu" id="header">DỊCH VỤ</a></li>
