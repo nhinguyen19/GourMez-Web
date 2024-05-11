@@ -5,9 +5,9 @@ require_once ('./google/libraries/Google/autoload.php');
 
 //Insert your cient ID and secret 
 //You can get it from : https://console.developers.google.com/
-$client_id = '';
-$client_secret = '';
-$redirect_uri = '';
+$client_id = '405724634430-3r0qovs4pft5n77bcsdvn8rlfpdaov7b.apps.googleusercontent.com';
+$client_secret = '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';
+$redirect_uri = 'http://localhost/GOURMEZ-WEB/view/cus/dangnhap/login.php';
 
 //incase of logout request, just unset the session var
 //if (isset($_GET['logout'])) {
