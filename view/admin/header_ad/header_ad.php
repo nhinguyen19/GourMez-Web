@@ -15,8 +15,8 @@
         body{
             width: 100%;
             background-color : #FFECCB;
-            overflow-y : auto;
-            padding-bottom: 30px;
+            margin-top: 100px;
+
         }
     </style>
 </head>
