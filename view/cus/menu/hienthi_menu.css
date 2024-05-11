@@ -101,6 +101,7 @@ body {
     background-color: #ffb84d;
     transition: background-color 0.3s ease;
 }
+
 .food-item {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -110,18 +111,6 @@ body {
     align-items: center;
     height: 100%;
     overflow: hidden; 
-}
-.btn_datngaynao{
-    width: 220px;
-    height: 40px;
-    border-radius: 20px;
-    color: #ffff;
-    background-color: #E26A2C;
-    border: none;
-    font-size: 25px;
-    display: block;
-    margin: 20px auto 0;
-    font-family: 'Lalezar';
 }
 
 .anhsp{
@@ -146,4 +135,45 @@ body {
     left: 50%; 
     transform: translateX(-50%);
     background-color: #F5EAD7;
+}
+
+.btn_dathang{
+    background-color: #E26A2C;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height:25px;
+    color: #ffff;
+    font-family: 'Lalezar';
+    font-size: 16px;
+}
+.btn_dathang:active {
+    background-color: #ffb84d; 
+}
+#amount{
+    width: 30px;
+    text-align: center;
+    background-color: #E26A2C;
+    color: #ffff;
+}
+#buy-amount{
+    padding-right: 20px;
+    padding-left: 30px;;
+
+}
+.button-quantity-container {
+    display: flex;
+    align-items: center;
+}
+.btn_amount{
+    margin-right: 0; 
+    background-color: #E26A2C; 
+    border: none; 
+    width:40px; 
+    height:25px;
+    border-radius: 0 10px 10px 0;
+    color: #ffff;
+}
+#buy-amount button:active {
+    background-color: #ffb84d; 
 }
