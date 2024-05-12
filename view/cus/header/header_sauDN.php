@@ -14,7 +14,8 @@
     <style>
         body{
             width: 100%;
-            margin-top : 20px;
+            margin : 0;
+            background-color : #FFECCB;
         }
         .header{
             font-family: 'Lalezar';
