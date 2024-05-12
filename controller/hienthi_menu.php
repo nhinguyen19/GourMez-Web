@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../view/cus/menu/hienthi_menu.css">
 <?php
    include("../view/cus/header/header_sauDN.php")
 ?>
