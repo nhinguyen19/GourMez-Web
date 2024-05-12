@@ -16,13 +16,11 @@
             background-color: #FFECCB;
             width: 100%;
             margin-top: 100px;
-            padding-bottom: 20px;
-            margin-top: 100px;    
+            padding-bottom: 20px;   
         }
     </style>
 </head>
 <body>
- 
     <header>
         <nav>
         <div class="menu">

@@ -1,4 +1,3 @@
-<link rel ="stylesheet" href="tranghienthi.css">
 <?php
     $conn = connectdb();
     $sql_lietke_danhmucsp = "SELECT * FROM category ORDER BY cate_id ASC";
