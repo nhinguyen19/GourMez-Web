@@ -1,4 +1,3 @@
-<link rel ="stylesheet" href="tranghienthi.css">
 <?php
     $conn = connectdb();
     $sql_lietke_danhmucsp = "SELECT * FROM category ORDER BY cate_id ASC";
@@ -7,10 +6,10 @@
 <h2 class="title"> Tất cả danh mục sản phẩm </h2>
 <div class="insert" >
     <table>
-        <tr>
-            <th style="text-align: center">Id</th>
-            <th style="text-align: center">Tên danh mục</th>
-            <th style="text-align: center">Quản lý</th>
+        <tr style="font-family: 'Lalezar'">
+            <td style="text-align: center">Id</td>
+            <td style="text-align: center">Tên danh mục</td>
+            <td style="text-align: center">Quản lý</td>
         </tr>
         <?php
             $i = 0;
@@ -29,7 +28,7 @@
         <tr>
             <td style="text-align: center" colspan="3">
                 <form action="../admin/tranghienthi.php?quanly=themdanhmuc" method="post">
-                    <input type="submit" value="Thêm danh mục sản phẩm">
+                    <input type="submit" style= " background-color: #F5EAD7; border: 0.5px solid black;font-family: 'Lalezar'; color: #E26A2C" value="Thêm danh mục sản phẩm">
                 </form>
             </td>
         </tr>

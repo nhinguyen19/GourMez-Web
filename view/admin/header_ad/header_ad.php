@@ -12,28 +12,26 @@
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <style>
-        body {
+        /* body {
             background-color: #FFECCB;
             width: 100%;
             margin-top: 100px;
-            padding-bottom: 20px;
-        }
+            padding-bottom: 20px;   
+        } */
     </style>
 </head>
 <body>
-<div class="header1">
-    <div class="hleft">
-        <img class="logo" src="img/logoadmin.png"/>
-    </div>
-    <div class="bar">
-        <nav class="navigation">
-            <div class="headermenu"> 
-            <ul class="mainmenu"> 
-                <li><a href="index.php?act=trangchu&id=1">Trang chủ</a></li>
-                <li><a href="index.php?act=xemtruoc">Xem trước trang</a></li>
-            </ul>
-        </div>
+    <header>
+        <nav>
+        <div class="menu">
+            <div class="logo">
+                <img class="logoad" src="img/logoadmin.png"/>
+            </div>
+                <ul> 
+                        <li><a href="index.php?act=trangchu&id=1">Trang chủ</a></li>
+                        <li><a href="index.php?act=xemtruoc">Xem trước trang</a></li>
+                </ul>
+         </div>
+        </nav>
+    </header>
 
-    </nav>
-    </div>
-</div>
