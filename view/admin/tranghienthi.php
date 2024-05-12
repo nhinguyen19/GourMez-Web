@@ -1,4 +1,8 @@
   <?php
+  session_start();
+
+if(isset($_SESSION['role'])&&($_SESSION['role']==1)){
+    
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
@@ -6,8 +10,7 @@
     include_once ("../../model/admin/xuly_dichvu.php");
     include("header_ad/header_ad.php");
     include("sidebar_ad/sidebar_ad.php");
-  ?>
-  <?php 
+    
     if(isset($_GET['quanly']))
     { 
       switch($_GET['quanly'])
@@ -99,6 +102,10 @@
           
       }
     }
+  }
+  else {
+    header('Location: ../cus/dangnhap/login.php');
+  }
   ?>
 
   

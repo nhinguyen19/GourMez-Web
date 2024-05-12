@@ -1,7 +1,7 @@
 <?php
 
-include 'checkuser.php';
-if((isset($_POST['dangnhap']))&&($_POST['dangnhap'])=='Đăng nhập'){
+if((isset($_POST['dangnhap']))&&($_POST['dangnhap'])=="Đăng nhập"){
+    include 'checkuser.php';
     $user=$_POST['user'];
     $pass=$_POST['password'];
     $role=checkuser($user,$pass);
@@ -11,7 +11,9 @@ if((isset($_POST['dangnhap']))&&($_POST['dangnhap'])=='Đăng nhập'){
     else {
         $_SESSION['text_error']="Tài khoản hoặc mật khẩu không đúng!!!";
         header ('Location:login.php');
+        
     }
+    
 }
 
 ?>

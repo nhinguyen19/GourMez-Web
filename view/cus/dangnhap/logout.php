@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<!--
+<!-- <!DOCTYPE html>
+<!
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<!-- <html>
     <head>
         <title>Đăng xuất tài khoản</title>
         <meta charset="UTF-8">
@@ -26,15 +26,16 @@ and open the template in the editor.
             }
         </style>
     </head>
-    <body>
+    <body> --> 
         <?php
         session_start();
         unset($_SESSION['current_user']);
         unset($_SESSION['access_token']);
+        header('Location: login.php');
         ?>
-        <div id="user_logout" class="box-content">
+        <!-- <div id="user_logout" class="box-content">
             <h1>Đăng xuất tài khoản thành công</h1>
             <a href="./login.php">Đăng nhập lại</a>
         </div>
     </body>
-</html>
+</html> -->

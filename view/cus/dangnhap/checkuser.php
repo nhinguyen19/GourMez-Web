@@ -20,7 +20,6 @@ function checkuser($user,$pass){
     if($result && $result->num_rows > 0){
         $row=$result->fetch_assoc();
         return $row['role'];
-        
     }
     else {return 2;}
     $conn->close();

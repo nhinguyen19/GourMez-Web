@@ -39,7 +39,7 @@
             <button id="name_user" style="border: 0;background-color:rgba(174, 33, 8, 1); font-size: 18px;font-weight: bold;">a</button> 
             <div class="dropdown_content" style="right: 0;"> 
                 <a href="#">Quản lý tài khoản</a>
-                <a href="#">Đăng xuất</a>
+                <a href="../view/cus/dangnhap/check_logout.php">Đăng xuất</a>
             </div>
         </div>
     </nav>

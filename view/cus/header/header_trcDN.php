@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
     <link rel="stylesheet" href="../view/cusdangnhap/login.css">
-    <script src="..view/cus/dangnhap/hienthi_mk.js"></script>
+    
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <style>
         body{
@@ -37,7 +37,7 @@
             <li><a href="tranghienthi.php?quanly=giohang" id="header"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
         <button class="bt_dangnhap" style="width: 100px;height: 40px;">
-        <a href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a>
+        <a href="login.php?quanly=dangnhap">Đăng nhập</a>
         </button>
     </nav>
 
