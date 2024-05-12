@@ -1,9 +1,3 @@
-body {
-    background-color: #FFECCB;
-    width: 100%;
-    margin-top: 100px;
-    padding-bottom: 20px;
-}
 .insert{
     display: flex;
     justify-content: center;
