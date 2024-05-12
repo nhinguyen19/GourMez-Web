@@ -7,15 +7,15 @@
 <h2 class="title">Tất cả sản phẩm</h2>
 <div class="insert">
     <table>
-        <tr>
-            <th style="text-align: center">Id</th>
-            <th style="text-align: center">Tên sản phẩm</th>
-            <th style="text-align: center">Danh mục</th>
-            <th style="text-align: center">Giá gốc</th>
-            <th style="text-align: center">Giá bán</th>
-            <th style="text-align: center">Mô tả</th>
-            <th style="text-align: center">Hình ảnh</th>
-            <th style="text-align: center">Quản lý</th>
+        <tr style="font-family: 'Lalezar'">
+            <td style="text-align: center">Id</td>
+            <td style="text-align: center">Tên sản phẩm</td>
+            <td style="text-align: center">Danh mục</td>
+            <td style="text-align: center">Giá gốc</td>
+            <td style="text-align: center">Giá bán</td>
+            <td style="text-align: center">Mô tả</td>
+            <td style="text-align: center">Hình ảnh</td>
+            <td style="text-align: center">Quản lý</td>
         </tr>
         <?php
             $i = 0;
@@ -40,7 +40,7 @@
         <tr>
             <td style="text-align: center" colspan="8">
                 <form action="../admin/tranghienthi.php?quanly=themsanpham" method="post">
-                    <input type="submit" value="Thêm sản phẩm">
+                    <input type="submit" value="Thêm sản phẩm" style= " background-color: #F5EAD7; border: 0.5px solid black;font-family: 'Lalezar'; color: #E26A2C">
                 </form>
             </td>
         </tr>
