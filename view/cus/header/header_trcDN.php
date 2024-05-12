@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
-    <script src="../view/LIB/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../view/LIB/bootstrap/css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
     <link rel="stylesheet" href="../view/cusdangnhap/login.css">

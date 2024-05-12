@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../view/LIB/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="../view/cus/trangchu/trangchu.css">
 <div class="trangchumain">
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -118,5 +119,6 @@ function renderCity(data) {
             </script>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+            <script src="../view/LIB/bootstrap/js/bootstrap.min.js"></script>
 </script>
 </div>
