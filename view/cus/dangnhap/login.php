@@ -1,10 +1,12 @@
         <?php
-            include './facebook_source.php';
-            include './google_source.php';
+            session_start();
+            include 'facebook_source.php';
+            include 'google_source.php';
             include '../header/header_trcDN.php';
-            include 'login_uname.php';
-            ?>
-           
+            
+        ?>
+           <link rel="stylesheet" href="login.css">
+           <link rel="stylesheet" href="../header/header.css">
             <div id="user_login" class="box-content" >
                 <div class="xinchao"style="display: flex; align-items: center;text-align: center;justify-content: center;">
                     <img src="../img/logocus.png" style="width: 160px;height: 160px; margin-right: 10px;">
@@ -28,12 +30,24 @@
                         </tr>
 
                         <tr colspan="2">
-                            <td><input type="submit" id="dangnhap" name="dangnhap" value="Đăng nhập"></td>
+                            <td><input type="submit" id="dangnhap" name="dangnhap" value="Đăng nhập">
+                                
+                            </td>
                         </tr>
+
+                    
                     </table>
                 </form>
-                
-                
+                <div class="mes_error" style="display: flex;align-items: center;text-align: center; justify-content: center;">
+                    <?php 
+                        include 'login_uname.php';
+                        $text_error= isset($_SESSION['text_error']) && !empty($_SESSION['text_error']) ? $_SESSION['text_error'] : '';
+                        if(isset($text_error)&&($text_error!=""))
+                        {
+                            echo "<h4 style=width:300px; >".$text_error."</h4>";
+                        }
+                    ?>
+                    </div>
                 <div id="login-with-social">
                     <a href="<?= $loginUrl ?>"><img src="../img/facebook.png" alt='facebook login' title="Facebook Login" height="50" width="280" /></a>
                     <?php if(isset($authUrl)){ ?>

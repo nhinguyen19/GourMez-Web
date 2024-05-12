@@ -1,0 +1,16 @@
+.box-content{
+    width: 400px;
+    height: fit-content;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+form{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+form h3{
+    margin-right: 20px;
+}
