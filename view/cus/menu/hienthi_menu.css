@@ -1,5 +1,6 @@
 body {
     background-color: #FBF5F5;
+    margin-top: 100px; 
   }
 
 #sidebar_menu {
@@ -26,7 +27,8 @@ body {
     display: block; 
     text-align: left;
     padding-left: 25px;
-    padding-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /* CSS cho liên kết được chọn */
@@ -43,7 +45,7 @@ body {
 #sidebar_menu img {
     max-width: 100%;
     height: auto;
-    margin-top: px; 
+    margin-top: 10px; 
     margin-bottom: 10px; 
 }
 

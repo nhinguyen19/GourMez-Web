@@ -1,3 +1,9 @@
+body {
+    background-color: #FFECCB;
+    width: 100%;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
 .insert{
     display: flex;
     justify-content: center;
@@ -17,9 +23,5 @@ table{
     padding-left: 240px;
     padding-top: 30px;
     font-family: Lalezar;
-    text-transform: uppercase;
     color: #E26A2C;
 }
-body {
-    background-color: #FFECCB;
-  }
