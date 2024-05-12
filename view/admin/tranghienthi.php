@@ -1,8 +1,6 @@
   <?php
-  session_start();
-
-if(isset($_SESSION['role'])&&($_SESSION['role']==1)){
-    
+    session_start();
+    if(isset($_SESSION['role'])){
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
@@ -10,7 +8,7 @@ if(isset($_SESSION['role'])&&($_SESSION['role']==1)){
     include_once ("../../model/admin/xuly_dichvu.php");
     include("header_ad/header_ad.php");
     include("sidebar_ad/sidebar_ad.php");
-    
+  
     if(isset($_GET['quanly']))
     { 
       switch($_GET['quanly'])
@@ -44,28 +42,25 @@ if(isset($_SESSION['role'])&&($_SESSION['role']==1)){
           suaSanPham();
           break;
 
-        case 'tatcakm' :
-          $kq=getall_discountnews();
-          include ('ql_khuyenmai/tatcakm.php');
-          break;
-        case 'themkmnews' :
-          insertdiscountnews();
-          include ('ql_khuyenmai/themkmnews.php');
-          
-          break;
-        case 'deldiscountnews':
-          deldiscountnews();
-          $kq=getall_discountnews();
-          include ('ql_khuyenmai/tatcakm.php');
-          break;
+      case 'tatcakm' :
+        $kq=getall_discountnews();
+        include ('ql_khuyenmai/tatcakm.php');
+        break;
+      case 'themkmnews' :
+        insertdiscountnews();
+        include ('ql_khuyenmai/themkmnews.php');
+        
+        break;
+      case 'deldiscountnews':
+        deldiscountnews();
+        $kq=getall_discountnews();
+        include ('ql_khuyenmai/tatcakm.php');
+        break;
 
-          case 'updatediscountnews' :
-            capnhatkmnews();
-            include ('ql_khuyenmai/capnhatkmnews.php');
-            break;
-
-
-        //Dịch vụ  
+        case 'updatediscountnews' :
+          capnhatkmnews();
+          include ('ql_khuyenmai/capnhatkmnews.php');
+          break;
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           themDichVu();
@@ -93,8 +88,6 @@ if(isset($_SESSION['role'])&&($_SESSION['role']==1)){
         case 'xoamonandichvu':
           xoamonandichvu();
           break;
-
-          
         default :
           include ('tranghienthi.php');
           break;
@@ -103,7 +96,7 @@ if(isset($_SESSION['role'])&&($_SESSION['role']==1)){
       }
     }
   }
-  else {
+  else{
     header('Location: ../cus/dangnhap/login.php');
   }
   ?>

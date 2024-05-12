@@ -46,4 +46,4 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
-    ?>
+?>
