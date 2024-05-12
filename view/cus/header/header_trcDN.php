@@ -23,6 +23,7 @@
 </head>
 <body>
 
+<header>
     <nav class="header">
         <!-- <div id="img"><img src="C:\xampp\htdocs\DoAn\Helene.png" style="height: 86.61px; width: 100px;"></div> -->
         
@@ -40,5 +41,6 @@
         <a href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a>
         </button>
     </nav>
+</header>
 
     
