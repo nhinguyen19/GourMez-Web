@@ -1,3 +1,8 @@
+<?php
+session_start();
+$username=$_SESSION['user'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +15,7 @@
     <link rel="stylesheet" href="../view/cusdangnhap/login.css">
     <script src="..view/cus/dangnhap/hienthi_mk.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
+
     <style>
         body{
             width: 100%;
@@ -36,7 +42,9 @@
         </ul>
 
         <div class="user_dropdown" > 
-            <button id="name_user" style="border: 0;background-color:rgba(174, 33, 8, 1); font-size: 18px;font-weight: bold;">a</button> 
+            <button id="name_user" style="border: 0;background-color:rgba(174, 33, 8, 1); font-size: 16px;font-weight: bold;">
+                <?php echo "Chào, ".$username?>
+            </button> 
             <div class="dropdown_content" style="right: 0;"> 
                 <a href="#">Quản lý tài khoản</a>
                 <a href="../view/cus/dangnhap/check_logout.php">Đăng xuất</a>

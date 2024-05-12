@@ -1,17 +1,15 @@
 .box-content{
-    font-family: 'Lalezar';
     margin: 0 auto;
-    width: 700px;
+    width: 800px;
     border: 1px solid rgba(255, 236, 203, 1);
     background-color: rgba(255, 236, 203, 1);
     text-align: center;
     padding: 15px;
     border-radius: 20px;
     margin-bottom: 30px;
-   
 }
 #user_login form{
-    width: 400px;
+    width: 500px;
     margin: 30px auto;
 }
 #user_login form table{
@@ -29,14 +27,17 @@
 
 }
 
-.bang_dn{
+.bang_dk{
     border: 1px solid rgba(255, 130, 67, 1);
     background-color: rgba(255, 130, 67, 1);
     border-radius: 20px;
     padding: 20px;
     text-align: left;
 }
-table tr{
+table tr td input [type="text"]{
     width: 150px;
     border-radius: 20px;
+}
+.left{
+    display: flex;
 }
