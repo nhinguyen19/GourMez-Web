@@ -14,12 +14,13 @@
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <style>
         body{
-            font-family: 'Lalezar';
             width: 100%;
             margin: 0px;
         }
+        .header{
+            font-family: 'Lalezar';
+        }
     </style>
-    
 </head>
 <body>
 

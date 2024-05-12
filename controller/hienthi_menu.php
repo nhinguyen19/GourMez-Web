@@ -23,6 +23,9 @@
         case 'chitiet_sp':
           include("../view/cus/menu/chitiet_sp.php");
           break;
+        default:
+          include ('../view/cus/menu/menu.php');
+          break;
       }
     }
     else{
