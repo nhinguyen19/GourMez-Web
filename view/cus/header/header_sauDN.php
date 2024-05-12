@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
+    <link rel="stylesheet" href="../view/LIB/bootstrap/css/bootstrap.min.css">
     <script src="../view/LIB/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
@@ -13,7 +14,7 @@
     <style>
         body{
             width: 100%;
-            margin: 0px;
+            margin-top : 20px;
         }
         .header{
             font-family: 'Lalezar';
