@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="hienthi_menu.css">
 <?php
     $conn = connectdb();
     $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id ORDER BY food_id ASC";
