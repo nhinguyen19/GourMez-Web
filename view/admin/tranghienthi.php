@@ -1,6 +1,6 @@
   <?php
-    session_start();
-    if(isset($_SESSION['role'])){
+    // session_start();
+    // if(isset($_SESSION['role'])){
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
@@ -51,10 +51,10 @@
         include ('ql_khuyenmai/themkmnews.php');
         break;
       case 'tatcathongtin':
-        include ('ql_thongtin/lienhe.php');
+        include ('ql_thongtin/lietke.php');
         break;
       case 'themthongtin':
-        include ('ql_thongtin/themthongtin.php');
+        include ('ql_thongtin/themlienhe.php');
         break;
       case 'deldiscountnews':
         deldiscountnews();
@@ -99,7 +99,7 @@
           
       }
     }
-  }
+  // }
   // else{
   //   header('Location: ../cus/dangnhap/login.php');
   // }
