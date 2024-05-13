@@ -12,12 +12,12 @@
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <style>
-        /* body {
-            background-color: #FFECCB;
+        body {
+            background-color: #FBF5F5;
             width: 100%;
             margin-top: 100px;
             padding-bottom: 20px;   
-        } */
+        }
     </style>
 </head>
 <body>

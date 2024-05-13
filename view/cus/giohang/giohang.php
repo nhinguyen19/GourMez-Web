@@ -42,14 +42,14 @@
         $totalPrice += $subtotal;
 
         $cartItems .= '<tr>';
-        $cartItems .= '<td> <img src="../../admin/ql_sanpham/uploads/' . $hinh_anh_san_pham . '" style="width: 120px; border-radius:5px"></td>';
+        $cartItems .= '<td> <img src="../../admin/ql_sanpham/uploads/' . $hinh_anh_san_pham . '" style="width: 120px;height: 120px; border-radius:5px"></td>';
         $cartItems .= '<td>';
         $cartItems .= '<span style="color: #E26A2C; font-weight: bold">' . $row_cart['food_name'] . '</span><br>';
         $cartItems .= '<form method="POST" action="">';
         $cartItems .= '<input type="hidden" name="food_id" value="' . $row_cart['food_id'] . '">';
         $cartItems .= '<div class="quantity-update" style="padding-top:5px; padding-bottom:5px">';
         $cartItems .= '<span style="padding-right: 5px">Số lượng:</span> <input type="number" style="width:30px;text-align:center" name="quantity" value="' . $quantity . '">';
-        $cartItems .= '<button type="submit" name="update" class="btn_update">Cập nhật</button>';
+        $cartItems .= '<button type="submit" name="update" class="btn_update">Sửa</button>';
         $cartItems .= '</div>';
         $cartItems .= '</form>';
         $cartItems .= "Giá bán: " . number_format($productPrice, 0, '.', '.') . " đ<br>";

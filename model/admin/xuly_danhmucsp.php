@@ -29,24 +29,23 @@
             }
         }
     }
-    function suaDanhMuc()
+function suaDanhMuc()
+{
+    $conn = connectdb();
+    if(isset($_POST['sua'])) 
     {
-        $conn = connectdb();
-        if(isset($_POST['sua'])) 
-        {
-            $tenloaisp = $_POST['tendanhmuc'];
-            $id = $_GET['id'];
-            
-            $sql_sua = "UPDATE category SET cate_name = '$tenloaisp' WHERE cate_id = '$id'";
-            
-            if(mysqli_query($conn, $sql_sua)) {
-                header('Location: tranghienthi.php?quanly=tatca');
-                exit();
-            } else {
-                echo "Lỗi: " . mysqli_error($conn);
-            }
+        $tenloaisp = $_POST['tendanhmuc'];
+        $id = $_GET['id'];
+        
+        $sql_sua = "UPDATE category SET cate_name = '$tenloaisp' WHERE cate_id = '$id'";
+        
+        if(mysqli_query($conn, $sql_sua)) {
+            echo '<div style="text-align: center; margin-top: 50px; font-size: 18px; color: green;">Category updated successfully!</div>';
+        } else {
+            echo "Error: " . mysqli_error($conn);
         }
     }
+}
     function xoaDanhMuc($id)
     {
         $conn = connectdb();
