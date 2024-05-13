@@ -100,13 +100,10 @@
             else{
                 $sql_sua = "UPDATE food SET food_name = '$tensp', selling_price = '$giaban',original_price='$giagoc',small_descr='$mota' WHERE food_id = '$id'";
             }
-    
-            
             if(mysqli_query($conn, $sql_sua)) {
-                header('Location: tranghienthi.php?quanly=tatcasp');
-                exit();
+                echo '<div style="text-align: center; margin-top: 50px; font-size: 18px; color: green;">Category updated successfully!</div>';
             } else {
-                echo "Lỗi: " . mysqli_error($conn);
+                echo "Error: " . mysqli_error($conn);
             }
         }
     }

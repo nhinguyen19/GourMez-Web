@@ -1,3 +1,4 @@
+
 <?php
 $conn = connectdb();
 $sql_chitiet = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.food_id='$_GET[id]' LIMIT 1";
@@ -45,27 +46,22 @@ while ($row_chitiet = mysqli_fetch_array($query_chitiet)) {
 
 <?php
 if (isset($_POST['themgiohang'])) {
-    // Retrieve the product information from the form
     $idsanpham = mysqli_real_escape_string($conn, $_GET['id']);
     $soluong = $_POST['soluong'];
 
-    // Check if the product already exists in the cart
     $sql_check_existing = "SELECT * FROM cart WHERE food_id = '$idsanpham'";
     $query_check_existing = mysqli_query($conn, $sql_check_existing);
     $row_check_existing = mysqli_fetch_assoc($query_check_existing);
 
     if ($row_check_existing) {
-        // If it exists, update the quantity
         $newQuantity = $row_check_existing['quantity'] + $soluong;
         $sql_update_quantity = "UPDATE cart SET quantity = $newQuantity WHERE food_id = '$idsanpham'";
         mysqli_query($conn, $sql_update_quantity);
     } else {
-        // If it doesn't exist, insert a new record
         $sql_insert = "INSERT INTO cart (food_id,quantity) VALUES ('$idsanpham', '$soluong')";
         mysqli_query($conn, $sql_insert);
     }
 
-    // Provide feedback to the user(optional)
     echo '<p style="text-align: center">Sản phẩm đã được thêm vào giỏ hàng.</p>';
 }
 ?>
