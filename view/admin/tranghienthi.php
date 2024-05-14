@@ -41,9 +41,10 @@
           include("ql_sanpham/sua.php");
           suaSanPham();
           break;
-
+    // Case Quản lý khuyến mãi
       case 'tatcakm' :
-        $kq=getall_discountnews();
+        $discount=getall_discountnews();
+        $codedis=getall_codedis();
         include ('ql_khuyenmai/tatcakm.php');
         break;
       case 'themkmnews' :

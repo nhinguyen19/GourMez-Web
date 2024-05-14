@@ -16,6 +16,22 @@ function getall_discountnews()
     $conn->close();
     return $kq;
 }
+function getall_codedis()
+{
+    $conn = connectdb();
+    $sql = "SELECT id, code_dis, qtt_of_dis FROM discount";
+    $result = $conn->query($sql);
+    $kq = array();
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $kq[] = $row;
+        }
+    }
+
+    $conn->close();
+    return $kq;
+}
 
 function insertdiscountnews()
 {
