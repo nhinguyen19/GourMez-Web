@@ -38,3 +38,34 @@
         </table>
     </form>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const input = document.querySelector('input[type="file"]');
+    const imageDiv = document.getElementById('imageDiv');
+    const innerDiv = document.getElementById('innerDiv');
+
+    input.addEventListener('change', function(event) {
+        // Xóa ảnh cũ nếu có
+        const existingImg = imageDiv.querySelector('img');
+        if (existingImg) {
+            imageDiv.removeChild(existingImg);
+        }
+
+        // Tạo và hiển thị ảnh mới
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.width = '195px'; // Đặt kích thước tối đa cho ảnh
+                img.style.height = '195px'; // Đặt kích thước tối đa cho ảnh
+                innerDiv.remove();
+                imageDiv.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+</script>
