@@ -1,7 +1,7 @@
 <?php
 
 //Google Code
-require_once ('./google/libraries/Google/autoload.php');
+require_once ('../view/cus/Google/libraries/Google/autoload.php');
 
 //Insert your cient ID and secret 
 //You can get it from : https://console.developers.google.com/
@@ -66,7 +66,7 @@ if ($client->isAccessTokenExpired()) {
 if (!isset($authUrl)) {
     $googleUser = $service->userinfo->get(); //get user info 
     if(!empty($googleUser)){
-        include './function.php';
+        include '../view/cus/dangnhap/function.php';
         loginFromSocialCallBack($googleUser);
     }
 }

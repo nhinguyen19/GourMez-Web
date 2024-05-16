@@ -2,8 +2,9 @@
 <style>
     .banner
     {
-        width: 1500px;
-        height: 700px;
+        width: 100%;
+        height: 90%;
+        margin-top: 90px;
 
     }
 
@@ -151,7 +152,7 @@
   
   .total_box
   {
-    width: 520px;
+    width: 600px;
     height: fit-content;
     background-color: white;
     border: none;
@@ -228,7 +229,7 @@
         <!-- Thanh đặt món -->
         
             <img src = "../view/cus/img/banner_bigdeal.png" class = "banner">
-            <div class="food_order">
+            <div class="food_order" style = "font-family: 'Lalezar'">
 
             <div class="food_label" style = "border: 1px solid yellow">
                 <h1>ĐẶT MÓN ĂN</h1>
@@ -238,7 +239,7 @@
                         require("../model/connect.php");
                         $conn = connectdb();
         
-                        $sql = "SELECT NameFood, Price,image FROM food_for_bigdeal";
+                        $sql = "SELECT food_combo, price,image FROM food_for_service WHERE ID_service = '2'";
                         $result = mysqli_query($conn, $sql);
 
                         if(!$result)
@@ -251,12 +252,12 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $counter++;
                                 echo '<div class="option1">';
-                                echo '<img name = "image" src="' . $row['image'] . '">';
+                                echo '<img name = "image" src="../view/admin/ql_dichvu/uploads/' . $row['image'] . '">';
                                 echo '<div class="text">';
-                                echo '<p name="name_of_food">'. $row['NameFood'] .  '</p>';
-                                echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['Price']. '">' . number_format($row['Price'], 0, ',', '.') . 'đ</p><br>';
-                                echo 'Số lượng: <input type="number" name="quantity" id = "quantity"  placeholder="1" min="1" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
-                                echo 'Chọn <input type="radio" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
+                                echo '<p name="name_of_food">'. $row['food_combo'] .  '</p>';
+                                echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
+                                echo 'Số lượng: <input type="number" name="quantity" id = "quantity"  placeholder="1" value="1" min="1" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
+                                echo 'Chọn <input type="checkbox" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
                                 echo '</div>';
                                 echo '</div>';
                             }
@@ -269,7 +270,7 @@
             <div class = "cus_info">
                 
                     
-                    <form id="form_customer" action="dichvu_bigdeal.php?quanly=dichvu_bigdeal" method="post">
+                    <form id="form_customer" action="../controller/xuli_bigdeal.php" method="post">
                     <div class = "info">
                         <h2>THÔNG TIN KHÁCH HÀNG</h2>
 
@@ -299,12 +300,7 @@
                             </div>
                             
                         </div>
-
-                        
-                        <input type="hidden" name="name_food" id="name_food_input">
-                        <input type="hidden" name="Last_quantity" id="quantity_input">
-                        <input type="hidden" name="Last_price" id="price_input">
-                    
+                        <input type="hidden" name = "Tongcong" id ="tongcong">
                     </form>
                 </div>
 
@@ -314,73 +310,92 @@
  <script>
     
 
+let selected_food = [];
 function formatNumber(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
-  
-  
+
   function get_info_food() {
-    let names = document.getElementsByName("name_of_food");
-    let prices = document.getElementsByName("price");
-    let quantities = document.getElementsByName("quantity");
-    let img = document.querySelectorAll(".option1 img");
-    let checks = document.getElementsByName("choose");
-  
-    for (let i = 0; i < checks.length; i++) {
-      if (checks[i].checked) 
-        {
-        let name_food = names[i].innerText;
-        let quantity = parseInt(quantities[i].value);
-        // Remove non-numeric characters (like comma) from the price
-        let price = parseInt(prices[i].innerText.replace(/\D/g, ''));
-        let trans_price =formatNumber(price);
-        let img_src = img[i].getAttribute("src");
-        
-        // Update the content of the div with class "total_box"
-        let totalBox = document.querySelector('.total_box');
-        let total_price = quantity * price;
-        
-        // Format total_price as desired
-        let formatted_total_price = formatNumber(total_price);
-  
-        
-        
-        totalBox.innerHTML = '<img src = "'+ img_src + '"'+ 'style = "display:inline; width: 80px; height: 80px; margin-left: 10px">' + '<p name="name_food" style="display:inline; margin-right: 30px; margin-left: 15px">' + name_food + '</p>' + '<p style = "display:inline; margin-left:20px">x</p>' + '<p style="display:inline; name = "Last_quantity">' + quantity + '</p>' + '<p style="display:inline; margin-left: 20px">' + trans_price + '</p>';
-        
-        let text = document.createElement("p");
-        let line = document.createElement("hr");
-  
-        text.classList.add("text_price");
-        text.setAttribute("name","Last_price");
-        text.innerHTML = "Tổng cộng: " + formatted_total_price;
-        totalBox.appendChild(line);
-        totalBox.appendChild(text);
-  
-        //add value for input hidden -> to get value to insert into
-        document.getElementById('name_food_input').value = name_food;
-        document.getElementById('quantity_input').value = quantity;
-        document.getElementById('price_input').value = total_price;
-  
-        // Exit the loop after finding the checked radio button
-        break;
-      }
+  let names = document.getElementsByName("name_of_food");
+  let prices = document.getElementsByName("price");
+  let quantities = document.getElementsByName("quantity");
+  let img = document.querySelectorAll(".option1 img");
+  let checks = document.getElementsByName("choose");
+
+  let sum_money = 0;
+
+  for (let i = 0; i < checks.length; i++) {
+    if (checks[i].checked) {
+      let name_food = names[i].innerText;
+      let quantity = parseInt(quantities[i].value);
+      let price = parseInt(prices[i].innerText.replace(/\D/g, ''));
+      let trans_price = formatNumber(price);
+      let img_src = img[i].getAttribute("src");
+      let total_price = quantity * price;
+
+      selected_food.push({
+        ten: name_food,
+        soluong: quantity,
+        dongia: trans_price,
+        thanhtien: quantity * price,
+        hinhanh: img_src
+      });
+
+      sum_money += quantity * price;
     }
   }
- </script>
 
-        <?php
-if(isset($_GET['alert']) && $_GET['alert'] == 'success') {
-    echo '<script>alert("Đơn hàng đã được ghi nhận. Nhân viên sẽ liên hệ với bạn.");</script>';
-}
-else if (isset($_GET['alert']) && $_GET['alert'] == 'empty')
-{
-    echo '<script>alert("Vui lòng chọn món ăn.");</script>';
-}
-else if (isset($_GET['alert']) && $_GET['alert'] == 'unsuccess')
-{
-    echo '<script>alert("Đơn hàng bị lỗi. Vui lòng nhập lại.");</script>';
-}
-?>
+  // update_order(selected_food);
 
-    </div>
-        
+  let totalBox = document.getElementById('totalBox');
+  totalBox.innerHTML="";
+
+  selected_food.forEach(food => {
+    let foodItem = document.createElement('div');
+    foodItem.classList.add('food_item');
+    foodItem.innerHTML = `
+      <img src="${food.hinhanh}" style="display:inline; width: 80px; height: 80px; margin-left: 10px">
+      <p name="bigdeal_food" style="display:inline; margin-right: 30px; margin-left: 15px">${food.ten}</p>
+      <p style="display:inline; margin-left:20px">x</p>
+      <p style="display:inline; name="bigdeal_quantity">${food.soluong}</p>
+      <p style="display:inline; margin-left: 20px name = "bigdeal_money">${formatNumber(food.dongia)}</p>
+      <p style="display:inline; margin-left: 20px name = "bigdeal_total">${formatNumber(food.thanhtien)}</p>
+      <hr>
+    `;
+
+    totalBox.appendChild(foodItem);
+  });
+
+    let text = document.createElement("p");
+  
+        text.classList.add("text_price");
+        text.setAttribute("name","Tongcong");
+        text.innerHTML = "Tổng cộng: " + formatNumber(sum_money);
+        totalBox.appendChild(text);
+
+    
+    let Tong =document.getElementById("tongcong");
+    Tong.value = sum_money;
+
+    insertDataToDatabase(selected_food);
+  }
+
+  function insertDataToDatabase(selected_food) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'xuli.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var response = xhr.responseText;
+      console.log(response);
+    }
+  };
+
+  // Chuyển đổi mảng selected_food thành chuỗi JSON
+  var jsonData = JSON.stringify(selected_food);
+
+  // Gửi yêu cầu AJAX đến insert_data.php
+  xhr.send('data=' + encodeURIComponent(jsonData));
+  return true;
+}
+  </script>

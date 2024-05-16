@@ -7,7 +7,12 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="../view/cus/dangnhap/login.css">
+    
+=======
     <link rel="stylesheet" href="../view/cusdangnhap/login.css">
+>>>>>>> c387c5c9143d94847776f63628ac6960a9bf3a7d
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <style>
         body{
@@ -24,10 +29,10 @@
 
 <header>
     <nav class="header">
-        <!-- <div id="img"><img src="C:\xampp\htdocs\DoAn\Helene.png" style="height: 86.61px; width: 100px;"></div> -->
+        <!-- <div id="img"><img src="..view/cus/img/logocus.png" style="height: 86.61px; width: 100px;"></div> -->
         
         <ul class="menu_header">
-            <li><a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../img/logocus.png" style="height: 150px; width: 150px;"></a></li>
+        <li><a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../view/cus/img/logocus.png" style="z-index:2;height: 150px; width: 150px;"></a></li>
             <li><a href="tranghienthi.php?quanly=thucdon" id="header">THỰC ĐƠN</a></li>
             <li><a href="tranghienthi.php?quanly=khuyenmai" id="header">KHUYẾN MÃI</a></li>
             <li><a href="tranghienthi.php?quanly=dichvu" id="header">DỊCH VỤ</a></li>
@@ -37,7 +42,7 @@
             <li><a href="tranghienthi.php?quanly=giohang" id="header"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
         <button class="bt_dangnhap" style="width: 100px;height: 40px;">
-        <a href="login.php?quanly=dangnhap">Đăng nhập</a>
+        <a href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a>
         </button>
     </nav>
 </header>

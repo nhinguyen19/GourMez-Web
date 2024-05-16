@@ -7,10 +7,15 @@
     padding: 15px;
     border-radius: 20px;
     margin-bottom: 30px;
+    margin-top: 100px;
 }
 #user_login form{
-    width: 500px;
+    width: 600px;
     margin: 30px auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 #user_login form table{
     align-items: center;
@@ -34,10 +39,35 @@
     padding: 20px;
     text-align: left;
 }
-table tr td input [type="text"]{
-    width: 150px;
+
+.title{
+    display: flex;
+    font-size: 20px;
+    font-weight:bold;
+}
+.has-error{
+    color: aliceblue;
+    font-size: 18px;
+}
+.dangky-bt input{
+    font-size: 20px;
+    padding: 10px;
+    font-family: 'Times New Roman';
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    color: aliceblue;
+    border: 1px solid black;
     border-radius: 20px;
 }
-.left{
+.dangky-bt{
     display: flex;
+    align-content: end;
+    align-items: end;
+    text-align: center;
+    justify-content: end;
+    margin-left: 30px;
 }
