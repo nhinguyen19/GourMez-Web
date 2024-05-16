@@ -31,7 +31,7 @@ and open the template in the editor.
         session_start();
         unset($_SESSION['current_user']);
         unset($_SESSION['access_token']);
-        header('Location: login.php');
+        header('Location: ../view/cus/dangnhap/login.php');
         ?>
         <!-- <div id="user_logout" class="box-content">
             <h1>Đăng xuất tài khoản thành công</h1>
