@@ -1,8 +1,10 @@
 
-<link rel="stylesheet" href="ql_khuyenmai/khuyenmai.css">
+<link rel="stylesheet" href="ql_khuyenmai/khuyenmai.css"> 
+<!-- <link rel ="stylesheet" href="tranghienthi.css"> -->
 <div class="main">
     <h2 class="title"> Tất cả tin tức khuyến mãi </h2>
-<div class="tablekhuyenmai">
+<div class ="main1">
+<div class="insert">
 <table>
     <tr>
         <th> STT</th> 
@@ -39,9 +41,10 @@ if (isset($discount)&&(count($discount)>0))
 </th>
 </tr>
 </table>
+</div>
 
 <!-- table mã khuyến mãi -->
-<div class="tablemakhuyenmai">
+<div class="insert">
 <table>
     <tr>
         <th> STT</th> 
@@ -76,4 +79,7 @@ if (isset($codedis)&&(count($codedis)>0))
 </th>
 </tr>
 </table>
+</div>
+
+</div>
 </div>

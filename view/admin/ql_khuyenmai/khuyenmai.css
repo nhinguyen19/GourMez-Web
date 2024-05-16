@@ -1,14 +1,33 @@
-.tablekhuyenmai{
+.insert{
+     display: inline-block;
+    vertical-align: top;
+    border: 1px solid  #3db76a; 
+}
+.main1 
+{
+    display : flex; 
+    justify-content : center;
+}
+.insert1 
+{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid  #754E39; 
+}
+table,tr,th,td{
+    border: 1px solid  #754E39;
+    background-color: #f0ac74;
+    padding: 10px;
+}
+
+table{
+    width: 90%;
+}
+.title{
     display: flex;
     justify-content: center;
     padding-left: 240px;
- }
-table,tr,th,td{
-    border: 1px solid black;
-    background-color: #d58d4a;
-    border-collapse: collapse;
-    padding: 10px;
-}
-table{
-    width: 90%;
+    padding-top: 30px;
+    font-family: Lalezar;
+    color: #E26A2C;
 }
