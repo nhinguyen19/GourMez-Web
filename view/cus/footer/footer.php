@@ -10,24 +10,28 @@ img
     width: 200px;
     height: 200px;
 }
-.background
+/* .background
 {
-    background-color: rgba(174, 33, 8, 1);
-    width: fit-content;
+    
+    width: 100%;
     margin-left: -10px;
-}
+} */
 .Contact
 {
     padding-left: 100px;
 }
 
-.footer
+footer
 {
     display: grid;
     grid-template-columns: 350px 350px 350px 350px;
     font-size: 20px;
     padding-inline: 50px;
-    padding: 30px 50px 30px 50px; 
+    padding: 30px 50px 30px 50px;
+    width: 120%;
+    height: 100px;
+    background-color: rgba(174, 33, 8, 1);
+    margin-left:-50px;
 }
 label, a
 {
@@ -75,18 +79,20 @@ label, a
     color: black;
 }
 
-footer
+/* footer
 {
     background-color: black;
     color: white;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-}
+    width : 100%;
+} */
 
 
 </style>
-<div class = "background">
- <div class = "footer">
+
+ <footer >
+ <!-- <div class = "background"> -->
         <div class = "logo">
             <img src = "../view/cus/img/logocus.png">
         </div>
@@ -113,7 +119,6 @@ footer
             <h3>Follow us</h3> <br>
             <i class="fab fa-facebook fa-lg" style="padding: 0 15px 0 0;"></i><i class="fab fa-instagram-square fa-lg"></i>
         </div>
-    </div>
+        <!-- </div> -->
+</footer>
     <footer>Copyright 2024, All rights reserved</footer>
-</div>
-</div> 

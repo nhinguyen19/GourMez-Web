@@ -12,7 +12,7 @@
             <a href="tranghienthi.php?quanly=themsanpham">Thêm món ăn</a>
         </div>
         <hr>
-        <a href="#">Quản lý danh mục sản phẩm</a>
+        <a href="#">Quản lý danh mục </a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatca">Tất cả</a>
             <a href="tranghienthi.php?quanly=themdanhmuc">Thêm danh mục</a>
@@ -29,6 +29,12 @@
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatcadichvu">Tất cả</a>
             <a href="tranghienthi.php?quanly=themdichvu">Thêm dịch vụ</a>
+        </div>
+        <hr>
+        <a href="#">Quản lý thông tin</a>
+        <div class="submenu">
+            <a href="tranghienthi.php?quanly=tatcathongtin">Tất cả</a>
+            <a href="tranghienthi.php?quanly=themthongtin">Thêm thông tin</a>
         </div>
         <hr>
         <a href="#">Quản lý tin tức</a>
