@@ -71,7 +71,7 @@ button
 
 
 <div class="container" style=" margin: 10px;">
-    <img src="../view/cus/img/banner_dv.png" style="width:1400px; height: 700px;align-items: center; margin-left: 10px">
+    <img src="../view/cus/img/banner_dv.png" style="width:98%; height: 700px;align-items: center; margin-left: 50px; margin-top:50px;">
 
     
     <div class="container_dv">
@@ -86,7 +86,7 @@ button
                 <div class="content">
                     <h3 style="color: orangered"><?php echo $row['service_name'] ?></h3>
                     <p><?php echo $row['small_descript'] ?></p>
-                    <button type="submit">Đặt hàng</button>
+                    <button type="submit" style = "font-family: 'Lalezar'">Đặt hàng</button>
                 </div>
             </div>
         </form>

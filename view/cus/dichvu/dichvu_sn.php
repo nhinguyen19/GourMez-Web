@@ -1,10 +1,14 @@
 
 <style>
+.food_order
+{
+  font-family: 'Lalezar';
+}
 .banner_sn
 {
     margin-top: 50px;
-    width: 1500px;
-    height: 700px;
+    width: 100%;
+    height: 90%;
 }
 
     .food_label
@@ -227,7 +231,7 @@
                 <?php
                     require("../model/connect.php");
                     $conn = connectdb();
-                    $sql = "SELECT food_combo, price,image FROM food_for_service";
+                    $sql = "SELECT food_combo, price,image FROM food_for_service WHERE ID_service = '1'";
                     $result = mysqli_query($conn, $sql);
 
                     if(!$result)
@@ -241,7 +245,7 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $counter++;
                                 echo '<div class="option">';
-                                echo '<img name = "image" src="' . $row['image'] . '">';
+                                echo '<img name = "image" src="../view/admin/ql_dichvu/uploads/' . $row['image'] . '">';
                                 echo '<div class="text">';
                                 echo '<p name="name_of_food">'. $row['food_combo'] .  '</p>';
                                 echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';

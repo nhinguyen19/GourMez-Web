@@ -2,8 +2,9 @@
 <style>
     .banner
     {
-        width: 1500px;
-        height: 700px;
+        width: 100%;
+        height: 90%;
+        margin-top: 90px;
 
     }
 
@@ -46,92 +47,12 @@
 
 .option
 {
-    text-align: justify;
-    padding: 40px;
+    text-align: center;
 }
 
-.text
-{
-    padding-left: 120px;
-}
 
-/*thông tin khách hàng*/
-.cus_info
-{
-  background-color: rgba(255, 236, 203, 1);
-  padding-top: 30px;
-  display: grid;
-  grid-template-columns: 800px 600px;
-}
-.info h2
-{
-  font-family: 'Lalezar';
-  width: 350px;
-  text-align: center;
-  align-items: center;
-  margin-left: 100px;
 
-}
-::placeholder
-{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    font-size: 15px;
-    padding-left: 1;
-  }
 
-  .info  input 
-  {
-    background-color: rgba(248, 127, 64, 1);
-    color:white;
-    width: 500px;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    padding-left: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .info input:focus
-  {
-    outline: 1px solid gray ;
-  }
-  
-  .info
-  {
-    padding-left: 200px;
-    margin-top: 20px;
-  }
-  
-  #ship_date
-  {
-    padding-right: 20px;
-    font-size: 15px;
-    color: white;
-    padding-right: 20px;
-    margin-bottom: 15px;
-
-  }
-  #gender
-  {
-    margin-left: 18px;
-    width: 128px;
-    height: 40px;
-    background-color:rgba(248, 127, 64, 1) ;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 15px;
-  }
-  
-  option
-  {
-    background-color: white;
-    color: black;
-  
-  }
   /*payment*/
   
   .info_payment
@@ -151,7 +72,7 @@
   
   .total_box
   {
-    width: 520px;
+    width: 800px;
     height: fit-content;
     background-color: white;
     border: none;
@@ -171,7 +92,18 @@
     float: right;
   }
   
- 
+ #datmonbigdeal
+ {
+   background-color: rgba(252, 47, 19, 1);
+    border-radius: 10px;
+    border: none; 
+    color: white;
+    font-family: 'Lalezar';
+    font-size: 20px;
+    width: fit-content;
+    padding: 5px;
+
+ }
   
   #send_order
   {
@@ -228,7 +160,7 @@
         <!-- Thanh đặt món -->
         
             <img src = "../view/cus/img/banner_bigdeal.png" class = "banner">
-            <div class="food_order">
+            <div class="food_order" style = "font-family: 'Lalezar'">
 
             <div class="food_label" style = "border: 1px solid yellow">
                 <h1>ĐẶT MÓN ĂN</h1>
@@ -238,7 +170,7 @@
                         require("../model/connect.php");
                         $conn = connectdb();
         
-                        $sql = "SELECT NameFood, Price,image FROM food_for_bigdeal";
+                        $sql = "SELECT food_combo, price,image FROM food_for_service WHERE ID_service = '2'";
                         $result = mysqli_query($conn, $sql);
 
                         if(!$result)
@@ -250,13 +182,18 @@
                             $counter = 0; // Counter to generate unique identifiers for radio buttons
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $counter++;
-                                echo '<div class="option1">';
-                                echo '<img name = "image" src="' . $row['image'] . '">';
+                                echo '<div class="option">';
+                                echo '<img name = "image" src="../view/admin/ql_dichvu/uploads/' . $row['image'] . '">';
                                 echo '<div class="text">';
-                                echo '<p name="name_of_food">'. $row['NameFood'] .  '</p>';
-                                echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['Price']. '">' . number_format($row['Price'], 0, ',', '.') . 'đ</p><br>';
-                                echo 'Số lượng: <input type="number" name="quantity" id = "quantity"  placeholder="1" min="1" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
-                                echo 'Chọn <input type="radio" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
+                                echo '<p style = "margin-bottom: 0px">'. $row['food_combo'] .'</p>';
+                                echo 'Giá bán: <p style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
+                                echo '<form action = "tranghienthi.php?quanly=giohangdv" method = "post">';
+                                echo 'Số lượng: <input type="number" name="soluong" id = "quantity"  placeholder="1" value="1" min="1" step="1" max="50" title="Vui lòng nhập số lượng" style = "width: 60px; height: 30px; font-size:18px; margin-bottom:20px "required ><br>';
+                                echo '<input type ="hidden" name = "tenmon" value = "'.$row['food_combo'].'">';
+                                echo '<input type ="hidden" name = "giamon" value = "'.$row['price'].'">';
+                                echo '<input type ="hidden" name = "hinhanh" value = "'.$row['image'].'">';
+                                echo '<input type="submit" name = "datmonbigdeal" value = "Đặt món">';
+                                echo '</form>';
                                 echo '</div>';
                                 echo '</div>';
                             }
@@ -265,122 +202,7 @@
                 
                 </div>
         </div>
-            <!-- Thông tin khách hàng -->
-            <div class = "cus_info">
-                
-                    
-                    <form id="form_customer" action="dichvu_bigdeal.php?quanly=dichvu_bigdeal" method="post">
-                    <div class = "info">
-                        <h2>THÔNG TIN KHÁCH HÀNG</h2>
-
-                        <input type = "text" name = "cusname" id = "customer_name" placeholder="Họ và tên*" title="Vui lòng nhập tên người đặt tiệc." > <br>
-                        <input type = "tel" name = "tel" id = "phone_number" placeholder="Số điện thoại*" required pattern="[0-9]{10}" title="Số điện thoại phải là số, có 10 chữ số!"> <br>
-                        <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
-                        
-
-                        <label style = "color: black; margin-top: -10px;">Chọn ngày giao hàng</label> <br>
-                        <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required>
-
-                        <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
-                        <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
-                        <div class = "button">
-                            <input type ="submit" name = "send" id = "send_order" value="Gửi đơn hàng">
-                            <div class = "button_reset">
-                                <input type="reset" id = "reset" value = "Reset" onclick = "reset_quantity()">
-                            </div>
-                        </div>
-
-                    </div> 
-
-                        <div class = "info_payment">
-                            <h2>CHI TIẾT ĐƠN HÀNG</h2>
-                            <div class = "total_box" id = "totalBox">
-                                <p style="display: inline;" id = "total">Tổng cộng: 0đ</p>
-                            </div>
-                            
-                        </div>
-
-                        
-                        <input type="hidden" name="name_food" id="name_food_input">
-                        <input type="hidden" name="Last_quantity" id="quantity_input">
-                        <input type="hidden" name="Last_price" id="price_input">
-                    
-                    </form>
-                </div>
+            
 
         </div>
                 
-
- <script>
-    
-
-function formatNumber(number) {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  }
-  
-  
-  function get_info_food() {
-    let names = document.getElementsByName("name_of_food");
-    let prices = document.getElementsByName("price");
-    let quantities = document.getElementsByName("quantity");
-    let img = document.querySelectorAll(".option1 img");
-    let checks = document.getElementsByName("choose");
-  
-    for (let i = 0; i < checks.length; i++) {
-      if (checks[i].checked) 
-        {
-        let name_food = names[i].innerText;
-        let quantity = parseInt(quantities[i].value);
-        // Remove non-numeric characters (like comma) from the price
-        let price = parseInt(prices[i].innerText.replace(/\D/g, ''));
-        let trans_price =formatNumber(price);
-        let img_src = img[i].getAttribute("src");
-        
-        // Update the content of the div with class "total_box"
-        let totalBox = document.querySelector('.total_box');
-        let total_price = quantity * price;
-        
-        // Format total_price as desired
-        let formatted_total_price = formatNumber(total_price);
-  
-        
-        
-        totalBox.innerHTML = '<img src = "'+ img_src + '"'+ 'style = "display:inline; width: 80px; height: 80px; margin-left: 10px">' + '<p name="name_food" style="display:inline; margin-right: 30px; margin-left: 15px">' + name_food + '</p>' + '<p style = "display:inline; margin-left:20px">x</p>' + '<p style="display:inline; name = "Last_quantity">' + quantity + '</p>' + '<p style="display:inline; margin-left: 20px">' + trans_price + '</p>';
-        
-        let text = document.createElement("p");
-        let line = document.createElement("hr");
-  
-        text.classList.add("text_price");
-        text.setAttribute("name","Last_price");
-        text.innerHTML = "Tổng cộng: " + formatted_total_price;
-        totalBox.appendChild(line);
-        totalBox.appendChild(text);
-  
-        //add value for input hidden -> to get value to insert into
-        document.getElementById('name_food_input').value = name_food;
-        document.getElementById('quantity_input').value = quantity;
-        document.getElementById('price_input').value = total_price;
-  
-        // Exit the loop after finding the checked radio button
-        break;
-      }
-    }
-  }
- </script>
-
-        <?php
-if(isset($_GET['alert']) && $_GET['alert'] == 'success') {
-    echo '<script>alert("Đơn hàng đã được ghi nhận. Nhân viên sẽ liên hệ với bạn.");</script>';
-}
-else if (isset($_GET['alert']) && $_GET['alert'] == 'empty')
-{
-    echo '<script>alert("Vui lòng chọn món ăn.");</script>';
-}
-else if (isset($_GET['alert']) && $_GET['alert'] == 'unsuccess')
-{
-    echo '<script>alert("Đơn hàng bị lỗi. Vui lòng nhập lại.");</script>';
-}
-?>
-
-    </div>
-        

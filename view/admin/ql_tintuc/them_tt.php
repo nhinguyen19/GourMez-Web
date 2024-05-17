@@ -9,7 +9,7 @@
             <tr>
                 <td>
                     <div id="imageDiv">
-                        <div>
+                        <div id = "innerDiv">
                             <b>Ảnh title</b>
                         </div>
                     </div>
@@ -37,3 +37,61 @@
         </table>
     </form>
 </div>
+<?php
+include "../../../model/connect.php";
+ $conndb = connectdb();
+//  $sql = "INSERT INTO `tintuc` (`tintuc_id`, `title`, `link`, `img_title`) VALUES (NULL, 'qq', 'ww', 'w');
+//  ";
+
+// if ($conndb->query($sql) === TRUE) {
+//   echo "New record created successfully";
+// } else {
+//   echo "Error: " . $sql . "<br>" . $conn->error;
+// }
+$sql = "SELECT* FROM tintuc";
+$result = $conndb->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["title"]. " - Name: " . $row["link"]. " " . $row["img_title"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+
+?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const input = document.querySelector('input[type="file"]');
+    const imageDiv = document.getElementById('imageDiv');
+    const innerDiv = document.getElementById('innerDiv');
+
+    input.addEventListener('change', function(event) {
+        // Xóa ảnh cũ nếu có
+        const existingImg = imageDiv.querySelector('img');
+        if (existingImg) {
+            imageDiv.removeChild(existingImg);
+        }
+
+        // Tạo và hiển thị ảnh mới
+        const file = event.target.files[0];
+        console.log(file);
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.width = '195px'; // Đặt kích thước tối đa cho ảnh
+                img.style.height = '195px'; // Đặt kích thước tối đa cho ảnh
+                innerDiv.remove();
+                imageDiv.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+</script>
+
