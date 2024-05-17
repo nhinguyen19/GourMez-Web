@@ -1,9 +1,10 @@
 <?php
     session_start();
-    if(isset($_SESSION['role'])&&($_SESSION['role']!==2))
-    {include("../view/cus/header/header_sauDN.php");}
-    else {include("../view/cus/header/header_trcDN.php");}
-    
+   if(isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
+        include("../view/cus/header/header_sauDN.php");
+    } else {
+        include("../view/cus/header/header_trcDN.php");
+    }
 ?>
 <?php 
     if(isset($_GET['quanly']))
@@ -26,10 +27,6 @@
         case '2':
             include ('../view/cus/dichvu/dichvu_bigdeal.php');
             break;
-        case 'giohangdv':
-            include('../view/cus/dichvu/giohang_dv.php');
-           
-            break;
         case 'tintuc':
             include ('../view/cus/tintuc/tintuc.php');
             break;
@@ -49,20 +46,18 @@
             include ('../view/cus/dangky/register.php');
             break;
         case 'dangxuat':
-            include ('../view/cus/dangnhap/check_logout.php');
+            include ('../view/cus/dangxuat/check_logout.php');
             break;
-        case 'dangnhapadmin':
-            include ('../view/admin/tranghienthi.php');
-            break;
+        // case 'dangnhapadmin':
+        //     include ('../view/admin/tranghienthi.php');
+        //     break;
         case 'quenmatkhau':
-            include ('../view/cus/quenmatkhau/changePassword.php');
+            include ('../view/cus/quenmatkhau/forgotpass.php');
             break;
         case 'trangchu':
             include ('../view/cus/trangchu/trangchu.php');
             break;
-        case 'guimail':
-            include ('../view/cus/send_mail/send-email.php');
-            break;
+        
         default :
         include ('../view/cus/trangchu/trangchu.php');
         break;
