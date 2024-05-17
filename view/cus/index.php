@@ -1,3 +1,3 @@
 <?php
-   header('Location:giohang/giohang.php');
+   header('Location:../../CONTROLLER/tranghienthi.php');
 ?>
