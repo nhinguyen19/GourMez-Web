@@ -6,6 +6,7 @@
     include_once("../../model/admin/xuly_sanpham.php");  
     include_once ("../../model/admin/xuly_khuyenmai.php");
     include_once ("../../model/admin/xuly_dichvu.php");
+    include_once ("../../model/admin/xuly_thongtin.php");
     include("header_ad/header_ad.php");
     include("sidebar_ad/sidebar_ad.php");
   
@@ -53,8 +54,9 @@
       case 'tatcathongtin':
         include ('ql_thongtin/lietke.php');
         break;
-      case 'themthongtin':
-        include ('ql_thongtin/themlienhe.php');
+      case 'suathongtin':
+        include ('ql_thongtin/suathongtin.php');
+        suaThongTin();
         break;
       case 'deldiscountnews':
         deldiscountnews();

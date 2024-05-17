@@ -1,5 +1,6 @@
 <?php
-   include("../view/cus/header/header_sauDN.php")
+   include("../view/cus/header/header_sauDN.php");
+   include("xuly_tinnhanKH");
 ?>
 <?php 
     if(isset($_GET['quanly']))
@@ -27,6 +28,7 @@
             break;
         case 'lienhe':
             include ('../view/cus/lienhe/lienhe.php');
+            insertMessage();
             break;
         case 'vechungtoi':
             include ('../view/cus/vechungtoi/vechungtoi.php');
