@@ -1,4 +1,4 @@
-        <?php
+<?php
             session_start();
             // ob_start();
             // include '../view/cus/dangnhap/facebook_source.php';
@@ -26,10 +26,10 @@
             }
         }
         ?>
-           <!-- <link rel="stylesheet" href="../view/cus/dangnhap/login.css"> -->
-           <link rel="stylesheet" href="login.css">
-           <!-- <script src="../view/cus/dangnhap/hienthi_mk.js"></script> -->
-           <script src="hienthi_mk.js"></script>
+           <link rel="stylesheet" href="../view/cus/dangnhap/login.css">
+           <!-- <link rel="stylesheet" href="login.css"> -->
+           <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
+           <!-- <script src="hienthi_mk.js"></script> -->
            <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
             <div id="user_login" class="box-content" >
@@ -41,7 +41,7 @@
                         
                         <!-- tên đăng nhập -->
                         <tr >
-                            <td style="font-size:22px ">Tên đăng nhập</td>
+                            <td style="font-size:20px ">Tên đăng nhập</td>
                             <td><input type="text" id="user" name="user"></td>
                         </tr>
                             
@@ -53,7 +53,7 @@
 
                         <!-- Mật khẩu -->
                         <tr>
-                            <td style="font-size:22px ">Mật khẩu</td>
+                            <td style="font-size:20px ">Mật khẩu</td>
                             <td style="display: flex;align-items: center;">
                                 <input type="password" id="password" name="password">
                                 <span id="nosee" style="cursor: pointer;" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
@@ -66,8 +66,8 @@
                             </td> 
                         </tr>
 
-                        <tr colspan="2">
-                            <td><input type="submit" id="dangnhap" name="dangnhap" value="Đăng nhập"></td>
+                        <tr >
+                            <td colspan="2" class="dn-bt"><input type="submit" id="dangnhap" name="dangnhap" value="Đăng nhập"></td>
                         </tr>
 
                     
@@ -87,11 +87,11 @@
                 </div> 
 
                 <!-- //dangky/quenmatkhau -->
-                <div>
-                    <!-- <a href="tranghienthi.php?quanly=dangky">Đăng ký/</a> -->
-                    <a href="../dangky/register.php">Đăng ký/</a>
-                    <!-- <a href="tranghienthi.php?quanly=quanmatkhau">Quên mật khẩu</a> -->
-                    <a href="../quenmatkhau/forgotpass.php">Quên mật khẩu</a>
+                <div class="dk-qmk">
+                    <a href="tranghienthi.php?quanly=dangky">Đăng ký/</a>
+                    <!-- <a href="../view/cus/dangky/register.php">Đăng ký/</a> -->
+                    <a href="tranghienthi.php?quanly=quenmatkhau">Quên mật khẩu</a>
+                    <!-- <a href="../view/cus/quenmatkhau/forgotpass.php">Quên mật khẩu</a> -->
 
                 </div>
                 
