@@ -7,12 +7,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="../view/cus/dangnhap/login.css">
-    
-=======
     <link rel="stylesheet" href="../view/cusdangnhap/login.css">
->>>>>>> c387c5c9143d94847776f63628ac6960a9bf3a7d
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <style>
         body{
