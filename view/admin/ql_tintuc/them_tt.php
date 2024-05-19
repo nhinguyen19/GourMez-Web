@@ -21,7 +21,7 @@
                 </td>
                 <td id="secondTd">
                     <div class="textbox">
-                        <label  for="title">Title</label> <br>
+                        <label for="title">Title</label> <br>
                         <input type="text" name="title" size="30" required><br><br>
                     </div>
                     <div class="textbox">
@@ -86,8 +86,8 @@ if ($fileToUpload !== null) {
             $imgTitle = $fileToUpload["name"];
             // Use prepared statements to prevent SQL injection
             $stmt = $conndb->prepare("INSERT INTO tintuc (tintuc_id, title, link, img_title) VALUES (NULL, ?, ?, ?)");
-            $stmt->bind_param("sss", $title, $POST['link'], $imgTitle);
-            
+            $stmt->bind_param("sss", $title, $_POST['link'], $target_file);
+
             if ($stmt->execute()) {
                 // Insert successful, show alert
                 echo '<script>alert("Thêm thành công");window.location = "trangtintuc.php"</script>';
@@ -101,8 +101,6 @@ if ($fileToUpload !== null) {
             // echo "Sorry, there was an error uploading your file.";
         }
     }
-} else {
-    // echo "Sorry, there was an error uploading your file.";
 }
 ?>
 
