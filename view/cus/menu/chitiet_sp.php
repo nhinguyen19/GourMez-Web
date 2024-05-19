@@ -63,6 +63,16 @@ if (isset($_POST['themgiohang'])) {
     }
 
     echo '<p style="text-align: center">Sản phẩm đã được thêm vào giỏ hàng.</p>';
+    echo "<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Xóa danh mục thành công!',
+        showConfirmButton: false,
+        timer: 1500
+    }).then(function() {
+        window.location.href = 'tranghienthi.php?quanly=tatca'
+    });
+    </script>";
 }
 ?>
 

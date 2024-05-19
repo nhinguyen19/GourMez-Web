@@ -101,9 +101,9 @@
           
       }
     }
-  // }
-  // else{
-  //   header('Location: ../cus/dangnhap/login.php');
-  // }
+  }
+  else{
+    header('Location: ../cus/dangnhap/login.php');
+  }
   ?>
 
