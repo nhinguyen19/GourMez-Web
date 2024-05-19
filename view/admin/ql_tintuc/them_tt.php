@@ -86,7 +86,7 @@ if ($fileToUpload !== null) {
             $imgTitle = $fileToUpload["name"];
             // Use prepared statements to prevent SQL injection
             $stmt = $conndb->prepare("INSERT INTO tintuc (tintuc_id, title, link, img_title) VALUES (NULL, ?, ?, ?)");
-            $stmt->bind_param("sss", $title, $target_file, $imgTitle);
+            $stmt->bind_param("sss", $title, $POST['link'], $imgTitle);
             
             if ($stmt->execute()) {
                 // Insert successful, show alert

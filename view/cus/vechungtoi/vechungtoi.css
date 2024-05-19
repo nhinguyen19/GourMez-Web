@@ -1,0 +1,28 @@
+.icon
+{
+    width: 200px;
+    height: 200px;
+}
+#intro
+{
+    width: 100%;
+    background-color:white;
+    text-align: center;
+    height: 500px;
+}
+#intro h1
+{
+    font-size: 100px;
+}
+
+
+
+#giatri img 
+{
+    opacity: 0.5;  filter: alpha(opacity=50);
+    width :100%;
+}
+#hinhBurger
+{
+    width: 100%;
+}
