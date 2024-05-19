@@ -2,7 +2,6 @@
 session_start();
 $username=$_SESSION['user'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,7 @@ $username=$_SESSION['user'];
     <title>Header</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
-    <link rel="stylesheet" href="../view/cus/dangnhap/login.css">
+    
     <link rel="stylesheet" href="../view/cus/menu/hienthi_menu.css">
     <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
@@ -44,7 +43,7 @@ $username=$_SESSION['user'];
 
         <div class="user_dropdown" > 
             <button id="name_user" style="border: 0;background-color:rgba(174, 33, 8, 1); font-size: 16px;font-weight: bold;">
-                <?php echo "Chào, ".$username?>
+                <!-- <?php echo "Chào, ".$username?> -->
             </button> 
             <div class="dropdown_content" style="right: 0;"> 
                 <a href="#">Quản lý tài khoản</a>
