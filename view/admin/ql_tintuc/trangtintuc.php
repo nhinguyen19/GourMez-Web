@@ -4,7 +4,7 @@
 <div id="container" style="background-color: #feeaca">
     <div>
         <img id="img_header" src="../../admin/ql_tintuc/img_tintuc/anhchotintuc.png" style="opacity: 0.5;  filter: alpha(opacity=50)">
-        <img src="../../admin/img/logoadmin.png">
+        <img src="../../cus/img/logocus.png">
         <h2>Tin tức</h2>
         <button id="thaydoi" name="subject" type="submit" value="CSS" style="background-color: #159C33; color:azure; border-radius: 5px; border:none" >Thay dổi</button>
         <div>

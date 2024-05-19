@@ -12,7 +12,16 @@
             $sql_sua = "UPDATE contacts SET ResName = '$tencuahang', ResPhoneNumber = '$sodienthoai', ResAddress = '$diachi', ResEmail = '$email'";
             
             if(mysqli_query($conn, $sql_sua)) {
-                echo '<div style="text-align: center; margin-top: 50px; font-size: 18px; color: green;">Cập nhật thông tin thành công!</div>';
+                echo "<script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cập nhật thông tin thành công!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(function() {
+                        window.location.href = 'tranghienthi.php?quanly=tatcathongtin'
+                    });
+                  </script>";
             } else {
                 echo "Lỗi: " . mysqli_error($conn);
             }
