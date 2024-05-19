@@ -51,7 +51,7 @@ if (isset($discount)&&(count($discount)>0))
         <th> Mã khuyến mãi</th>
         <th> Giá trị áp dụng</th>  
         <th></th>
-</tr> 
+    </tr> 
 <?php 
 //var_dump($kq);
  //check trong mảng đã có dữ liệu chưa

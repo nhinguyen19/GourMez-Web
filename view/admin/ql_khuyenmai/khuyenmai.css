@@ -1,19 +1,19 @@
-.insert{
-     display: inline-block;
-    vertical-align: top;
-    border: 1px solid  #3db76a; 
-}
-.main1 
-{
-    display : flex; 
-    justify-content : center;
-}
-.insert1 
-{
-    display: inline-block;
-    vertical-align: top;
-    border: 1px solid  #754E39; 
-}
+.insert {
+    border: 1px solid #2bcd53;
+    margin-bottom: 20px;
+    width : 1200px;
+    padding : 10px;
+  }
+  .main1 {
+    clear : both;
+    width: 1200px;
+    border : 1px solid #4b13d8;
+    margin-left : 300px;
+  float : left;
+  height : 350px;
+  
+  }
+  
 table,tr,th,td{
     border: 1px solid  #754E39;
     background-color: #f0ac74;
@@ -21,7 +21,8 @@ table,tr,th,td{
 }
 
 table{
-    width: 90%;
+    width: 1200px;
+    margin-left : 0;
 }
 .title{
     display: flex;

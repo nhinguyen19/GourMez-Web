@@ -71,6 +71,20 @@ function insertdiscountnews()
 
 }
 
+function insertcodedis()
+{
+    if ((isset($_POST['themcodedis1'])) &&($_POST['themcodedis1']))
+    {
+        $conn=connectdb();
+        $code =$_POST['namecode'];
+        $qtt =$_POST['qttcode'];
+            $sql = "INSERT INTO discount (code_dis, qtt_of_dis)
+            VALUES ('$code', ' $qtt')";
+            $conn->query($sql);
+
+
+    }
+}
 function deldiscountnews()
 {
      if(isset($_GET['id']))
