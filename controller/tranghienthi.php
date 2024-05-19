@@ -1,7 +1,7 @@
 <?php
     include("xuly_tinnhanKH.php");
     session_start();
-   if(isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
+    if(isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
         include("../view/cus/header/header_sauDN.php");
     } else {
         include("../view/cus/header/header_trcDN.php");

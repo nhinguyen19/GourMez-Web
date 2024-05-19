@@ -21,14 +21,33 @@
     
             if($count > 0) {
                 // Tên danh mục đã tồn tại, hiển thị thông báo bằng JavaScript
-                echo "<script>alert('Không thể thêm sản phẩm. Sản phẩm đã tồn tại.'); window.location='tranghienthi.php?quanly=themsanpham';</script>";
+                echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Không thể thêm danh mục',
+                            text: 'Tên danh mục đã tồn tại.',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=themsanpham';
+                            }
+                        });
+                      </script>";
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO food(food_name, cate_id ,original_price, selling_price, small_descr, img) VALUES ('$tensanpham','$danhmuc', '$giagoc', '$giasanpham', '$mota', '$hinhanh')";
                 move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_sanpham/uploads/'.$hinhanh); 
     
                 if(mysqli_query($conn, $sql_them)) {
-                    exit();
+                    echo "<script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thêm danh mục thành công!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                  </script>";
                 } else {
                     echo "Lỗi: " . mysqli_error($conn);
                 }
@@ -56,25 +75,28 @@
                     unlink($imagePath);
                 }
 
-                // Delete the record from the database
                 $sql_xoa = "DELETE FROM food WHERE food_id = '$id'";
                 mysqli_query($conn, $sql_xoa);
 
-                // Update the food_id values
                 $sql_capnhat = "SET @count = 0";
                 mysqli_query($conn, $sql_capnhat);
 
                 $sql_capnhat = "UPDATE food SET food_id = @count:= @count + 1";
                 mysqli_query($conn, $sql_capnhat);
 
-                // Reset the auto-increment value
                 $sql_reset_auto_increment = "ALTER TABLE food AUTO_INCREMENT = 1";
                 mysqli_query($conn, $sql_reset_auto_increment);
 
-                header('Location: tranghienthi.php?quanly=tatcasp');
-                exit();
-            } else {
-                echo "<script>alert('Sản phẩm không tồn tại.'); window.location='tranghienthi.php?quanly=tatcasp';</script>";
+                echo "<script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Xóa sản phẩm thành công!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(function() {
+                        window.location.href = 'tranghienthi.php?quanly=tatcasp'
+                    });
+                    </script>";
             }
         }
     }
@@ -101,7 +123,16 @@
                 $sql_sua = "UPDATE food SET food_name = '$tensp', selling_price = '$giaban',original_price='$giagoc',small_descr='$mota' WHERE food_id = '$id'";
             }
             if(mysqli_query($conn, $sql_sua)) {
-                echo '<div style="text-align: center; margin-top: 50px; font-size: 18px; color: green;">Category updated successfully!</div>';
+                echo "<script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cập nhật danh mục thành công!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(function() {
+                        window.location.href = 'tranghienthi.php?quanly=tatcasp'
+                    });
+                  </script>";
             } else {
                 echo "Error: " . mysqli_error($conn);
             }

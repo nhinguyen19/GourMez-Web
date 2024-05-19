@@ -2,7 +2,6 @@
 session_start();
 $username=$_SESSION['user'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +43,7 @@ $username=$_SESSION['user'];
 
         <div class="user_dropdown" > 
             <button id="name_user" style="border: 0;background-color:rgba(174, 33, 8, 1); font-size: 16px;font-weight: bold;">
-                <?php echo "Chào, ".$username?>
+                <!-- <?php echo "Chào, ".$username?> -->
             </button> 
             <div class="dropdown_content" style="right: 0;"> 
                 <a href="#">Quản lý tài khoản</a>
