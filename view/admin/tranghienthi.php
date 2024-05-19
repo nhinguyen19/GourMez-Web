@@ -1,6 +1,6 @@
-  <?php
-    session_start();
-    if(isset($_SESSION['role'])){
+<?php
+   // session_start();
+    //if(isset($_SESSION['role'])){
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
     include_once("../../model/admin/xuly_sanpham.php");  
@@ -42,48 +42,33 @@
           include("ql_sanpham/sua.php");
           suaSanPham();
           break;
-    // Case Quản lý khuyến mãi
+// CASE QUẢN LÍ KHUYẾN MÃI
       case 'tatcakm' :
-        $discount=getall_discountnews();
-        $codedis=getall_codedis();
+        $kq=getall_discountnews();
         include ('ql_khuyenmai/tatcakm.php');
         break;
       case 'themkmnews' :
         insertdiscountnews();
         include ('ql_khuyenmai/themkmnews.php');
         break;
-      case 'tatcathongtin':
-        include ('ql_thongtin/lietke.php');
-        break;
-      case 'suathongtin':
-        include ('ql_thongtin/suathongtin.php');
-        suaThongTin();
-        break;
       case 'deldiscountnews':
         deldiscountnews();
         $kq=getall_discountnews();
         include ('ql_khuyenmai/tatcakm.php');
         break;
-      case 'updatediscountnews' :
+        case 'updatediscountnews' :
           capnhatkmnews();
           include ('ql_khuyenmai/capnhatkmnews.php');
           break;
 
-      case 'themcodedis': 
-        insertcodedis();
-        include ('ql_khuyenmai/themcodedis.php');
-        break;
 
-
-
-
-        case 'tatcathongtin':
-          include ('ql_thongtin/lietke.php');
-          break;
-        case 'themthongtin':
-          include ('ql_thongtin/themlienhe.php');
-          break;
-
+          case 'tatcathongtin':
+            include ('ql_thongtin/lietke.php');
+            break;
+          case 'suathongtin':
+            include ('ql_thongtin/suathongtin.php');
+            suaThongTin();
+            break;
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           themDichVu();
@@ -118,9 +103,9 @@
           
       }
     }
-  }
+  
   else{
-    header('Location: ../cus/dangnhap/login.php');
+  //  header('Location: ../cus/dangnhap/login.php');
+  include ('tranghienthi.php');
   }
   ?>
-
