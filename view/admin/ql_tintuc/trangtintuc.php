@@ -1,17 +1,20 @@
 <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
 <link rel="stylesheet" href="trangtintuc.css">
 
-<div id="container" style="background-color: #feeaca">
+<div id="container" >
     <div>
-        <img id="img_header" src="../../admin/ql_tintuc/img_tintuc/anhchotintuc.png" style="opacity: 0.5;  filter: alpha(opacity=50)">
-        <img src="../../cus/img/logocus.png">
-        <h2>Tin tức</h2>
-        <button id="thaydoi" name="subject" type="submit" value="CSS" style="background-color: #159C33; color:azure; border-radius: 5px; border:none" >Thay dổi</button>
+        <div id="header_tt">
+        <img id="img_header" src="../../admin/ql_tintuc/img_tintuc/anhchotintuc.png" >
+        <img id="img_logo" src="../../cus/img/logocus.png">
+        <h1 id="name">Tin tức</h1>
+        <button id="thaydoi" name="subject" type="submit" value="CSS" >Thay dổi</button>
+        </div>
+     
         <div>
             <table>
                 <tr>
                     <td style="width: 30 px; margin:0">
-                        <img src="../../admin/ql_tintuc/img_tintuc/anhchotintuc.png" style="width:70%; height:70%"> <br>
+                        <img id="img_" src="../../admin/ql_tintuc/img_tintuc/anhchotintuc.png" style="width:70%; height:70%"> <br>
                         <a
                             href="https://jollibee.com.vn/blog/post/jollibee-%E2%80%93-th%E1%BA%A5u-hi%E1%BB%83u-d%E1%BB%83-thanh-cong-duplicated">Tham
                             vọng trở thành thương hiệu yêu thích của giới trẻ</a>
