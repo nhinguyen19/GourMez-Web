@@ -127,6 +127,37 @@ function deldiscountnews()
 }
 
 
+function delcodedis()
+{
+    if(isset($_GET['id']))
+    {
+        $id=$_GET['id'];
+    }
+    $conn=connectdb();
+    $sql = "SELECT * FROM discount WHERE id=".$id;
+    $query = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($query) > 0) {
+                // Delete the record from the database
+                $sql_xoa = "DELETE FROM discount WHERE id = '$id'";
+                mysqli_query($conn, $sql_xoa);
+
+                // Update  values
+                $sql_capnhat = "SET @count = 0";
+                mysqli_query($conn, $sql_capnhat);
+
+                $sql_capnhat = "UPDATE discount SET id = @count:= @count + 1";
+                mysqli_query($conn, $sql_capnhat);
+
+                // Reset the auto-increment value
+                $sql_reset_auto_increment = "ALTER TABLE discount AUTO_INCREMENT = 1";
+                mysqli_query($conn, $sql_reset_auto_increment);
+
+                header('Location: tranghienthi.php?quanly=tatcakm');
+                exit();
+            } 
+}
+
 function getone_discountnews($id)
 {
     $conn=connectdb();

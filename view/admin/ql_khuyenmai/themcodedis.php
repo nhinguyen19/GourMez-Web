@@ -4,7 +4,7 @@
 <div class ="main1">
 <div class="insert" >
     <table>
-    <form action="tranghienthi.php?quanly=themcodedis" method="post" enctype="multipart/form-data">
+    <form action="tranghienthi.php?quanly=themcodedis" method="post">
                 <th>Mã khuyến mãi </th>
                 <th><input type="text" name="namecode" id=""></th>
             </tr>

@@ -44,7 +44,8 @@
           break;
 // CASE QUẢN LÍ KHUYẾN MÃI
       case 'tatcakm' :
-        $kq=getall_discountnews();
+        $discount=getall_discountnews();
+        $codedis=getall_codedis();
         include ('ql_khuyenmai/tatcakm.php');
         break;
       case 'themkmnews' :
@@ -53,13 +54,24 @@
         break;
       case 'deldiscountnews':
         deldiscountnews();
-        $kq=getall_discountnews();
+        $discount=getall_discountnews();
         include ('ql_khuyenmai/tatcakm.php');
         break;
         case 'updatediscountnews' :
           capnhatkmnews();
           include ('ql_khuyenmai/capnhatkmnews.php');
           break;
+        
+        case 'themcodedis':
+          insertcodedis();
+          include('ql_khuyenmai/themcodedis.php');
+          break;
+        case 'delcodedis':
+        delcodedis();
+        $codedis=getall_codedis();
+        include ('ql_khuyenmai/tatcakm.php');
+
+  
 
 
           case 'tatcathongtin':
