@@ -1,65 +1,23 @@
-
 .logoad
 {
-  width : 180px; 
-  height : 180px;
+    width: 180px;
+    height : 180px;
 }
+
+.logo {
+    float: left;
+    margin-top : -70px;
+    margin-left : 70px;
+} 
+
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  background-color: #3D52A0;
-  z-index: 1000;
-  padding: 0 20px; /* Thêm padding để tách logo và các liên kết */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #754E39;
 }
 
-.menu ul {
-  display: flex;
-  justify-content: flex-start; /* Đẩy các mục về bên trái */
-  margin: 0;
-  width: 100%;
-  padding: 0; /* Loại bỏ padding để các liên kết không có khoảng cách */
-}
-
-.menu li {
-  display: flex;
-  margin: 0;
-}
-
-.menu li a {
-  color: rgba(249, 248, 248, 1);
-  list-style: none;
-  text-decoration: none;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-  font-size: 18px;
-  width: 100%;
-  margin-right: 60px;
-}
-
-.menu li img {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  float: left;
-  margin-top: -50px;
-  margin-left: 0; /* Đặt margin-left thành 0 để logo nằm bên trái */
-}
-
-.menu ul a:hover {
-  font-size: 22px;
-  color: rgba(255, 236, 203, 1);
-}
-/* 
 
 header::before{
   position : absolute; 
@@ -101,7 +59,7 @@ nav .menu
 {
   text-decoration : none; 
   color : #ffffff;
-  font-family : 'Lalezar'; 
+  font-style : lalezar; 
   font-size : 18px; 
   padding : 10px 20px;
-} */
+}
