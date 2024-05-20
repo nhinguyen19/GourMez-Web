@@ -1,6 +1,18 @@
 <?php
+    if(isset($_GET['trang'])){
+        $page = $_GET['trang'];
+    } else {
+        $page = 1; 
+    }
+
+    if($page == 1){
+        $begin = 0; 
+    } else {
+        $begin = ($page - 1) * 8; 
+    }
     $conn = connectdb();
-    $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id ORDER BY food_id ASC";
+
+    $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id ORDER BY food_id ASC LIMIT $begin, 8";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
 ?>
 <ul id="all_dishes" style=" margin-left: 16vw;">
@@ -26,4 +38,21 @@
             }
         ?>
     </div>
+    <?php
+        $sql_trang = mysqli_query($conn,"SELECT * FROM food");
+        $row_count = mysqli_num_rows( $sql_trang);
+        $trang = ceil($row_count/8);
+    ?>
+    <div class="list_trang" style="clear:both;"></div>
+        <ul class="list">
+            <?php
+                for($i=1; $i<=$trang;$i++){
+                ?>
+                    <li><a href="tranghienthi.php?quanly=thucdon&trang=<?php echo $i ?>"><?php echo $i ?></a></li>
+                <?php
+                }
+                ?>
+        </ul>
+    </div>
+    <h1 class="title_datngaynao">Đặt ngay nào</h1>
 </ul>
