@@ -1,8 +1,9 @@
 .insert{
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     padding-left: 240px;
 }
+
 table,tr,th,td{
     border: 1px solid  #754E39;
     background-color: #f0ac74;

@@ -16,6 +16,22 @@ function getall_discountnews()
     $conn->close();
     return $kq;
 }
+function getall_codedis()
+{
+    $conn = connectdb();
+    $sql = "SELECT id, code_dis, qtt_of_dis FROM discount";
+    $result = $conn->query($sql);
+    $kq = array();
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $kq[] = $row;
+        }
+    }
+
+    $conn->close();
+    return $kq;
+}
 
 function insertdiscountnews()
 {
@@ -55,6 +71,20 @@ function insertdiscountnews()
 
 }
 
+function insertcodedis()
+{
+    if ((isset($_POST['themcodedis1'])) &&($_POST['themcodedis1']))
+    {
+        $conn=connectdb();
+        $code =$_POST['namecode'];
+        $qtt =$_POST['qttcode'];
+            $sql = "INSERT INTO discount (code_dis, qtt_of_dis)
+            VALUES ('$code', ' $qtt')";
+            $conn->query($sql);
+
+
+    }
+}
 function deldiscountnews()
 {
      if(isset($_GET['id']))
@@ -96,6 +126,37 @@ function deldiscountnews()
             } 
 }
 
+
+function delcodedis()
+{
+    if(isset($_GET['id']))
+    {
+        $id=$_GET['id'];
+    }
+    $conn=connectdb();
+    $sql = "SELECT * FROM discount WHERE id=".$id;
+    $query = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($query) > 0) {
+                // Delete the record from the database
+                $sql_xoa = "DELETE FROM discount WHERE id = '$id'";
+                mysqli_query($conn, $sql_xoa);
+
+                // Update  values
+                $sql_capnhat = "SET @count = 0";
+                mysqli_query($conn, $sql_capnhat);
+
+                $sql_capnhat = "UPDATE discount SET id = @count:= @count + 1";
+                mysqli_query($conn, $sql_capnhat);
+
+                // Reset the auto-increment value
+                $sql_reset_auto_increment = "ALTER TABLE discount AUTO_INCREMENT = 1";
+                mysqli_query($conn, $sql_reset_auto_increment);
+
+                header('Location: tranghienthi.php?quanly=tatcakm');
+                exit();
+            } 
+}
 
 function getone_discountnews($id)
 {

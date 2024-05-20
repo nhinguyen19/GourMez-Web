@@ -42,31 +42,45 @@
           include("ql_sanpham/sua.php");
           suaSanPham();
           break;
-
+// CASE QUẢN LÍ KHUYẾN MÃI
       case 'tatcakm' :
-        $kq=getall_discountnews();
+        $discount=getall_discountnews();
+        $codedis=getall_codedis();
         include ('ql_khuyenmai/tatcakm.php');
         break;
       case 'themkmnews' :
         insertdiscountnews();
         include ('ql_khuyenmai/themkmnews.php');
         break;
-      case 'tatcathongtin':
-        include ('ql_thongtin/lietke.php');
-        break;
-      case 'suathongtin':
-        include ('ql_thongtin/suathongtin.php');
-        suaThongTin();
-        break;
       case 'deldiscountnews':
         deldiscountnews();
-        $kq=getall_discountnews();
+        $discount=getall_discountnews();
         include ('ql_khuyenmai/tatcakm.php');
         break;
         case 'updatediscountnews' :
           capnhatkmnews();
           include ('ql_khuyenmai/capnhatkmnews.php');
           break;
+        
+        case 'themcodedis':
+          insertcodedis();
+          include('ql_khuyenmai/themcodedis.php');
+          break;
+        case 'delcodedis':
+        delcodedis();
+        $codedis=getall_codedis();
+        include ('ql_khuyenmai/tatcakm.php');
+
+  
+
+
+          case 'tatcathongtin':
+            include ('ql_thongtin/lietke.php');
+            break;
+          case 'suathongtin':
+            include ('ql_thongtin/suathongtin.php');
+            suaThongTin();
+            break;
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           themDichVu();
@@ -99,9 +113,9 @@
           break;
       }
     }
-  }
+  
   else{
-    header('Location: ../cus/dangnhap/login.php');
+  //  header('Location: ../cus/dangnhap/login.php');
+  include ('tranghienthi.php');
   }
   ?>
-
