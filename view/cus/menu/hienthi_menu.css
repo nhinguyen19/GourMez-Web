@@ -5,7 +5,7 @@ body {
 
 #sidebar_menu {
     width: 240px;
-    height: 600px;
+    height: 100vh;
     background-color:#F5EAD7; 
     position: fixed;
     left: 0;
@@ -180,4 +180,65 @@ body {
 }
 #buy-amount button:active {
     background-color: #ffb84d; 
+}
+
+.list {
+    list-style: none;
+    padding-top: 30px;
+    margin-left: 40%;
+}
+
+.list li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.list li a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #FDA65D;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffff;
+    font-family: Lalezar;
+}
+
+.list li a.active {
+    background-color: #E26A2C; 
+    color: #fff; 
+}
+.list li a:hover {
+    background-color: #E26A2C; 
+    color: #fff; 
+}
+.title_datngaynao{
+    margin-left: 41%;
+    color: #E26A2C;
+    font-family: 'Lalezar';
+    text-transform: uppercase;
+    padding-top: 10px;
+    
+}
+
+.other_food {
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.Thucdon{
+    background-color: #F5EAD7;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.09);
+    display: inline-block;
+    max-width: fit-content;
+    padding: 15px;
+    margin: 20px;
+}
+.descr{
+    width:90%; 
+    font-size:16px;
+    padding-bottom: 10px;
 }
