@@ -175,12 +175,66 @@ function getone_discountnews($id)
     return $kq;
 }
 
-
-function capnhatkmnews()
+function updatekmnews()
 {
-    if(isset($_GET['id']) &&($_GET['id']>0))
+    $conn = connectdb();
+    if((isset($_POST['suakmnews'])) &&($_POST['suakmnews']))
     {
-        $id=$_GET['id'];
-        $kmnews1=getone_discountnews($id);
+        $id = $_GET['id'];
+        $ten = $_POST['discount_name'];
+        $mota = $_POST['des'];
+        $target_dir = "ql_khuyenmai/uploads/";
+        $target_file = $target_dir . basename($_FILES["img"]["name"]);
+        $img = $target_file;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+          
+                if($_FILES['img'])
+                {
+                $sql_sua = "UPDATE discount_news SET discount_name = '$ten', description ='$mota',img='$img' WHERE id = '$id'";
+                   
+                $sql = "SELECT * FROM discount_news WHERE id=".$id;
+                $query = mysqli_query($conn, $sql);
+ 
+                if (mysqli_num_rows($query) > 0) {
+                 // Fetch the image filename from the database
+                 $row = mysqli_fetch_assoc($query);
+                 $imageName = $row['img'];
+ 
+                 // Delete the image file from the "uploads" folder
+                 $imagePath =  $imageName;
+                 if (file_exists($imagePath)) {
+                     unlink($imagePath);
+                 }
+
+             }
+
+             move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+                    
+ 
+
+               }
+                else{
+
+                    $sql_sua = "UPDATE discount_news SET discount_name = '$ten', description ='$mota' WHERE id = '$id'";
+                }
+               
+                
+                
+                if(mysqli_query($conn, $sql_sua))
+                {
+                   echo "<script>
+                       Swal.fire({
+                           icon: 'success',
+                           title: 'Cập nhật tin tức khuyến mãi thành công!',
+                           showConfirmButton: false,
+                           timer: 1500
+                       })
+                     </script>";
+               } else {
+                   echo "Error: " . mysqli_error($conn);
+               }
+
+        
+        }
     }
-}
+?>

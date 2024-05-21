@@ -58,8 +58,8 @@
         include ('ql_khuyenmai/tatcakm.php');
         break;
         case 'updatediscountnews' :
-          capnhatkmnews();
           include ('ql_khuyenmai/capnhatkmnews.php');
+          updatekmnews();
           break;
         
         case 'themcodedis':
@@ -114,10 +114,10 @@
         
           
       }
-    }
+     }
   
-  else{
-  //  header('Location: ../cus/dangnhap/login.php');
-  include ('tranghienthi.php');
-  }
+  // else{
+  // //  header('Location: ../cus/dangnhap/login.php');
+  // include ('tranghienthi.php');
+  // }
   ?>
