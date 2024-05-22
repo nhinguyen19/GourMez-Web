@@ -1,22 +1,24 @@
 <?php
   include ('../model/connect.php');
     $conn = connectdb();
-    $sql_lietke_sanpham = "SELECT * FROM discount_news ORDER BY id ASC";
-    $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
+    $sql_lietke= "SELECT * FROM discount_news ORDER BY id ASC";
+    $query_lietke = mysqli_query($conn, $sql_lietke);
 ?>
-<ul id="all_dishes" style=" margin-left: 16vw;">
-    <h1 class="title_thucdon">Thực đơn</h1>
-    <div class="food-item">
+<body>
+<link rel="stylesheet" href="../view/cus/khuyenmai/khuyenmai.css">
+<ul id="tatcadiscount">
+    <h1 class="title">KHUYẾN MÃI HÔM NAY</h1>
+    <div class="onediscount">
         <?php
             $i = 0;
-            while ($row = mysqli_fetch_array($query_lietke_sanpham)) {
+            while ($row = mysqli_fetch_array($query_lietke)) {
                 $i++;
         ?>
-        <li class="Thucdon_mon">  
+        <li class="khuyenmaigroup">  
             <img src="../view/admin/<?php echo $row['img'] ?>" style="width: 150px; height: 150px;">
-            <p class="Ten_mon"><?php echo $row['discount_name'] ?></p>
+            <p class="discount_name"><?php echo $row['discount_name'] ?></p>
             <button class="btn_xemchitiet">
-                <a href="hienthi_menu.php?quanly=chitiet_sp&id=<?php echo $row['id']?>" style="text-decoration: none; color: #ffff;">Xem chi tiết</a>
+                <a href="tranghienthi.php?quanly=chitietkm&id=<?php echo $row['id']?>" style="text-decoration: none; color: #ffff;">Xem chi tiết</a>
             </button>
         </li>
         <?php
@@ -24,3 +26,4 @@
         ?>
     </div>
 </ul>
+</body>
