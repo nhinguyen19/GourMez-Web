@@ -1,9 +1,12 @@
+<link rel="stylesheet" href="tranghienthi.css">
 <link rel="stylesheet" href="them_tt.css">
-<link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
+<style>
 
-<div id="container">
-    <h2>Thêm tin tức</h2>
-
+    
+</style>
+<h2 class="title">Thêm tin tức</h2> 
+<div class="insert">
+    
     <form action="../admin/tranghienthi.php?quanly=themtintuc" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
@@ -14,18 +17,18 @@
                         </div>
                     </div>
                     <div class="upload-btn-wrapper">
-                        <button class="btn">Thêm ảnh</button>
+                        <button class="btn"></button>
                         <input type="file" name="hinhanh" id="fileToUpload" />
                     </div>
 
                 </td>
                 <td id="secondTd">
                     <div class="textbox">
-                        <label for="title">Title</label> <br>
+                        <label  style="font-family: 'Lalezar'" for="title">Title</label> <br>
                         <input type="text" name="title" size="30" required><br><br>
                     </div>
                     <div class="textbox">
-                        <label for="link">Link</label> <br>
+                        <label  style="font-family: 'Lalezar'" for="link">Link</label> <br>
                         <input type="url" name="link" size="30" required><br><br>
                     </div>
 

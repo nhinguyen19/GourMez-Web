@@ -21,8 +21,9 @@ if ($result->num_rows > 0) {
     $imgTitle = isset($row["img_title"]) ? $row["img_title"] : $imgTitle;
 }
 ?>
-<div id="container">
-    <h2>Sửa tin tức</h2>
+<h2 class="title">Sửa tin tức</h2>
+<div class="insert">
+    
 
     <form action="../admin/tranghienthi.php?quanly=suatintuc&tintucId=<?php echo $row['tintuc_id'] ?>" method="POST" enctype="multipart/form-data">
         <table>
@@ -36,7 +37,7 @@ if ($result->num_rows > 0) {
                         </div>
                     </div>
                     <div class="upload-btn-wrapper">
-                        <button class="btn">Thêm ảnh</button>
+                        <button class="btn"></button>
                         <input type="file" name="hinhanh" id="fileToUpload" />
                     </div>
                 </td>
