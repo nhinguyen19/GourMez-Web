@@ -15,8 +15,13 @@
         case 'thucdon':
             include ('hienthi_menu.php');
             break;
+
+        // CASE KHUYẾN MÃI
         case 'khuyenmai':
             include ('../view/cus/khuyenmai/khuyenmai.php');
+            break;
+        case 'chitietkm':
+            include("../view/cus/khuyenmai/chitietkm.php");
             break;
 
         case 'dichvu':

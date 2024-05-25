@@ -59,7 +59,7 @@
             </tr>
             <tr>
               <td colspan="3">
-                <button class="buttonguideli" id="GuiDeliTC" type="submit">Hiện nhà hàng gần bạn</button>
+                <button class="buttonguideli" id="GuiDeliTC" type="submit"> Đặt giao hàng</button>
               </td>
             </tr>
             </table>
@@ -67,6 +67,11 @@
           </td>
           </tr>
           </table>
+        </div>
+
+        <div class="chuongtrinh">
+          <p id="ct1">Hôm nay ăn gì?</p>
+          <p id="ct2">Khuyến mãi</p>
         </div>
 
           
