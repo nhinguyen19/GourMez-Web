@@ -33,6 +33,10 @@
         case '2':
             include ('../view/cus/dichvu/dichvu_bigdeal.php');
             break;
+        case 'giohangdv':
+                include('../view/cus/dichvu/giohang_dv.php');
+               
+                break;
         case 'tintuc':
             include ('../view/cus/tintuc/tintuc.php');
             break;

@@ -50,7 +50,7 @@
             }
             else
             {
-                echo"Giỏ hàng rỗng.Bạn đặt hàng thôi!";
+                echo"<tr><td colspan = '6'>Giỏ hàng rỗng.Bạn đặt hàng thôi!</td></tr>";
             }
         }
     }
@@ -128,14 +128,20 @@
         font-size:30px;
     }
 
+    h2:first-child
+    {
+        margin-top: 80px;
+        margin-bottom:-20px;
+    }
+
     /*thông tin khách hàng*/
 .cus_info
 {
   background-color: rgba(255, 236, 203, 1);
   padding-top: 30px;
-  display:flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-left: 500px;
+  margin-top: 10px;
 }
 
 ::placeholder
@@ -175,32 +181,39 @@
     color: black;
   
   }
+
+  .submitbutton
+  {
+        background-color: rgba(73, 169, 111, 1);
+        border-radius: 5px;
+        border: none; 
+        color: white;
+        font-size: 18px;
+        width: fit-content;
+        height: 40px;
+        padding: 5px;
+        margin-left: 50px;
+        font-weight:bolder;
+
+  }
 </style>
 
+<form action = "xuly_order.php" method = "post">
 <!-- Thông tin khách hàng -->
-<div class = "cus_info">    
-    <form id="form_customer" action="#" method="post">
-        <h2>THÔNG TIN KHÁCH HÀNG</h2>
+<h2>THÔNG TIN KHÁCH HÀNG</h2>
 
+    <div class = "cus_info">    
         <input type = "text" name = "cusname" id = "customer_name" placeholder="Họ và tên*" title="Vui lòng nhập tên người đặt tiệc." > <br>
         <input type = "tel" name = "tel" id = "phone_number" placeholder="Số điện thoại*" required pattern="[0-9]{10}" title="Số điện thoại phải là số, có 10 chữ số!"> <br>
         <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
                       
 
         <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày giao hàng</label> <br>
-        <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required><br>
+        <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required> <br>
 
         <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
         <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
-            <!-- <div class = "button">
-                <input type ="submit" name = "send" id = "send_order" value="Gửi đơn hàng">
-                    <div class = "button_reset">
-                        <input type="reset" id = "reset" value = "Reset">
-                    </div>
-            </div> -->
-            </form>
-
-</div> 
+    </div> 
                       
 
     <!-- Thông tin đơn hàng -->
@@ -222,9 +235,15 @@
     </div>
 
     <div style="display:flex; justify-content:center; margin-top:30px;">
-        <a href = "tranghienthi.php?quanly=giohangdv&delcart=1" style = "color: blue"><button>Xóa giỏ hàng dịch vụ </button></a>
-        <a href = "tranghienthi.php?quanly=2"><button>Tiếp tục đặt hàng </button></a>
+        <input type = "submit" value="Đặt hàng" name = "dathang" class = "submitbutton"> <br>
     </div>
+
+</form>
+<div style = "display:flex; justify-content:center">
+        <a href = "tranghienthi.php?quanly=giohangdv&delcart=1" style = "color: blue"><button>Xóa giỏ hàng dịch vụ </button></a>
+        <a href = "tranghienthi.php?quanly=2"><button>Tiếp tục đặt hàng </button></a> <br>
+</div>
+        
     
     
                       
