@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../view/LIB/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="../view/cus/trangchu/trangchu.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="trangchumain">
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -67,15 +68,29 @@
           </td>
           </tr>
           </table>
-        </div>
-
+        </div> 
+    
         <div class="chuongtrinh">
-          <p id="ct1">Hôm nay ăn gì?</p>
-          <p id="ct2">Khuyến mãi</p>
+            <a class="link" href="#" id="displayfood">Hôm nay ăn gì?      </a>
+            <a class="link" href="#" id="displaynews">Khuyến mãi siêu hot</a>
         </div>
-
-          
-              
+        <div id="content">
+            <!-- Nơi hiển thị danh sách món ăn -->
+        </div>
+        <script>
+          $("#displayfood").click(function(e)
+        {
+          e.preventDefault();
+          $("#content").load("../view/cus/trangchu/getdishes.php");
+        })
+        $("#displaynews").click(function(e)
+        {
+          e.preventDefault();
+          $("#content").load("../view/cus/trangchu/getdiscountnews.php");
+        })
+         
+        </script>
+ 
        
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script>
@@ -122,8 +137,7 @@ function renderCity(data) {
 	</script>
   <img class="postertrangchu" src="../view/cus/img/postertrangchu.png">
             </script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+           
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
             <script src="../view/LIB/bootstrap/js/bootstrap.min.js"></script>
-</script>
 </div>
