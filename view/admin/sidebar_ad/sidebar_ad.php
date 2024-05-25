@@ -39,8 +39,8 @@
         <hr>
         <a href="#">Quản lý tin tức</a>
         <div class="submenu">
-            <a href="#">Tất cả</a>
-            <a href="#">Thêm tin tức</a>
+            <a href="tranghienthi.php?quanly=tatcatintuc">Tất cả</a>
+            <a href="tranghienthi.php?quanly=themtintuc">Thêm tin tức</a>
         </div>
         <hr>
     </div>
