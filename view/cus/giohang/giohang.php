@@ -8,9 +8,21 @@
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <title>Giỏ hàng của bạn</title>
     <?php
-        include("../../../model/connect.php");
-        $conn = connectdb();
+        function connectdb()
+        {
+            $host = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "gourmez_web";
+            $conn = new mysqli($host, $username, $password, $database);
 
+            if ($conn->connect_error) {
+                die('Kết nối không thành công: ' . $conn->connect_error);
+            }
+            return $conn;
+        }
+    ?>
+    <?php
         if (isset($_POST['update'])) {
             $foodId = $_POST['food_id'];
             $quantity = $_POST['quantity'];

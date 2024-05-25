@@ -25,10 +25,13 @@
     <header>
         <nav>
         <div class="menu">
-        <ul>
-            <li><a href="index.php?act=trangchu&id=1"><img class="logoad" src="img/logoadmin.png"/></a></li>  
-            <li><a href="index.php?act=xemtruoc">Xem trước trang</a></li>
-        </ul>
+            <div class="logo">
+                <img class="logoad" src="img/logoadmin.png"/>
+            </div>
+                <ul> 
+                        <li><a href="index.php?act=trangchu&id=1">Trang chủ</a></li>
+                        <li><a href="index.php?act=xemtruoc">Xem trước trang</a></li>
+                </ul>
          </div>
         </nav>
     </header>

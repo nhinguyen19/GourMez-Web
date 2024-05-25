@@ -42,21 +42,20 @@
           include("ql_sanpham/sua.php");
           suaSanPham();
           break;
-// CASE QUẢN LÍ KHUYẾN MÃI
-      case 'tatcakm' :
-        $discount=getall_discountnews();
-        $codedis=getall_codedis();
-        include ('ql_khuyenmai/tatcakm.php');
-        break;
-      case 'themkmnews' :
-        insertdiscountnews();
-        include ('ql_khuyenmai/themkmnews.php');
-        break;
-      case 'deldiscountnews':
-        deldiscountnews();
-        $discount=getall_discountnews();
-        include ('ql_khuyenmai/tatcakm.php');
-        break;
+        case 'tatcakm' :
+          $discount=getall_discountnews();
+          $codedis=getall_codedis();
+          include ('ql_khuyenmai/tatcakm.php');
+          break;
+        case 'themkmnews' :
+          insertdiscountnews();
+          include ('ql_khuyenmai/themkmnews.php');
+          break;
+        case 'deldiscountnews':
+          deldiscountnews();
+          $discount=getall_discountnews();
+          include ('ql_khuyenmai/tatcakm.php');
+          break;
         case 'updatediscountnews' :
           include ('ql_khuyenmai/capnhatkmnews.php');
           updatekmnews();
@@ -67,20 +66,16 @@
           include('ql_khuyenmai/themcodedis.php');
           break;
         case 'delcodedis':
-        delcodedis();
-        $codedis=getall_codedis();
-        include ('ql_khuyenmai/tatcakm.php');
-
-  
-
-
-          case 'tatcathongtin':
-            include ('ql_thongtin/lietke.php');
-            break;
-          case 'suathongtin':
-            include ('ql_thongtin/suathongtin.php');
-            suaThongTin();
-            break;
+          delcodedis();
+          $codedis=getall_codedis();
+          include ('ql_khuyenmai/tatcakm.php');
+        case 'tatcathongtin':
+          include ('ql_thongtin/lietke.php');
+          break;
+        case 'suathongtin':
+          include ('ql_thongtin/suathongtin.php');
+          suaThongTin();
+          break;
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           themDichVu();
