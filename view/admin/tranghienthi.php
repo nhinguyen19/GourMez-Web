@@ -7,6 +7,7 @@
     include_once ("../../model/admin/xuly_khuyenmai.php");
     include_once ("../../model/admin/xuly_dichvu.php");
     include_once ("../../model/admin/xuly_thongtin.php");
+    include_once ("../../model/admin/xuly_tintuc.php");
     include("header_ad/header_ad.php");
     include("sidebar_ad/sidebar_ad.php");
   
@@ -108,10 +109,28 @@
         case 'xoamonandichvu':
           xoamonandichvu();
           break;
+        // Case Quản lý tin tức
+        case 'tatcatintuc';
+        include ('ql_tintuc/trangtintuc.php');
+        
+        break;
+        case 'suatintuc';
+        include ('ql_tintuc/sua_tt.php');
+        suaTinTuc();
+        break;
+       case 'themtintuc';
+        include('ql_tintuc/them_tt.php');
+        themTinTuc();
+        break;
+       case 'xoatintuc';
+       xoaTinTuc();
+        break;
+
         default :
           include ('tranghienthi.php');
           break;
         
+
           
       }
      }

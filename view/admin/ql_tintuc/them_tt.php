@@ -4,7 +4,7 @@
 <div id="container">
     <h2>Thêm tin tức</h2>
 
-    <form action="them_tt.php" method="POST" enctype="multipart/form-data">
+    <form action="../admin/tranghienthi.php?quanly=themtintuc" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>
@@ -15,7 +15,7 @@
                     </div>
                     <div class="upload-btn-wrapper">
                         <button class="btn">Thêm ảnh</button>
-                        <input type="file" name="fileToUpload" id="fileToUpload" />
+                        <input type="file" name="hinhanh" id="fileToUpload" />
                     </div>
 
                 </td>
@@ -29,7 +29,7 @@
                         <input type="url" name="link" size="30" required><br><br>
                     </div>
 
-                    <button id="them" value="Upload Image" name="submit" type="submit">Thêm</button>
+                    <button id="them" value="Upload Image" name="themTinTuc" type="submit">Thêm</button>
 
                 </td>
             </tr>
@@ -37,72 +37,6 @@
         </table>
     </form>
 </div>
-<?php
-// Suppressing errors for undefined array keys
-$fileToUpload = isset($_FILES["fileToUpload"]) ? $_FILES["fileToUpload"] : null;
-$title = isset($_POST['title']) ? $_POST['title'] : null;
-
-if ($fileToUpload !== null) {
-    $target_dir = "uploads/";
-    $target_file = $target_dir . basename($fileToUpload["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-    // Check if image file is a actual image or fake image
-    if (isset($_POST["submit"])) {
-        if ($fileToUpload["error"] === 0) {
-            $check = getimagesize($fileToUpload["tmp_name"]);
-            if ($check !== false) {
-                $uploadOk = 1;
-            } else {
-                $uploadOk = 0;
-            }
-        } else {
-            $uploadOk = 0;
-        }
-    }
-
-    // Check if file already exists
-    if (file_exists($target_file)) {
-        $uploadOk = 0;
-    }
-
-    // Allow certain file formats
-    if (
-        $imageFileType != "jpg" && $imageFileType != "png"
-        && $imageFileType != "jpeg" && $imageFileType != "gif"
-    ) {
-        $uploadOk = 0;
-    }
-
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    } else {
-        $result = move_uploaded_file($fileToUpload["tmp_name"], $target_file);
-        if ($result) {
-            include "../../../model/connect.php";
-            $conndb = connectdb();
-            $imgTitle = $fileToUpload["name"];
-            // Use prepared statements to prevent SQL injection
-            $stmt = $conndb->prepare("INSERT INTO tintuc (tintuc_id, title, link, img_title) VALUES (NULL, ?, ?, ?)");
-            $stmt->bind_param("sss", $title, $_POST['link'], $target_file);
-
-            if ($stmt->execute()) {
-                // Insert successful, show alert
-                echo '<script>alert("Thêm thành công");window.location = "trangtintuc.php"</script>';
-            } else {
-                // Handle error
-                echo "Lỗi: " . $stmt->error;
-            }
-            $stmt->close();
-            $conndb->close();
-        } else {
-            // echo "Sorry, there was an error uploading your file.";
-        }
-    }
-}
-?>
 
 
 <script>
