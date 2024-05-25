@@ -24,14 +24,14 @@ table{
     font-family: 'Lalezar';
     font-size: 16px;
 }
-/* .btn_update{
+.btn_update{
   background-color: #14942c; 
   color: white; 
-  border: 0.5px solid black;
+  border: 0.1px solid black;
   border-radius: 10px;
   font-family: 'Lalezar';
   font-size: 12px;
-} */
+}
 .btn_delete{
   background-color: #b32400; 
   color: white; 

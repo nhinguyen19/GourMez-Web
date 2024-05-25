@@ -23,6 +23,7 @@
         }
     ?>
     <?php
+        $conn = connectdb();
         if (isset($_POST['update'])) {
             $foodId = $_POST['food_id'];
             $quantity = $_POST['quantity'];
@@ -54,7 +55,7 @@
         $totalPrice += $subtotal;
 
         $cartItems .= '<tr>';
-        $cartItems .= '<td> <img src="../../admin/ql_sanpham/uploads/' . $hinh_anh_san_pham . '" style="width: 120px;height: 120px; border-radius:5px"></td>';
+        $cartItems .= '<td> <img src="../view/admin/ql_sanpham/uploads/' . $hinh_anh_san_pham . '" style="width: 120px;height: 120px; border-radius:5px"></td>';
         $cartItems .= '<td>';
         $cartItems .= '<span style="color: #E26A2C; font-weight: bold">' . $row_cart['food_name'] . '</span><br>';
         $cartItems .= '<form method="POST" action="">';
@@ -77,9 +78,9 @@
         $cartItems .= '</tr>';
     }
 ?>
-<div class="noidung" style="margin-left: 150px;">
+<div class="noidung" style="margin-left: 150px;padding-top:100px; padding-bottom:30px">
     <?php
-        echo '<p style="color:black; font-family: Lalezar; font-size: 30px"><i class="fas fa-shopping-cart" style="color:#E26A2C"></i> Giỏ hàng của bạn</p>';
+        echo '<p style="color:black; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" style="color:#E26A2C"></i> Giỏ hàng của bạn</p>';
         echo '<table style="font-size: 16px">';
         echo $cartItems;
         echo '<tr>';

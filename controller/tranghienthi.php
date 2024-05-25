@@ -70,8 +70,4 @@
         break;
         }
     }
-    else 
-    {
-        include ('../view/cus/trangchu/trangchu.php');
-    }
 ?>

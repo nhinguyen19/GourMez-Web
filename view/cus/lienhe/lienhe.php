@@ -27,12 +27,12 @@ function connectdb()
 
     .contact-details table {
         font-family: Lalezar;
-        margin-left: 40px;
+        margin-left: 20px;
     }
 </style>
 
 <div class="content">
-    <?php echo '<h1 style="font-family: Lalezar;margin-top:100px; color: #E26A2C; text-align:center;">LIÊN HỆ GOURMÉZ</h1>'; ?>
+    <?php echo '<h1 style="font-family: Lalezar;margin-top:130px; color: #E26A2C; text-align:center;">LIÊN HỆ GOURMÉZ</h1>'; ?>
     <div class="contact-info">
         <div class="contact-details">
             <?php
