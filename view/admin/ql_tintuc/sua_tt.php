@@ -23,17 +23,19 @@ if ($result->num_rows > 0) {
 ?>
 <h2 class="title">Sửa tin tức</h2>
 <div class="insert">
-    
 
-    <form action="../admin/tranghienthi.php?quanly=suatintuc&tintucId=<?php echo $row['tintuc_id'] ?>" method="POST" enctype="multipart/form-data">
+
+    <form action="../admin/tranghienthi.php?quanly=suatintuc&tintucId=<?php echo $row['tintuc_id'] ?>" method="POST"
+        enctype="multipart/form-data">
         <table>
             <tr>
                 <td>
                     <div id="imageDiv">
                         <div id="innerDiv">
-                            
-                            <img id="currentImage" style="width:200px; height: 200px" src="ql_tintuc/<?php echo $imgTitle; ?>" alt="News Image">
-                            
+
+                            <img id="currentImage" style="width:200px; height: 200px"
+                                src="ql_tintuc/<?php echo $imgTitle; ?>" alt="News Image">
+
                         </div>
                     </div>
                     <div class="upload-btn-wrapper">
@@ -50,6 +52,10 @@ if ($result->num_rows > 0) {
                     <div class="textbox">
                         <label for="link">Link</label> <br>
                         <input type="url" name="link" value="<?php echo $link; ?>" size="30"><br><br>
+                    </div>
+                    <div class="textbox">
+                        <label for="link">Description</label> <br>
+                        <input type="text" name="description" value="<?php echo $link; ?>" size="30"><br><br>
                     </div>
                     <button id="sua" name="suaTinTuc" type="submit" value="CSS">Thay đổi</button>
                 </td>

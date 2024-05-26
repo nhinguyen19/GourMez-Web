@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="them_tt.css">
 <style>
 
-    
+
 </style>
-<h2 class="title">Thêm tin tức</h2> 
+<h2 class="title">Thêm tin tức</h2>
 <div class="insert">
-    
+
     <form action="../admin/tranghienthi.php?quanly=themtintuc" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
@@ -24,12 +24,17 @@
                 </td>
                 <td id="secondTd">
                     <div class="textbox">
-                        <label  style="font-family: 'Lalezar'" for="title">Title</label> <br>
+                        <label style="font-family: 'Lalezar'" for="title">Title</label> <br>
                         <input type="text" name="title" size="30" required><br><br>
                     </div>
                     <div class="textbox">
-                        <label  style="font-family: 'Lalezar'" for="link">Link</label> <br>
+                        <label style="font-family: 'Lalezar'" for="link">Link</label> <br>
                         <input type="url" name="link" size="30" required><br><br>
+                    </div>
+
+                    <div class="textbox">
+                        <label style="font-family: 'Lalezar'" for="link">Mô tả</label> <br>
+                        <input type="text" name="description" size="30" required><br><br>
                     </div>
 
                     <button id="them" value="Upload Image" name="themTinTuc" type="submit">Thêm</button>
