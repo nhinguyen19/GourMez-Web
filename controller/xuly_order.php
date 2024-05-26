@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
 session_start();
 include('../controller/thuvien.php');
@@ -18,9 +19,6 @@ include('../model/connect.php');
 
         //insert đơn hàng -  tạo đơn hàng mới
         $id_bill = taodonhang($new_id,$ten,$sdt,$email,$ship_day,$diachi,$total,$ghichu);
-        echo "tạo đơn hàng thành công";
-
-        //lấy thông tin giỏ hàng từ session + id đơn hàng vừa tạo
 
         //insert vào order_item
         for($i=0; $i < sizeof($_SESSION['giohang']); $i++)
@@ -30,15 +28,25 @@ include('../model/connect.php');
             $dongia = $_SESSION['giohang'][$i][2];
             $thanhtien = $dongia*$soluong;
             taogiohang($tenmon,$dongia,$soluong,$thanhtien,$id_bill);
-            echo "thêm giỏ hàng thành công";
         }
 
-         //show confirm đơn hàng
-
-
+        
 
         //unset giỏ hàng session
+        unset($_SESSION['giohang']);
 
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
+        echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Đơn hàng của bạn đã được ghi nhận. Nhân viên sẽ liên hệ lại với bạn.',
+            showConfirmButton: false,
+            timer: 1500
+        }).then(function() {
+            window.location.href = 'tranghienthi.php?quanly=2';
+        });
+        </script>";
+        header('Location: tranghienthi.php?quanly=2');
 
        
     }

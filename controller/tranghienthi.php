@@ -33,6 +33,8 @@
         case '2':
             include ('../view/cus/dichvu/dichvu_bigdeal.php');
             break;
+        case 'xulygiohang':
+            include('../controller/xuly_order.php');
         case 'giohangdv':
                 include('../view/cus/dichvu/giohang_dv.php');
                

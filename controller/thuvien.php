@@ -26,11 +26,9 @@ function taodonhang($id,$name, $phone, $email, $booking_date, $address, $total_p
                 VALUES ('$id','$name','$phone','$email','$booking_date','$address', '$total_price', '$note')";
     mysqli_query($conn,$sql);
 
-    $last_id = mysqli_insert_id($conn);
-    echo $last_id;
+    $last_id = $id;
     mysqli_close($conn);
     return $last_id;
-
 }
 
 function taogiohang($tenmon,$dongia,$soluong,$thanhtien,$idbill)
@@ -44,4 +42,5 @@ function taogiohang($tenmon,$dongia,$soluong,$thanhtien,$idbill)
 
 
 }
+
 ?>

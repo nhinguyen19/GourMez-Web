@@ -198,7 +198,7 @@
   }
 </style>
 
-<form action = "xuly_order.php" method = "post">
+<form action = "../controller/xuly_order.php" method = "post">
 <!-- Thông tin khách hàng -->
 <h2>THÔNG TIN KHÁCH HÀNG</h2>
 

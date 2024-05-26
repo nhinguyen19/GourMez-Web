@@ -29,7 +29,7 @@
             $sql = "INSERT INTO birthday_service (customer_name, phone, email,name_order_party, booking_date, gender, address, note, name_food, quantity, total_price, status)
             VALUES ('$name', '$tele', '$email', '$name_birthday', STR_TO_DATE('$party', '%d/%m/%Y'), '$name_gender', '$address', '$note', '$food', '$quantity', '$Total_price', null)";
             if(mysqli_query($conn,$sql)) {
-                echo "<script>alert('Đơn hàng của bạn đã được ghi nhận. Nhân viên cửa hàng sẽ sớm liên hệ'); window.location('tranghienthi.php?quanly=1') </script>";
+                echo "<script>alert('Đơn hàng của bạn đã được ghi nhận. Nhân viên cửa hàng sẽ sớm liên hệ'); window.location('tranghienthi.php') </script>";
                 exit();  
             } 
             else 
