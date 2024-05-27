@@ -1,3 +1,13 @@
+#container 
+{
+    
+    background-color: #feeaca;
+}
+
+.font-family 
+{
+    font-family: 'Lalezar' ;
+}
 .icon
 {
     width: 200px;
@@ -13,16 +23,80 @@
 #intro h1
 {
     font-size: 100px;
+    margin-bottom :0px;
+    padding-top : 100px;
+
 }
 
 
 
-#giatri img 
-{
-    opacity: 0.5;  filter: alpha(opacity=50);
-    width :100%;
+#giatri img {
+    width: 100%;
+    height: auto;
+    max-height: 99.1vh; /* Ensure it doesn't exceed the viewport height */
+    padding: 0px;
 }
 #hinhBurger
 {
-    width: 100%;
+    width: 600px;
+    height: 600px;
+    border-radius:  7px;
+    margin-right : 60px;
+    margin-bottom : 30px;
+
+}
+
+#logoTong
+{
+    width: 50%;
+    height: auto;
+}
+
+
+#logoNho
+{
+    width :auto;
+    height:auto;
+    padding-right: 40px;
+
+}
+
+#gioithieu 
+{
+    padding:20px 0px;
+}
+#gioithieu table tr td:first-child
+{
+    height: 500px;
+}
+h2
+{
+    font-size:4em;
+}
+
+#suMenhTamNhin
+{
+    padding-left :50px;
+    padding-right:100px;
+}
+
+#suMenhTamNhin h2:nth-of-type(2)
+{
+    padding-top : 80px;
+}
+
+#suMenhTamNhin h2 
+{
+    margin:0px;
+}
+#suMenhTamNhin p 
+{
+    margin:0px;
+
+    font-size: 30px;
+}
+
+#tamNhinSuMenhContainer
+{
+    padding: 4% 0px ;
 }

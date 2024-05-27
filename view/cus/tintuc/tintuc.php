@@ -115,6 +115,7 @@
     max-width: 650px;
     max-height: 500px;
     margin-right: 90px;
+    padding-left: 0;
   }
 
 
@@ -125,6 +126,8 @@
     max-height: 300px;
     border-radius: 5px;
     box-shadow: 7px 7px 7px grey;
+    padding-left: 0;
+
   }
 
   .item-container {
@@ -164,6 +167,10 @@
     flex-direction: column;
     align-items: flex-start;
     /* Căn chỉnh các phần tử con theo chiều ngang, từ trái sang phải */
+  }
+
+  #img_header{
+    padding-left: 0;
   }
 </style>
 <?php
