@@ -54,6 +54,7 @@
     align-items: center;
     height: 100%;
     overflow: hidden; 
+    margin-top : 30px;
 }
 
 
@@ -106,7 +107,6 @@ include('../../../model/connect.php');
     $query_lietke = mysqli_query($conn, $sql_lietke);
 ?>
 <ul id="tatcadiscount">
-    <h1 class="title">KHUYẾN MÃI HÔM NAY</h1>
     <div class="onediscount">
         <?php
             $i = 0;
