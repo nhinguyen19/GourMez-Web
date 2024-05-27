@@ -13,12 +13,10 @@
 .big
 {
     display: grid;
-    width: 1360px;
     grid-template-columns: 500px 700px;
-    background-color: rgba(251, 229, 218, 1);
-    margin-left: 50px;
+    /* background-color: rgba(251, 229, 218, 1); */
     padding: 50px;
-    border: 1px solid yellowgreen;
+    margin-top: -10px;
 }
 .content
 {
@@ -60,6 +58,10 @@ button
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif'
 }
 
+hr
+{
+    background-color: black;
+}
 </style>
 
 <?php
@@ -70,10 +72,9 @@ button
 ?>
 
 
-<div class="container" style=" margin: 10px;">
-    <img src="../view/cus/img/banner_dv.png" style="width:98%; height: 700px;align-items: center; margin-left: 50px; margin-top:50px;">
+<div class="container">
+    <img src="../view/cus/img/BannerDichVu.png" style="width:100%; height: 700px;margin-left:-40px; margin-top:50px">
 
-    
     <div class="container_dv">
     <?php
     $i = 0;
@@ -81,18 +82,21 @@ button
         $i++;
     ?>
         <form method="POST" action="tranghienthi.php?quanly=<?php echo $row['id_service'] ?>">
-            <div style="border: 1px solid green" class="big">
+            <div class="big">
                 <img src="../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" style="width: 400px; height:400px;padding-left:30px;">
                 <div class="content">
                     <h3 style="color: orangered"><?php echo $row['service_name'] ?></h3>
                     <p><?php echo $row['small_descript'] ?></p>
                     <button type="submit" style = "font-family: 'Lalezar'">Đặt hàng</button>
-                </div>
+                </div> 
             </div>
+            <hr>
         </form>
+        
     <?php
     }
     ?>
-</div>
+    
+    </div>
 
     

@@ -6,7 +6,7 @@ body {
 
 
 
-.title_chitiet,.title{
+.title{
     display: flex;
     justify-content: center;
     text-align: center;
@@ -60,28 +60,16 @@ body {
     overflow: hidden; 
 }
 
-.anhsp{
-    background-color: #F5EAD7;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.6);
-    display: block;
-    max-width: fit-content;
-    padding: 10px;
-    justify-content: center;
-    text-align: center;
-    border: 1px solid black;
-}
 .content-wrapper {
     display: flex;
+    justify-content: center;
     border-radius: 30px;
     padding-top:30px;
     padding-bottom:30px;
     padding-left: 45px;
-    width: 50vw;
-    position: relative;
-    left: 50%; 
-    transform: translateX(-50%);
-    background-color: #F5EAD7;
+    width : 1000px; 
+    margin : 0 auto;
+    background-color: #ffffff;
 }
 
 .btn_dathang{

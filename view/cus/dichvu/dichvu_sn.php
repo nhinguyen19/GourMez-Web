@@ -4,9 +4,12 @@
 {
   font-family: 'Lalezar';
 }
+
 .banner_sn
 {
     margin-top: 50px;
+    margin-left: -40px;
+    margin-bottom: -40px;
     width: 100%;
     height: 90%;
 }
@@ -121,7 +124,7 @@
   #gender
   {
     margin-left: 18px;
-    width: 128px;
+    width: 110px;
     height: 40px;
     background-color:rgba(248, 127, 64, 1) ;
     border-radius: 5px;
@@ -164,7 +167,7 @@
     border: none;
     border-radius: 15px;
     margin: 35px 0 0 0;
-    padding: 0 18px 0 18px;
+    padding: 15px 18px 0 18px;
     align-content: center;
     font-size: 25px;
   }
@@ -249,7 +252,7 @@
                                 echo '<div class="text">';
                                 echo '<p name="name_of_food">'. $row['food_combo'] .  '</p>';
                                 echo 'Giá bán: <p name="price" style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
-                                echo 'Số lượng: <input type="number" name="quantity" value = "10" id = "quantity"  placeholder="10" min="10" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
+                                echo 'Số lượng: <input type="number" style = "width:40px;font-size: 15px;" name="quantity" value = "10" id = "quantity"  placeholder="10" min="10" step="1" max="50" title="Vui lòng nhập số lượng" onchange = "get_info_food()" required ><br>';
                                 echo 'Chọn <input type="radio" name="choose" id="choose'.$counter.'" onclick="get_info_food()" required title="Vui lòng chọn món">';
                                 echo '</div>';
                                 echo '</div>';

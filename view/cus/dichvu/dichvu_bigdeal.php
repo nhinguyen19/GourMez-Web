@@ -5,6 +5,7 @@
         width: 100%;
         height: 90%;
         margin-top: 90px;
+        margin-left: -40px;
 
     }
 
@@ -13,9 +14,10 @@
 {
   background-color: rgba(255, 242, 242, 1);
   padding-bottom: 50px;
+  padding-top: 50px;
 }
 
-.food_label h1
+h1
 {
   display: flex;
   justify-content: center;
@@ -23,13 +25,14 @@
   font-family: 'Lalezar';
   align-items: center;
   background-color: rgba(174, 33, 8, 1);
-   color: white;
-   padding: 10px 0 5px 0;
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .full_menu
 {
-    display: grid;
+  display: grid;
   grid-template-columns: 500px 500px 500px;
   margin-top: 50px;
   margin-block-end: 50px;
@@ -104,34 +107,7 @@
     padding: 5px;
 
  }
-  
-  #send_order
-  {
-    background-color: rgba(252, 47, 19, 1);
-    border-radius: 30px;
-    border: none; 
-    color: white;
-    font-family: 'Lalezar';
-    font-size: 25px;
-    width: 180px;
-    height: 40px;
-    padding: 5px;
-  }
-
-  #reset
-  {
-    background-color: rgba(252, 47, 19, 1);
-    border-radius: 30px;
-    border: none; 
-    color: white;
-    font-family: 'Lalezar';
-    font-size: 25px;
-    width: 100px;
-    height: 40px;
-    padding: 5px;
-    margin-left: 50px;
-  }
-  
+   
   .button
   {
     display: flex;
@@ -160,10 +136,11 @@
         <!-- Thanh đặt món -->
         
             <img src = "../view/cus/img/banner_bigdeal.png" class = "banner">
+            <h1>ĐẶT MÓN ĂN</h1>
             <div class="food_order" style = "font-family: 'Lalezar'">
 
-            <div class="food_label" style = "border: 1px solid yellow">
-                <h1>ĐẶT MÓN ĂN</h1>
+            <div class="food_label">
+                
 
                 <div class="full_menu">
                     <?php
@@ -192,7 +169,7 @@
                                 echo '<input type ="hidden" name = "tenmon" value = "'.$row['food_combo'].'">';
                                 echo '<input type ="hidden" name = "giamon" value = "'.$row['price'].'">';
                                 echo '<input type ="hidden" name = "hinhanh" value = "'.$row['image'].'">';
-                                echo '<input type="submit" name = "datmonbigdeal" value = "Đặt món">';
+                                echo '<input type="submit" id  = "datmonbigdeal"name = "datmonbigdeal" value = "Đặt món">';
                                 echo '</form>';
                                 echo '</div>';
                                 echo '</div>';
