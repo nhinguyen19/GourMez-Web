@@ -1,5 +1,4 @@
 body{
-<<<<<<< HEAD
   background-color: #FFECCB;
 }
 .giohang_content {
@@ -25,37 +24,6 @@ padding-left: 50px;
   background-color: #ffff;
   display: inline-block;
   vertical-align: top; 
-=======
-  background-image: linear-gradient(to right, #202020 ,#444444);
-  margin-top: 100px; 
-}
-.giohang_content {
-    display: flex; /* Use flexbox to align items */
-}
-.noidung{
-  margin-left: 150px; 
-  padding-top:100px; 
-  padding-bottom:30px;
-}
-.monan_qc{
-  padding-top:100px;  
-  padding-bottom:30px;
-  padding-left: 50px;
-}
-.tb_noidung{
-    background-color: #ffff;
-    padding: 30px; 
-    padding-right:50px;
-    padding-left:50px;
-}
-.tb_monan{
-    /* background-color: #ffff; */
-    display: inline-block;
-    vertical-align: top; 
-    padding: 15px; 
-    padding-right:25px;
-    padding-left:30px;
->>>>>>> tubi
 }
 
 .quantity-update {
@@ -67,30 +35,13 @@ padding-left: 50px;
 margin-right: 10px;
 }
 .btn_thanhtoan{
-<<<<<<< HEAD
   background-color: #E26A2C;
   border: none;
-=======
-    background-color: #E26A2C;
-    border: none;
-    border-radius: 10px;
-    width: 150px;
-    height:25px;
-    color: #ffff;
-    font-family: 'Lalezar';
-    font-size: 16px;
-}
-.btn_update{
-  background-color: #14942c; 
-  color: white; 
-  border: 0.1px solid black;
->>>>>>> tubi
   border-radius: 10px;
   width: 150px;
   height:25px;
   color: #ffff;
   font-family: 'Lalezar';
-<<<<<<< HEAD
   font-size: 16px;
 }
 .btn_update{
@@ -100,9 +51,6 @@ border: 0.1px solid black;
 border-radius: 10px;
 font-family: 'Lalezar';
 font-size: 12px;
-=======
-  font-size: 12px;
->>>>>>> tubi
 }
 .btn_delete{
 background-color: #b32400; 
@@ -170,77 +118,4 @@ padding: 10px;
 justify-content: center;
 text-align: center;
 border: 1px solid black;
-}
-.btn_delete:hover:not(.active) {
-  background-color: #ffb84d;
-  transition: background-color 0.3s ease;
-}
-.btn_update:hover:not(.active) {
-  background-color: #ffb84d;
-  transition: background-color 0.3s ease;
-}
-.btn_delete:hover:not(.active) {
-  background-color: #ffb84d;
-  transition: background-color 0.3s ease;
-}
-.Thucdon_mon{
-  background-color: rgba(16, 16, 16, 0.3);
-    border: 0.5px solid #F6E7D8;
-    border-radius: 10px;
-    display: inline-block;
-    max-width: fit-content;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng */
-    padding: 15px;
-}
-.Ten_mon{
-  color: #fd9a29;
-  font-weight: bold;
-}
-.label {
-  color: #ffff;
-  font-weight: bold;
-}
-
-.price {
-  color: #fd9a29;
-  font-weight: bold;
-}
-.btn_xemchitiet{
-  background-color: #E26A2C;
-  border: none;
-  border-radius: 10px;
-  width: 100px;
-  height: 23px;
-  color: #ffff;
-  font-family: 'Lalezar';
-  font-size: 16px;
-}
-.btn_xemchitiet:hover:not(.active) {
-  background-color: #ffb84d;
-  transition: background-color 0.3s ease;
-}
-
-.food-item {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 30px;
-  justify-items: center;
-  align-items: center;
-  height: 100%;
-  overflow: hidden; 
-}
-
-.anhsp{
-  background-color: #F5EAD7;
-  border-radius: 20px;
-  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.6);
-  display: block;
-  max-width: fit-content;
-  padding: 10px;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid black;
 }

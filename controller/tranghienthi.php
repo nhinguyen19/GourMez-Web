@@ -81,8 +81,9 @@
         break;
         }
     }
-?>
-<?php
-include('../view/cus/footer/footer.php');
+    else 
+    {
+        include ('../view/cus/trangchu/trangchu.php');
+    }
 ?>
 
