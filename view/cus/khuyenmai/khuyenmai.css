@@ -3,9 +3,6 @@ body {
     margin-top: 150px; 
     font-family: 'Lalezar';
   }
-
-
-
 .title_chitiet,.title{
     display: flex;
     justify-content: center;

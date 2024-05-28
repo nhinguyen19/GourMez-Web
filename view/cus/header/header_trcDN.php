@@ -23,7 +23,6 @@
     </style>
 </head>
 <body>
-
 <header>
     <nav class="header">
         <!-- <div id="img"><img src="..view/cus/img/logocus.png" style="height: 86.61px; width: 100px;"></div> -->
@@ -43,5 +42,6 @@
         </button>
     </nav>
 </header>
+</body>
 
     
