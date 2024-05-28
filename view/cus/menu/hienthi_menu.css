@@ -1,20 +1,21 @@
 body {
-    background-color: #FBF5F5;
-    margin-top: 100px; 
-  }
+    background-image: url('anhnen.jpg');
+    /* g */
+    margin-top: 100px;
+}
 
 #sidebar_menu {
-    width: 240px;
-    height: 100vh;
-    background-color:#F5EAD7; 
+    width: 200px;
+    height:100vh;
+    background-image: linear-gradient(to right, #1a1a1a 0%, black 100%);
     position: fixed;
     left: 0;
     overflow-x: hidden;
-    overflow-y: auto; 
+    overflow-y: auto;
     padding-top: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Thay đổi thành justify-content: flex-start */
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
@@ -22,13 +23,13 @@ body {
 #sidebar_menu a {
     text-decoration: none;
     font-size: 20px;
-    color: #E95002;
+    color: #F6E7D8;;
     font-family: 'Lalezar';
     display: block; 
     text-align: left;
-    padding-left: 25px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 /* CSS cho liên kết được chọn */
@@ -51,44 +52,54 @@ body {
 
 /* CSS cho thẻ hr */
 #sidebar_menu hr {
-    width: 80%; 
-    background-color: #ffff; 
+    width: 100%; 
+    background-color: #F6E7D8;
     height: 0.5px; 
     border: none; 
     margin: 0 auto; 
     margin-top: auto; 
     margin-bottom: auto; 
+    margin-left: 10px;
 }
 .title_chitiet,.title_thucdon{
     display: flex;
     justify-content: center;
     text-align: center;
-    color: #E26A2C;
+    color: #FFCB00;
     font-family: 'Lalezar';
     text-transform: uppercase;
-    padding-top: 10px;
+    padding-top: 20px;
 }
-.Thucdon_mon{
-    background-color: #F5EAD7;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.09);
-    display: inline-block;
-    max-width: fit-content;
-    padding: 15px;
+.title_chitiet1,.title_thucdon1{
+    display: flex;
     justify-content: center;
     text-align: center;
+    color: #E7B037;
+    font-family: 'Lalezar';
+    text-transform: uppercase;
+    padding-top: 20px;
 }
+.Thucdon_mon {
+    background-color: rgba(16, 16, 16, 0.3);
+    border: 0.5px solid #F6E7D8;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: fit-content;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng */
+}
+
 .Ten_mon{
-    color: #E95002;
+    color: #fd9a29;
     font-weight: bold;
 }
 .label {
-    color: black;
+    color: #ffff;
     font-weight: bold;
 }
-
 .price {
-    color: #f98324;
+    color: #fd9a29;
     font-weight: bold;
 }
 .btn_xemchitiet{
@@ -100,45 +111,38 @@ body {
     color: #ffff;
     font-family: 'Lalezar';
     font-size: 16px;
-}
-.btn_xemchitiet:hover:not(.active) {
+  }
+  .btn_xemchitiet:hover:not(.active) {
     background-color: #ffb84d;
     transition: background-color 0.3s ease;
-}
-
+  }
 .food-item {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 30px;
-    justify-items: center;
-    align-items: center;
+    grid-gap: 20px;
     height: 100%;
     overflow: hidden; 
 }
-
-.anhsp{
-    background-color: #F5EAD7;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.6);
+.anh{
     display: block;
     max-width: fit-content;
-    padding: 10px;
     justify-content: center;
     text-align: center;
-    border: 1px solid black;
 }
 .content-wrapper {
     display: flex;
-    border-radius: 30px;
-    padding-top:30px;
-    padding-bottom:30px;
-    padding-left: 45px;
+    background: none;
+    background-color: rgba(16, 16, 16, 0.3);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 25px;
     width: 50vw;
     position: relative;
-    left: 50%; 
+    left: 50%;
     transform: translateX(-50%);
-    background-color: #F5EAD7;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Tăng độ dài và độ mờ của bóng */
 }
 
 .btn_dathang{
@@ -147,18 +151,19 @@ body {
     border-radius: 10px;
     width: 150px;
     height:25px;
-    color: #ffff;
+    color: #F6E7D8;
     font-family: 'Lalezar';
     font-size: 16px;
 }
-.btn_dathang:active {
-    background-color: #ffb84d; 
-}
+.btn_dathang:hover:not(.active) {
+    background-color: #ffb84d;
+    transition: background-color 0.3s ease;
+  }
 #amount{
     width: 30px;
     text-align: center;
     background-color: #E26A2C;
-    color: #ffff;
+    color: #F6E7D8;
 }
 #buy-amount{
     padding-right: 20px;
@@ -171,21 +176,22 @@ body {
 }
 .btn_amount{
     margin-right: 0; 
-    background-color: #E26A2C; 
+    background-color: #E26A2C;
     border: none; 
     width:40px; 
     height:25px;
     border-radius: 0 10px 10px 0;
-    color: #ffff;
+    color: #F6E7D8;
 }
-#buy-amount button:active {
-    background-color: #ffb84d; 
-}
+.btn_amount:hover:not(.active) {
+    background-color: #ffb84d;
+    transition: background-color 0.3s ease;
+  }
 
 .list {
     list-style: none;
     padding-top: 30px;
-    margin-left: 40%;
+    margin-left: 430px;
 }
 
 .list li {
@@ -198,25 +204,28 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #FDA65D;
+    background-image: linear-gradient(45deg, #f12711, #f5af19);
     line-height: 30px;
     text-align: center;
     text-decoration: none;
     color: #ffff;
     font-family: Lalezar;
+    transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển màu */
 }
 
-.list li a.active {
-    background-color: #E26A2C; 
-    color: #fff; 
+.list li a a#active {
+    color: #a20b0b;
 }
-.list li a:hover {
-    background-color: #E26A2C; 
-    color: #fff; 
+
+/* CSS khi rê chuột qua liên kết */
+.list li a:hover:not(#active) {
+    color: #910303;
 }
+
+
 .title_datngaynao{
-    margin-left: 41%;
-    color: #E26A2C;
+    margin-left: 40.5%;
+    color: #E7B037;
     font-family: 'Lalezar';
     text-transform: uppercase;
     padding-top: 10px;
@@ -229,9 +238,10 @@ body {
   text-align: center;
 }
 .Thucdon{
-    background-color: #F5EAD7;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.09);
+    background:none; 
+    border: 0.5px solid #F6E7D8;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
     display: inline-block;
     max-width: fit-content;
     padding: 15px;
@@ -241,4 +251,18 @@ body {
     width:90%; 
     font-size:16px;
     padding-bottom: 10px;
+    color: #ffff;
+}
+.Thucdon_mon2{
+    border-radius: 20px;
+    border: 0.5px solid #F6E7D8;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    width : 200px;
+    height : 300px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
 }

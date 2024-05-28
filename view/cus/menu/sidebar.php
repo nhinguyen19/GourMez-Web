@@ -18,14 +18,10 @@
       <?php
         while ($row = mysqli_fetch_array($query_sidebar_danhmuc)) {
       ?>   
-      <a href="hienthi_menu.php?quanly=danhmucsanpham&id=<?php echo $row['cate_id']?>"><?php echo $row['cate_name']?></a>
-      <hr> 
+      <a href="hienthi_menu.php?quanly=danhmucsanpham&id=<?php echo $row['cate_id']?>"><?php echo $row['cate_name']?></a><hr>
       <?php 
         } 
       ?>
-    </div>
-    <div class="menu_image">
-      <img src="../view/cus/img/menu_1.png" alt="Menu Image">
     </div>
   </div>
 </body>

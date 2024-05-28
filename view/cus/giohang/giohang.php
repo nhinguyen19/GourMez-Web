@@ -44,9 +44,7 @@
     $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id";
     $query_cart = mysqli_query($conn, $sql_cart);
 ?>
-</head>
-<body>
-<link rel="stylesheet" href="../view/cus/giohang/giohang.css">
+<div class="giohang_content">
 <?php
 $totalPrice = 0;
 $cartItems = "";
@@ -84,30 +82,26 @@ while ($row_cart = mysqli_fetch_array($query_cart)) {
 <div class="giohang_content">
 <div class="noidung">
     <?php
-        echo '<p style="color:black; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" style="color:#E26A2C"></i> Giỏ hàng của bạn</p>';
+        echo '<p style="color: #E7B037;; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" color: #E7B037;></i> Giỏ hàng của bạn</p>';
         echo '<table class="tb_noidung" style="font-size: 16px">';
         echo $cartItems;
         echo '<tr>';
         echo '<td colspan="2" style="text-align: center; font-weight:bold">Thành tiền: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
         echo '</tr>';
         echo '<tr>';
-        echo '<td colspan="2" style="text-align: center;"> <button class="btn_thanhtoan" style="margin-top: 5px;"> <a href="tranghienthi.php?quanly=thanhtoan" style="text-decoration: none; color: #ffff;">Thanh toán</a>
-        </button> </td>';
+        echo '<td colspan="2" style="text-align: center;"> <button class="btn_thanhtoan" style="margin-top: 5px;"> <a href="tranghienthi.php?quanly=thanhtoan" style="text-decoration: none; color: #ffff;">Thanh toán</a></button> </td>';
         echo '</tr>';
         echo '</table>';
     ?>
 </div>
 <div class="monan_qc">
 <?php
-    echo '<p style="color:black; font-family: Lalezar; font-size: 30px"><i class="fas fa-drumstick-bite" style="color:#E26A2C"></i> Món ăn phải thử</p>';
+    echo '<p style="color: #E7B037;; font-family: Lalezar; font-size: 30px"><i class="fas fa-drumstick-bite" style="color:#E7B037;"></i> Món ăn phải thử</p>';
     echo '<table class="tb_monan" style="font-size: 16px">';
-    echo '<tr>';
-    echo '<td colspan="4">Món ăn nên thử</td>'; // colspan to span across all columns
-    echo '</tr>';
     echo '<tr>';
     $random_foods = get_random_food($conn); // Assuming you already defined this function
     foreach ($random_foods as $row) {
-        echo '<td>'; // Start a new table cell for each food item
+        echo '<td style="padding-right:30px">'; // Start a new table cell for each food item
         echo '<li class="Thucdon_mon">';
         echo '<img src="../view/admin/ql_sanpham/uploads/' . $row['img'] . '" style="width: 150px; height: 150px;">';
         echo '<p class="Ten_mon">' . $row['food_name'] . '</p>';
@@ -126,5 +120,3 @@ while ($row_cart = mysqli_fetch_array($query_cart)) {
 ?>
 </div>
 </div>
-</body>
-</html>
