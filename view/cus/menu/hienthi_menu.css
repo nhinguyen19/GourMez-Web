@@ -1,8 +1,9 @@
-body{
-    /* background-image: url('anhnen.jpg'); */
-    background-image: linear-gradient(to right, #202020 ,#444444);
-    margin-top: 100px; 
-  }
+body {
+    background-image: url('anhnen.jpg');
+    /* g */
+    margin-top: 100px;
+}
+
 #sidebar_menu {
     width: 200px;
     height:100vh;
