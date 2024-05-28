@@ -131,10 +131,47 @@ function renderCity(data) {
       for (const w of dataWards) {
         wards.options[wards.options.length] = new Option(w.Name, w.Id);
       }
-    }Q
+    }
   };
 }
 	</script>
+ <!-- The Popup -->
+ <script>
+  document.getElementById('GuiDeliTC').addEventListener('click', function(event) {
+    event.preventDefault();
+    const city = document.getElementById('city').value;
+    if (city !== 'Đà Lạt') {
+      openPopup();
+    } else {
+      // Submit the form or perform any further actions if necessary
+      window.location.href = '../view/cus/menu/menu.php';
+    }
+  });
+
+  function openPopup() {
+    // Create the popup HTML dynamically
+    const popupHtml = `
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <p>Xin lỗi quý khách, GOURMEZ chỉ khả dụng giao hàng tại Đà Lạt</p>
+          <button onclick="closePopup()">Đóng</button>
+        </div>
+      </div>
+    `;
+    // Append the popup HTML to the body
+    document.body.insertAdjacentHTML('beforeend', popupHtml);
+    // Show the popup
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  function closePopup() {
+    // Remove the popup from the DOM
+    const popup = document.getElementById('popup');
+    if (popup) {
+      popup.remove();
+    }
+  }
+</script>
   <img class="postertrangchu" src="../view/cus/img/postertrangchu.png">
             </script>
            
