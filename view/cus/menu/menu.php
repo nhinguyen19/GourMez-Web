@@ -33,7 +33,7 @@ $(document).ready(function() {
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
 ?>
 <ul id="all_dishes" style=" margin-left: 12vw;">
-    <img src="../view/cus/menu/banner5.png" width="100%";height="50%">
+    <img src="../view/cus/menu/s.png" width="100%";height="50%">
     <h1 class="title_thucdon">Hôm nay ăn gì?</h1>
     <div class="food-item">
         <?php

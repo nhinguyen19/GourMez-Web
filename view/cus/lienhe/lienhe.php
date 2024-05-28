@@ -54,7 +54,7 @@ function connectdb()
 }
 </style>
 <div class="content">
-        <?php echo '<h1 style="font-family: Lalezar;margin-top:130px; color: #ffa724; text-align:center;">LIÊN HỆ GOURMÉZ</h1>'; ?>
+        <?php echo '<h1 style="font-family: Lalezar;margin-top:130px; color: #E7B037; text-align:center;">LIÊN HỆ GOURMÉZ</h1>'; ?>
         <div class="contact-info">
             <div class="contact-details">
                 <?php
@@ -64,7 +64,7 @@ function connectdb()
 
                     echo '<ul id="tatca_thongtin">';
                     echo '<table class="tb_lienhe">';
-                    echo '<tr><td style="font-size: 20px; color: #ffa724">Thông tin liên hệ: </td></tr>';
+                    echo '<tr><td style="font-size: 20px; color: #E7B037;">Thông tin liên hệ: </td></tr>';
 
                     while ($row = $query_lietke_lienhe->fetch_assoc()) {
                         echo '<tr><td style="padding-top:10px"><i class="fas fa-user" style="border: 1px solid white; background-color: white; padding: 5px; border-radius: 50%"></i><span style="padding-left: 15px;color:#ffff">' . $row['ResName'] . '</span></td></tr>';
@@ -73,7 +73,7 @@ function connectdb()
                         echo '<tr><td style="padding-top:10px"><i class="fas fa-envelope" style="border: 1px solid white; background-color: white; padding: 5px; border-radius: 50%"></i><span style="padding-left: 0px"></i><span style="padding-left: 15px;color:#ffff">' . $row['ResEmail'] . '</span></td></tr>';
                     }
 
-                    echo '<tr><td style="font-size: 20px; color: #ffa724; padding-top: 10px">Gửi tin nhắn cho chúng tôi: </td></tr>';
+                    echo '<tr><td style="font-size: 20px; color: #E7B037;; padding-top: 10px">Gửi tin nhắn cho chúng tôi: </td></tr>';
                     echo '<form method="POST" action="tranghienthi.php?quanly=lienhe">';
                     echo '<tr><td><input type="text" id="name" name="tenkhachhang" placeholder="Họ và tên"></td></tr>';
                     echo '<tr><td><input type="text" id="phone" name="sodienthoai" placeholder="Số điện thoại"></td></tr>'; 
