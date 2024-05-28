@@ -33,6 +33,23 @@
     font-family: 'Lalezar';
     font-size: 16px;
 }
+
+.btn_xemthem
+{
+    background-color: #E26A2C;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 23px;
+    color: #ffff;
+    font-family: 'Lalezar';
+    font-size: 16px;
+}
+.xemthembutton
+{
+    display : flex;
+    justify-content: center;
+}
 .btn_xemchitiet:hover:not(.active) {
     background-color: #ffb84d;
     transition: background-color 0.3s ease;
@@ -47,6 +64,7 @@
     align-items: center;
     height: 100%;
     overflow: hidden; 
+    margin-top : 30px;
 }
 
 
@@ -80,3 +98,8 @@ $conn = connectdb();
         ?>
     </div>
 </ul>
+<div class="xemthembutton">
+<button class="btn_xemthem">
+                <a href="tranghienthi.php?quanly=thucdon" style="text-decoration: none; color: #ffff;">XEM THÊM</a>
+            </button>
+            </div>

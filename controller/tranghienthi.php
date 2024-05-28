@@ -51,8 +51,13 @@
         case 'vechungtoi':
             include ('../view/cus/vechungtoi/vechungtoi.php');
             break;
+
+        // CASE GIỎ HÀNG VÀ THANH TOÁN
         case 'giohang':
             include ('../view/cus/giohang/giohang.php');
+            break;
+        case 'thanhtoan': 
+            include ('../view/cus/thanhtoan/thanhtoan.php');
             break;
         case 'dangnhap':
             include ('../view/cus/dangnhap/login.php');
