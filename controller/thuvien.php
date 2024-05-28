@@ -36,8 +36,36 @@ function taogiohang($tenmon,$dongia,$soluong,$thanhtien,$idbill)
     $conn = connectdb();
     $sql = "INSERT INTO bigdeal_order_item(id_bill,tenmon,soluong,dongia,thanhtien)
                 VALUES ('$idbill','$tenmon','$soluong','$dongia','$thanhtien')";
-
-    mysqli_query($conn,$sql);
+    echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
+    if(mysqli_query($conn,$sql))
+    {
+        echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Đơn hàng của bạn đã được ghi nhận. Nhân viên sẽ liên hệ lại với bạn.',
+            showConfirmButton: false,
+            timer: 1500
+        }).then(function() {
+            window.location.href = 'tranghienthi.php?quanly=2';
+        });
+        </script>";
+    }
+    else
+    {
+        echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Không thể đặt hàng',
+            text: 'Vui lòng đặt lại',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'tranghienthi.php?quanly=2';
+            }
+        });
+      </script>";
+    }
     mysqli_close($conn);
 
 

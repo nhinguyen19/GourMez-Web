@@ -53,48 +53,6 @@ h1
     text-align: center;
 }
 
-
-
-
-  /*payment*/
-  
-  .info_payment
-  {
-    font-family: 'Lalezar';
-    margin-top: 30px;
-  }
-  
-  .info_payment h2
-  {
-    font-family: 'Lalezar';
-    text-align: center;
-    align-items: center;
-    margin-left: 100px;
-    margin-bottom: 30px;
-  }
-  
-  .total_box
-  {
-    width: 800px;
-    height: fit-content;
-    background-color: white;
-    border: none;
-    border-radius: 15px;
-    margin: 35px 0 0 50px;
-    padding: 20px;
-    align-content: center;
-    font-size: 25px;
-    padding-inline: 5px;
-
-  }
-  
-
-
-  #total
-  {
-    float: right;
-  }
-  
  #datmonbigdeal
  {
    background-color: rgba(252, 47, 19, 1);
@@ -114,12 +72,6 @@ h1
     padding: 20px 0 20px 100px;
   }
 
-
-  label
-  {
-    padding: 5px 0 5px 0;
-  }
-
 .text_price
 {
   font-size: 30px;
@@ -127,11 +79,6 @@ h1
   padding-top: 10px;
 }
 
-#form_customer
-{
-  display: grid;
-  grid-template-columns: 750px 400px;
-}
 </style>
         <!-- Thanh đặt món -->
         

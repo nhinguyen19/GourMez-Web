@@ -18,6 +18,7 @@
     padding: 50px;
     margin-top: -10px;
 }
+
 .content
 {
     width: 480px ;
@@ -78,11 +79,13 @@ hr
     <div class="container_dv">
     <?php
     $i = 0;
+    $colors = ["#F7CACD", "#FEEFDD", "#50B2CO"];
     while ($row = mysqli_fetch_array($query)) {
+        $bgColor = $colors[$i % count($colors)]; 
         $i++;
     ?>
         <form method="POST" action="tranghienthi.php?quanly=<?php echo $row['id_service'] ?>">
-            <div class="big">
+            <div class="big" style="background-color: <?php echo $bgColor; ?>">
                 <img src="../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" style="width: 400px; height:400px;padding-left:30px;">
                 <div class="content">
                     <h3 style="color: orangered"><?php echo $row['service_name'] ?></h3>
@@ -91,8 +94,7 @@ hr
                 </div> 
             </div>
             <hr>
-        </form>
-        
+        </form> 
     <?php
     }
     ?>
