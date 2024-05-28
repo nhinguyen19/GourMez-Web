@@ -86,4 +86,7 @@
         include ('../view/cus/trangchu/trangchu.php');
     }
 ?>
+<?php
+include('../view/cus/footer/footer.php');
+?>
 
