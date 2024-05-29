@@ -1,12 +1,8 @@
 <?php
+    // include("xuly_tinnhanKH.php");
     session_start();
-   if(isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
-        include("../view/cus/header/header_sauDN.php");
-    } else {
-        include("../view/cus/header/header_trcDN.php");
-    }
-?>
-<?php 
+    include("../view/cus/header/header.php");
+    
     if(isset($_GET['quanly']))
     { 
         switch($_GET['quanly'])
@@ -32,6 +28,7 @@
             break;
         case 'lienhe':
             include ('../view/cus/lienhe/lienhe.php');
+            insertMessage();
             break;
         case 'vechungtoi':
             include ('../view/cus/vechungtoi/vechungtoi.php');
@@ -48,12 +45,25 @@
         case 'dangxuat':
             include ('../view/cus/dangxuat/check_logout.php');
             break;
-        // case 'dangnhapadmin':
-        //     include ('../view/admin/tranghienthi.php');
-        //     break;
+        case 'dangnhapadmin':
+            include ('../view/admin/tranghienthi.php');
+            break;
         case 'quenmatkhau':
             include ('../view/cus/quenmatkhau/forgotpass.php');
             break;
+        case 'quanlytaikhoan':
+            include ('../view/cus/accountManagement/profile.php');
+            break;
+        case 'chinhsuathongtin':
+            include ('../view/cus/accountManagement/changeProfile/FormChangeProfile.php');
+            break;
+        case 'doimatkhau':
+            include ('../view/cus/accountManagement/changePass/changePass.php');
+            break;
+        case 'lammoimatkhau':
+            include ('../view/cus/quenmatkhau/resetPassword.php');
+            break;
+        
         case 'trangchu':
             include ('../view/cus/trangchu/trangchu.php');
             break;

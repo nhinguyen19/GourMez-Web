@@ -1,0 +1,7 @@
+.box-content{
+    padding-top: 100px;
+    display: flexbox;
+    align-items: center;
+    justify-content:left;
+    text-align: center;
+}
