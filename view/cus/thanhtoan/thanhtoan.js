@@ -45,11 +45,11 @@ function renderCity(data) {
 document.getElementById('GuiDeliTC').addEventListener('click', function(event) {
   event.preventDefault();
   const city = citis.options[citis.selectedIndex].text;
-  if (city !== 'Đà Lạt') {
+  if (city !== 'Tỉnh Lâm Đồng') {
     openPopup();
   } else {
     // Redirect to the specified URL
-    window.location.href = '../view/cus/menu/menu.php';
+    openPopup();
   }
 });
 

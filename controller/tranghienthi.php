@@ -1,5 +1,6 @@
 <?php
     include("xuly_tinnhanKH.php");
+    include("xuly_thanhtoan.php");
     session_start();
     if(isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
         include("../view/cus/header/header_sauDN.php");
@@ -56,6 +57,7 @@
             break;
         case 'thanhtoan': 
             include ('../view/cus/thanhtoan/thanhtoan.php');
+            thanhtoandonhang();
             break;
         case 'dangnhap':
             include ('../view/cus/dangnhap/login.php');
