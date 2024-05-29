@@ -1,46 +1,33 @@
-var citis = document.getElementById("city");
-var districts = document.getElementById("district");
-var wards = document.getElementById("ward");
+document.addEventListener('DOMContentLoaded', function() {
+  const citySelect = document.getElementById('city');
+  const wardSelect = document.getElementById('ward');
 
-var Parameter = {
-  url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
-  method: "GET",
-  responseType: "application/json"
-};
+  const wards = {
+      "Đà Lạt": Array.from({length: 12}, (_, i) => `Phường ${i + 1}`),
+      "Hồ Chí Minh": [
+          "Quận 1", "Quận 2", "Quận 3", "Quận 4", "Quận 5", 
+          "Quận 6", "Quận 7", "Quận 8", "Quận 9", "Quận 10",
+          "Quận 11", "Quận 12", "Quận Bình Thạnh", "Quận Gò Vấp",
+          "Quận Phú Nhuận", "Quận Tân Bình", "Quận Tân Phú",
+          "Quận Thủ Đức", "Huyện Bình Chánh", "Huyện Cần Giờ",
+          "Huyện Củ Chi", "Huyện Hóc Môn", "Huyện Nhà Bè"
+      ]
+  };
 
-axios(Parameter).then(function (result) {
-  renderCity(result.data);
+  citySelect.addEventListener('change', function() {
+      const selectedCity = citySelect.value;
+      const options = wards[selectedCity] || [];
+
+      wardSelect.innerHTML = '<option value="" selected>Chọn phường</option>';
+      options.forEach(ward => {
+          const option = document.createElement('option');
+          option.value = ward;
+          option.textContent = ward;
+          wardSelect.appendChild(option);
+      });
+  });
 });
 
-function renderCity(data) {
-  for (const x of data) {
-    citis.options[citis.options.length] = new Option(x.Name, x.Id);
-  }
-
-  citis.onchange = function () {
-    districts.length = 1;
-    wards.length = 1;
-    if (this.value != "") {
-      const result = data.filter(n => n.Id === this.value);
-
-      for (const k of result[0].Districts) {
-        districts.options[districts.options.length] = new Option(k.Name, k.Id);
-      }
-    }
-  };
-
-  districts.onchange = function () {
-    wards.length = 1;
-    const dataCity = data.filter(n => n.Id === citis.value);
-    if (this.value != "") {
-      const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
-
-      for (const w of dataWards) {
-        wards.options[wards.options.length] = new Option(w.Name, w.Id);
-      }
-    }
-  };
-}
 
 document.getElementById('GuiDeliTC').addEventListener('click', function(event) {
   event.preventDefault();

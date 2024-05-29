@@ -10,11 +10,7 @@ body{
   padding-top:100px; 
   padding-bottom:30px;
   }
-  .monan_qc{
-  padding-top:100px;  
-  padding-bottom:30px;
-  padding-left: 50px;
-  }
+
   .tb_noidung{
     background-color: #ffff;
     padding: 30px; 
@@ -255,3 +251,15 @@ body{
           transform: scale(1);
         }
       }
+
+
+    label 
+    {
+      color : #ffffff;
+
+    }
+
+    .thanhtoanform 
+    {
+      background-color: #E26A2C;
+    }

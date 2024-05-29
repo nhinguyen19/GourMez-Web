@@ -1,8 +1,8 @@
 <?php
-include('../model/connect.php');
-$conn = connectdb();
+function thanhtoandonhang(){
+    if (isset($_POST['guithanhtoan'])) {
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $conn = connectdb();
     $tenkhachhang = $_POST['cusname'];
     $sodienthoai = $_POST['cusphone'];
     $email = $_POST['cusemail'];
@@ -15,8 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $totalPrice = $_POST['total_price'];
 
     $diachi = $city . ', ' . $district . ', ' . $ward . ', ' . $diachideli;
-
-    // Get the current date and time
     $date = date('Y-m-d H:i:s');
 
     // Insert the order into the database
@@ -32,5 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error: " . mysqli_error($conn);
     }
+
+
+$conn->close();
+   
+}
 }
 ?>
