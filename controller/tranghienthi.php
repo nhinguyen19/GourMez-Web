@@ -1,21 +1,13 @@
 <?php
-<<<<<<< HEAD
-    // include("xuly_tinnhanKH.php");
-    session_start();
-    include("../view/cus/header/header.php");
-    
-=======
+
     include("xuly_tinnhanKH.php");
     include("xuly_thanhtoan.php");
     session_start();
-    if(isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
-        include("../view/cus/header/header_sauDN.php");
-    } else {
-        include("../view/cus/header/header_trcDN.php");
-    }
+    include("../view/cus/header/header.php");
+
 ?>
 <?php 
->>>>>>> bd521305dda4d75cc0a0805b74acc24c3fe5f9c4
+
     if(isset($_GET['quanly']))
     { 
         switch($_GET['quanly'])
@@ -109,15 +101,11 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
-<<<<<<< HEAD
-?>
-=======
+
 ?>
 
-<<<<<<< HEAD
+
 <?php
     include("../view/cus/footer/footer.php");
 ?>
-=======
->>>>>>> bd521305dda4d75cc0a0805b74acc24c3fe5f9c4
->>>>>>> 0904c68d847841ab733733b445949c2b8e5f69ad
+
