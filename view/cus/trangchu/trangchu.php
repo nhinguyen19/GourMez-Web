@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../view/LIB/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="../view/cus/trangchu/trangchu.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="trangchumain">
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -59,7 +60,7 @@
             </tr>
             <tr>
               <td colspan="3">
-                <button class="buttonguideli" id="GuiDeliTC" type="submit">Hiện nhà hàng gần bạn</button>
+                <button class="buttonguideli" id="GuiDeliTC" type="submit"> Đặt giao hàng</button>
               </td>
             </tr>
             </table>
@@ -67,10 +68,29 @@
           </td>
           </tr>
           </table>
+        </div> 
+    
+        <div class="chuongtrinh">
+            <a class="link" href="#" id="displayfood">Hôm nay ăn gì?      </a>
+            <a class="link" href="#" id="displaynews">Khuyến mãi siêu hot</a>
         </div>
-
-          
-              
+        <div id="content">
+            <!-- Nơi hiển thị danh sách món ăn -->
+        </div>
+        <script>
+          $("#displayfood").click(function(e)
+        {
+          e.preventDefault();
+          $("#content").load("../view/cus/trangchu/getdishes.php");
+        })
+        $("#displaynews").click(function(e)
+        {
+          e.preventDefault();
+          $("#content").load("../view/cus/trangchu/getdiscountnews.php");
+        })
+         
+        </script>
+ 
        
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script>
@@ -111,14 +131,50 @@ function renderCity(data) {
       for (const w of dataWards) {
         wards.options[wards.options.length] = new Option(w.Name, w.Id);
       }
-    }Q
+    }
   };
 }
 	</script>
+ <!-- The Popup -->
+ <script>
+  document.getElementById('GuiDeliTC').addEventListener('click', function(event) {
+    event.preventDefault();
+    const city = document.getElementById('city').value;
+    if (city !== 'Đà Lạt') {
+      openPopup();
+    } else {
+      // Submit the form or perform any further actions if necessary
+      window.location.href = '../view/cus/menu/menu.php';
+    }
+  });
+
+  function openPopup() {
+    // Create the popup HTML dynamically
+    const popupHtml = `
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <p>Xin lỗi quý khách, GOURMEZ chỉ khả dụng giao hàng tại Đà Lạt</p>
+          <button onclick="closePopup()">Đóng</button>
+        </div>
+      </div>
+    `;
+    // Append the popup HTML to the body
+    document.body.insertAdjacentHTML('beforeend', popupHtml);
+    // Show the popup
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  function closePopup() {
+    // Remove the popup from the DOM
+    const popup = document.getElementById('popup');
+    if (popup) {
+      popup.remove();
+    }
+  }
+</script>
   <img class="postertrangchu" src="../view/cus/img/postertrangchu.png">
             </script>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+           
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
             <script src="../view/LIB/bootstrap/js/bootstrap.min.js"></script>
-</script>
 </div>

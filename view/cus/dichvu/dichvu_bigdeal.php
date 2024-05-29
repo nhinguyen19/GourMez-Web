@@ -1,11 +1,13 @@
-
+<?php
+require("../model/connect.php");
+$conn = connectdb();
+?>
 <style>
-    .banner
+    .banner_bigdeal
     {
         width: 100%;
         height: 90%;
         margin-top: 90px;
-
     }
 
     /* Thanh đặt món */
@@ -13,9 +15,10 @@
 {
   background-color: rgba(255, 242, 242, 1);
   padding-bottom: 50px;
+  padding-top: 50px;
 }
 
-.food_label h1
+h1
 {
   display: flex;
   justify-content: center;
@@ -23,13 +26,14 @@
   font-family: 'Lalezar';
   align-items: center;
   background-color: rgba(174, 33, 8, 1);
-   color: white;
-   padding: 10px 0 5px 0;
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .full_menu
 {
-    display: grid;
+  display: grid;
   grid-template-columns: 500px 500px 500px;
   margin-top: 50px;
   margin-block-end: 50px;
@@ -50,48 +54,6 @@
     text-align: center;
 }
 
-
-
-
-  /*payment*/
-  
-  .info_payment
-  {
-    font-family: 'Lalezar';
-    margin-top: 30px;
-  }
-  
-  .info_payment h2
-  {
-    font-family: 'Lalezar';
-    text-align: center;
-    align-items: center;
-    margin-left: 100px;
-    margin-bottom: 30px;
-  }
-  
-  .total_box
-  {
-    width: 800px;
-    height: fit-content;
-    background-color: white;
-    border: none;
-    border-radius: 15px;
-    margin: 35px 0 0 50px;
-    padding: 20px;
-    align-content: center;
-    font-size: 25px;
-    padding-inline: 5px;
-
-  }
-  
-
-
-  #total
-  {
-    float: right;
-  }
-  
  #datmonbigdeal
  {
    background-color: rgba(252, 47, 19, 1);
@@ -104,44 +66,11 @@
     padding: 5px;
 
  }
-  
-  #send_order
-  {
-    background-color: rgba(252, 47, 19, 1);
-    border-radius: 30px;
-    border: none; 
-    color: white;
-    font-family: 'Lalezar';
-    font-size: 25px;
-    width: 180px;
-    height: 40px;
-    padding: 5px;
-  }
-
-  #reset
-  {
-    background-color: rgba(252, 47, 19, 1);
-    border-radius: 30px;
-    border: none; 
-    color: white;
-    font-family: 'Lalezar';
-    font-size: 25px;
-    width: 100px;
-    height: 40px;
-    padding: 5px;
-    margin-left: 50px;
-  }
-  
+   
   .button
   {
     display: flex;
     padding: 20px 0 20px 100px;
-  }
-
-
-  label
-  {
-    padding: 5px 0 5px 0;
   }
 
 .text_price
@@ -151,25 +80,37 @@
   padding-top: 10px;
 }
 
-#form_customer
-{
-  display: grid;
-  grid-template-columns: 750px 400px;
-}
 </style>
         <!-- Thanh đặt món -->
         
-            <img src = "../view/cus/img/banner_bigdeal.png" class = "banner">
+
+           <?php
+           $query = "SELECT banner FROM service WHERE id_service = '2'";
+           $result = mysqli_query($conn, $query);
+           
+           if (!$result) {
+               die('Invalid query: ' . mysqli_error($conn));
+           }
+           
+           $img = mysqli_fetch_assoc($result);
+           
+           if ($img && isset($img['banner'])) {
+               $bannerUrl = $img['banner'];
+           } else {
+               $bannerUrl = false;
+           }
+           ?>
+
+           <img src="<?php echo htmlspecialchars('/project/GourMez-Web/view/admin/ql_dichvu/uploads/' . $bannerUrl); ?>" class="banner_bigdeal">
+
+            <h1>ĐẶT MÓN ĂN</h1>
             <div class="food_order" style = "font-family: 'Lalezar'">
 
-            <div class="food_label" style = "border: 1px solid yellow">
-                <h1>ĐẶT MÓN ĂN</h1>
+            <div class="food_label">
+                
 
                 <div class="full_menu">
                     <?php
-                        require("../model/connect.php");
-                        $conn = connectdb();
-        
                         $sql = "SELECT food_combo, price,image FROM food_for_service WHERE ID_service = '2'";
                         $result = mysqli_query($conn, $sql);
 
@@ -192,7 +133,7 @@
                                 echo '<input type ="hidden" name = "tenmon" value = "'.$row['food_combo'].'">';
                                 echo '<input type ="hidden" name = "giamon" value = "'.$row['price'].'">';
                                 echo '<input type ="hidden" name = "hinhanh" value = "'.$row['image'].'">';
-                                echo '<input type="submit" name = "datmonbigdeal" value = "Đặt món">';
+                                echo '<input type="submit" id  = "datmonbigdeal"name = "datmonbigdeal" value = "Đặt món">';
                                 echo '</form>';
                                 echo '</div>';
                                 echo '</div>';

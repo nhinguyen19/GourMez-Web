@@ -34,13 +34,13 @@
         <a href="#">Quản lý thông tin</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatcathongtin">Tất cả</a>
-            <a href="tranghienthi.php?quanly=themthongtin">Thêm thông tin</a>
+            <a href="tranghienthi.php?quanly=suathongtin">Sửa thông tin</a>
         </div>
         <hr>
         <a href="#">Quản lý tin tức</a>
         <div class="submenu">
-            <a href="#">Tất cả</a>
-            <a href="#">Thêm tin tức</a>
+            <a href="tranghienthi.php?quanly=tatcatintuc">Tất cả</a>
+            <a href="tranghienthi.php?quanly=themtintuc">Thêm tin tức</a>
         </div>
         <hr>
     </div>

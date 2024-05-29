@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="ql_khuyenmai/khuyenmai.css">
-<h2> Thêm tin tức khuyến mãi </h2>
-<div class="tablekhuyenmai" >
+<div class="main">
+<h2 class="title"> Thêm tin tức khuyến mãi </h2>
+<div class ="main1">
+<div class="insert" >
     <table>
     <form action="tranghienthi.php?quanly=themkmnews" method="post" enctype="multipart/form-data">
                 <th>Tên tin tức khuyến mãi </th>
@@ -21,5 +23,5 @@
         </form>
     </table>
 </div>
-
-   
+</div>
+</div>

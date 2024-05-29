@@ -50,7 +50,7 @@
             }
             else
             {
-                echo"Giỏ hàng rỗng.Bạn đặt hàng thôi!";
+                echo"<tr><td colspan = '6'>Giỏ hàng rỗng.Bạn đặt hàng thôi!</td></tr>";
             }
         }
     }
@@ -128,14 +128,18 @@
         font-size:30px;
     }
 
-    /*thông tin khách hàng*/
+    h2:first-child
+    {
+        margin-top: 80px;
+        margin-bottom:-20px;
+    }
+
+/*thông tin khách hàng*/
 .cus_info
 {
   background-color: rgba(255, 236, 203, 1);
   padding-top: 30px;
-  display:flex;
-  justify-content: center;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 ::placeholder
@@ -143,6 +147,12 @@
     color: white;
     font-size: 15px;
     padding-left: 1;
+  }
+
+  #ship_date
+  {
+    padding-right: 20px;
+    width: 480px;
   }
 
   input 
@@ -175,37 +185,63 @@
     color: black;
   
   }
+
+  .submitbutton
+  {
+        background-color: rgba(73, 169, 111, 1);
+        border-radius: 5px;
+        border: none; 
+        color: white;
+        font-size: 18px;
+        width: fit-content;
+        height: 40px;
+        padding: 5px;
+        margin-left: 50px;
+        font-weight:bolder;
+
+  }
+
+  .giohang
+  {
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  .container
+  {
+    display: grid;
+    grid-template-columns: 700px 700px;
+  }
 </style>
 
+<form action = "" method = "post">
 <!-- Thông tin khách hàng -->
-<div class = "cus_info">    
-    <form id="form_customer" action="#" method="post">
-        <h2>THÔNG TIN KHÁCH HÀNG</h2>
 
-        <input type = "text" name = "cusname" id = "customer_name" placeholder="Họ và tên*" title="Vui lòng nhập tên người đặt tiệc." > <br>
-        <input type = "tel" name = "tel" id = "phone_number" placeholder="Số điện thoại*" required pattern="[0-9]{10}" title="Số điện thoại phải là số, có 10 chữ số!"> <br>
-        <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
+<div class = "container">
+    
+    <div class = "cus_info">   
+        <h2>THÔNG TIN KHÁCH HÀNG</h2> 
+
+        <div class = "thongtinkh">
+            <input type = "text" name = "cusname" id = "customer_name" placeholder="Họ và tên*" title="Vui lòng nhập tên người đặt tiệc." > <br>
+            <input type = "tel" name = "tel" id = "phone_number" placeholder="Số điện thoại*" required pattern="[0-9]{10}" title="Số điện thoại phải là số, có 10 chữ số!"> <br>
+            <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
+                        
+
+            <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày giao hàng</label> <br>
+            <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required> <br>
+
+            <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
+            <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
+        </div>
+    </div> 
                       
-
-        <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày giao hàng</label> <br>
-        <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required><br>
-
-        <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
-        <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
-            <!-- <div class = "button">
-                <input type ="submit" name = "send" id = "send_order" value="Gửi đơn hàng">
-                    <div class = "button_reset">
-                        <input type="reset" id = "reset" value = "Reset">
-                    </div>
-            </div> -->
-            </form>
-
-</div> 
-                      
-
+    
     <!-- Thông tin đơn hàng -->
-    <h2>Thông tin đơn hàng</h2>
-    <div style="margin-top: 20px; display:flex; justify-content:center">
+    
+    <div class = "giohang" style="margin-top: 20px; display:flex; justify-content:center">
+        <!-- <h2>Thông tin đơn hàng</h2> -->
         <table class = "table_food">
             <tr>
                 <th>Hình ảnh</th>
@@ -220,12 +256,66 @@
             ?>
         </table>
     </div>
-
+ </div>
     <div style="display:flex; justify-content:center; margin-top:30px;">
-        <a href = "tranghienthi.php?quanly=giohangdv&delcart=1" style = "color: blue"><button>Xóa giỏ hàng dịch vụ </button></a>
-        <a href = "tranghienthi.php?quanly=2"><button>Tiếp tục đặt hàng </button></a>
+        <input type = "submit" value="Đặt hàng" name = "dathangdv" class = "submitbutton"> <br>
     </div>
+
+</form>
+<div style = "display:flex; justify-content:center">
+        <a href = "tranghienthi.php?quanly=giohangdv&delcart=1" style = "color: blue"><button>Xóa giỏ hàng dịch vụ </button></a>
+        <a href = "tranghienthi.php?quanly=2"><button>Tiếp tục đặt hàng </button></a> <br>
+</div>
+        
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<?php
+include('../controller/thuvien.php');
+include('../model/connect.php');
+    if(isset($_POST['dathangdv'])&&($_POST['dathangdv']))
+    {
+        //lấy thông tin KH
+        $ten = $_POST['cusname'];
+        $sdt = $_POST['tel'];
+        $email = $_POST['email'];
+        $ship_day = $_POST['ship_date'];
+        $diachi = $_POST['address'];
+        $ghichu = $_POST['note'];
+
+        $total = tongdonhang();
+
+        $new_id = uniqid('bigdeal_');
+
+        //insert đơn hàng -  tạo đơn hàng mới
+        $id_bill = taodonhang($new_id,$ten,$sdt,$email,$ship_day,$diachi,$total,$ghichu);
+
+        //insert vào order_item
+        for($i=0; $i < sizeof($_SESSION['giohang']); $i++)
+        {
+            $tenmon = $_SESSION['giohang'][$i][1];
+            $soluong = $_SESSION['giohang'][$i][3];
+            $dongia = $_SESSION['giohang'][$i][2];
+            $thanhtien = $dongia*$soluong;
+            taogiohang($tenmon,$dongia,$soluong,$thanhtien,$id_bill);
+        }
+
+        
+
+        //unset giỏ hàng session
+        
+        echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Đơn hàng đã được ghi nhận. 
+            Nhân viên sẽ liên hệ bạn sau.',
+            showConfirmButton: false,
+            timer: 2500
+        });
+        </script>";
+        // header('Location: tranghienthi.php?quanly=2');   
+        unset($_SESSION['giohang']);
+    }
     
+?>
     
                       
 

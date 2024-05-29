@@ -8,10 +8,38 @@
     justify-content: center;
     height: 100px;
     background-color: #252525;
+<<<<<<< HEAD
     /* background-color: rgba(174, 33, 8, 1); */
     z-index: 1000; 
     transition: all 300ms ease-in-out;
     /* justify-content: space-between; */
+=======
+    z-index: 999; 
+}
+.header ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    width: 100%;
+}
+.header ul li{
+    display: flex;
+    margin: 0px;
+    
+}
+.header li a {
+    color: #ffff;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    font-size: 18px;
+    width: 100%;
+    margin-right: 60px;
+>>>>>>> bd521305dda4d75cc0a0805b74acc24c3fe5f9c4
 }
 
 

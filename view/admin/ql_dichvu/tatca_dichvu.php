@@ -15,6 +15,7 @@
         <tr>
             <th style="text-align: center">ID</th>
             <th style="text-align: center">Tên dịch vụ</th>
+            <th style="text-align: center">Mô tả</th>
             <th style="text-align: center">Logo</th>
             <th style="text-align: center">Banner</th>
             <th style="text-align: center">Quản lý</th>
@@ -28,6 +29,7 @@
         <tr>
             <td style="text-align: center"><?php echo $row['id_service'] ?></td>
             <td style="text-align: center"><?php echo $row['service_name']?></td>
+            <td style="font-size: 15px; width: 200px; "><?php echo $row['small_descript'] ?></td>
             <td style="text-align: center">
                 <img src = "../../view/admin/ql_dichvu/uploads/<?php echo $row['image']?>" style = "width: 150px; height: 150px;">
             </td>
@@ -40,7 +42,7 @@
             }
         ?>
         <tr>
-            <td style="text-align: center" colspan="5">
+            <td style="text-align: center" colspan="6">
                 <form action="../admin/tranghienthi.php?quanly=themdichvu" method="post">
                     <input type="submit" value="Thêm dịch vụ" style="font-size: 18px;">
                 </form>

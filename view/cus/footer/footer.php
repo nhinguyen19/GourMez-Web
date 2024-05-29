@@ -4,34 +4,23 @@ label, a
 {
     color: white;
 }
-img
-{
-    padding-left: 40px;
-    width: 200px;
-    height: 200px;
-}
-/* .background
-{
-    
-    width: 100%;
-    margin-left: -10px;
-} */
+
 .Contact
 {
     padding-left: 100px;
 }
 
-footer
+.background
 {
     display: grid;
-    grid-template-columns: 350px 350px 350px 350px;
+    grid-template-columns: 350px 350px 350px 300px;
     font-size: 20px;
     padding-inline: 50px;
     padding: 30px 50px 30px 50px;
-    width: 120%;
-    height: 100px;
     background-color: rgba(174, 33, 8, 1);
-    margin-left:-50px;
+    font-family: 'Lalezar';
+    /* width: 100%; */
+    
 }
 label, a
 {
@@ -40,10 +29,10 @@ label, a
 
 .logo img
 {
-    margin-top: -40px;
-    padding-left: 10px;
-    width: 300px;
-    height: 250px;
+    width: 220px;
+    height: 100px;
+    padding-top: 40px;
+
 }
 
 .Contact
@@ -51,54 +40,47 @@ label, a
     padding-left: 100px;
 }
 
-.nav
-{
-    display:list-item;
-}
-.nav a
+/* .nav a
 {
     line-height: 30px;
-}
-
-.address label
-{
-    line-height: 30px;
-}
-
-.nav a:hover {
-    color: black;
-}
-
-
-.address label
-{
-    line-height: 30px;
-}
-
-.nav a:hover {
-    color: black;
-}
-
-/* footer
-{
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    width : 100%;
 } */
 
+.address label
+{
+    line-height: 30px;
+}
+
+.nav a:hover {
+    color: black;
+}
+
+
+.address label
+{
+    line-height: 30px;
+}
+
+.nav a:hover {
+    color: black;
+}
+
+footer
+{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
 
 </style>
 
- <footer >
- <!-- <div class = "background"> -->
+
+ <div class = "background">
         <div class = "logo">
             <img src = "../view/cus/img/logocus.png">
         </div>
 
         <div class = "nav">
-            <h3>GourMéz</h3>
+            <h3 style = "width: 340px; height: 32.65px;">GourMéz</h3>
             <div class = "text">
             <a href="">Trang chủ</a><br>
             <a href = "">About us</a><br>
@@ -119,6 +101,6 @@ label, a
             <h3>Follow us</h3> <br>
             <i class="fab fa-facebook fa-lg" style="padding: 0 15px 0 0;"></i><i class="fab fa-instagram-square fa-lg"></i>
         </div>
-        <!-- </div> -->
-</footer>
+</div>
+
     <footer>Copyright 2024, All rights reserved</footer>
