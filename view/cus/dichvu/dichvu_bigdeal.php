@@ -27,7 +27,7 @@ h1
   align-items: center;
   background-color: rgba(174, 33, 8, 1);
   color: white;
-  margin-top: 0px;
+  margin-top: -5px;
   margin-bottom: 0px;
 }
 
@@ -79,7 +79,11 @@ h1
   padding-left: 50px;
   padding-top: 10px;
 }
-
+.text_info
+{
+  text-align: left;
+  margin-left: 170px;
+}
 </style>
         <!-- Thanh đặt món -->
         
@@ -125,7 +129,7 @@ h1
                                 $counter++;
                                 echo '<div class="option">';
                                 echo '<img name = "image" src="../view/admin/ql_dichvu/uploads/' . $row['image'] . '">';
-                                echo '<div class="text">';
+                                echo '<div class="text_info">';
                                 echo '<p style = "margin-bottom: 0px">'. $row['food_combo'] .'</p>';
                                 echo 'Giá bán: <p style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
                                 echo '<form action = "tranghienthi.php?quanly=giohangdv" method = "post">';
@@ -133,9 +137,9 @@ h1
                                 echo '<input type ="hidden" name = "tenmon" value = "'.$row['food_combo'].'">';
                                 echo '<input type ="hidden" name = "giamon" value = "'.$row['price'].'">';
                                 echo '<input type ="hidden" name = "hinhanh" value = "'.$row['image'].'">';
+                                echo '</div>';
                                 echo '<input type="submit" id  = "datmonbigdeal"name = "datmonbigdeal" value = "Đặt món">';
                                 echo '</form>';
-                                echo '</div>';
                                 echo '</div>';
                             }
                         }
