@@ -35,7 +35,7 @@
                             <div>'.$tt.'</div>
                         </td>
                         <td>
-                            <a href="tranghienthi.php?quanly=giohangdv&delid='.$i.'">Xóa</a>
+                            <a style = "color: blue;font-weight:bold;"href="tranghienthi.php?quanly=giohangdv&delid='.$i.'">Xóa</a>
                         </td>
 
                     </tr>';
@@ -94,8 +94,8 @@
 <style>
     table, th,td
     {
-        border: 2px solid orangered;
-        border-collapse: collapse;
+        /* border: 2px solid orangered;
+        border-collapse: collapse; */
         font-size: 18px;
         text-align: center;
     }
@@ -128,20 +128,17 @@
         font-size:30px;
     }
 
-    h2:first-child
-    {
-        margin-top: 80px;
-        margin-bottom:-20px;
-    }
-
 /*thông tin khách hàng*/
 .cus_info
 {
-  background-color: rgba(255, 236, 203, 1);
-  padding-top: 30px;
-  margin-top: 10px;
+  padding: 20px;
+  margin-left: 120px;
+  background-color: white;
+    /* border-radius: 40px; */
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 20px 20px 50px 10px pink inset ;
 }
-
 ::placeholder
 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
@@ -203,27 +200,37 @@
 
   .giohang
   {
-    width: 400px;
-    background-color: white;
-    border-radius: 20px;
+    padding: 20px;
+  /* background-color: white; */
+    border-radius: 40px;
+    width: fit-content;
+    height: fit-content;
+    color: white;
   }
 
   .container
   {
     display: grid;
-    grid-template-columns: 700px 700px;
+    grid-template-columns: 800px 600px;
+    margin-top: 120px;
+  }
+
+  .body
+  {
+    background-image: url('/project/GourMez-Web/view/admin/ql_dichvu/uploads/background.png');
+    padding-top: 20px;
   }
 </style>
 
+<div class = "body">
 <form action = "" method = "post">
 <!-- Thông tin khách hàng -->
-
 <div class = "container">
     
     <div class = "cus_info">   
-        <h2>THÔNG TIN KHÁCH HÀNG</h2> 
 
         <div class = "thongtinkh">
+            <h2>THÔNG TIN KHÁCH HÀNG</h2> 
             <input type = "text" name = "cusname" id = "customer_name" placeholder="Họ và tên*" title="Vui lòng nhập tên người đặt tiệc." > <br>
             <input type = "tel" name = "tel" id = "phone_number" placeholder="Số điện thoại*" required pattern="[0-9]{10}" title="Số điện thoại phải là số, có 10 chữ số!"> <br>
             <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
@@ -241,8 +248,12 @@
     <!-- Thông tin đơn hàng -->
     
     <div class = "giohang" style="margin-top: 20px; display:flex; justify-content:center">
-        <!-- <h2>Thông tin đơn hàng</h2> -->
         <table class = "table_food">
+            <tr>
+                <td colspan="6">
+                <h2>Thông tin đơn hàng</h2>
+                </td>
+            </tr>
             <tr>
                 <th>Hình ảnh</th>
                 <th>Tên món</th>
@@ -266,11 +277,10 @@
         <a href = "tranghienthi.php?quanly=giohangdv&delcart=1" style = "color: blue"><button>Xóa giỏ hàng dịch vụ </button></a>
         <a href = "tranghienthi.php?quanly=2"><button>Tiếp tục đặt hàng </button></a> <br>
 </div>
-        
+</div>      
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
 include('../controller/thuvien.php');
-include('../model/connect.php');
     if(isset($_POST['dathangdv'])&&($_POST['dathangdv']))
     {
         //lấy thông tin KH

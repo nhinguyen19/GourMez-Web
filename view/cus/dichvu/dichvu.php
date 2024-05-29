@@ -9,26 +9,31 @@
 .container
 {
     font-family: 'Lalezar';
+    margin-bottom: 50px;
 }
 .big
 {
     display: grid;
     grid-template-columns: 500px 700px;
-    /* background-color: rgba(251, 229, 218, 1); */
     padding: 50px;
-    margin-top: -10px;
+    margin-top: 50px;
+    background-color: #F5EAD7;
+    border-radius: 40px;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 50px;
 }
 
 .content
 {
-    width: 480px ;
+    width: 500px ;
     padding-left: 50px;
     justify-content: center;
     align-items: center;
     text-align:justify;
     font-size: medium;
     line-height: 30px;
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 .content h3
@@ -45,6 +50,7 @@
     font-size: 25px;
 }
 
+
 button
 {
     width: fit-content;
@@ -59,6 +65,9 @@ button
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif'
 }
 
+button:hover {
+  box-shadow: 0 0 25px rgba(33,33,33,.2); 
+}
 hr
 {
     background-color: black;
@@ -79,13 +88,13 @@ hr
     <div class="container_dv">
     <?php
     $i = 0;
-    $colors = ["#F7CACD", "#FEEFDD", "#50B2CO"];
+    // $colors = ["#F7CACD", "#FEEFDD", "#50B2CO"];
     while ($row = mysqli_fetch_array($query)) {
-        $bgColor = $colors[$i % count($colors)]; 
+        // $bgColor = $colors[$i % count($colors)]; 
         $i++;
     ?>
-        <form method="POST" action="tranghienthi.php?quanly=<?php echo $row['id_service'] ?>">
-            <div class="big" style="background-color: <?php echo $bgColor; ?>">
+        <form style = "display:flex; justify-content: center;" method="POST" action="tranghienthi.php?quanly=<?php echo $row['id_service'] ?>">
+            <div class="big">  
                 <img src="../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" style="width: 400px; height:400px;padding-left:30px;">
                 <div class="content">
                     <h3 style="color: orangered"><?php echo $row['service_name'] ?></h3>
@@ -93,12 +102,13 @@ hr
                     <button type="submit" style = "font-family: 'Lalezar'">Đặt hàng</button>
                 </div> 
             </div>
-            <hr>
         </form> 
     <?php
     }
     ?>
     
     </div>
+</div>
+
 
     

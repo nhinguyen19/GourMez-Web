@@ -91,7 +91,7 @@ while ($row_cart = mysqli_fetch_array($query_cart)) {
         echo '<td colspan="2" style="text-align: center; font-weight:bold">Thành tiền: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
         echo '</tr>';
         echo '<tr>';
-        echo '<td colspan="2" style="text-align: center;"> <button class="btn_thanhtoan" type="button" style="margin-top: 5px;">Thanh toán</button> </td>';
+        echo '<td colspan="2" style="text-align: center;"> <button class="btn_thanhtoan" type="button" style="margin-top: 5px;"> <a href="tranghienthi.php?quanly=thanhtoan" style="text-decoration: none; color: #ffff;">Thanh toán</a></button> </td>';
         echo '</tr>';
         echo '</table>';
     ?>
