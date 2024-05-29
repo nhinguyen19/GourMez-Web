@@ -134,7 +134,7 @@
         margin-bottom:-20px;
     }
 
-    /*thông tin khách hàng*/
+/*thông tin khách hàng*/
 .cus_info
 {
   background-color: rgba(255, 236, 203, 1);
@@ -149,6 +149,12 @@
     color: white;
     font-size: 15px;
     padding-left: 1;
+  }
+
+  #ship_date
+  {
+    padding-right: 20px;
+    width: 480px;
   }
 
   input 
@@ -198,7 +204,7 @@
   }
 </style>
 
-<form action = "../controller/xuly_order.php" method = "post">
+<form action = "" method = "post">
 <!-- Thông tin khách hàng -->
 <h2>THÔNG TIN KHÁCH HÀNG</h2>
 
@@ -244,7 +250,55 @@
         <a href = "tranghienthi.php?quanly=2"><button>Tiếp tục đặt hàng </button></a> <br>
 </div>
         
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<?php
+include('../controller/thuvien.php');
+include('../model/connect.php');
+    if(isset($_POST['dathang'])&&($_POST['dathang']))
+    {
+        //lấy thông tin KH
+        $ten = $_POST['cusname'];
+        $sdt = $_POST['tel'];
+        $email = $_POST['email'];
+        $ship_day = $_POST['ship_date'];
+        $diachi = $_POST['address'];
+        $ghichu = $_POST['note'];
+
+        $total = tongdonhang();
+
+        $new_id = uniqid('bigdeal_');
+
+        //insert đơn hàng -  tạo đơn hàng mới
+        $id_bill = taodonhang($new_id,$ten,$sdt,$email,$ship_day,$diachi,$total,$ghichu);
+
+        //insert vào order_item
+        for($i=0; $i < sizeof($_SESSION['giohang']); $i++)
+        {
+            $tenmon = $_SESSION['giohang'][$i][1];
+            $soluong = $_SESSION['giohang'][$i][3];
+            $dongia = $_SESSION['giohang'][$i][2];
+            $thanhtien = $dongia*$soluong;
+            taogiohang($tenmon,$dongia,$soluong,$thanhtien,$id_bill);
+        }
+
+        
+
+        //unset giỏ hàng session
+        
+        echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Đơn hàng đã được ghi nhận. 
+            Nhân viên sẽ liên hệ bạn sau.',
+            showConfirmButton: false,
+            timer: 2500
+        });
+        </script>";
+        // header('Location: tranghienthi.php?quanly=2');   
+        unset($_SESSION['giohang']);
+    }
     
+?>
     
                       
 

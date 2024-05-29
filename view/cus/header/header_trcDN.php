@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="../view/cus/giohang/giohang.css">
     <link rel="stylesheet" href="../view/cus/dangnhap/login.css">
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
     <style>
@@ -22,7 +23,6 @@
     </style>
 </head>
 <body>
-
 <header>
     <nav class="header">
         <!-- <div id="img"><img src="..view/cus/img/logocus.png" style="height: 86.61px; width: 100px;"></div> -->
@@ -42,5 +42,6 @@
         </button>
     </nav>
 </header>
+</body>
 
     

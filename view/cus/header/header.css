@@ -7,8 +7,8 @@
     align-items: center;
     justify-content: center;
     height: 100px;
-    background-color: rgba(174, 33, 8, 1);
-    z-index: 1000; 
+    background-color: #252525;
+    z-index: 999; 
 }
 .header ul{
     display: flex;
@@ -22,7 +22,7 @@
     
 }
 .header li a {
-    color: rgba(249, 248, 248, 1);
+    color: #ffff;
     list-style: none;
     text-decoration: none;
     display: flex;

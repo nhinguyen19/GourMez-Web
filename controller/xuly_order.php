@@ -34,21 +34,15 @@ include('../model/connect.php');
 
         //unset giỏ hàng session
         unset($_SESSION['giohang']);
-
-        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
         echo "<script>
         Swal.fire({
             icon: 'success',
-            title: 'Đơn hàng của bạn đã được ghi nhận. Nhân viên sẽ liên hệ lại với bạn.',
+            title: 'Sản phẩm đã được thêm vào giỏ hàng',
             showConfirmButton: false,
             timer: 1500
-        }).then(function() {
-            window.location.href = 'tranghienthi.php?quanly=2';
         });
         </script>";
-        header('Location: tranghienthi.php?quanly=2');
-
-       
+        header('Location: tranghienthi.php?quanly=2');   
     }
     
 ?>

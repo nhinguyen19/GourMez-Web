@@ -37,8 +37,10 @@
         case 'xulygiohang':
             include('../controller/xuly_order.php');
         case 'giohangdv':
-                include('../view/cus/dichvu/giohang_dv.php');
-               
+                include('../view/cus/dichvu/giohang_dv.php');   
+                break;
+        case 'giohangsn':
+                include('../view/cus/dichvu/giohang_sn.php');   
                 break;
         case 'tintuc':
             include ('../view/cus/tintuc/tintuc.php');
@@ -89,6 +91,3 @@
     }
 ?>
 
-<?php
-include('../view/cus/footer/footer.php');
-?>
