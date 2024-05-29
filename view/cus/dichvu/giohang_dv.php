@@ -139,8 +139,6 @@
 {
   background-color: rgba(255, 236, 203, 1);
   padding-top: 30px;
-  justify-content: center;
-  margin-left: 500px;
   margin-top: 10px;
 }
 
@@ -202,29 +200,48 @@
         font-weight:bolder;
 
   }
+
+  .giohang
+  {
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  .container
+  {
+    display: grid;
+    grid-template-columns: 700px 700px;
+  }
 </style>
 
 <form action = "" method = "post">
 <!-- Thông tin khách hàng -->
-<h2>THÔNG TIN KHÁCH HÀNG</h2>
 
-    <div class = "cus_info">    
-        <input type = "text" name = "cusname" id = "customer_name" placeholder="Họ và tên*" title="Vui lòng nhập tên người đặt tiệc." > <br>
-        <input type = "tel" name = "tel" id = "phone_number" placeholder="Số điện thoại*" required pattern="[0-9]{10}" title="Số điện thoại phải là số, có 10 chữ số!"> <br>
-        <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
-                      
+<div class = "container">
+    
+    <div class = "cus_info">   
+        <h2>THÔNG TIN KHÁCH HÀNG</h2> 
 
-        <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày giao hàng</label> <br>
-        <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required> <br>
+        <div class = "thongtinkh">
+            <input type = "text" name = "cusname" id = "customer_name" placeholder="Họ và tên*" title="Vui lòng nhập tên người đặt tiệc." > <br>
+            <input type = "tel" name = "tel" id = "phone_number" placeholder="Số điện thoại*" required pattern="[0-9]{10}" title="Số điện thoại phải là số, có 10 chữ số!"> <br>
+            <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
+                        
 
-        <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
-        <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
+            <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày giao hàng</label> <br>
+            <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required> <br>
+
+            <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
+            <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
+        </div>
     </div> 
                       
-
+    
     <!-- Thông tin đơn hàng -->
-    <h2>Thông tin đơn hàng</h2>
-    <div style="margin-top: 20px; display:flex; justify-content:center">
+    
+    <div class = "giohang" style="margin-top: 20px; display:flex; justify-content:center">
+        <!-- <h2>Thông tin đơn hàng</h2> -->
         <table class = "table_food">
             <tr>
                 <th>Hình ảnh</th>
@@ -239,9 +256,9 @@
             ?>
         </table>
     </div>
-
+ </div>
     <div style="display:flex; justify-content:center; margin-top:30px;">
-        <input type = "submit" value="Đặt hàng" name = "dathang" class = "submitbutton"> <br>
+        <input type = "submit" value="Đặt hàng" name = "dathangdv" class = "submitbutton"> <br>
     </div>
 
 </form>
@@ -254,7 +271,7 @@
 <?php
 include('../controller/thuvien.php');
 include('../model/connect.php');
-    if(isset($_POST['dathang'])&&($_POST['dathang']))
+    if(isset($_POST['dathangdv'])&&($_POST['dathangdv']))
     {
         //lấy thông tin KH
         $ten = $_POST['cusname'];

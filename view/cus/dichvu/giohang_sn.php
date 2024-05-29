@@ -153,13 +153,27 @@
     padding-left: 1;
   }
 
-  #ship_date
+  #party_date
   {
     padding-right: 20px;
-    width: 480px;
+    width: 380px;
   }
 
-  input 
+  #gender
+  {
+    width: 100px;
+    background-color: rgba(248, 127, 64, 1);
+    color:white;
+    width: 90px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    padding-left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  input
   {
     background-color: rgba(248, 127, 64, 1);
     color:white;
@@ -216,8 +230,15 @@
         <input type = "email" name = "email" id = "email" placeholder="Email"> <br>
                       
 
-        <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày giao hàng</label> <br>
-        <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required> <br>
+        <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày tổ chức</label> <br>
+        <input type="date" style="font-size: 15px;" name = "party_date" value = "12-5-2004" id = "party_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required>
+
+        <select name = "gender" id = "gender">
+            <option value  = "" disabled selected>Giới tính</option>
+            <option value = "nữ">Nữ</option>
+            <option value  = "nam">Nam</option>
+            <option value = "khác">Khác</option>
+        </select>
 
         <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
         <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
@@ -255,14 +276,14 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
 include('../controller/thuvien.php');
-include('../model/connect.php');
+// include('../model/connect.php');
     if(isset($_POST['dathang'])&&($_POST['dathang']))
     {
         //lấy thông tin KH
         $ten = $_POST['cusname'];
         $sdt = $_POST['tel'];
         $email = $_POST['email'];
-        $ship_day = $_POST['ship_date'];
+        $party_day = $_POST['party_date'];
         $diachi = $_POST['address'];
         $ghichu = $_POST['note'];
 

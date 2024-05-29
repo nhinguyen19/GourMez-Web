@@ -1,4 +1,22 @@
 <?php
+require("../model/connect.php");
+
+function getImageUrl() {
+    $conn = connectdb();
+    $query = "SELECT banner FROM service WHERE id_service = '2'";
+    $result = mysqli_query($conn,$query);
+    
+    if (!$result) {
+        die('Invalid query: ' . mysqli_error($conn));
+    }
+    
+    $img = mysqli_fetch_assoc($result);
+    
+    mysqli_close($conn); // Close the connection
+    
+    return $img;
+}
+
 
 function tongdonhang()
     {
@@ -69,6 +87,18 @@ function taogiohang($tenmon,$dongia,$soluong,$thanhtien,$idbill)
     mysqli_close($conn);
 
 
+}
+
+function taodonhang_sinhnhat($id,$name, $phone, $email, $booking_date, $address, $total_price, $note)
+{
+    $conn = connectdb();
+    $sql = "INSERT INTO bigdeal_service(id_bill,name, phone, email, booking_date, address, total_price, note)
+                VALUES ('$id','$name','$phone','$email','$booking_date','$address', '$total_price', '$note')";
+    mysqli_query($conn,$sql);
+
+    $last_id = $id;
+    mysqli_close($conn);
+    return $last_id;
 }
 
 ?>

@@ -1,12 +1,13 @@
-
+<?php
+require("../model/connect.php");
+$conn = connectdb();
+?>
 <style>
-    .banner
+    .banner_bigdeal
     {
         width: 100%;
         height: 90%;
         margin-top: 90px;
-        margin-left: -40px;
-
     }
 
     /* Thanh đặt món */
@@ -82,7 +83,26 @@ h1
 </style>
         <!-- Thanh đặt món -->
         
-            <img src = "../view/cus/img/banner_bigdeal.png" class = "banner">
+
+           <?php
+           $query = "SELECT banner FROM service WHERE id_service = '2'";
+           $result = mysqli_query($conn, $query);
+           
+           if (!$result) {
+               die('Invalid query: ' . mysqli_error($conn));
+           }
+           
+           $img = mysqli_fetch_assoc($result);
+           
+           if ($img && isset($img['banner'])) {
+               $bannerUrl = $img['banner'];
+           } else {
+               $bannerUrl = false;
+           }
+           ?>
+
+           <img src="<?php echo htmlspecialchars('/project/GourMez-Web/view/admin/ql_dichvu/uploads/' . $bannerUrl); ?>" class="banner_bigdeal">
+
             <h1>ĐẶT MÓN ĂN</h1>
             <div class="food_order" style = "font-family: 'Lalezar'">
 
@@ -91,9 +111,6 @@ h1
 
                 <div class="full_menu">
                     <?php
-                        require("../model/connect.php");
-                        $conn = connectdb();
-        
                         $sql = "SELECT food_combo, price,image FROM food_for_service WHERE ID_service = '2'";
                         $result = mysqli_query($conn, $sql);
 

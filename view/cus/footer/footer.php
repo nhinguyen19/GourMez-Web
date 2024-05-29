@@ -4,12 +4,7 @@ label, a
 {
     color: white;
 }
-img
-{
-    padding-left: 40px;
-    width: 200px;
-    height: 200px;
-}
+
 .Contact
 {
     padding-left: 100px;
@@ -24,7 +19,7 @@ img
     padding: 30px 50px 30px 50px;
     background-color: rgba(174, 33, 8, 1);
     font-family: 'Lalezar';
-    width: 100%;
+    /* width: 100%; */
     
 }
 label, a
@@ -34,10 +29,10 @@ label, a
 
 .logo img
 {
-    margin-top: -40px;
-    padding-left: 10px;
-    width: 300px;
-    height: 250px;
+    width: 220px;
+    height: 100px;
+    padding-top: 40px;
+
 }
 
 .Contact
@@ -45,14 +40,10 @@ label, a
     padding-left: 100px;
 }
 
-.nav
-{
-    display:list-item;
-}
-.nav a
+/* .nav a
 {
     line-height: 30px;
-}
+} */
 
 .address label
 {
@@ -89,7 +80,7 @@ footer
         </div>
 
         <div class = "nav">
-            <h3>GourMéz</h3>
+            <h3 style = "width: 340px; height: 32.65px;">GourMéz</h3>
             <div class = "text">
             <a href="">Trang chủ</a><br>
             <a href = "">About us</a><br>

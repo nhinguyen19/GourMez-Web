@@ -74,7 +74,7 @@ hr
 
 
 <div class="container">
-    <img src="../view/cus/img/BannerDichVu.png" style="width:100%; height: 700px;margin-left:-40px; margin-top:50px">
+    <img src="../view/cus/img/BannerDichVu.png" style="width:100%; height: 700px;margin-top:50px">
 
     <div class="container_dv">
     <?php

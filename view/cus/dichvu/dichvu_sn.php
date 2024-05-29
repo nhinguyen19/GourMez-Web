@@ -1,12 +1,13 @@
-
+<?php
+require("../model/connect.php");
+$conn = connectdb();
+?>
 <style>
-    .banner
+    .banner_sinhnhat
     {
         width: 100%;
         height: 90%;
         margin-top: 90px;
-        margin-left: -40px;
-
     }
 
     /* Thanh đặt món */
@@ -79,10 +80,35 @@ h1
   padding-top: 10px;
 }
 
+.text_info
+{
+  text-align: left;
+  margin-left: 170px;
+}
+
 </style>
         <!-- Thanh đặt món -->
         
-            <img src = "../view/cus/img/banner_bigdeal.png" class = "banner">
+          <?php
+           $query = "SELECT banner FROM service WHERE id_service = '1'";
+           $result = mysqli_query($conn, $query);
+           
+           if (!$result) {
+               die('Invalid query: ' . mysqli_error($conn));
+           }
+           
+           $img = mysqli_fetch_assoc($result);
+           
+           if ($img && isset($img['banner'])) {
+               $bannerUrl = $img['banner'];
+           } else {
+               $bannerUrl = false;
+           }
+           ?>
+
+           <img src="<?php echo htmlspecialchars('/project/GourMez-Web/view/admin/ql_dichvu/uploads/' . $bannerUrl); ?>" class="banner_sinhnhat">
+
+
             <h1>ĐẶT MÓN ĂN</h1>
             <div class="food_order" style = "font-family: 'Lalezar'">
 
@@ -91,9 +117,6 @@ h1
 
                 <div class="full_menu">
                     <?php
-                        require("../model/connect.php");
-                        $conn = connectdb();
-        
                         $sql = "SELECT food_combo, price,image FROM food_for_service WHERE ID_service = '1'";
                         $result = mysqli_query($conn, $sql);
 
@@ -108,17 +131,17 @@ h1
                                 $counter++;
                                 echo '<div class="option">';
                                 echo '<img name = "image" src="../view/admin/ql_dichvu/uploads/' . $row['image'] . '">';
-                                echo '<div class="text">';
+                                echo '<div class="text_info">';
                                 echo '<p style = "margin-bottom: 0px">'. $row['food_combo'] .'</p>';
                                 echo 'Giá bán: <p style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
                                 echo '<form action = "tranghienthi.php?quanly=giohangsn" method = "post">';
-                                echo 'Số lượng: <input type="number" name="soluong" id = "quantity"  placeholder="1" value="1" min="1" step="1" max="50" title="Vui lòng nhập số lượng" style = "width: 60px; height: 30px; font-size:18px; margin-bottom:20px "required ><br>';
+                                echo 'Số lượng: <input type="number" name="soluong" id = "quantity"  placeholder="10" min="10" step="1" title="Vui lòng nhập số lượng" style = "width: 60px; height: 30px; font-size:18px; margin-bottom:20px "required ><br>';
                                 echo '<input type ="hidden" name = "tenmon" value = "'.$row['food_combo'].'">';
                                 echo '<input type ="hidden" name = "giamon" value = "'.$row['price'].'">';
                                 echo '<input type ="hidden" name = "hinhanh" value = "'.$row['image'].'">';
+                                echo '</div>';
                                 echo '<input type="submit" id  = "datmonsinhnhat"name = "datmonsinhnhat" value = "Đặt món">';
                                 echo '</form>';
-                                echo '</div>';
                                 echo '</div>';
                             }
                         }
