@@ -20,6 +20,7 @@ body{
     padding: 30px; 
     padding-right:50px;
     padding-left:50px;
+    border-radius: 5px;
 }
 .tb_monan{
     /* background-color: #ffff; */
@@ -39,7 +40,7 @@ body{
   margin-right: 10px;
 }
 .btn_thanhtoan{
-    background-color: #E26A2C;
+  background-image: linear-gradient(45deg, #f12711, #f5af19);
     border: none;
     border-radius: 10px;
     width: 150px;
@@ -47,6 +48,10 @@ body{
     color: #ffff;
     font-family: 'Lalezar';
     font-size: 16px;
+}
+.btn_thanhtoan:hover:not(.active) {
+  background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
+  transition: background-color 0.3s ease;
 }
 .btn_update{
   background-color: #14942c; 
@@ -101,7 +106,7 @@ body{
   font-weight: bold;
 }
 .btn_xemchitiet{
-  background-color: #E26A2C;
+  background-image: linear-gradient(45deg, #f12711, #f5af19);
   border: none;
   border-radius: 10px;
   width: 100px;
@@ -111,7 +116,7 @@ body{
   font-size: 16px;
 }
 .btn_xemchitiet:hover:not(.active) {
-  background-color: #ffb84d;
+  background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
   transition: background-color 0.3s ease;
 }
 
