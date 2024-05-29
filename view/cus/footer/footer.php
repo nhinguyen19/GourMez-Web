@@ -24,6 +24,7 @@ img
     padding: 30px 50px 30px 50px;
     background-color: rgba(174, 33, 8, 1);
     font-family: 'Lalezar';
+    width: 100%;
     
 }
 label, a

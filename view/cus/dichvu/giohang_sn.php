@@ -1,41 +1,42 @@
 <?php
     session_start();
-    if(!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];
+    if(!isset($_SESSION['giohangsn'])) 
+    {$_SESSION['giohangsn'] = [];}
     //xóa giỏ hàng
-    if(isset($_GET['delcart'])&&($_GET['delcart']==1)) unset($_SESSION['giohang']);
+    if(isset($_GET['delcart'])&&($_GET['delcart']==1)) unset($_SESSION['giohangsn']);
 
     //xóa sp
     if(isset($_GET['delid'])&&($_GET['delid']>=0)) 
     {
-        array_splice($_SESSION['giohang'], $_GET['delid'],1);
+        array_splice($_SESSION['giohangsn'], $_GET['delid'],1);
     }
 
     //chuyển lại trang đặt món
     if (isset($_GET['continue_order']))
     {
-        header('Location: tranghienthi.php?quanly=2');
+        header('Location: tranghienthi.php?quanly=1');
     }
     function show_food()
     {
-        if(isset($_SESSION['giohang'])&&(is_array($_SESSION['giohang'])))
+        if(isset($_SESSION['giohangsn'])&&(is_array($_SESSION['giohangsn'])))
         {
-            if(sizeof($_SESSION['giohang'])>0)
+            if(sizeof($_SESSION['giohangsn'])>0)
             {
             $tong = 0;
-            for($i=0; $i < sizeof($_SESSION['giohang']); $i++)
+            for($i=0; $i < sizeof($_SESSION['giohangsn']); $i++)
             {
-                $tt =(int) $_SESSION['giohang'][$i][2]*(int)$_SESSION['giohang'][$i][3];
+                $tt =(int) $_SESSION['giohangsn'][$i][2]*(int)$_SESSION['giohangsn'][$i][3];
                 $tong+= $tt;
                 echo '<tr>
-                        <td><img style = "width:50px; height:50px" src = "../view/admin/ql_dichvu/uploads/'.$_SESSION['giohang'][$i][0].'"</td>
-                        <td>'.$_SESSION['giohang'][$i][1]. '</td>
-                        <td>'.$_SESSION['giohang'][$i][2]. '</td>
-                        <td>'.$_SESSION['giohang'][$i][3]. '</td>
+                        <td><img style = "width:50px; height:50px" src = "../view/admin/ql_dichvu/uploads/'.$_SESSION['giohangsn'][$i][0].'"</td>
+                        <td>'.$_SESSION['giohangsn'][$i][1]. '</td>
+                        <td>'.$_SESSION['giohangsn'][$i][2]. '</td>
+                        <td>'.$_SESSION['giohangsn'][$i][3]. '</td>
                         <td>
                             <div>'.$tt.'</div>
                         </td>
                         <td>
-                            <a href="tranghienthi.php?quanly=giohangdv&delid='.$i.'">Xóa</a>
+                            <a href="tranghienthi.php?quanly=giohangsn&delid='.$i.'">Xóa</a>
                         </td>
 
                     </tr>';
@@ -52,11 +53,12 @@
             {
                 echo"<tr><td colspan = '6'>Giỏ hàng rỗng.Bạn đặt hàng thôi!</td></tr>";
             }
+            // print_r($_SESSION['giohangsn']);
         }
     }
 
     //lấy dữ liệu từ form
-    if(isset($_POST['datmonbigdeal'])&&($_POST['datmonbigdeal']))
+    if(isset($_POST['datmonsinhnhat'])&&($_POST['datmonsinhnhat']))
     {
         $hinh = $_POST['hinhanh'];
         $tenmon = $_POST['tenmon'];
@@ -66,13 +68,13 @@
         $flag = 0; //kiểm tra sp có trùng khong
 
         //kiểm tra sp có trong giỏ hàng
-        for($i=0; $i< sizeof($_SESSION['giohang']); $i++)
+        for($i=0; $i< sizeof($_SESSION['giohangsn']); $i++)
         {
-            if($_SESSION['giohang'][$i][1] == $tenmon)
+            if($_SESSION['giohangsn'][$i][1] == $tenmon)
             {
                 $flag = 1; //tìm được sp
-                $soluongnew = $soluong + $_SESSION['giohang'][$i][3];
-                $_SESSION['giohang'][$i][3] = $soluongnew;
+                $soluongnew = $soluong + $_SESSION['giohangsn'][$i][3];
+                $_SESSION['giohangsn'][$i][3] = $soluongnew;
                 break;
             }
         }
@@ -82,7 +84,7 @@
         {
             //thêm sp vào giỏ hàng
             $monan = [$hinh,$tenmon,$gia,$soluong];
-            $_SESSION['giohang'][] = $monan;
+            $_SESSION['giohangsn'][] = $monan;
         }
              
 
@@ -246,8 +248,8 @@
 
 </form>
 <div style = "display:flex; justify-content:center">
-        <a href = "tranghienthi.php?quanly=giohangdv&delcart=1" style = "color: blue"><button>Xóa giỏ hàng dịch vụ </button></a>
-        <a href = "tranghienthi.php?quanly=2"><button>Tiếp tục đặt hàng </button></a> <br>
+        <a href = "tranghienthi.php?quanly=giohangsn&delcart=1" style = "color: blue"><button>Xóa giỏ hàng dịch vụ </button></a>
+        <a href = "tranghienthi.php?quanly=1"><button>Tiếp tục đặt hàng </button></a> <br>
 </div>
         
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
