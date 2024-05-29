@@ -1,20 +1,20 @@
 
 .box-content{
     margin: 0 auto;
-    width: 500px;
+    width: 40%;
     border: 1px solid black;
     background-color:white;
     text-align: center;
     padding: 10px;
     border-radius: 20px;
     /* margin-bottom: 30px; */
-    margin-top: 100px;
+    margin-top: 150px;
     
 }
 
 .box-content h2{
     margin: 0 auto;
-    width: 500px;
+    width: 80%;
     border: 1px solid black;
     background-color:rgb(255, 255, 4);
     text-align: center;
@@ -42,6 +42,7 @@
     border: 1px solid black;
     border-radius: 20px;
     margin-bottom: 20px;
+    font-family: 'Times New Roman';
 }
 .box-content input[type='submit']{
     width: 20%;
@@ -55,4 +56,6 @@
     color: black;
     border: 1px solid black;
     border-radius: 20px;
+    font-family: 'Times New Roman';
+    font-size: 18px;
 }

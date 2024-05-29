@@ -17,46 +17,43 @@
         $conn = connectdb();
         $errors = array(); // Mảng để lưu trữ các thông báo lỗi
     
-        // Kiểm tra xem tên người dùng, email hoặc mật khẩu đã tồn tại
-        $check_query = "SELECT * FROM user WHERE user_name = '$user_name' OR email = '$email' OR password = '$pass'";
-        $check_result = $conn->query($check_query);
+        // Prepare and bind to prevent SQL injection
+        $stmt = $conn->prepare("SELECT user_name, email, password FROM user WHERE user_name = ? OR email = ?");
+        $stmt->bind_param("ss", $user_name, $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
     
-        if ($check_result->num_rows > 0) {
+        if ($result->num_rows > 0) {
             // Lặp qua tập kết quả và thêm các thông báo lỗi phù hợp
-            while ($row = $check_result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
                 if ($row['user_name'] == $user_name) {
                     $errors['username'] = "Tên người dùng đã tồn tại.";
                 }
                 if ($row['email'] == $email) {
                     $errors['email'] = "Email đã tồn tại.";
                 }
-                if ($row['password'] == $pass) {
+                if (password_verify($pass, $row['password'])) {
                     $errors['pass'] = "Mật khẩu đã tồn tại.";
                 }
             }
-    
-            // Trả về mảng lỗi
-            return $errors;
         } else {
             // Thêm người dùng mới vào cơ sở dữ liệu
-            $sql = "INSERT INTO user (fullname, user_name, email, phone, password) VALUES ('$name', '$user_name', '$email', '$phone', '$pass')";
+            $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+            $insert_stmt = $conn->prepare("INSERT INTO user (fullname, user_name, email, phone, password) VALUES (?, ?, ?, ?, ?)");
+            $insert_stmt->bind_param("sssss", $name, $user_name, $email, $phone, $pass_hash);
     
-            if ($conn->query($sql)) {
-                header('Location: tranghienthi?quanly=dangnhap');
-                // header('Location: ../view/cus/dangnhap/login.php');
+            if ($insert_stmt->execute()) {
+                header('Location: tranghienthi.php?quanly=dangnhap');
                 $conn->close();
-                die();
+                exit();
             } else {
                 $errors['fail'] = "Đã xảy ra lỗi: " . $conn->error;
-                return $errors;
-                $conn->close();
-                die();
             }
+            $insert_stmt->close();
         }
     
+        $stmt->close();
         $conn->close();
+        return $errors;
     }
-    
-
 ?>
-

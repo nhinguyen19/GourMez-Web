@@ -1,49 +1,85 @@
 .box-content{
-    
-    font-family: 'Lalezar';
     margin: 0 auto;
-    width: 700px;
-    border: 1px solid rgba(255, 236, 203, 1);
-    background-color: rgba(255, 236, 203, 1);
+    width: 60%;
+    /* border: 1px solid black; */
+    background-color: white;
     text-align: center;
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    margin-top: 100px;
+    padding: 10px;
+    /* border-radius: 20px; */
+    /* margin-bottom: 30px; */
+    margin-top: 150px;
     
-    
+    display: flex;
 }
-#user_login form{
-    width: 400px;
-    margin: 30px auto;
+.box-content img{
+    width: 50%;
+    height: max-content;
+}
+
+
+.login-form b{
+    margin: 0 auto;
+    width: 80%;
+    
+    text-align: center;
+    padding: 10px;
+    
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.login-form{
+    width: 70%;
+    margin:  auto;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
     
 }
 #user_login form table{
     align-items: center;
     justify-content: center;
-    margin-left: 20px;
+    width: 100%;
+    
 }
+
 #user_login form input[type='text'], #user_login form input[type='password']{
-    margin: 5px 0;
-    border-radius: 5px;
-    border-color: gainsboro;
+    width: 85%;
+    height: fit-content;
+    font-size: 16px;
+    padding: 10px;
+    align-content: center;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    background-color: aliceblue;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* margin-bottom: 20px; */
+    font-family: 'Times New Roman';
 }
 
 
 .bang_dn{
-    border: 1px solid rgba(255, 130, 67, 1);
-    background-color: rgba(255, 130, 67, 1);
-    border-radius: 20px;
-    padding: 15px;
+    padding: 20px;
     text-align: left;
+    
+    font-weight: bold;
 }
-table tr{
-    width: 150px;
-    border-radius: 20px;
+.title{
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 20%;
+    margin-right: 30%;
+    
 }
+
 .has-error{
-    color: aliceblue;
-    font-weight: normal;
+    color: red;
+    font-size: 18px;
 }
 .dn-bt{
     
@@ -55,8 +91,9 @@ table tr{
 }
 
 .dn-bt input{
-    font-size: 16px;
-    padding: 8px;
+    font-family: 'Times New Roman';
+    font-size: 18px;
+    padding: 10px;
     align-content: center;
     align-items: center;
     text-align: center;
@@ -65,8 +102,20 @@ table tr{
     color: aliceblue;
     border: 1px solid black;
     border-radius: 20px;
+    font-weight: bold;
 }
 .dk-qmk a{
     text-decoration: none;
     color: black;
+    font-size: 18px;
+}
+
+/* Icon mắt */
+#nosee{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    /* margin-bottom: 20px; */
+    margin-left: 5px;
 }

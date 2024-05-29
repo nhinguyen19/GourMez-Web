@@ -1,22 +1,18 @@
 <?php
-        // session_start();
+        session_start();
         // include 'google_source.php';
-        
-        // include ('regis_uname.php');
-        // include ('../../../model/connect.php');
-        
         
         $err=array();
         if(isset($_POST['dangky']) && ($_POST['dangky'])=='Đăng ký')
         {
-            include('../view/model/check_regis.php');
+            include('../model/check_regis.php');
             // include ('check_regis.php');
             $name=$_POST['name'];
             $user_name=$_POST['user_name'];
             $email=$_POST['email'];
             $phone=$_POST['phone'];
-            $pass=md5($_POST['password']);
-            $rpass=md5($_POST['re_enter_password']);
+            $pass=$_POST['password'];
+            $rpass=$_POST['re_enter_password'];
             if(empty($user_name)){
                 $err['name']='Bạn chưa nhập tên đăng nhập';
             }
@@ -30,6 +26,12 @@
             if($pass!==$rpass)
             {
                 $err['rpass'] ='Mật khẩu nhập lại không khớp';
+            }
+            // if (strlen($user_name) < 3) {
+            //     $err['countname']='Tên đăng nhập tối thiểu 3 kí tự';
+            // }
+            if (strlen($pass) < 6) {
+                $err['countpass']='Mật khẩu tối thiểu 6 kí tự';
             }
             if(empty($err)){
                 
@@ -52,12 +54,12 @@
 
         <link rel="stylesheet" href="../view/cus/dangky/register.css">
         <!-- <link rel="stylesheet" href="register.css"> -->
-        <!-- <script src="../view/cus/dangnhap/hienthi_mk.js"></script> -->
-        <script src="../dangnhap/hienthi_mk.js"></script>
+        <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
+        <!-- <script src="../dangnhap/hienthi_mk.js"></script> -->
         <div id="user_login" class="box-content" >
             
             <h2>ĐĂNG KÝ</h2>
-            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="Post">
+            <form  method="Post">
                     
                     <table class="bang_dk">
                         <!-- //name -->
@@ -73,9 +75,10 @@
                             
                         </tr>
 
-                        <tr colspan='2'>
-                            <td class="has-error">
+                        <tr >
+                            <td class="has-error" colspan='2'>
                                 <span><?php echo (isset($err['name']))?$err['name']:''?></span>
+                                
                             </td> 
                         </tr>
 
@@ -110,6 +113,7 @@
                         <tr colspan='2'>
                             <td class="has-error">
                                 <span><?php echo (isset($err['pass']))?$err['pass']:''?></span>
+                                <span><?php echo (isset($err['countpass']))?$err['countpass']:''?></span>
                             </td> 
                         </tr>
 
@@ -119,7 +123,7 @@
                             <td>
                                 <input type="password" id="re_enter_password" name="re_enter_password">
                                 <span id="noseeRe" style="cursor: pointer;" onclick="showRepass()"><i class="fas fa-eye-slash" ></i></span>
-                                <!-- <p style="color: red;">Mật khẩu từ 8 ký tự trở lên, bao gồm chữ hoa, chữ thường và chữ số</p> -->
+                                <!-- <p style="color: red;">Mật khẩu từ 6 ký tự trở lên, bao gồm chữ hoa, chữ thường và chữ số</p> -->
                             </td>
                         </tr>
 
@@ -144,6 +148,9 @@
                         
                     ?>
                 </div>
+                <a href="../view/cus/dangky/register_with_gmail.php">
+                    <button type="button">Register with Gmail</button>
+                </a>
                 <div id="login-with-social">
 
                     <!-- <?php if(isset($authUrl)){ ?>

@@ -1,6 +1,6 @@
 <?php
-session_start();
-include ('checkEmail_exist.php');
+
+// include ('../view/cus/quenmatkhau/checkEmail_exist.php');
 $err=array();
 if(isset($_POST['send']))
 {
@@ -14,9 +14,9 @@ if(isset($_POST['send']))
     if(empty($err)){
         
         if(CheckEmailExist($email)){
-            require ("PHPMailer-master\src\PHPMailer.php");
-            require ("PHPMailer-master\src\SMTP.php");
-            require ("PHPMailer-master\src\Exception.php");
+            require ("../view/cus/quenmatkhau/PHPMailer-master/src/PHPMailer.php");
+            require ("../view/cus/quenmatkhau/PHPMailer-master/src/SMTP.php");
+            require ("../view/cus/quenmatkhau/PHPMailer-master/src/Exception.php");
 
 
             //Create an instance; passing `true` enables exceptions
@@ -57,7 +57,7 @@ if(isset($_POST['send']))
             
             if($mail->send())
             {   echo 'Message has been sent';
-                header ('Location: ../quenmatkhau/changePassword.php');}
+                header ('Location: ../view/cus/quenmatkhau/resetPassword.php');}
             else {
             echo "Message could not be sent. Mailer Error:".$mail->ErrorInfo;
             }
