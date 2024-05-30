@@ -1,3 +1,4 @@
+
 <?php
     session_start();
     if(!isset($_SESSION['giohangsn'])) 
@@ -35,8 +36,8 @@
                         <td>
                             <div>'.$tt.'</div>
                         </td>
-                        <td>
-                            <a href="tranghienthi.php?quanly=giohangsn&delid='.$i.'">Xóa</a>
+                        <td style = "color: blue; width: 20px;">
+                            <a href="tranghienthi.php?quanly=giohangsn&delid=' . $i . '" style="color: orange;">Xóa</a>
                         </td>
 
                     </tr>';
@@ -94,6 +95,11 @@
 ?>
 
 <style>
+    .table_food a
+    {
+        color:black;
+        font-size: 50px;
+    }
     table, th,td
     {
         border: 2px solid orangered;
@@ -231,7 +237,7 @@
                       
 
         <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày tổ chức</label> <br>
-        <input type="date" style="font-size: 15px;" name = "party_date" value = "12-5-2004" id = "party_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required>
+        <input type="date" style="font-size: 15px;" name = "party_date" id = "party_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required>
 
         <select name = "gender" id = "gender">
             <option value  = "" disabled selected>Giới tính</option>
@@ -247,7 +253,7 @@
 
     <!-- Thông tin đơn hàng -->
     <h2>Thông tin đơn hàng</h2>
-    <div style="margin-top: 20px; display:flex; justify-content:center">
+    <div class = "donhang" style="margin-top: 20px; display:flex; justify-content:center">
         <table class = "table_food">
             <tr>
                 <th>Hình ảnh</th>
