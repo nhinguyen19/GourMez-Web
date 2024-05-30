@@ -1,70 +1,46 @@
 body {
-    background-image: url('anhnen.jpg');
-    /* g */
+    background-image: linear-gradient(to right, #202020 ,#444444);
     margin-top: 100px;
 }
-
 #sidebar_menu {
-    width: 200px;
-    height:100vh;
-    background-image: linear-gradient(to right, #1a1a1a 0%, black 100%);
-    position: fixed;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding-top: 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: row; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
-
-/* CSS cho liên kết trong sidebar */
+.menu_categories {
+    display: flex; 
+    flex-direction: row;
+}
 #sidebar_menu a {
     text-decoration: none;
     font-size: 20px;
-    color: #F6E7D8;;
+    color: #ffff;
     font-family: 'Lalezar';
     display: block; 
     text-align: left;
-    padding-left: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
-/* CSS cho liên kết được chọn */
 #sidebar_menu a#active {
     color: #FFA629;
 }
 
-/* CSS khi rê chuột qua liên kết */
 #sidebar_menu a:hover:not(#active) {
     color: #FFA629;
-}
-
-/* CSS cho ảnh */
-#sidebar_menu img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-}
-
-/* CSS cho thẻ hr */
-#sidebar_menu hr {
-    width: 100%; 
-    background-color: #F6E7D8;
-    height: 0.5px; 
-    border: none; 
-    margin: 0 auto; 
-    margin-top: auto; 
-    margin-bottom: auto; 
-    margin-left: 10px;
 }
 .title_chitiet,.title_thucdon{
     display: flex;
     justify-content: center;
     text-align: center;
+    color: #FFCB00;
+    font-family: 'Lalezar';
+    text-transform: uppercase;
+    padding-top: 20px;
+} 
+.title_datngaynao{
+    margin-left: 42.5%;
     color: #FFCB00;
     font-family: 'Lalezar';
     text-transform: uppercase;
@@ -112,7 +88,7 @@ body {
     font-family: 'Lalezar';
     font-size: 16px;
   }
-  .btn_xemchitiet:hover:not(.active) {
+.btn_xemchitiet:hover:not(.active) {
     background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
     transition: background-color 0.3s ease;
   }
@@ -120,8 +96,6 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 20px;
-    height: 100%;
     overflow: hidden; 
 }
 .anh{
@@ -132,12 +106,15 @@ body {
 }
 .content-wrapper {
     display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;
     background: none;
-    background-color: rgba(16, 16, 16, 0.3);
+    background-color: #F6E7D8;
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 25px;
+    padding-right: 40px;
     width: 50vw;
     position: relative;
     left: 50%;
@@ -190,8 +167,7 @@ body {
 
 .list {
     list-style: none;
-    padding-top: 30px;
-    margin-left: 430px;
+    margin-left: 42%;
 }
 
 .list li {
@@ -222,20 +198,13 @@ body {
     color: #910303;
 }
 
-
-.title_datngaynao{
-    margin-left: 40.5%;
-    color: #E7B037;
-    font-family: 'Lalezar';
-    text-transform: uppercase;
-    padding-top: 10px;
-    
-}
-
 .other_food {
-  height: 100%;
-  overflow: hidden;
-  text-align: center;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;
 }
 .Thucdon{
     background:none; 
@@ -265,4 +234,29 @@ body {
     justify-content: center;
     text-align: center;
     margin: 20px;
+}
+.onediscount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.noidung_chitiet {
+    max-width: 800px; /* Giới hạn chiều rộng của nội dung */
+    margin: 0 auto; /* Căn giữa nội dung trên trang */
+    padding: 20px; /* Thêm padding cho nội dung */
+}
+
+.anh {
+    margin-right: 20px; /* Khoảng cách giữa hình ảnh và nội dung khác */
+}
+.label1{
+    color: black;
+    font-weight:bold
+}
+.price1{
+    color: black;
+}
+.descr1{
+    color: black;
+    font-weight:bold
 }

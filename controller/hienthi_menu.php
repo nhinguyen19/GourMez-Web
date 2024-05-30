@@ -1,10 +1,7 @@
+
 <?php
-   include("../view/cus/header/header_sauDN.php")
+  include_once("../model/connect.php");
 ?>
-  <?php
-    include_once("../model/connect.php");
-    include("../view/cus/menu/sidebar.php");
-  ?>
   <?php 
     if(isset($_GET['quanly']))
     { 
