@@ -1,0 +1,35 @@
+.insert {
+    border: 1px solid #2bcd53;
+    margin-bottom: 20px;
+    width : 1200px;
+    padding : 10px;
+  }
+  .main1 {
+    clear : both;
+    width: 1200px;
+    border : 1px solid #13d81d;
+    margin-left : 300px;
+    margin-top : 100px;
+  float : left;
+  height : 350px;
+  
+  }
+  
+table,tr,th,td{
+    border: 1px solid  #754E39;
+    background-color: #f0ac74;
+    padding: 10px;
+}
+
+table{
+    width: 1200px;
+    margin-left : 0;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    padding-left: 240px;
+    padding-top: 30px;
+    font-family: Lalezar;
+    color: #E26A2C;
+}
