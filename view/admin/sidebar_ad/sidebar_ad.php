@@ -2,7 +2,7 @@
     <div id="sidebar_menu">
         <a href="#">Đơn hàng</a>
         <div class="submenu">
-            <a href="#">Tất cả</a>
+            <a href="tranghienthi.php?quanly=donhang">Tất cả</a>
             <a href="#">Cài đặt vận chuyển</a>
         </div>
         <hr> 

@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Checkout Form</title>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   <link rel="stylesheet" href="../view/cus/thanhtoan/thanhtoan.css">
-</head>
 <?php
   include('../model/connect.php');
   $conn = connectdb();
@@ -91,17 +86,17 @@
       <br>
       <label>Phương thức thanh toán*</label>
       <br>
-      <input type="radio" name="pay" value="momo" required> Thanh toán qua Momo
+      <input type="radio" name="pay" value="MOMO" required> Thanh toán qua Momo
       <br>
-      <input type="radio" name="pay" value="vnpay"> Thanh toán qua VNpay
+      <input type="radio" name="pay" value="VNPAY"> Thanh toán qua VNpay
       <br>
-      <input type="radio" name="pay" value="vietqr"> Thanh toán qua VietQR
+      <input type="radio" name="pay" value="VIETQR"> Thanh toán qua VietQR
       <br>
-      <input type="radio" name="pay" value="cash"> Thanh toán khi nhận hàng
+      <input type="radio" name="pay" value="Tiền mặt"> Thanh toán khi nhận hàng
       <br>
   <div class="giohang_content">
     <div class="noidung">
-      <?php
+      <?php 
         $totalPrice = 0;
         $cartItems = "";
         while ($row_cart = mysqli_fetch_array($query_cart)) {
