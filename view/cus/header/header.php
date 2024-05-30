@@ -35,7 +35,7 @@
         <!-- <div id="img"><img src="..view/cus/img/logocus.png" style="height: 86.61px; width: 100px;"></div> -->
         
         <div class="menu_header">
-            <a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../view/cus/img/logocus.png" style="height: 150px; width: 150px;"></a>
+            <a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../view/cus/img/logocus.png" style="height: 50px; width: 120px;"></a>
             <a href="tranghienthi.php?quanly=thucdon" id="header">THỰC ĐƠN</a>
             <a href="tranghienthi.php?quanly=khuyenmai" id="header">KHUYẾN MÃI</a>
             <a href="tranghienthi.php?quanly=dichvu" id="header">DỊCH VỤ</a>
@@ -53,7 +53,7 @@
                             
                     ?>
                 
-                    <button id="name_user" style="background-color:rgba(174, 33, 8, 1); font-size: 18px;font-family: 'Lalezar'">
+                    <button id="name_user" style="background-color:#252525; font-size: 18px;font-family: 'Lalezar'">
                         <?php echo "Chào, " . $username; ?>
                     </button>
                     <div class="dropdown_content" style="right: 0;">

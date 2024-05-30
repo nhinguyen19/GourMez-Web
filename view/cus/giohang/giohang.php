@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="../view/cus/giohang/giohang.css">
 <?php
     function connectdb()
     {

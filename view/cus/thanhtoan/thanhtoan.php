@@ -13,6 +13,7 @@
   if (isset($_POST['update'])) {
     $foodId = $_POST['food_id'];
     $quantity = $_POST['quantity'];
+    $sessionId = session_id(); // Get the current session ID
     $updateQuantityQuery = "UPDATE cart SET quantity = $quantity WHERE food_id = $foodId";
     mysqli_query($conn, $updateQuantityQuery);
   }
@@ -97,7 +98,7 @@
       <input type="radio" name="pay" value="vietqr"> Thanh toán qua VietQR
       <br>
       <input type="radio" name="pay" value="cash"> Thanh toán khi nhận hàng
-      <input type="hidden" name="total_price" value="<?php echo $totalPrice; ?>">
+      <br>
   <div class="giohang_content">
     <div class="noidung">
       <?php
@@ -132,6 +133,7 @@
         echo '</tr>';
         echo '</table>';
       ?>
+      <input type="hidden" name="totalPrice" value="<?php echo $totalPrice; ?>">
     </div>
   </div>
   
