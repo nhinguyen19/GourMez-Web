@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 
     include("xuly_tinnhanKH.php");
 
