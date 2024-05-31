@@ -1,0 +1,65 @@
+.logoad
+{
+    width: 180px;
+    height : 180px;
+}
+
+.logo {
+    float: left;
+    margin-top : -70px;
+    margin-left : 70px;
+} 
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #754E39;
+}
+
+
+header::before{
+  position : absolute; 
+  content : "";
+  height : 100%;
+  width : 100%;
+}
+
+nav{
+  position : fixed; 
+  width : 100%;
+  padding : 20px 0; 
+  z-index : 1;
+}
+
+nav .menu 
+{
+  max-width : 1200px; 
+  margin : auto; 
+  display : flex; 
+  align-items : center;
+  justify-content : space-between; 
+  padding : 0 20px;
+
+}
+
+.menu ul 
+{
+  display : flex; 
+}
+
+.menu ul li 
+{
+  list-style : none; 
+  margin-left : 7px;
+}
+
+.menu ul li a 
+{
+  text-decoration : none; 
+  color : #ffffff;
+  font-style : lalezar; 
+  font-size : 18px; 
+  padding : 10px 20px;
+}

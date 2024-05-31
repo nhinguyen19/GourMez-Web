@@ -1,0 +1,57 @@
+#sidebar_menu {
+  width: 240px;
+  height: 600px;
+  background-color: #a16646;
+  position: fixed;
+  left: 0;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden; /* Thay đổi thành overflow: hidden */
+}
+
+/* CSS cho liên kết trong sidebar */
+#sidebar_menu a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffff;
+  font-family: 'Lalezar';
+  display: block;
+  text-align: left;
+  padding-left: 25px;
+  padding-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* CSS cho liên kết được chọn */
+#sidebar_menu a#active {
+  color: #FFA629;
+}
+
+/* CSS khi rê chuột qua liên kết */
+#sidebar_menu a:hover:not(#active) {
+  color: #FFA629;
+}
+
+/* CSS cho thẻ hr */
+#sidebar_menu hr {
+  width: 80%;
+  background-color: #ffff;
+  height: 0.5px;
+  border: none;
+  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+#sidebar_menu a:hover + .submenu,
+.submenu:hover {
+  display: block;
+}

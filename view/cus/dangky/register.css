@@ -1,0 +1,62 @@
+.box-content {
+    margin: 0 auto;
+    width: 900px;
+    background-color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-rows: 450px 0;
+    grid-template-columns: 450px 450px;
+    grid-template-areas: 
+        "h f";
+}
+.img {
+    width: 450px;
+    height: 450px;
+    grid-area: h;
+}
+.form {
+    width: 70%;
+    margin: auto 100px auto;
+    align-items: center;
+    
+    justify-content: center;
+    grid-area: f;
+    
+}
+.bang_dk{
+    display: block;
+    align-items: center;
+    justify-content: end;
+}
+.dangky{
+    display: flex;
+    margin-left: 45px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.name,.user,.phone,.email{
+    width: 200px;
+    margin-bottom: 10px;
+}
+.pass-icon,.rpass-icon{
+    display: flex;
+    width: 200px;
+    margin-bottom: 10px;
+}
+.icon{
+    display: flex;
+    align-items: end;
+    margin-left: 5px;
+}
+.title{
+    color: black;
+}
+
+
+.has-error{
+    color: red;
+}
