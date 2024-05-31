@@ -1,13 +1,10 @@
 <?php
-
     include("xuly_tinnhanKH.php");
-    include("xuly_thanhtoan.php");
     session_start();
+    include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
-
 ?>
 <?php 
-
     if(isset($_GET['quanly']))
     { 
         switch($_GET['quanly'])
@@ -39,7 +36,7 @@
                 include('../view/cus/dichvu/giohang_dv.php');   
                 break;
         case 'giohangsn':
-                include('../view/cus/dichvu/giohang_sn.php');   
+                include('../view/cus/dichvu/giohang_sinhnhat.php');   
                 break;
         case 'tintuc':
             include ('../view/cus/tintuc/tintuc.php');
@@ -51,14 +48,11 @@
         case 'vechungtoi':
             include ('../view/cus/vechungtoi/vechungtoi.php');
             break;
-
-        // CASE GIỎ HÀNG VÀ THANH TOÁN
         case 'giohang':
             include ('../view/cus/giohang/giohang.php');
             break;
         case 'thanhtoan': 
             include ('../view/cus/thanhtoan/thanhtoan.php');
-            thanhtoandonhang();
             break;
         case 'dangnhap':
             include ('../view/cus/dangnhap/login.php');
@@ -101,7 +95,6 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
-
 ?>
 <?php
     include("../view/cus/footer/footer.php");

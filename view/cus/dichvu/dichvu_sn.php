@@ -7,7 +7,7 @@ $conn = connectdb();
     {
         width: 100%;
         height: 90%;
-        margin-top: 90px;
+        margin-top: 100px;
     }
 
     /* Thanh đặt món */
@@ -27,7 +27,7 @@ h1
   align-items: center;
   background-color: rgba(174, 33, 8, 1);
   color: white;
-  margin-top: 0px;
+  margin-top: -5px;
   margin-bottom: 0px;
 }
 

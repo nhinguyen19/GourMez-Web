@@ -8,6 +8,8 @@
     include_once ("../../model/admin/xuly_dichvu.php");
     include_once ("../../model/admin/xuly_thongtin.php");
     include_once ("../../model/admin/xuly_tintuc.php");
+    include_once ("../../model/admin/xuly_donhang.php");
+
     include("header_ad/header_ad.php");
     include("sidebar_ad/sidebar_ad.php");
   
@@ -42,6 +44,16 @@
         case 'suasp':
           include("ql_sanpham/sua.php");
           suaSanPham();
+          break;
+
+
+        case 'donhang':
+          include('ql_donhang/donhang.php');
+          break;
+        case 'updateorder':
+          updateorder();
+          include('ql_donhang/updateorder.php');
+         
           break;
         case 'tatcakm' :
           $discount=getall_discountnews();
