@@ -2,20 +2,16 @@
 <<<<<<< HEAD
 
     include("xuly_tinnhanKH.php");
-=======
-    // include("xuly_tinnhanKH.php");
->>>>>>> a651581f8d8bd4e3f6b01c6d36e07f88cc36da90
+
     session_start();
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
-<<<<<<< HEAD
+
 
 ?>
 <?php 
 
-=======
-    
->>>>>>> a651581f8d8bd4e3f6b01c6d36e07f88cc36da90
+
     if(isset($_GET['quanly']))
     { 
         switch($_GET['quanly'])
@@ -108,7 +104,7 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
-<<<<<<< HEAD
+
 
 ?>
 <!-- đừng xóa footer nựa -->
@@ -116,7 +112,4 @@
     include("../view/cus/footer/footer.php");
 
 ?>
-=======
-?>
 
->>>>>>> a651581f8d8bd4e3f6b01c6d36e07f88cc36da90
