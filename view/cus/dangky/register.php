@@ -1,5 +1,5 @@
 <?php
-        session_start();
+        // session_start();
         // include 'google_source.php';
         
         $err=array();
@@ -56,90 +56,78 @@
         <!-- <link rel="stylesheet" href="register.css"> -->
         <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
         <!-- <script src="../dangnhap/hienthi_mk.js"></script> -->
-        <div id="user_login" class="box-content" >
-            
-            <h2>ĐĂNG KÝ</h2>
-            <form  method="Post">
-                    
-                    <table class="bang_dk">
+        <div class="box-content" >
+            <img class="img" src="../view/cus/img/anhDK.png">
+            <div class="form">
+                <h2 class="dangky">ĐĂNG KÝ</h2>
+                <form class="bang-dk"  method="Post">                
                         <!-- //name -->
-                        <tr >
-                            <td class="title" >Họ và tên</td>
-                            <td><input type="text" name="name"></td>
-                        </tr>
-
-                        <!-- user_name -->
-                        <tr >
-                            <td class="title" >Tên đăng nhập*</td>
-                            <td><input type="text" name="user_name"></td>
-                            
-                        </tr>
-
-                        <tr >
-                            <td class="has-error" colspan='2'>
-                                <span><?php echo (isset($err['name']))?$err['name']:''?></span>
-                                
-                            </td> 
-                        </tr>
-
-                        <!-- email -->
-                        <tr >
-                            <td class="title" >Địa chỉ email*</td>
-                            <td><input type="email" name="email"></td>
-                        </tr>
-
-                        <tr colspan='2'>
-                            <td class="has-error">
-                                <span><?php echo (isset($err['email']))?$err['email']:''?></span>
-                            </td> 
-                        </tr>
-
-                        <!-- phone -->
-                        <tr >
-                            <td class="title" >Số điện thoại</td>
-                            <td><input type="text" name="phone"></td>
-                        </tr>
-
-
-                        <!-- pass -->
-                        <tr>
-                            <td class="title" >Mật khẩu*</td>
-                            <td >
-                                <input type="password" id="password" name="password">
-                                <span id="nosee" style="cursor: pointer;" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
-                            </td>
-                        </tr>
-
-                        <tr colspan='2'>
-                            <td class="has-error">
-                                <span><?php echo (isset($err['pass']))?$err['pass']:''?></span>
-                                <span><?php echo (isset($err['countpass']))?$err['countpass']:''?></span>
-                            </td> 
-                        </tr>
-
-                        <!-- rpass -->
-                        <tr>
-                            <td class="title" >Nhập lại mật khẩu*</td>
-                            <td>
-                                <input type="password" id="re_enter_password" name="re_enter_password">
-                                <span id="noseeRe" style="cursor: pointer;" onclick="showRepass()"><i class="fas fa-eye-slash" ></i></span>
-                                <!-- <p style="color: red;">Mật khẩu từ 6 ký tự trở lên, bao gồm chữ hoa, chữ thường và chữ số</p> -->
-                            </td>
-                        </tr>
-
-                        <tr colspan="2">
-                            <td class="has-error">
-                                <span><?php echo (isset($err['rpass']))?$err['rpass']:''?></span>
-                            </td> 
-                        </tr>
-                        <tr>
-                        <td colspan="2" class="dangky-bt"><input type="submit" id="dangky" name="dangky" value="Đăng ký"></td>
-                        </tr>
-                        
-                    </table>
+                    <div class="name">
+                        <label class="title" >Họ và tên</label>
+                        <br><input type="text" name="name">
+                    </div>
                     
-                </form>
-                <!-- dangky button -->
+                            
+                            <!-- user_name --> 
+                    <div class="user">
+                        <label class="title" >Tên đăng nhập*</label>
+                        <br><input type="text" name="user_name">
+                    </div>
+                    
+                    <div class="has-error">
+                        <span><?php echo (isset($err['name']))?$err['name']:''?></span>
+                    </div> 
+
+                            <!-- email -->
+                    <div class="email">
+                        <label class="title" >Địa chỉ email*</label>
+                        <br><input type="email" name="email">
+                    </div>
+
+                    <div class="has-error">
+                        <span><?php echo (isset($err['email']))?$err['email']:''?></span>
+                    </div> 
+                            
+                            <!-- phone -->
+                    <div class="phone">
+                        <label class="title" >Số điện thoại</label>
+                        <br><input type="text" name="phone">
+                    </div>
+                    
+                            <!-- pass -->
+                    <div class="pass-icon">
+                        <div class="pass">
+                            <label class="title" >Mật khẩu*</label>
+                            <br><input type="password" id="password" name="password">
+                        </div>
+                        <span class="icon" id="nosee" style="cursor: pointer;" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
+                    </div>
+                                
+                    <div class="has-error">
+                        <span><?php echo (isset($err['pass']))?$err['pass']:''?></span><br>
+                        <span><?php echo (isset($err['countpass']))?$err['countpass']:''?></span>
+                    </div>
+                            <!-- rpass -->
+                    <div class="rpass-icon">
+                        <div class="rpass">
+                            <label class="title" >Nhập lại mật khẩu*</label>
+                            <input type="password" id="re_enter_password" name="re_enter_password">
+                        </div>
+                        <span class="icon" id="noseeRe" style="cursor: pointer;" onclick="showRepass()"><i class="fas fa-eye-slash" ></i></span>
+                    </div>
+
+                    <div class="has-error">
+                        <span><?php echo (isset($err['rpass']))?$err['rpass']:''?></span>
+                    </div> 
+                            
+                        <!-- dangky button -->
+                    <input class="dk-bt" type="submit" id="dangky" name="dangky" value="Đăng ký">
+                            
+                    </form>
+
+            </div>
+            
+                
                 
                 <div class="mes_error" style="display: flex;align-items: center;text-align: center; justify-content: center;">
                     <?php 
