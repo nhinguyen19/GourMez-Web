@@ -13,7 +13,6 @@
             include ('hienthi_menu.php');
             break;
 
-        // CASE KHUYẾN MÃI
         case 'khuyenmai':
             include ('../view/cus/khuyenmai/khuyenmai.php');
             break;
@@ -95,8 +94,7 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
-?>
+ ?>
 <?php
     include("../view/cus/footer/footer.php");
-
 ?>

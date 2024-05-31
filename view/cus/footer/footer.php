@@ -70,14 +70,7 @@ footer
     background-color: black;
     color: white;
 }
-.footer{
-    clear: both;
-    width: 100%; 
-    bottom:0;
-    
-}
 </style>
-
 <div class="footer">
     <div class = "background">
             <div class = "logo">
@@ -107,6 +100,5 @@ footer
                 <i class="fab fa-facebook fa-lg" style="padding: 0 15px 0 0;"></i><i class="fab fa-instagram-square fa-lg"></i>
             </div>
     </div>
-
-        <footer>Copyright 2024, All rights reserved</footer>
+    <footer>Copyright 2024, All rights reserved</footer>
 </div>

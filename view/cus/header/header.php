@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../view/cus/menu/hienthi_menu.css">
     <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
         body{
             width: 100%;

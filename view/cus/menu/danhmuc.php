@@ -1,3 +1,4 @@
+<?php include("../view/cus/header/header.php");?>
 <?php
     $conn = connectdb();
     $sql_danhmuc = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.cate_id='$_GET[id]' ORDER BY food.food_id ASC";
@@ -5,9 +6,13 @@
     $query_danhmuc1= mysqli_query($conn, $sql_danhmuc);
     $row_title = mysqli_fetch_array($query_danhmuc1);
 ?>
-<ul id="all_dishes" style=" margin-left: 14vw;">
+<div id="all">
+    <?php
+       include("../view/cus/menu/sidebar.php");
+    ?>
+    <div class="content">
     <h1 class="title_thucdon"><?php echo $row_title['cate_name']?></h1>
-    <div class="food-item">
+    <div class="food-item" style="padding-left:55px">
         <?php
             while ($row = mysqli_fetch_array( $query_danhmuc)) {
         ?>
@@ -26,4 +31,4 @@
         }
         ?>
     </div>
-</ul>
+</div>
