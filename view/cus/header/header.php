@@ -33,7 +33,6 @@
 <body>
     <nav class="header">
         <!-- <div id="img"><img src="..view/cus/img/logocus.png" style="height: 86.61px; width: 100px;"></div> -->
-        
         <div class="menu_header">
             <a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../view/cus/img/logocus.png" style="height: 50px; width: 120px;"></a>
             <a href="tranghienthi.php?quanly=thucdon" id="header">THỰC ĐƠN</a>
