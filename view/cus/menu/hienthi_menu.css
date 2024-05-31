@@ -1,6 +1,15 @@
+body {
+    background-image: url('anhnen.jpg');
+    /* g */
+    margin-top: 100px;
+}
+
 #sidebar_menu {
     width: 200px;
+    height:100vh;
     background-image: linear-gradient(to right, #1a1a1a 0%, black 100%);
+    position: fixed;
+    left: 0;
     overflow-x: hidden;
     overflow-y: auto;
     padding-top: 30px;
@@ -8,8 +17,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    float: left;
-    padding-bottom: 100vh;
 }
 
 /* CSS cho liên kết trong sidebar */
@@ -96,7 +103,7 @@
     font-weight: bold;
 }
 .btn_xemchitiet{
-    background-image: linear-gradient(45deg, #f12711, #f5af19);
+    background-color: #E26A2C;
     border: none;
     border-radius: 10px;
     width: 100px;
@@ -106,7 +113,7 @@
     font-size: 16px;
   }
   .btn_xemchitiet:hover:not(.active) {
-    background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
+    background-color: #ffb84d;
     transition: background-color 0.3s ease;
   }
 .food-item {
@@ -114,12 +121,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 20px;
-    overflow: hidden; 
-}
-.all_dishes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    height: 100%;
     overflow: hidden; 
 }
 .anh{
@@ -144,7 +146,7 @@
 }
 
 .btn_dathang{
-    background-image: linear-gradient(45deg, #f12711, #f5af19);
+    background-color: #E26A2C;
     border: none;
     border-radius: 10px;
     width: 150px;
@@ -154,7 +156,7 @@
     font-size: 16px;
 }
 .btn_dathang:hover:not(.active) {
-    background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
+    background-color: #ffb84d;
     transition: background-color 0.3s ease;
   }
 #amount{
@@ -174,7 +176,7 @@
 }
 .btn_amount{
     margin-right: 0; 
-    background-image: linear-gradient(45deg, #f12711, #f5af19);
+    background-color: #E26A2C;
     border: none; 
     width:40px; 
     height:25px;
@@ -182,13 +184,13 @@
     color: #F6E7D8;
 }
 .btn_amount:hover:not(.active) {
-    background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
+    background-color: #ffb84d;
     transition: background-color 0.3s ease;
   }
 
 .list {
     list-style: none;
-    /* padding-top: 30px; */
+    padding-top: 30px;
     margin-left: 430px;
 }
 
@@ -222,7 +224,7 @@
 
 
 .title_datngaynao{
-    margin-left: 41%;
+    margin-left: 40.5%;
     color: #E7B037;
     font-family: 'Lalezar';
     text-transform: uppercase;
