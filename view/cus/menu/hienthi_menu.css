@@ -1,66 +1,68 @@
-body {
-    background-image: url('anhnen.jpg');
-    /* g */
-    margin-top: 100px;
-}
-
-#sidebar_menu {
-    width: 200px;
-    height:100vh;
-    background-image: linear-gradient(to right, #1a1a1a 0%, black 100%);
-    position: fixed;
-    left: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding-top: 30px;
+#all{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 100px;
 }
-
-/* CSS cho liên kết trong sidebar */
-#sidebar_menu a {
-    text-decoration: none;
-    font-size: 20px;
-    color: #F6E7D8;;
-    font-family: 'Lalezar';
-    display: block; 
-    text-align: left;
-    padding-left: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+.content{
+    flex: 1;
 }
-
-/* CSS cho liên kết được chọn */
-#sidebar_menu a#active {
-    color: #FFA629;
+.sidebar_menu {
+    width: 200px;
+    background-image: linear-gradient(to right, #1a1a1a 0%, black 100%);
+    position: sticky;
+    top: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
-
-/* CSS khi rê chuột qua liên kết */
-#sidebar_menu a:hover:not(#active) {
-    color: #FFA629;
-}
-
-/* CSS cho ảnh */
-#sidebar_menu img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-}
-
-/* CSS cho thẻ hr */
-#sidebar_menu hr {
-    width: 100%; 
-    background-color: #F6E7D8;
-    height: 0.5px; 
+.sidebar_menu hr {
+    width: 80%; 
+    background-color: #f3e9dec0;
+    height: 0.3px; 
     border: none; 
     margin: 0 auto; 
     margin-top: auto; 
     margin-bottom: auto; 
     margin-left: 10px;
 }
+.menu_categories {
+    width: 200px;
+    position: initial;
+    transition: all 0.3s ease;
+}
+
+.menu_categories.fixed {
+    z-index: 10;
+    width: 260px;
+    left: 15px;
+    position: fixed;
+    top: 140px;
+}
+
+.menu_categories.scrolled {
+    z-index: 10;
+    width: 260px;
+    left: 15px;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.menu_categories a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F6E7D8;
+    font-family: 'Lalezar';
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.menu_categories a:hover {
+color: #FFA629;
+}
+  
+
 .title_chitiet,.title_thucdon{
     display: flex;
     justify-content: center;
@@ -121,7 +123,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 20px;
-    height: 100%;
     overflow: hidden; 
 }
 .anh{
@@ -135,9 +136,6 @@ body {
     background: none;
     background-color: rgba(16, 16, 16, 0.3);
     border-radius: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 25px;
     width: 50vw;
     position: relative;
     left: 50%;
@@ -224,7 +222,7 @@ body {
 
 
 .title_datngaynao{
-    margin-left: 40.5%;
+    margin-left: 50.5%;
     color: #E7B037;
     font-family: 'Lalezar';
     text-transform: uppercase;

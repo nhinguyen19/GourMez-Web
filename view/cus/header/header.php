@@ -6,11 +6,11 @@
     <title>Header</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
-    
+    <link rel="stylesheet" href="../view/cus/giohang/giohang.css">
     <link rel="stylesheet" href="../view/cus/menu/hienthi_menu.css">
     <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
         body{
             width: 100%;
@@ -26,7 +26,6 @@
 <body>
     <nav class="header">
         <!-- <div id="img"><img src="..view/cus/img/logocus.png" style="height: 86.61px; width: 100px;"></div> -->
-        
         <div class="menu_header">
             <a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../view/cus/img/logocus.png" style="height: 40px; width: 120px;"></a>
             <a href="tranghienthi.php?quanly=thucdon" id="header">THỰC ĐƠN</a>
