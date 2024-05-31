@@ -1,6 +1,4 @@
 <?php
-session_start();
-include("../view/cus/header/header.php");
 $conn = connectdb();
 $sql_chitiet = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.food_id='$_GET[id]'";
 $query_chitiet = mysqli_query($conn, $sql_chitiet);
@@ -8,7 +6,7 @@ while ($row_chitiet = mysqli_fetch_array($query_chitiet)) {
     $cate_id = $row_chitiet['cate_id'];
     $food_id = $row_chitiet['food_id'];
 ?>
-<div class="body1" style="margin-top:100px">
+<div class="body1">
 <form method="POST" action="">
     <div class="noidung_chitiet" style=" margin-left: 19vw;">
         <h1 class="title_chitiet1" style="text-align: center"><?php echo $row_chitiet['food_name'] ?></h1>
