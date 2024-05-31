@@ -72,8 +72,6 @@ footer
 }
 
 </style>
-
-
  <div class = "background">
         <div class = "logo">
             <img src = "../view/cus/img/logocus.png">

@@ -1,121 +1,76 @@
-.box-content{
+
+.box-content {
     margin: 0 auto;
-    width: 60%;
-    /* border: 1px solid black; */
+    width: 800px;
     background-color: white;
-    text-align: center;
-    padding: 10px;
-    /* border-radius: 20px; */
-    /* margin-bottom: 30px; */
     margin-top: 150px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-rows: 400px 0;
+    grid-template-columns: 400px 400px;
+    grid-template-areas: 
+        "h f";
+}
+
+.img {
+    width: 400px;
+    height: 400px;
+    grid-area: h;
+}
+
+.form {
+    width: 70%;
+    margin: 100px 90px auto;
+    align-items: center;
     
+    justify-content: center;
+    grid-area: f;
+    
+}
+.bang_dn{
+    display: block;
+    align-items: center;
+    justify-content: end;
+}
+.dangnhap{
     display: flex;
+    margin-left: 45px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
-.box-content img{
-    width: 50%;
-    height: max-content;
-}
-
-
-.login-form b{
-    margin: 0 auto;
-    width: 80%;
-    
-    text-align: center;
-    padding: 10px;
-    
-    margin-top: 20px;
+.ten{
     margin-bottom: 10px;
 }
-.login-form{
-    width: 70%;
-    margin:  auto;
-    align-items: center;
-    text-align: left;
-    justify-content: center;
-    
+.ten input,.mk-icon input{
+    width: 192px;
 }
-#user_login form table{
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    
-}
-
-#user_login form input[type='text'], #user_login form input[type='password']{
-    width: 85%;
-    height: fit-content;
-    font-size: 16px;
-    padding: 10px;
-    align-content: center;
-    align-items: center;
-    text-align: left;
-    justify-content: center;
-    background-color: aliceblue;
-    color: black;
-    border: 1px solid black;
-    border-radius: 10px;
-    /* margin-bottom: 20px; */
-    font-family: 'Times New Roman';
-}
-
-
-.bang_dn{
-    padding: 20px;
-    text-align: left;
-    
-    font-weight: bold;
-}
-.title{
+.mk-icon{
     display: flex;
-    text-align: left;
-    align-items: flex-start;
-    font-size: 32px;
-    font-weight: bold;
-    margin-left: 20%;
-    margin-right: 30%;
     
 }
-
-.has-error{
-    color: red;
-    font-size: 18px;
+.icon{
+    display: flex;
+    align-items: end;
+    margin-left: 5px;
+}
+.tittle1,.tittle2{
+    color: black;
+    font-size: 20px;
 }
 .dn-bt{
-    
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    
-}
-
-.dn-bt input{
-    font-family: 'Times New Roman';
-    font-size: 18px;
-    padding: 10px;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
     background-color: black;
-    color: aliceblue;
-    border: 1px solid black;
-    border-radius: 20px;
-    font-weight: bold;
+    color: white;
+    width: 200px;
+    
+    height: 25px;
+
 }
 .dk-qmk a{
-    text-decoration: none;
     color: black;
-    font-size: 18px;
+    
 }
-
-/* Icon mắt */
-#nosee{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    /* margin-bottom: 20px; */
-    margin-left: 5px;
+.dk-qmk{
+    margin-top: 10px;
+    margin-left: 20px;
 }

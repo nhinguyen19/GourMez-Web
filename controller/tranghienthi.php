@@ -1,9 +1,17 @@
 <?php
-    // include("xuly_tinnhanKH.php");
+
+
+    include("xuly_tinnhanKH.php");
+
     session_start();
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
-    
+
+
+?>
+<?php 
+
+
     if(isset($_GET['quanly']))
     { 
         switch($_GET['quanly'])

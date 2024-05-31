@@ -1,6 +1,5 @@
 body{
   background-image: linear-gradient(to right, #202020 ,#444444);
-  margin-top: 100px; 
 }
 .giohang_content {
     display: flex; /* Use flexbox to align items */
@@ -120,7 +119,7 @@ body{
   transition: background-color 0.3s ease;
 }
 
-.food-item {
+.food-item1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);

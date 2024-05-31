@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gourmez</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lalezar">
-  <link rel="stylesheet" href="../view/cus/menu/hienthi_menu.css">
-</head>
-<body>
 <?php
         $conn = connectdb();
         $sql_sidebar_danhmuc = "SELECT * FROM category ORDER BY cate_id ASC";
@@ -24,6 +14,3 @@
             ?>
         </div>
     </div>
-</body>
-</html> 
-

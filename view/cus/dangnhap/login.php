@@ -60,26 +60,31 @@
 
         <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-        <div id="user_login" class="box-content" >
-            <img src="../view/cus/dangnhap/Fried Chicken Instagram Post.png">
-            <div class="login-form">
-                <b style="font-size:18px">ĐĂNG NHẬP</b>
+        
+        <div class="box-content" >
+            <img class="img" src="../view/cus/img/anhDN.png">
+            <div class="form">
+                <b class="dangnhap">ĐĂNG NHẬP</b><br>
                 <form class="bang_dn" method="Post" autocomplete="off" >
                          
                 <!-- tên đăng nhập -->
-
-                    <label class="tittle" style="font-size:20px ">Tên đăng nhập</label>
+                    <div class="ten">
+                    <label class="tittle1" >Tên đăng nhập</label><br>
                     <input type="text" id="user" name="user">
+                    </div>
+                    
                     
                 <!-- Mật khẩu -->
-                
-                    <lable class="tittle" style="font-size:20px ">Mật khẩu</label>
-                    <div style="display: flex;align-items: center;"> 
-                        <input type="password" id="password" name="password">
-                        <span id="nosee" style="cursor: pointer;" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
-                    </div>
+                <div class="mk-icon">
+                <div class="mk">
+                <label class="tittle2" >Mật khẩu</label><br>
+                    <input type="password" id="password" name="password">
+                </div>
+                <span class="icon" id="nosee" style="cursor: pointer;" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
+                </div>
+                    
                         
-                    <input class="dn-bt" type="submit" id="dangnhap" name="dangnhap" value="Đăng nhập">
+                <br><input class="dn-bt" type="submit" id="dangnhap" name="dangnhap" value="Đăng nhập">
                 </form>
 
                 <?php
@@ -92,9 +97,9 @@
                 <!-- //dangky/quenmatkhau -->
                 <div class="dk-qmk">
                     <a href="tranghienthi.php?quanly=dangky">Đăng ký/</a>
-                    <!-- <a href="../view/cus/dangky/register.php">Đăng ký/</a> -->
+                   
                     <a href="tranghienthi.php?quanly=quenmatkhau">Quên mật khẩu</a>
-                    <!-- <a href="../view/cus/quenmatkhau/forgotpass.php">Quên mật khẩu</a> -->
+                   
 
                 </div>
                 
