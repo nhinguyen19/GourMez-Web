@@ -30,7 +30,7 @@
         <h1> TRẠNG THÁI ĐƠN HÀNG</h1>
         <label>Nhân viên đảm nhận :</label>
         <select id="staff" name="staff" required>
-        <option value="" selected>Tên nhân viên </option>
+    <option value="" selected>Tên nhân viên</option>
     <?php
     // Kết nối cơ sở dữ liệu
     $conn = connectdb();
@@ -56,21 +56,23 @@
                 $rowStaffName = mysqli_fetch_assoc($resultStaffName);
                 echo "<option value='$staff_id' selected>" . $rowStaffName['name_staff'] . "</option>";
             }
-        } else {
-            // Nếu staff_id là NULL, hiển thị danh sách nhân viên để chọn
-            $sql = "SELECT * FROM staff";
-            $result2 = mysqli_query($conn, $sql);
+        }
 
-            // Kiểm tra xem có dữ liệu trả về không
-            if (mysqli_num_rows($result2) > 0) {
-                
-                // Duyệt qua từng hàng dữ liệu và tạo các tùy chọn trong thẻ select
-                while ($row = mysqli_fetch_assoc($result2)) {
-                    echo "<option value='" . $row['staff_id'] . "'>" . $row['name_staff'] . "</option>";
+        // Hiển thị danh sách tất cả các nhân viên khác
+        $sql = "SELECT * FROM staff";
+        $result2 = mysqli_query($conn, $sql);
+
+        // Kiểm tra xem có dữ liệu trả về không
+        if (mysqli_num_rows($result2) > 0) {
+            while ($row = mysqli_fetch_assoc($result2)) {
+                // Nếu staff_id không phải là NULL và khớp với giá trị trong vòng lặp, bỏ qua nó
+                if ($staff_id !== NULL && $row['staff_id'] == $staff_id) {
+                    continue;
                 }
-            } else {
-                echo "<option value=''>Không có nhân viên</option>";
+                echo "<option value='" . $row['staff_id'] . "'>" . $row['name_staff'] . "</option>";
             }
+        } else {
+            echo "<option value=''>Không có nhân viên</option>";
         }
     } else {
         echo "<option value=''>Không thể kiểm tra staff_id</option>";
@@ -80,6 +82,8 @@
     mysqli_close($conn);
     ?>
 </select>
+
+<div id="additionalStaffInfo"></div> <!-- Div để hiển thị thông tin bổ sung -->
 <label>Trạng thái đơn hàng :</label>
 <select id="status" name="status" required>
     <?php
@@ -111,7 +115,7 @@
     mysqli_close($conn);
     ?>
 </select>
-
+<div id="additionalStatusInfo"></div> <!-- Div để hiển thị thông tin bổ sung -->
 
 
 
@@ -129,3 +133,71 @@
             console.error(error);
         });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const statusSelect = document.getElementById('status');
+    const staffSelect = document.getElementById('staff');
+
+    // Function to handle status change
+    function handleStatusChange() {
+        const status = statusSelect.value;
+        if (status === 'Đang giao hàng') {
+            // Display input fields for driver information
+            document.getElementById('additionalStatusInfo').innerHTML = `
+                <label for="driverName">Tên tài xế:</label>
+                <input type="text" id="driverName" name="driverName" required>
+                <label for="driverPhone">Số điện thoại tài xế:</label>
+                <input type="text" id="driverPhone" name="driverPhone" required>
+            `;
+        } else {
+            // Clear additional fields
+            document.getElementById('additionalStatusInfo').innerHTML = '';
+        }
+    }
+
+    // Function to handle staff change
+    function handleStaffChange() {
+        const staffId = staffSelect.value;
+        if (staffId) {
+            // Display additional information for selected staff
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `getStaffInfo.php?staff_id=${staffId}`, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('additionalStaffInfo').innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        } else {
+            document.getElementById('additionalStaffInfo').innerHTML = '';
+        }
+    }
+
+    statusSelect.addEventListener('change', handleStatusChange);
+    staffSelect.addEventListener('change', handleStaffChange);
+
+    // Initial check on page load
+    handleStatusChange();
+    handleStaffChange();
+});
+
+</script>
+<?php
+
+if (isset($_GET['staff_id'])) {
+    $staff_id = $_GET['staff_id'];
+    $conn = connectdb();
+    $query = "SELECT * FROM staff WHERE staff_id = '$staff_id'";
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $staff = mysqli_fetch_assoc($result);
+        echo "<p>Email: " . $staff['email'] . "</p>";
+        echo "<p>Số điện thoại: " . $staff['phone'] . "</p>";
+    } else {
+        echo "<p>Không tìm thấy thông tin nhân viên.</p>";
+    }
+
+    mysqli_close($conn);
+}
+?>
