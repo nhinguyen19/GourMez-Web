@@ -1,13 +1,11 @@
 <?php
-    session_start();
-    include("../view/cus/header/header.php");
     $conn = connectdb();
     $sql_danhmuc = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.cate_id='$_GET[id]' ORDER BY food.food_id ASC";
     $query_danhmuc= mysqli_query($conn, $sql_danhmuc);
     $query_danhmuc1= mysqli_query($conn, $sql_danhmuc);
     $row_title = mysqli_fetch_array($query_danhmuc1);
 ?>
-<ul id="all_dishes" style=" margin-left: 14vw;margin-top:100px">
+<ul id="all_dishes" style=" margin-left: 14vw;">
     <h1 class="title_thucdon"><?php echo $row_title['cate_name']?></h1>
     <div class="food-item">
         <?php
