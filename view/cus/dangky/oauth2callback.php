@@ -4,9 +4,9 @@ require_once 'vendor/autoload.php';
 session_start();
 
 // Replace these with your own values
-$clientID = 'YOUR_GOOGLE_CLIENT_ID';
-$clientSecret = 'YOUR_GOOGLE_CLIENT_SECRET';
-$redirectUri = 'YOUR_REDIRECT_URI';
+$clientID = '518795742590-khm6qvjatokc6rrema282dg93h691fvr.apps.googleusercontent.com';
+$clientSecret = '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';
+$redirectUri = 'http://localhost/GOURMEZ-WEB/CONTROLLER/tranghienthi.php?quanly=trangchu';
 
 $client = new Google_Client();
 $client->setClientId($clientID);
