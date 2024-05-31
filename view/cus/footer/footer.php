@@ -74,6 +74,7 @@ footer
     clear: both;
     width: 100%; 
     bottom:0;
+    
 }
 </style>
 

@@ -32,14 +32,14 @@ $(document).ready(function() {
     $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id ORDER BY food_id ASC LIMIT $begin, 8";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
 ?>
-<img src="../view/cus/menu/banner5.png" width="100%" height="50%" style="padding-top: 100px;">
-<div id="all_dishes">
-    <div class="sidebar" style="margin-top: -96px;">
+<div id="all_dishes" style="margin-top: 100px; display: flex;">
+    <div class="sidebar_1">
         <?php 
             include("../view/cus/menu/sidebar.php");
         ?>
     </div>
-    <div class="noidung_menu" style="height:100%;overflow: auto;">
+    <div class="noidung_menu" style="flex-grow: 1">
+        <img src="../view/cus/menu/s.png" width="100%";height="50%">
         <h1 class="title_thucdon">Hôm nay ăn gì?</h1>
         <div class="food-item">
             <?php
@@ -67,7 +67,7 @@ $(document).ready(function() {
             $row_count = mysqli_num_rows( $sql_trang);
             $trang = ceil($row_count/8);
         ?>
-        <div class="list_trang" style="padding-top:10px">
+        <div class="list_trang">
             <ul class="list">
                 <?php
                     for($i=1; $i<=$trang;$i++){
@@ -89,7 +89,7 @@ $(document).ready(function() {
             $selected_discounts = array_slice($discounts, 0, 3);
         ?>
         <h1 class="title_datngaynao">Đặt ngay nào</h1>
-            <div class="onediscount" style="padding-bottom:30px">
+            <div class="onediscount"  style=" margin-left: 13vw;">
                 <?php foreach ($selected_discounts as $row): ?>
                 <li class="Thucdon_mon2">
                     <img src="../view/admin/<?php echo $row['img'] ?>" style="width: 170px; height: 170px;">
@@ -102,4 +102,10 @@ $(document).ready(function() {
             </div>
     </div>
 </div>
-
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+    var noidungMenuHeight = document.querySelector('.noidung_menu').offsetHeight;
+    var sidebar = document.querySelector('.sidebar_1');
+    sidebar.style.height = noidungMenuHeight + 'px';
+});
+</script>
