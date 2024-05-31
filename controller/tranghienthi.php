@@ -1,10 +1,17 @@
 <?php
+
+
     include("xuly_tinnhanKH.php");
+
     session_start();
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
+
+
 ?>
 <?php 
+
+
     if(isset($_GET['quanly']))
     { 
         switch($_GET['quanly'])
@@ -13,6 +20,7 @@
             include ('hienthi_menu.php');
             break;
 
+        // CASE KHUYẾN MÃI
         case 'khuyenmai':
             include ('../view/cus/khuyenmai/khuyenmai.php');
             break;
@@ -47,6 +55,8 @@
         case 'vechungtoi':
             include ('../view/cus/vechungtoi/vechungtoi.php');
             break;
+
+        // CASE GIỎ HÀNG VÀ THANH TOÁN
         case 'giohang':
             include ('../view/cus/giohang/giohang.php');
             break;
@@ -94,7 +104,11 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
- ?>
+
+
+?>
+<!-- đừng xóa footer nựa -->
 <?php
     include("../view/cus/footer/footer.php");
+
 ?>
