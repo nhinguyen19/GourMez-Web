@@ -4,8 +4,14 @@
 <?php
   include('../model/connect.php');
   $conn = connectdb();
+  if (isset($_SESSION['id'])) {
+    $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
+} else {
+    // Nếu session user_id không tồn tại, gán user_id = null
+    $user_id = "NULL";
+}
   
-  $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id";
+  $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id and user_id=' $user_id'";
   $query_cart = mysqli_query($conn, $sql_cart);
 ?>
   <div class="thanhtoanform">

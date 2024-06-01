@@ -1,7 +1,15 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <?php
 require("../model/connect.php");
 $conn = connectdb();
 ?>
+
+<script>
+  function navigate()
+  {
+    window.location = "tranghienthi.php?quanly=giohangsn";
+  }
+</script>
 <style>
     .banner_sinhnhat
     {
@@ -11,7 +19,7 @@ $conn = connectdb();
     }
 
     /* Thanh đặt món */
-.food_label
+.food_order
 {
   background-color: rgba(255, 242, 242, 1);
   padding-bottom: 50px;
@@ -64,6 +72,7 @@ h1
     font-size: 20px;
     width: fit-content;
     padding: 5px;
+    margin-bottom: 50px;
 
  }
    
@@ -84,6 +93,16 @@ h1
 {
   text-align: left;
   margin-left: 170px;
+}
+.giohangDV
+{
+  background-color: rgba(252, 47, 19, 1);
+  width: fit-content;
+  border-radius: 60px;
+  border: none;
+  padding: 18px;
+  font-size: 24px;
+  float: right;
 }
 
 </style>
@@ -112,9 +131,11 @@ h1
             <h1>ĐẶT MÓN ĂN</h1>
             <div class="food_order" style = "font-family: 'Lalezar'">
 
-            <div class="food_label">
-                
+            <div style = "margin-top: -20px; margin-right: 50px;margin-bottom: 100px;">
+              <button class = "giohangDV" onclick="navigate()"><i class="fas fa-shopping-basket fa-lg" style="color: #ffffff;"></i></button>
+            </div>
 
+            <div class="food_label">
                 <div class="full_menu">
                     <?php
                         $sql = "SELECT food_combo, price,image FROM food_for_service WHERE ID_service = '1'";

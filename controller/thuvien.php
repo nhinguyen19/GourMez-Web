@@ -111,11 +111,32 @@ function taodonhang_sinhnhat($id,$name, $phone, $email, $order_name,$gender,$boo
     $conn = connectdb();
     $sql = "INSERT INTO birthday_service(id_bill,name, phone, email,order_name, gender , booking_date, address, total_price, note)
                 VALUES ('$id','$name','$phone','$email','$order_name','$gender','$booking_date','$address', '$total_price', '$note')";
-    mysqli_query($conn,$sql);
+    if ($total_price != 0)
+    {
+        mysqli_query($conn,$sql);
 
-    $last_id = $id;
-    mysqli_close($conn);
-    return $last_id;
+        $last_id = $id;
+        mysqli_close($conn);
+        return $last_id;
+    }
+    else if ($total_price == 0)
+    {
+        echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Không thể đặt dịch vụ',
+            text: 'Vui lòng đặt lại',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'tranghienthi.php?quanly=1';
+            }
+        });
+      </script>";
+        exit();
+    }
+   
 }
 
 function taogiohang_sinhnhat($tenmon,$dongia,$soluong,$thanhtien,$idbill)
@@ -137,7 +158,7 @@ function taogiohang_sinhnhat($tenmon,$dongia,$soluong,$thanhtien,$idbill)
         });
         </script>";
     }
-    else
+    else if ($tenmon == "")
     {
         echo "<script>
         Swal.fire({

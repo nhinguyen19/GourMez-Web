@@ -36,19 +36,19 @@ h2{
 
             <input type="hidden" name = "IDdichvu" value = " <?php  echo $_GET['iddichvu'] ?>">
             <tr>
-                <th style="text-align: center">Tên món </th>
-                <td><input type="text" name="tenmon_dv" style="width: 400px; height: 30px; background-color: #FFECCB; color: black;border:none"></td>
+                <th style="text-align: center">Tên món ăn </th>
+                <td><input required type="text" name="tenmon_dv" style="width: 400px; height: 30px; background-color: #FFECCB; color: black;border:none"></td>
             </tr>
             <tr>
-                <th>Giá</th>
+                <th>Giá tiền</th>
                 <td>
-                    <input type = number name = "giamonan_dv" min = "10000" step = "1000" id = "giamonan_dv" style="width: 400px; height: 100px;background-color: #FFECCB; color: black;border:none">
+                    <input required type = number name = "giamonan_dv" min = "10000" step = "1000" id = "giamonan_dv" style="width: 400px;; height: fit-content;background-color: #FFECCB; color: black;border:none">
                 </td>
             </tr>
             <tr>
                 <th>Hình ảnh</th>
                 <td>
-                    <input type="file" name = "hinhanhmondv" id ="hinhanhmondv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
+                    <input type="file" name = "hinhanhmondv" id ="hinhanhmondv" style="width: 400px; background-color: #FFECCB; color: black;border:none" required>
                 </td>
             </tr>
             <tr>

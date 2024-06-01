@@ -1,6 +1,7 @@
 <?php
-  session_start();
+ session_start();
   include_once("../model/connect.php");
+
 ?>
 
 <?php 

@@ -2,14 +2,13 @@
 
 
     include("xuly_tinnhanKH.php");
-
     session_start();
          
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
 
-
 ?>
+
 <?php 
 
 
@@ -40,8 +39,8 @@
             break;
         case 'xulygiohang':
             include('../controller/xuly_order.php');
-        case 'giohangdv':
-                include('../view/cus/dichvu/giohang_dv.php');   
+        case 'giohangbigdeal':
+                include('../view/cus/dichvu/giohang_bigdeal.php');   
                 break;
         case 'giohangsn':
                 include('../view/cus/dichvu/giohang_sinhnhat.php');   
@@ -105,7 +104,6 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
-
 ?>
 <!-- đừng xóa footer nựa -->
 <?php
