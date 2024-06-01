@@ -30,7 +30,7 @@
         <h1> TRẠNG THÁI ĐƠN HÀNG</h1>
         <label>Nhân viên đảm nhận :</label>
         <select id="staff" name="staff" required>
-        <option value="" selected>Tên nhân viên </option>
+    <option value="" selected>Tên nhân viên</option>
     <?php
     // Kết nối cơ sở dữ liệu
     $conn = connectdb();
@@ -56,21 +56,23 @@
                 $rowStaffName = mysqli_fetch_assoc($resultStaffName);
                 echo "<option value='$staff_id' selected>" . $rowStaffName['name_staff'] . "</option>";
             }
-        } else {
-            // Nếu staff_id là NULL, hiển thị danh sách nhân viên để chọn
-            $sql = "SELECT * FROM staff";
-            $result2 = mysqli_query($conn, $sql);
+        }
 
-            // Kiểm tra xem có dữ liệu trả về không
-            if (mysqli_num_rows($result2) > 0) {
-                
-                // Duyệt qua từng hàng dữ liệu và tạo các tùy chọn trong thẻ select
-                while ($row = mysqli_fetch_assoc($result2)) {
-                    echo "<option value='" . $row['staff_id'] . "'>" . $row['name_staff'] . "</option>";
+        // Hiển thị danh sách tất cả các nhân viên khác
+        $sql = "SELECT * FROM staff";
+        $result2 = mysqli_query($conn, $sql);
+
+        // Kiểm tra xem có dữ liệu trả về không
+        if (mysqli_num_rows($result2) > 0) {
+            while ($row = mysqli_fetch_assoc($result2)) {
+                // Nếu staff_id không phải là NULL và khớp với giá trị trong vòng lặp, bỏ qua nó
+                if ($staff_id !== NULL && $row['staff_id'] == $staff_id) {
+                    continue;
                 }
-            } else {
-                echo "<option value=''>Không có nhân viên</option>";
+                echo "<option value='" . $row['staff_id'] . "'>" . $row['name_staff'] . "</option>";
             }
+        } else {
+            echo "<option value=''>Không có nhân viên</option>";
         }
     } else {
         echo "<option value=''>Không thể kiểm tra staff_id</option>";
@@ -80,6 +82,8 @@
     mysqli_close($conn);
     ?>
 </select>
+
+<div id="additionalStaffInfo"></div> <!-- Div để hiển thị thông tin bổ sung -->
 <label>Trạng thái đơn hàng :</label>
 <select id="status" name="status" required>
     <?php
@@ -111,7 +115,7 @@
     mysqli_close($conn);
     ?>
 </select>
-
+<div id="additionalStatusInfo"></div> <!-- Div để hiển thị thông tin bổ sung -->
 
 
 
@@ -129,3 +133,85 @@
             console.error(error);
         });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const statusSelect = document.getElementById('status');
+    const staffSelect = document.getElementById('staff');
+
+    // Function to handle status change
+    function handleStatusChange() {
+        const status = statusSelect.value;
+        if (status === 'Đang giao hàng') {
+            // Display input fields for driver information
+            document.getElementById('additionalStatusInfo').innerHTML = `
+            <label>Nhân viên giao hàng :</label>
+        <select id="shipper" name="shipper" required>
+    <option value="" selected>Tên nhân viên</option>
+    <?php
+    // Kết nối cơ sở dữ liệu
+    $conn = connectdb();
+
+    // Lấy id của đơn hàng từ tham số GET
+    $id = $_GET['id'];
+
+    // Truy vấn cơ sở dữ liệu để kiểm tra xem staff_id của đơn hàng có giá trị NULL không
+    $checkNullQuery = "SELECT shipper_id FROM orders WHERE order_id = '$id'";
+    $resultCheckNull = mysqli_query($conn, $checkNullQuery);
+
+    // Kiểm tra xem có dữ liệu trả về không
+    if ($resultCheckNull) {
+        $rowCheckNull = mysqli_fetch_assoc($resultCheckNull);
+        $shipper_id = $rowCheckNull['shipper_id'];
+
+        // Nếu shipper không phải là NULL, hiển thị tên nhân viên đã chọn
+        if ($shipper_id !== NULL) {
+            // Lấy tên nhân viên từ bảng shipper
+            $getShipperNameQuery = "SELECT name_shipper FROM shipper WHERE shipper_id = '$shipper_id'";
+            $resultShipperName = mysqli_query($conn, $getShipperNameQuery);
+            if ($resultShipperName) {
+                $rowShipperName = mysqli_fetch_assoc($resultShipperName);
+                echo "<option value='$shipper_id' selected>" . $rowShipperName['name_shipper'] . "</option>";
+            }
+        }
+
+        // Hiển thị danh sách tất cả các nhân viên khác
+        $sql = "SELECT * FROM shipper";
+        $result2 = mysqli_query($conn, $sql);
+
+        // Kiểm tra xem có dữ liệu trả về không
+        if (mysqli_num_rows($result2) > 0) {
+            while ($row = mysqli_fetch_assoc($result2)) {
+                // Nếu staff_id không phải là NULL và khớp với giá trị trong vòng lặp, bỏ qua nó
+                if ($shipper_id !== NULL && $row['shipper_id'] == $shipper_id) {
+                    continue;
+                }
+                echo "<option value='" . $row['shipper_id'] . "'>" . $row['name_shipper'] . "</option>";
+            }
+        } else {
+            echo "<option value=''>Không có nhân viên</option>";
+        }
+    } else {
+        echo "<option value=''>Không thể kiểm tra shipper_id</option>";
+    }
+
+    // Đóng kết nối cơ sở dữ liệu
+    mysqli_close($conn);
+    ?>
+</select>
+          `;
+        } else {
+            // Clear additional fields
+            document.getElementById('additionalStatusInfo').innerHTML = '';
+        }
+    }
+
+   
+
+    statusSelect.addEventListener('change', handleStatusChange);
+
+    // Initial check on page load
+    handleStatusChange();
+});
+
+</script>
+

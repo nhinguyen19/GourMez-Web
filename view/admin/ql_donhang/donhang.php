@@ -17,32 +17,32 @@
 <script>
     $("#displayall").click(function(e) {
         e.preventDefault();
-        $("#content").load("ql_donhang/alldonhang.php");
+        $("#content").load("ql_donhang/allorder.php");
     });
 
     $("#received").click(function(e) {
         e.preventDefault();
-        $("#content").load("ql_donhang/received.php");
+        $("#content").load("ql_donhang/receivedorder.php");
     });
 
     $("#processed").click(function(e) {
         e.preventDefault();
-        $("#content").load("ql_donhang/processed.php");
+        $("#content").load("ql_donhang/processedorder.php");
     });
 
     $("#delivery").click(function(e) {
         e.preventDefault();
-        $("#content").load("ql_donhang/delivery.php");
+        $("#content").load("ql_donhang/deliveryorder.php");
     });
 
     $("#completed").click(function(e) {
         e.preventDefault();
-        $("#content").load("ql_donhang/completed.php");
+        $("#content").load("ql_donhang/completedorder.php");
     });
 
     $("#canceled").click(function(e) {
         e.preventDefault();
-        $("#content").load("ql_donhang/canceled.php");
+        $("#content").load("ql_donhang/cancelledorder.php");
     });
     </script>
   
