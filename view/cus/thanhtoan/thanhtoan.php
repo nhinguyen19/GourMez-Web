@@ -4,21 +4,7 @@
 <?php
   include('../model/connect.php');
   $conn = connectdb();
-
-  if (isset($_POST['update'])) {
-    $foodId = $_POST['food_id'];
-    $quantity = $_POST['quantity'];
-    $sessionId = session_id(); // Get the current session ID
-    $updateQuantityQuery = "UPDATE cart SET quantity = $quantity WHERE food_id = $foodId";
-    mysqli_query($conn, $updateQuantityQuery);
-  }
-
-  if (isset($_POST['delete'])) {
-    $foodId = $_POST['food_id'];
-    $deleteQuery = "DELETE FROM cart WHERE food_id = $foodId";
-    mysqli_query($conn, $deleteQuery);
-  }
-
+  
   $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id";
   $query_cart = mysqli_query($conn, $sql_cart);
 ?>
