@@ -2,13 +2,14 @@
 
 
     include("xuly_tinnhanKH.php");
-
     session_start();
+    //unset($_SESSION['cart']);
+         
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
 
-
 ?>
+
 <?php 
 
 
@@ -39,8 +40,8 @@
             break;
         case 'xulygiohang':
             include('../controller/xuly_order.php');
-        case 'giohangdv':
-                include('../view/cus/dichvu/giohang_dv.php');   
+        case 'giohangbigdeal':
+                include('../view/cus/dichvu/giohang_bigdeal.php');   
                 break;
         case 'giohangsn':
                 include('../view/cus/dichvu/giohang_sinhnhat.php');   
@@ -62,6 +63,7 @@
             break;
         case 'thanhtoan': 
             include ('../view/cus/thanhtoan/thanhtoan.php');
+            thanhtoandonhang();
             break;
         case 'dangnhap':
             include ('../view/cus/dangnhap/login.php');
@@ -73,10 +75,10 @@
             include ('../view/cus/dangxuat/check_logout.php');
             break;
         case 'dangnhapadmin':
-            include ('../view/admin/tranghienthi.php');
+            include ('adminhienthi.php');
             break;
         case 'quenmatkhau':
-            include ('../view/cus/quenmatkhau/forgotpass.php');
+            include ('../view/cus/quenmatkhau/requestReset.php');
             break;
         case 'quanlytaikhoan':
             include ('../view/cus/accountManagement/profile.php');
@@ -104,11 +106,9 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
-
-
 ?>
 <!-- đừng xóa footer nựa -->
-<?php
-    include("../view/cus/footer/footer.php");
+    <?php
+        include("../view/cus/footer/footer.php");
 
-?>
+    ?>

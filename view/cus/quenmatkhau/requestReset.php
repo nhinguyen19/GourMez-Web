@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php'; // Adjust the path to your vendor directory
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (isset($_POST['send']) && ($_POST['send'])=='Gửi email') {
     $email = $_POST['email'];
 
     if (empty($email)) {
@@ -56,21 +56,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Port       = 587;
 
             //Recipients
-            $mail->setFrom('duongyennhi270904@gmail.com', 'Mailer');
+            $mail->setFrom('gourmezfood123@gmail.com', 'Gourmez Food');
             $mail->addAddress($email);
 
             // Content
             $mail->isHTML(true);
-            $mail->Subject = 'Password Reset Request';
-            $mail->Body    = 'Click the following link to reset your password: <a href="' . $reset_link . '">Reset Password</a>';
+            $mail->setLanguage('vn', '/optional/path/to/language/directory/');
+            $mail->Subject = 'Gourmez Password';
+            $mail->Body    = 'Bấm vào link để thay đổi mật khẩu: <a href="' . $reset_link . '">Thay đổi mật khẩu</a>';
 
             $mail->send();
-            echo 'A password reset link has been sent to your email.';
+            echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Liên kết để thay đổi mật khẩu đã được gửi đến bạn. <br>Vui lòng kiểm tra email.',
+                showConfirmButton: true,
+            });
+            </script>";
+            // echo 'Liên kết để thay đổi mật khẩu đã được gửi đến bạn. Vui lòng kiểm tra email.';
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     } else {
-        echo "No account found with that email.";
+        // echo "Email không tồn tại.";
+        echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Email không tồn tại.',
+                showConfirmButton: true,
+            });
+            </script>";
     }
 
     $stmt->close();
@@ -78,15 +93,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Request Password Reset</title>
-</head>
-<body>
-    <form method="post" action="requestReset.php">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <input type="submit" value="Request Password Reset">
+<link rel="stylesheet" href="../view/cus/quenmatkhau/requestReset.css">
+<div class="box-content">
+    <h3>QUÊN MẬT KHẨU?</h3>
+    <form method="post">
+        <label for="email">Email</label>
+        <br><input type="email" name="email" placeholder="Email" required>
+        <br><input type="submit" name="send" value="Gửi email">
     </form>
-</body>
-</html>
+</div>
+    

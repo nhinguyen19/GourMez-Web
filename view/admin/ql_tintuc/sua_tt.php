@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="sua_tt.css">
+<link rel="stylesheet" href="tranghienthi.css">
 <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
 <?php
 // Kết nối đến cơ sở dữ liệu
@@ -19,6 +19,7 @@ if ($result->num_rows > 0) {
     $title = isset($row["title"]) ? $row["title"] : "";
     $link = isset($row["link"]) ? $row["link"] : "";
     $imgTitle = isset($row["img_title"]) ? $row["img_title"] : $imgTitle;
+    $description = isset($row["description"]) ? $row["description"] : "";
 }
 ?>
 <h2 class="title">Sửa tin tức</h2>
@@ -33,7 +34,7 @@ if ($result->num_rows > 0) {
                     <div id="imageDiv">
                         <div id="innerDiv">
 
-                            <img id="currentImage" style="width:200px; height: 200px"
+                            <img id="currentImage" style="width:200px; height: 200px;margin-left : 45px;"
                                 src="ql_tintuc/<?php echo $imgTitle; ?>" alt="News Image">
 
                         </div>
@@ -54,8 +55,8 @@ if ($result->num_rows > 0) {
                         <input type="url" name="link" value="<?php echo $link; ?>" size="30"><br><br>
                     </div>
                     <div class="textbox">
-                        <label for="link">Description</label> <br>
-                        <input type="text" name="description" value="<?php echo $link; ?>" size="30"><br><br>
+                        <label for="description">Description</label> <br>
+                        <input type="text" name="description" value="<?php echo $description; ?>" size="30"><br><br>
                     </div>
                     <button id="sua" name="suaTinTuc" type="submit" value="CSS">Thay đổi</button>
                 </td>
@@ -85,6 +86,7 @@ if ($result->num_rows > 0) {
                         img.src = e.target.result;
                         img.style.width = '200px'; // Đặt kích thước tối đa cho ảnh
                         img.style.height = '200px'; // Đặt kích thước tối đa cho ảnh
+                        img.style.marginLeft ='45px';
                         innerDiv.appendChild(img);
                     };
                     reader.readAsDataURL(file);

@@ -77,14 +77,14 @@
                 <!-- Mật khẩu -->
                 <div class="mk-icon">
                 <div class="mk">
-                <label class="tittle2" >Mật khẩu</label><br>
+                    <label class="tittle2" >Mật khẩu</label><br>
                     <input type="password" id="password" name="password">
                 </div>
                 <span class="icon" id="nosee" style="cursor: pointer;" onclick="showpass()" ><i class="fas fa-eye-slash" ></i></span>
                 </div>
                     
                         
-                <br><input class="dn-bt" type="submit" id="dangnhap" name="dangnhap" value="Đăng nhập">
+                <input class="dn-bt" type="submit" id="dangnhap" name="dangnhap" value="Đăng nhập">
                 </form>
 
                 <?php
