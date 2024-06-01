@@ -3,11 +3,15 @@
 
     include("xuly_tinnhanKH.php");
     session_start();
+         
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
 
 ?>
+
 <?php 
+
+
     if(isset($_GET['quanly']))
     { 
         switch($_GET['quanly'])
@@ -69,7 +73,7 @@
             include ('../view/cus/dangxuat/check_logout.php');
             break;
         case 'dangnhapadmin':
-            include ('../view/admin/tranghienthi.php');
+            include ('adminhienthi.php');
             break;
         case 'quenmatkhau':
             include ('../view/cus/quenmatkhau/forgotpass.php');

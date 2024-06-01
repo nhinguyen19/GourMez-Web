@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="tranghienthi.css">
+    <link rel="stylesheet" href="../view/admin/tranghienthi.css">
     <link rel="stylesheet" href="header_ad/header_ad.css">
     <link rel="stylesheet" href="../LIB/bootstrap/css/bootstrap.min.css">
     <script src="../LIB/bootstrap/js/bootstrap.min.js"></script>
@@ -26,11 +26,12 @@
         <nav>
         <div class="menu">
             <div class="logo">
-                <img class="logoad" src="img/logoadmin.png"/>
+                <img class="logoad" src="../view/admin/img/logoadmin.png"/>
             </div>
                 <ul> 
-                        <li><a href="index.php?act=trangchu&id=1">Trang chủ</a></li>
-                        <li><a href="index.php?act=xemtruoc">Xem trước trang</a></li>
+                        <li><a href="tranghienthi.php?quanly=trangchu&id=1">Trang chủ</a></li>
+                        <li><a href="tranghienthi.php?quanly=xemtruoc">Xem trước trang</a></li>
+                        <li><a href="tranghienthi.php?quanly=thoat">Thoát</a></li>
                 </ul>
          </div>
         </nav>

@@ -135,11 +135,18 @@
        xoaTinTuc();
         break;
 
+<<<<<<< HEAD
       // test
       case 'donhang1':
         include('ql_donhang/donhang_1.php');
 
 
+=======
+        case 'thoat';
+        include('ADdangxuat.php');
+        
+        break;
+>>>>>>> c7204de74d2433c98df5ec0256b910176b522bfc
         default :
           include ('tranghienthi.php');
           break;

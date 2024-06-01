@@ -2,15 +2,15 @@
     position: fixed; 
     top: 0; 
     left: 0; 
-    width: 100%; 
+    width: 100vw; 
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 80px;
     background-color: #252525;
     z-index: 999; 
 }
-.header ul{
+/* .header ul{
     display: flex;
     justify-content: space-between;
     margin: 0px;
@@ -33,7 +33,7 @@
     font-size: 18px;
     width: 100%;
     margin-right: 60px;
-}
+} */
 
 
 .menu_header{
@@ -107,24 +107,44 @@
 
 /* Nút đăng nhập */
 .bt_dangnhap{
-    border: 1px solid white;
+    /* border: 1px solid white; */
     background-color: white;
-    border-radius: 20px;
-    /* margin-top: 5px; */
-    width: 100%;
-    /* margin-right: 30px; */
+
+    
+    border-radius: 10px;
+
+    width: 90%;
+    
+
     
 }
-.bt_dangnhap a{
-    color: rgba(174, 33, 8, 1);
+/* .bt_dangnhap a{
+    
+    color: #252525; 
+     padding: auto; 
     text-decoration: none;
-    
-}
-.bt_dangnhap:hover{
+    a
+} */
+/* .bt_dangnhap:hover{
     border: 1px solid black;
     background-color: black;
-    
-}
-.bt_dangnhap a:hover{
     color: white;
+} */
+/* .bt_dangnhap a:hover{
+    color: white;
+} */
+.user_dropdown .bt_dangnhap{
+    color: #252525;
+    /* padding: 5px; */
+    margin-top: 5px;
+    text-align: center;
+    align-items: center;
+}
+.user_dropdown .bt_dangnhap:hover{
+    border: 1px solid white;
+    
+    color: rgba(174, 33, 8, 1);
+    /* padding: 5px; */
+    text-align: center;
+    align-items: center;
 }

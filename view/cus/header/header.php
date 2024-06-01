@@ -1,10 +1,3 @@
-<?php
-// session_start();
-// $username=$_SESSION['user'];
-// unset($_SESSION['role']);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +6,11 @@
     <title>Header</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="../view/cus/header/header.css">
-    
+    <link rel="stylesheet" href="../view/cus/giohang/giohang.css">
     <link rel="stylesheet" href="../view/cus/menu/hienthi_menu.css">
     <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
         body{
             width: 100%;
@@ -33,9 +26,8 @@
 <body>
     <nav class="header">
         <!-- <div id="img"><img src="..view/cus/img/logocus.png" style="height: 86.61px; width: 100px;"></div> -->
-        
         <div class="menu_header">
-            <a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../view/cus/img/logocus.png" style="height: 50px; width: 120px;"></a>
+            <a href="tranghienthi.php?quanly=trangchu&id=1" id="header"><img src="../view/cus/img/logocus.png" style="height: 40px; width: 120px;"></a>
             <a href="tranghienthi.php?quanly=thucdon" id="header">THỰC ĐƠN</a>
             <a href="tranghienthi.php?quanly=khuyenmai" id="header">KHUYẾN MÃI</a>
             <a href="tranghienthi.php?quanly=dichvu" id="header">DỊCH VỤ</a>
@@ -54,7 +46,7 @@
                     ?>
                 
                     <button id="name_user" style="background-color:#252525; font-size: 18px;font-family: 'Lalezar'">
-                        <?php echo "Chào, " . $username; ?>
+                        <?php echo "Chào " . $username; ?>
                     </button>
                     <div class="dropdown_content" style="right: 0;">
                         <a href="tranghienthi.php?quanly=quanlytaikhoan">Quản lý tài khoản</a>
@@ -63,30 +55,33 @@
                 
 
                     <?php
-                    } elseif (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
+                    } 
+                    elseif (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                         // Nếu $_SESSION['role'] == 1, chuyển hướng sang trang admin/tranghienthi.php
-                        unset($_SESSION['user']);
-                        unset($_SESSION['role']);
-                        header("Location: tranghienthi.php?quanly=dangnhapadmin");
+                        // unset($_SESSION['user']);
+                        // unset($_SESSION['role']);
+                    //   header("Location: tranghienthi.php?quanly=dangnhapadmin");
                         
                         exit();
                     } 
                     
-                    
-                    else {
+                    else
+                    // elseif (isset($_SESSION['role']) && $_SESSION['role'] == )
+                    {
                         // Nếu $_SESSION['role'] == 2, hiển thị nút "Đăng nhập"
                         ?>
-                        <button class="bt_dangnhap" style="height: 40px;font-family: 'Lalezar'; margin-top: 5px;">
-                            <a href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a>
-                        </button>
+
+                        
+                        <a class="bt_dangnhap" style="font-family: 'Lalezar'" href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a>
+                        
+
                         
                     <?php
                     }?>
             </div>
         </div>
 
-        
-
+    
         
     </nav>
     
