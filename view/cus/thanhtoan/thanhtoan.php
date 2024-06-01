@@ -4,15 +4,8 @@
 <?php
   include('../model/connect.php');
   $conn = connectdb();
-  if (isset($_SESSION['id'])) {
-    $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
-} else {
-    // Nếu session user_id không tồn tại, gán user_id = null
-    $user_id = "NULL";
-}
+
   
-  $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id and user_id=' $user_id'";
-  $query_cart = mysqli_query($conn, $sql_cart);
 ?>
   <div class="thanhtoanform">
     <form method="POST" action="tranghienthi.php?quanly=thanhtoan">
@@ -91,34 +84,76 @@
       <?php 
         $totalPrice = 0;
         $cartItems = "";
-        while ($row_cart = mysqli_fetch_array($query_cart)) {
-          $productPrice = $row_cart['selling_price'];
-          $quantity = $row_cart['quantity'];
-          $subtotal = $productPrice * $quantity;
-          $totalPrice += $subtotal;
-
-          $cartItems .= '<tr>';
-          $cartItems .= '<td>';
-          $cartItems .= '<span style="color: #E26A2C; font-weight: bold">' . $row_cart['food_name'] . '</span><br>';
-          $cartItems .= '</td>';
-          $cartItems .= '<td>';
-          $cartItems .= '<span style="padding-right: 5px">Số lượng:</span> ' . $quantity . '</span>';
-          $cartItems .= '</td>';
-          $cartItems .= '<td>';
-          $cartItems .= "Thành tiền: " . number_format($subtotal, 0, '.', '.') . " đ<br>";
-          $cartItems .= '</td>';
-          $cartItems .= '</tr>';
-          $cartItems .= '<tr>';
-          $cartItems .= '<td colspan="2"><hr style="width:350px"></td>';
-          $cartItems .= '</tr>';
-        }
-        echo '<p style="color:black; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" style="color:#E26A2C"></i> CHI TIẾT ĐƠN HÀNG</p>';
-        echo '<table class="tb_noidung" style="font-size: 16px">';
-        echo $cartItems;
-        echo '<tr>';
-        echo '<td colspan="2" style="text-align: center; font-weight:bold">Tổng cộng: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
-        echo '</tr>';
-        echo '</table>';
+        if (isset($_SESSION['id'])) {
+        
+          $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
+          $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id and user_id='$user_id'";
+          $query_cart = mysqli_query($conn, $sql_cart);
+          while ($row_cart = mysqli_fetch_array($query_cart)) {
+            $productPrice = $row_cart['selling_price'];
+            $quantity = $row_cart['quantity'];
+            $subtotal = $productPrice * $quantity;
+            $totalPrice += $subtotal;
+  
+            $cartItems .= '<tr>';
+            $cartItems .= '<td>';
+            $cartItems .= '<span style="color: #E26A2C; font-weight: bold">' . $row_cart['food_name'] . '</span><br>';
+            $cartItems .= '</td>';
+            $cartItems .= '<td>';
+            $cartItems .= '<span style="padding-right: 5px">Số lượng:</span> ' . $quantity . '</span>';
+            $cartItems .= '</td>';
+            $cartItems .= '<td>';
+            $cartItems .= "Thành tiền: " . number_format($subtotal, 0, '.', '.') . " đ<br>";
+            $cartItems .= '</td>';
+            $cartItems .= '</tr>';
+            $cartItems .= '<tr>';
+            $cartItems .= '<td colspan="2"><hr style="width:350px"></td>';
+            $cartItems .= '</tr>';
+          }
+          echo '<p style="color:black; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" style="color:#E26A2C"></i> CHI TIẾT ĐƠN HÀNG</p>';
+          echo '<table class="tb_noidung" style="font-size: 16px">';
+          echo $cartItems;
+          echo '<tr>';
+          echo '<td colspan="2" style="text-align: center; font-weight:bold">Tổng cộng: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
+          echo '</tr>';
+          echo '</table>';
+        } else  
+        { 
+          echo 'con gà minh anh';
+          if (isset($_SESSION['cart'])) {
+            echo 'con bò minh anh';
+          foreach ($_SESSION['cart'] as $item) {
+              $hinh_anh_san_pham = $item['img'];
+              $productPrice = $item['price'];
+              $quantity = $item['quantity'];
+              $subtotal = $productPrice * $quantity;
+              $totalPrice += $subtotal;
+  
+              $cartItems .= '<tr>';
+              $cartItems .= '<td>';
+              $cartItems .= '<span style="color: #E26A2C; font-weight: bold">' . $item['name'] . '</span><br>';
+              $cartItems .= '</td>';
+              $cartItems .= '<td>';
+              $cartItems .= '<span style="padding-right: 5px">Số lượng:</span> ' . $quantity . '</span>';
+              $cartItems .= '</td>';
+              $cartItems .= '<td>';
+              $cartItems .= "Thành tiền: " . number_format($subtotal, 0, '.', '.') . " đ<br>";
+              $cartItems .= '</td>';
+              $cartItems .= '</tr>';
+              $cartItems .= '<tr>';
+              $cartItems .= '<td colspan="2"><hr style="width:350px"></td>';
+              $cartItems .= '</tr>';
+            }
+            echo '<p style="color:black; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" style="color:#E26A2C"></i> CHI TIẾT ĐƠN HÀNG</p>';
+            echo '<table class="tb_noidung" style="font-size: 16px">';
+            echo $cartItems;
+            echo '<tr>';
+            echo '<td colspan="2" style="text-align: center; font-weight:bold">Tổng cộng: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
+            echo '</tr>';
+            echo '</table>';
+          }
+      }
+  
       ?>
       <input type="hidden" name="totalPrice" value="<?php echo $totalPrice; ?>">
     </div>

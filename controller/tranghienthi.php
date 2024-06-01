@@ -3,6 +3,7 @@
 
     include("xuly_tinnhanKH.php");
     session_start();
+    //unset($_SESSION['cart']);
          
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
@@ -62,6 +63,7 @@
             break;
         case 'thanhtoan': 
             include ('../view/cus/thanhtoan/thanhtoan.php');
+            thanhtoandonhang();
             break;
         case 'dangnhap':
             include ('../view/cus/dangnhap/login.php');
