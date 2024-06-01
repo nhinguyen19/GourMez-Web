@@ -5,17 +5,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $confirm_password = $_POST['confirm_password'];
 
     if (empty($new_password) || empty($confirm_password)) {
-        echo "Both password fields are required.";
+        echo "Bạn chưa nhập mật khẩu.";
         exit;
     }
 
     if (strlen($new_password) < 6) {
-        echo "Password must be at least 6 characters.";
+        echo "Mật khẩu tối thiểu 6 ký tự.";
         exit;
     }
 
     if ($new_password !== $confirm_password) {
-        echo "Passwords do not match.";
+        echo "Mật khẩu nhập lại không đúng.";
         exit;
     }
 

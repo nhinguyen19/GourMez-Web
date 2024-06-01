@@ -77,7 +77,7 @@
             include ('adminhienthi.php');
             break;
         case 'quenmatkhau':
-            include ('../view/cus/quenmatkhau/forgotpass.php');
+            include ('../view/cus/quenmatkhau/requestReset.php');
             break;
         case 'quanlytaikhoan':
             include ('../view/cus/accountManagement/profile.php');
