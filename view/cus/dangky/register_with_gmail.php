@@ -25,20 +25,23 @@ $client->addScope('email');
 $client->addScope('profile');
 $client->addScope('https://www.googleapis.com/auth/user.phonenumbers.read');
 
+$auth_url = $client->createAuthUrl();
+
+
 if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
     $client->setAccessToken($_SESSION['access_token']);
     $oauth2 = new Google_Service_Oauth2($client);
     $userinfo = $oauth2->userinfo->get();
-
     // Retrieve user data
     $email = $userinfo->email;
     $name = $userinfo->name;
-    // You might need to use Google People API to get phone number
+//     // You might need to use Google People API to get phone number
     $people_service = new Google_Service_PeopleService($client);
     $person = $people_service->people->get('people/me', ['personFields' => 'phoneNumbers']);
     $phone = isset($person->phoneNumbers[0]->value) ? $person->phoneNumbers[0]->value : '';
+        echo "yes";
 
-    // Save user data to the database
+//     // Save user data to the database
     $_SESSION['user']=$name;
     
     $stmt = $conn->prepare("INSERT INTO user (email, user_name, phone) VALUES (?, ?, ?)");
@@ -51,6 +54,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
     $stmt->close();
     $conn->close();
 } else {
+    echo "no";
     $auth_url = $client->createAuthUrl();
     header('Location: ' . filter_var($auth_url, FILTER_SANITIZE_URL));
 }

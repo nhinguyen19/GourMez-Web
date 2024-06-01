@@ -29,8 +29,9 @@
                 <img class="logoad" src="../view/admin/img/logoadmin.png"/>
             </div>
                 <ul> 
-                        <li><a href="index.php?act=trangchu&id=1">Trang chủ</a></li>
-                        <li><a href="index.php?act=xemtruoc">Xem trước trang</a></li>
+                        <li><a href="tranghienthi.php?quanly=trangchu&id=1">Trang chủ</a></li>
+                        <li><a href="tranghienthi.php?quanly=xemtruoc">Xem trước trang</a></li>
+                        <li><a href="tranghienthi.php?quanly=thoat">Thoát</a></li>
                 </ul>
          </div>
         </nav>

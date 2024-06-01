@@ -133,6 +133,10 @@
        xoaTinTuc();
         break;
 
+        case 'thoat';
+        include('ADdangxuat.php');
+        
+        break;
         default :
           include ('tranghienthi.php');
           break;
