@@ -104,6 +104,8 @@
         suaDichVu();
         break;
 
+        case 'suadichvu':
+          include('ql_dichvu/sua_dv.php');
         case 'themmonan':
           include ('ql_dichvu/themmonan.php');
           themmonanDV();
@@ -133,15 +135,16 @@
        xoaTinTuc();
         break;
 
-        case 'thoat';
-        include('ADdangxuat.php');
-        
-        break;
+      // test
+      case 'donhang1':
+        include('ql_donhang/donhang_1.php');
+
+
         default :
           include ('tranghienthi.php');
           break;
         
-
+        
           
       }
      }

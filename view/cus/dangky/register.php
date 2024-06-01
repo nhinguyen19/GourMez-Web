@@ -36,13 +36,7 @@
             if(empty($err)){
                 
                 $errors=reg_uname($name,$user_name,$email,$phone,$pass);
-                if (count($errors) > 0) {
-                    // Hiển thị thông báo lỗi
-                    foreach ($errors as $error) //trong mỗi vòng lặp qua mảng $errors thì sẽ gán mỗi ptu mảng vào biến $error
-                    {
-                        echo $error . "<br>";
-                    }
-                }
+                
             }
             // var_dump($err);hien ra mang cho de nhin va kiem tra
             // die();
@@ -53,9 +47,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
         <link rel="stylesheet" href="../view/cus/dangky/register.css">
-        <!-- <link rel="stylesheet" href="register.css"> -->
+        
         <script src="../view/cus/dangnhap/hienthi_mk.js"></script>
-        <!-- <script src="../dangnhap/hienthi_mk.js"></script> -->
+        
         <div class="box-content" >
             <img class="img" src="../view/cus/img/anhDK.png">
             <div class="form">
@@ -66,7 +60,6 @@
                         <label class="title" >Họ và tên</label>
                         <br><input type="text" name="name">
                     </div>
-                    
                             
                             <!-- user_name --> 
                     <div class="user">
@@ -104,14 +97,14 @@
                     </div>
                                 
                     <div class="has-error">
-                        <span><?php echo (isset($err['pass']))?$err['pass']:''?></span><br>
+                        <span><?php echo (isset($err['pass']))?$err['pass'].'<br>':''?></span>
                         <span><?php echo (isset($err['countpass']))?$err['countpass']:''?></span>
                     </div>
                             <!-- rpass -->
                     <div class="rpass-icon">
                         <div class="rpass">
                             <label class="title" >Nhập lại mật khẩu*</label>
-                            <input type="password" id="re_enter_password" name="re_enter_password">
+                            <br><input type="password" id="re_enter_password" name="re_enter_password">
                         </div>
                         <span class="icon" id="noseeRe" style="cursor: pointer;" onclick="showRepass()"><i class="fas fa-eye-slash" ></i></span>
                     </div>
@@ -122,35 +115,29 @@
                             
                         <!-- dangky button -->
                     <input class="dk-bt" type="submit" id="dangky" name="dangky" value="Đăng ký">
-                            
+                    <?php
+                        if(isset($errors))
+                        {
+                            if (count($errors) > 0) {
+                                // Hiển thị thông báo lỗi
+                                foreach ($errors as $error) //trong mỗi vòng lặp qua mảng $errors thì sẽ gán mỗi ptu mảng vào biến $error
+                                {
+                                    echo "<p style='color:red'>".$error . "</p><br>";
+                                }
+                            }
+                        }
+                    ?>
                     </form>
 
             </div>
             
                 
-                
-                <div class="mes_error" style="display: flex;align-items: center;text-align: center; justify-content: center;">
-                    <?php 
-                        
-                        
-                        
-                    ?>
+            
                 </div>
                 <a href="../view/cus/dangky/register_with_gmail.php">
                     <button type="button">Register with Gmail</button>
                 </a>
-                <div id="login-with-social">
 
-                    <!-- <?php if(isset($authUrl)){ ?>
-                    <a href="<?= $authUrl ?>"><img src="../view/cus/img/google.png" alt='google login' title="Google Login" height="40" width="160" /></a>
-                    <?php } ?> -->
-                    <?php if(isset($authUrl)){ ?>
-                    <a href="<?= $authUrl ?>"><img src="../img/google.png" alt='google login' title="Google Login" height="40" width="160" /></a>
-                    <?php } ?>
-                </div>
-
-                
-            
         </div>
        
     

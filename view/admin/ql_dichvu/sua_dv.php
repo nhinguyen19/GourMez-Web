@@ -95,7 +95,7 @@
                 <td style = "text-align: center; border: 1px solid black" ><?php echo $row['food_combo']?></td>
                 <td style = "text-align: center; border: 1px solid black"><?php echo $row['price']?></td>
                 <td style="text-align: center; border: 1px solid black"><img src="../../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" width="100" height="100"></td>
-                <td style="text-align: center;border: 1px solid black"><a href="tranghienthi.php?quanly=xoamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suamonandichvu&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></td>     
+                <td style="text-align: center;border: 1px solid black"><a href="tranghienthi.php?quanly=xoamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></td>     
             
             </tr>
              

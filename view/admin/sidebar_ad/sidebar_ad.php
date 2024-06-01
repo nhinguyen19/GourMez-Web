@@ -3,6 +3,7 @@
         <a href="#">Đơn hàng</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=donhang">Tất cả</a>
+            <a href = "tranghienthi.php?quanly=donhang1">Test</a>
             <a href="#">Cài đặt vận chuyển</a>
         </div>
         <hr> 

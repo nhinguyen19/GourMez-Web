@@ -78,15 +78,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Request Password Reset</title>
-</head>
-<body>
+
     <form method="post" action="requestReset.php">
-        <input type="email" name="email" placeholder="Enter your email" required>
+        <label for="email"></label>
+        <input type="email" name="email" placeholder="Email" required>
         <input type="submit" value="Request Password Reset">
     </form>
-</body>
-</html>

@@ -58,88 +58,102 @@
             $hinhanhBanner_tmp = $_FILES['bannerdichvumoi']['tmp_name']; 
             $hinhanh_banner = time().'_'.$hinhanh_banner;
 
-            if($mota !="")
-            {
-                $sql_sua = "UPDATE service 
-                            SET small_descript= '$mota' 
-                            WHERE id_service = '$id'";
-                if(mysqli_query($conn, $sql_sua)) 
-                {
-                    echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
-                    exit();
-                } else 
-                {
-                    echo "Lỗi: " . mysqli_error($conn);
-                }
-                            
-            }
-            if($tendichvu != "")
-            {
-                $sql_sua = "UPDATE service 
-                            SET service_name= '$tendichvu' 
-                            WHERE id_service = '$id'";
-                if(mysqli_query($conn, $sql_sua)) 
-                {
-                    echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
-                    exit();
-                } else 
-                {
-                    echo "Lỗi: " . mysqli_error($conn);
-                }
-            }
-            if($hinhanh != "")
-            {
-                $sql_select_image = "SELECT image FROM service WHERE id_service = '$id' ";
-                $result = mysqli_query($conn, $sql_select_image);
-                $row = mysqli_fetch_assoc($result);
-                $old_image = $row['image'];
-                $old_image_path = "../../view/admin/ql_dichvu/uploads/" . $old_image;
+             // Kiểm tra xem tên dịch vụ đã tồn tại hay chưa
+             $sql_check = "SELECT COUNT(*) as count FROM service WHERE service_name = '$tendichvu'";
+             $result_check = mysqli_query($conn, $sql_check);
+             $row_check = mysqli_fetch_assoc($result_check);
+             $count = $row_check['count'];
 
-                if (file_exists($old_image_path)) {
-                    unlink($old_image_path);
+             if ($count > 0)
+             {
+                echo "<script>alert('Không thể sửa dịch vụ. Tên dịch vụ đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+             }
+             else
+             {
+                if($mota !="")
+                {
+                    $sql_sua = "UPDATE service 
+                                SET small_descript= '$mota' 
+                                WHERE id_service = '$id'";
+                    if(mysqli_query($conn, $sql_sua)) 
+                    {
+                        echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                        exit();
+                    } else 
+                    {
+                        echo "<script>alert('Sửa dịch vụ thất bại'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                        echo mysqli_error($conn);
+                    }
+                                
                 }
-            
-                $sql_sua = "UPDATE service 
-                            SET  image= '$hinhanh'
-                            WHERE id_service = '$id'";
-                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh); 
+                else if($tendichvu != "")
+                {
+                    $sql_sua = "UPDATE service 
+                                SET service_name= '$tendichvu' 
+                                WHERE id_service = '$id'";
+                    if(mysqli_query($conn, $sql_sua)) 
+                    {
+                        echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                        exit();
+                    } else 
+                    {
+                        echo "Lỗi: " . mysqli_error($conn);
+                    }
+                }
+                else if($hinhanh != "")
+                {
+                    $sql_select_image = "SELECT image FROM service WHERE id_service = '$id' ";
+                    $result = mysqli_query($conn, $sql_select_image);
+                    $row = mysqli_fetch_assoc($result);
+                    $old_image = $row['image'];
+                    $old_image_path = "../../view/admin/ql_dichvu/uploads/" . $old_image;
 
-                if(mysqli_query($conn, $sql_sua)) 
+                    if (file_exists($old_image_path)) {
+                        unlink($old_image_path);
+                    }
+                
+                    $sql_sua = "UPDATE service 
+                                SET  image= '$hinhanh'
+                                WHERE id_service = '$id'";
+                    move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh); 
+
+                    if(mysqli_query($conn, $sql_sua)) 
+                    {
+                        echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                    } else 
+                    {
+                        echo "Lỗi: " . mysqli_error($conn);
+                    }
+                }
+                
+                else if($hinhanh_banner != "")
                 {
-                    echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
-                } else 
-                {
-                    echo "Lỗi: " . mysqli_error($conn);
+                    $sql_select_image = "SELECT banner FROM service WHERE id_service = '$id' ";
+                    $result = mysqli_query($conn, $sql_select_image);
+                    $row = mysqli_fetch_assoc($result);
+                    $old_image = $row['image'];
+                    $old_image_path = "../../view/admin/ql_dichvu/uploads/" . $old_image;
+
+                    if (file_exists($old_image_path)) {
+                        unlink($old_image_path);
+                    }
+                
+                    $sql_sua = "UPDATE service 
+                                SET  banner= '$hinhanh_banner'
+                                WHERE id_service = '$id'";
+                    move_uploaded_file($hinhanhBanner_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh_banner); 
+
+                    if(mysqli_query($conn, $sql_sua)) 
+                    {
+                        echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                        exit();
+                    } else 
+                    {
+                        echo "Lỗi: " . mysqli_error($conn);
+                    }
                 }
             }
-            
-            if($hinhanh_banner != "")
-            {
-                $sql_select_image = "SELECT banner FROM service WHERE id_service = '$id' ";
-                $result = mysqli_query($conn, $sql_select_image);
-                $row = mysqli_fetch_assoc($result);
-                $old_image = $row['image'];
-                $old_image_path = "../../view/admin/ql_dichvu/uploads/" . $old_image;
-
-                if (file_exists($old_image_path)) {
-                    unlink($old_image_path);
-                }
-            
-                $sql_sua = "UPDATE service 
-                            SET  banner= '$hinhanh_banner'
-                            WHERE id_service = '$id'";
-                move_uploaded_file($hinhanhBanner_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh_banner); 
-
-                if(mysqli_query($conn, $sql_sua)) 
-                {
-                    echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
-                    exit();
-                } else 
-                {
-                    echo "Lỗi: " . mysqli_error($conn);
-                }
-            }
-        }    
+        }   
     }
     function xoaDichVu()
     {
@@ -238,12 +252,24 @@
             $id = $_GET['idmonan'];
             $tenmonan_DV = $_POST['tenmonandv'];
             $giamonan_DV = $_POST['giamonandv'];
-            $iddichvu = $_POST['iddichvu'];
+            // $iddichvu = $_POST['iddichvu'];
             $hinhanh = $_FILES['hinhanhmonandvmoi']['name'];
             $hinhanh_tmp = $_FILES['hinhanhmonandvmoi']['tmp_name']; 
             $hinhanh = time().'_'.$hinhanh;
 
+            // Kiểm tra xem tên món đã tồn tại hay chưa
+            $sql_check = "SELECT COUNT(*) as count FROM food_for_service WHERE food_combo = '$tenmonan_DV'";
+            $result_check = mysqli_query($conn, $sql_check);
+            $row_check = mysqli_fetch_assoc($result_check);
+            $count = $row_check['count'];
 
+            if ($count > 0)
+            {
+                // Tên món ăn đã tồn tại, hiển thị thông báo bằng JavaScript
+                echo "<script>alert('Không thể sửa món ăn. Món ăn đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+            }
+            else
+            {
             if ($tenmonan_DV != "")
             {
                 $sql_sua = "UPDATE food_for_service 
@@ -251,28 +277,28 @@
                         Where ID_food = '$id'";
                 if(mysqli_query($conn, $sql_sua)) 
                     {
-                        echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=suamonandichvu&idmonan=$id' ;</script>";
+                        echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=tatcadichvu' ;</script>";
                     } else 
                     {
                         echo "Lỗi: " . mysqli_error($conn);
                     }
             }
 
-            if ($giamonan_DV != "")
+            else if ($giamonan_DV != "")
             {
                 $sql_sua = "UPDATE food_for_service 
                         SET price = '$giamonan_DV'
                         Where ID_food = '$id'";
                 if(mysqli_query($conn, $sql_sua)) 
                     {
-                        echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=suamonandichvu&idmonan=$id' ;</script>";
+                        echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=tatcadichvu' ;</script>";
                     } else 
                     {
                         echo "Lỗi: " . mysqli_error($conn);
                     }
             }
 
-            if ($hinhanh != "")
+            else if ($hinhanh != "")
             {
                 $sql_select_image = "SELECT image FROM food_for_service WHERE ID_food = '$id' ";
                 $result = mysqli_query($conn, $sql_select_image);
@@ -290,7 +316,7 @@
                 move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh); 
                 if(mysqli_query($conn, $sql_sua)) 
                 {
-                    echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=suamonandichvu&idmonan=$id' ;</script>";
+                    echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=tatcadichvu' ;</script>";
                     exit();
                 } else 
                 {
@@ -300,6 +326,7 @@
             }
 
         }
+    }
     }  
 
     function xoamonandichvu()
