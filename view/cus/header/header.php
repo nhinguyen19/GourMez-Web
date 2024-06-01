@@ -42,13 +42,12 @@
                         if (isset($_SESSION['role']) && $_SESSION['role'] == 0) {
                             // Nếu $_SESSION['role'] == 0, hiển thị nút và dropdown menu
                             $username = $_SESSION['user'];
-                            
                     ?>
                 
-                    <button id="name_user" style="background-color:#252525; font-size: 18px;font-family: 'Lalezar'">
+                    <button id="name_user" >
                         <?php echo "Chào " . $username; ?>
                     </button>
-                    <div class="dropdown_content" style="right: 0;">
+                    <div class="dropdown_content" >
                         <a href="tranghienthi.php?quanly=quanlytaikhoan">Quản lý tài khoản</a>
                         <a href="tranghienthi.php?quanly=dangxuat">Đăng xuất</a>
                     </div>
@@ -58,30 +57,19 @@
                     } 
                     elseif (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                         // Nếu $_SESSION['role'] == 1, chuyển hướng sang trang admin/tranghienthi.php
-                        // unset($_SESSION['user']);
-                        // unset($_SESSION['role']);
                     //   header("Location: tranghienthi.php?quanly=dangnhapadmin");
-                        
                         exit();
                     } 
                     
                     else
-                    // elseif (isset($_SESSION['role']) && $_SESSION['role'] == )
                     {
                         // Nếu $_SESSION['role'] == 2, hiển thị nút "Đăng nhập"
                         ?>
-
-                        
-                        <a class="bt_dangnhap" style="font-family: 'Lalezar'" href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a>
-                        
-
-                        
+                        <a class="bt_dangnhap"  href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a>
                     <?php
                     }?>
             </div>
         </div>
 
-    
-        
     </nav>
     
