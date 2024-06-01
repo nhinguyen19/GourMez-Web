@@ -3,6 +3,12 @@ function thanhtoandonhang() {
     if (isset($_POST['guithanhtoan'])) {
 
         $conn = connectdb();
+        if (isset($_SESSION['id'])) {
+            $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
+        } else {
+            // Nếu session user_id không tồn tại, gán user_id = null
+            $user_id = "NULL";
+        }
         $tenkhachhang = $_POST['cusname'];
         $sodienthoai = $_POST['cusphone'];
         $email = $_POST['cusemail'];
@@ -17,8 +23,8 @@ function thanhtoandonhang() {
         $date = date('Y-m-d H:i:s');
 
         // Insert the order into the database
-        $sql_insert = "INSERT INTO orders (name_cus, phone, email, note, address, payment_mode, origin_total_price, date_order, status) 
-                             VALUES ('$tenkhachhang', '$sodienthoai', '$email', '$ghichu', '$diachi', '$phuongthuc', '$totalPrice', '$date','Ghi nhận')";
+        $sql_insert = "INSERT INTO orders (name_cus, phone, email, note, address, payment_mode, origin_total_price, date_order, status, user_id) 
+                             VALUES ('$tenkhachhang', '$sodienthoai', '$email', '$ghichu', '$diachi', '$phuongthuc', '$totalPrice', '$date','Ghi nhận','$user_id')";
         $query_insert = mysqli_query($conn, $sql_insert);
 
         if ($query_insert) {
@@ -44,7 +50,7 @@ function thanhtoandonhang() {
                 mysqli_query($conn, $insertOrderItemQuery);
             }
             // Clear the cart items that were just associated with this order
-            $clearCartQuery = "DELETE FROM cart WHERE orderid = '$orderID'";
+            $clearCartQuery = "DELETE FROM cart WHERE orderid = '$orderID' and user_id='$user_id'";
             mysqli_query($conn, $clearCartQuery);
 
             echo "Order placed successfully!";

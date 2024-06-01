@@ -11,7 +11,7 @@
     $user_id = "NULL";
 }
   
-  $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id and user_id=' $user_id'";
+  $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id and user_id='$user_id'";
   $query_cart = mysqli_query($conn, $sql_cart);
 ?>
   <div class="thanhtoanform">
