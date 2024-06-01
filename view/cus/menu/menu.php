@@ -112,3 +112,40 @@
         </div>
     </div>
 </div>
+<script>
+    function logAllScrollInfo() {
+            const menuElement = document.querySelector('.menu_categories');
+            const allElement = document.getElementById('all');
+            const allHeight = allElement ? allElement.scrollHeight : 0;
+            const visibleHeight = window.innerHeight;
+            const scrollTop = window.scrollY;
+            const elementTop = allElement.getBoundingClientRect().top + window.scrollY;
+            const remainingHeight = (elementTop + allHeight) - (scrollTop + visibleHeight);
+
+            console.log(`Element height: ${allHeight}px`);
+            console.log(`Visible height: ${visibleHeight}px`);
+            console.log(`Scrolled height: ${scrollTop}px`);
+            console.log(`Remaining height: ${remainingHeight}px`);
+            if(remainingHeight <= 0){
+                menuElement.classList.remove('fixed_menu');
+                menuElement.classList.add('initial_menu');
+            }
+            else{
+                menuElement.classList.add('fixed_menu');
+                menuElement.classList.remove('initial_menu');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Log initial scroll info
+            logAllScrollInfo();
+
+            // Log scroll info on scroll event
+            window.addEventListener('scroll', logAllScrollInfo);
+
+            // Optionally, log scroll info on window resize
+            window.addEventListener('resize', logAllScrollInfo);
+        });
+    
+
+</script>

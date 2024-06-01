@@ -1,7 +1,7 @@
 #all{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 80px;
+    margin-top: 80px;
 }
 .content{
     flex: 1;
@@ -26,26 +26,26 @@
 }
 .menu_categories {
     width: 200px;
-    position: initial;
     transition: all 0.3s ease;
+    z-index: 10;
 }
-
-.menu_categories.fixed {
+.fixed_menu {
+    position: fixed;
+}
+.initial_menu {
+    position: initial;
+}
+/* .menu_categories.fixed {
     z-index: 10;
     width: 260px;
     left: 15px;
     position: fixed;
     top: 140px;
 }
-
+*/
 .menu_categories.scrolled {
-    z-index: 10;
-    width: 260px;
-    left: 15px;
-    position: absolute;
-    top: 100%;
-    transform: translateY(-100%);
-}
+    position: initial;
+} 
 
 .menu_categories a {
     display: block;
