@@ -4,8 +4,7 @@
     include("xuly_tinnhanKH.php");
 
     session_start();
-         unset($_SESSION['user']);
-        unset($_SESSION['role']);
+         
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
 
