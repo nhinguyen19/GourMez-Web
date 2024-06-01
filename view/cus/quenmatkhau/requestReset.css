@@ -1,0 +1,10 @@
+.box-content{
+    margin: 0 auto;
+    width: 30%;
+    background-color: white;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

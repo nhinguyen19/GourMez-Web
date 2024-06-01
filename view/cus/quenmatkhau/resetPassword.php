@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (isset($_POST['update']) && $_POST['update']="Cập nhật") {
     $token = $_POST['token'];
     $new_password = $_POST['new_password'];
     $confirm_password = $_POST['confirm_password'];
@@ -45,47 +45,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("ss", $hashed_password, $email);
 
         if ($stmt->execute()) {
-            echo "Your password has been reset successfully.";
-        } else {
-            echo "Error updating password.";
+            // echo "Your password has been reset successfully.";
+            echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Cập nhật thành công.',
+                showConfirmButton: true,
+            });
+            </script>";
         }
     } else {
-        echo "Invalid or expired token.";
-    }
+        // echo "Error updating password.";
+        echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Cập nhật thất bại.',
+            showConfirmButton: true,
+        });
+        </script>";
+        
+        }
+ }else {
+        // echo "Mã thông báo không hợp lệ hoặc đã hết hạn.";
 
-    $stmt->close();
-    $conn->close();
-} 
-
-else {
-    $token = $_GET['token'];
-
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "gourmez_web";
-    $conn = new mysqli($host, $username, $password, $database);
-
-    if ($conn->connect_error) {
-        die('Kết nối không thành công: ' . $conn->connect_error);
-    }
-
-    $stmt = $conn->prepare("SELECT email FROM user WHERE reset_token = ? AND reset_token_expiry > NOW()");
-    $stmt->bind_param("s", $token);
-    $stmt->execute();
-    $stmt->store_result();
-
-    if ($stmt->num_rows > 0) {
-        $stmt->close();
-    } else {
-        echo "Invalid or expired token.";
+        echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Mã thông báo không hợp lệ hoặc đã hết hạn.',
+            showConfirmButton: true,
+        });
+        </script>";
         $stmt->close();
         $conn->close();
-        exit;
-    }
-}
+ }
+
+
 ?>
 
+<div class="box-content">
+    <p>THAY ĐỔI MẬT KHẨU</p>
     <form method="post" >
     <!-- action="resetPassword.php" -->
         <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token']); ?>">
@@ -97,6 +95,9 @@ else {
         <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter New Password" required>
         <span id="noseeRe" style="cursor: pointer;" onclick="showRepass()"><i class="fas fa-eye-slash" ></i></span>
         <br>
-        <input type="submit" value="Reset Password">
+        <input type="submit" name ="update" value="Cập nhật">
     </form>
+
+</div>
+    
 
