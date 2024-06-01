@@ -1,7 +1,7 @@
 #container 
 {
     
-    background-color: #feeaca;
+    background-color: #252525;
 }
 
 .font-family 
@@ -13,27 +13,47 @@
     width: 200px;
     height: 200px;
 }
-#intro
-{
+#intro {
     width: 100%;
-    background-color:white;
     text-align: center;
-    height: 500px;
-}
-#intro h1
-{
-    font-size: 100px;
-    margin-bottom :0px;
-    padding-top : 100px;
-
+    position: relative; /* Thêm thuộc tính này để tạo vị trí tương đối */
+    height: 300px;
 }
 
+#intro h1 {
+    font-size: 60px;
+    margin-bottom: 0px;
+    /* padding-top: 10px; */
+    position: absolute; /* Thêm thuộc tính này để tạo vị trí tuyệt đối */
+    top: 50%; /* Di chuyển tiêu đề đến giữa theo chiều dọc */
+    left: 50%; /* Di chuyển tiêu đề đến giữa theo chiều ngang */
+    transform: translate(-50%, -120%); /* Dịch chuyển tiêu đề để nằm ở chính giữa */
+    z-index: 1; /* Đảm bảo tiêu đề hiển thị trên ảnh */
+    color: white;
+}
+
+#intro img:first-child {
+    height: 300px;
+    width: 100%;
+}
+
+#backgroundHeader {
+    position: relative; /* Thêm thuộc tính này để tạo vị trí tương đối */
+}
+
+#logoTong {
+    position: absolute; /* Thêm thuộc tính này để tạo vị trí tuyệt đối */
+    top: 50%; /* Di chuyển logo đến giữa theo chiều dọc */
+    left: 50%; /* Di chuyển logo đến giữa theo chiều ngang */
+    transform: translate(-50%, 0%); /* Dịch chuyển logo để nằm ở chính giữa */
+    z-index: 2; /* Đảm bảo logo hiển thị trên nền */
+}
 
 
 #giatri img {
     width: 100%;
-    height: auto;
-    max-height: 99.1vh; /* Ensure it doesn't exceed the viewport height */
+    max-height: 78.6vh;
+     /* Ensure it doesn't exceed the viewport height */
     padding: 0px;
 }
 #hinhBurger
@@ -43,12 +63,13 @@
     border-radius:  7px;
     margin-right : 60px;
     margin-bottom : 30px;
+    box-shadow:15px 15px 15px black;
 
 }
 
 #logoTong
 {
-    width: 50%;
+    width: 30%;
     height: auto;
 }
 
@@ -57,21 +78,40 @@
 {
     width :auto;
     height:auto;
-    padding-right: 40px;
+    border-radius: 10px;
+    box-shadow:15px 15px 15px black
 
 }
 
 #gioithieu 
 {
-    padding:20px 0px;
+    padding:30px 0px;
+}
+
+#gioithieu table 
+{
+    padding-left: 35px;
 }
 #gioithieu table tr td:first-child
 {
     height: 500px;
+    margin-left: 100px;
 }
+
+
 h2
 {
     font-size:4em;
+    color: #FFCB00;
+}
+
+#tieuSu
+{
+
+font-size: 2em;
+color: white;
+margin: 0px 50px;
+
 }
 
 #suMenhTamNhin
@@ -92,6 +132,7 @@ h2
 #suMenhTamNhin p 
 {
     margin:0px;
+    color :white;
 
     font-size: 30px;
 }

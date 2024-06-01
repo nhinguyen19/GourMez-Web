@@ -7,19 +7,26 @@
 // include "../../cus/header/header_trcDN.php";
 ?>
 <div id="container">
-    <div id="intro">
+<div id="intro">
+    <div id="backgroundHeader">
+        <img src="../view/cus/vechungtoi/img_vechungtoi/backgroundHeader.png">
         <h1 class="font-family">Giới thiệu về chúng mình</h1>
         <img id="logoTong" src="../view/cus/img/logocus.png">
-
     </div>
+</div>
+
     <div id="gioithieu">
         <table style="margin:20px;">
             <tr>
-                <td style="background-color: #AE2108; box-shadow:10px 10px 10px grey; border-radius:10px">
-                    <img id="logoNho" src="../view/cus/img/logocus.png">
+                <td>
+                    <img id="logoNho" src="../view/cus/vechungtoi/img_vechungtoi/GioiThieu.png">
                 </td>
                 <td style="text-align:center;">
-                    <h2 class="font-family">Một dự án web đặt món ăn tên Gourméz </h2>
+                    <p id="tieuSu">Gourméz là trang web bán thức ăn nhanh tại Đà Lạt.
+                        Với đội ngũ 5 thành viên năng động, chúng tôi cam kết mang đến cho khách hàng món ăn ngon, đa
+                        dạng và tiện lợi.
+                        Chúng tôi luôn chú trọng vào chất lượng và trải nghiệm mua sắm trực tuyến thú vị cho mọi người.
+                    </p>
                 </td>
             </tr>
         </table>
@@ -27,7 +34,7 @@
     <div id="giatri">
         <img style="width:auto;" src="../view/cus/vechungtoi/img_vechungtoi/GiaTri.png">
     </div>
-    <div id = "tamNhinSuMenhContainer">
+    <div id="tamNhinSuMenhContainer">
         <table>
             <tr>
                 <td id="suMenhTamNhin">
