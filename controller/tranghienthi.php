@@ -108,7 +108,7 @@
     }
 ?>
 <!-- đừng xóa footer nựa -->
-<?php
-    include("../view/cus/footer/footer.php");
+    <?php
+        include("../view/cus/footer/footer.php");
 
-?>
+    ?>
