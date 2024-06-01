@@ -4,6 +4,7 @@
     include("xuly_tinnhanKH.php");
 
     session_start();
+         
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
 
@@ -73,7 +74,7 @@
             include ('../view/cus/dangxuat/check_logout.php');
             break;
         case 'dangnhapadmin':
-            include ('../view/admin/tranghienthi.php');
+            include ('adminhienthi.php');
             break;
         case 'quenmatkhau':
             include ('../view/cus/quenmatkhau/forgotpass.php');
@@ -104,7 +105,6 @@
     {
         include ('../view/cus/trangchu/trangchu.php');
     }
-
 
 ?>
 <!-- đừng xóa footer nựa -->

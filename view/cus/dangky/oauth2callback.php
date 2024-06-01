@@ -15,14 +15,16 @@ $client->setRedirectUri($redirectUri);
 $client->addScope('email');
 $client->addScope('profile');
 $client->addScope('https://www.googleapis.com/auth/user.phonenumbers.read');
+echo "call back ";
 
 if (!isset($_GET['code'])) {
+    echo "call back false";
     $auth_url = $client->createAuthUrl();
     header('Location: ' . filter_var($auth_url, FILTER_SANITIZE_URL));
 } else {
     $client->authenticate($_GET['code']);
     $_SESSION['access_token'] = $client->getAccessToken();
-    $redirect_uri = 'YOUR_FINAL_REDIRECT_URI';
+    $redirect_uri = 'http://localhost/GOURMEZ-WEB/CONTROLLER/tranghienthi.php?quanly=trangchu';
     header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
 }
 ?>
