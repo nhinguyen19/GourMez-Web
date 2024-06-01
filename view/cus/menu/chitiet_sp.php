@@ -82,21 +82,38 @@ while ($row_chitiet = mysqli_fetch_array($query_chitiet)) {
 </div>
 <?php
 if (isset($_POST['themgiohang'])) {
-    $idsanpham = mysqli_real_escape_string($conn, $_GET['id']);
-    $soluong = $_POST['soluong'];
+    // Kết nối cơ sở dữ liệu
+    $conn = connectdb();
 
-    $sql_check_existing = "SELECT * FROM cart WHERE food_id = '$idsanpham'";
+    // Lấy id sản phẩm và số lượng từ POST
+    $idsanpham = mysqli_real_escape_string($conn, $_GET['id']);
+    $soluong = mysqli_real_escape_string($conn, $_POST['soluong']);
+
+    // Kiểm tra xem session user_id có tồn tại không
+    if (isset($_SESSION['user_id'])) {
+        $user_id = mysqli_real_escape_string($conn, $_SESSION['user_id']);
+    } else {
+        // Nếu session user_id không tồn tại, gán user_id = null
+        $user_id = "NULL";
+    }
+
+    // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng của user này chưa
+    $sql_check_existing = "SELECT * FROM cart WHERE food_id = '$idsanpham' AND (user_id = '$user_id' OR user_id IS NULL)";
     $query_check_existing = mysqli_query($conn, $sql_check_existing);
     $row_check_existing = mysqli_fetch_assoc($query_check_existing);
 
     if ($row_check_existing) {
+        // Nếu sản phẩm đã tồn tại, cập nhật số lượng
         $newQuantity = $row_check_existing['quantity'] + $soluong;
-        $sql_update_quantity = "UPDATE cart SET quantity = $newQuantity WHERE food_id = '$idsanpham'";
+        $sql_update_quantity = "UPDATE cart SET quantity = '$newQuantity' WHERE food_id = '$idsanpham' AND (user_id = '$user_id' OR user_id IS NULL)";
         mysqli_query($conn, $sql_update_quantity);
     } else {
-        $sql_insert = "INSERT INTO cart (food_id,quantity) VALUES ('$idsanpham', '$soluong')";
+        // Nếu sản phẩm chưa tồn tại, thêm sản phẩm mới vào giỏ hàng
+        $sql_insert = "INSERT INTO cart (user_id, food_id, quantity) VALUES ($user_id, '$idsanpham', '$soluong')";
         mysqli_query($conn, $sql_insert);
     }
+
+    // Thông báo thành công bằng SweetAlert
     echo "<script>
         Swal.fire({
             icon: 'success',
@@ -106,6 +123,8 @@ if (isset($_POST['themgiohang'])) {
         });
     </script>";
 }
+?>
+
 ?>
 
 <script>

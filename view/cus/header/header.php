@@ -55,17 +55,19 @@
                 
 
                     <?php
-                    } elseif (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
+                    } 
+                    elseif (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                         // Nếu $_SESSION['role'] == 1, chuyển hướng sang trang admin/tranghienthi.php
                         // unset($_SESSION['user']);
                         // unset($_SESSION['role']);
-                        header("Location: tranghienthi.php?quanly=dangnhapadmin");
+                    //   header("Location: tranghienthi.php?quanly=dangnhapadmin");
                         
                         exit();
                     } 
                     
-                    
-                    else {
+                    else
+                    // elseif (isset($_SESSION['role']) && $_SESSION['role'] == )
+                    {
                         // Nếu $_SESSION['role'] == 2, hiển thị nút "Đăng nhập"
                         ?>
                         

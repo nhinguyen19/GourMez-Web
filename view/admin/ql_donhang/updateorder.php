@@ -144,60 +144,74 @@
         if (status === 'Đang giao hàng') {
             // Display input fields for driver information
             document.getElementById('additionalStatusInfo').innerHTML = `
-                <label for="driverName">Tên tài xế:</label>
-                <input type="text" id="driverName" name="driverName" required>
-                <label for="driverPhone">Số điện thoại tài xế:</label>
-                <input type="text" id="driverPhone" name="driverPhone" required>
-            `;
+            <label>Nhân viên giao hàng :</label>
+        <select id="shipper" name="shipper" required>
+    <option value="" selected>Tên nhân viên</option>
+    <?php
+    // Kết nối cơ sở dữ liệu
+    $conn = connectdb();
+
+    // Lấy id của đơn hàng từ tham số GET
+    $id = $_GET['id'];
+
+    // Truy vấn cơ sở dữ liệu để kiểm tra xem staff_id của đơn hàng có giá trị NULL không
+    $checkNullQuery = "SELECT shipper_id FROM orders WHERE order_id = '$id'";
+    $resultCheckNull = mysqli_query($conn, $checkNullQuery);
+
+    // Kiểm tra xem có dữ liệu trả về không
+    if ($resultCheckNull) {
+        $rowCheckNull = mysqli_fetch_assoc($resultCheckNull);
+        $shipper_id = $rowCheckNull['shipper_id'];
+
+        // Nếu shipper không phải là NULL, hiển thị tên nhân viên đã chọn
+        if ($shipper_id !== NULL) {
+            // Lấy tên nhân viên từ bảng shipper
+            $getShipperNameQuery = "SELECT name_shipper FROM shipper WHERE shipper_id = '$shipper_id'";
+            $resultShipperName = mysqli_query($conn, $getShipperNameQuery);
+            if ($resultShipperName) {
+                $rowShipperName = mysqli_fetch_assoc($resultShipperName);
+                echo "<option value='$shipper_id' selected>" . $rowShipperName['name_shipper'] . "</option>";
+            }
+        }
+
+        // Hiển thị danh sách tất cả các nhân viên khác
+        $sql = "SELECT * FROM shipper";
+        $result2 = mysqli_query($conn, $sql);
+
+        // Kiểm tra xem có dữ liệu trả về không
+        if (mysqli_num_rows($result2) > 0) {
+            while ($row = mysqli_fetch_assoc($result2)) {
+                // Nếu staff_id không phải là NULL và khớp với giá trị trong vòng lặp, bỏ qua nó
+                if ($shipper_id !== NULL && $row['shipper_id'] == $shipper_id) {
+                    continue;
+                }
+                echo "<option value='" . $row['shipper_id'] . "'>" . $row['name_shipper'] . "</option>";
+            }
+        } else {
+            echo "<option value=''>Không có nhân viên</option>";
+        }
+    } else {
+        echo "<option value=''>Không thể kiểm tra shipper_id</option>";
+    }
+
+    // Đóng kết nối cơ sở dữ liệu
+    mysqli_close($conn);
+    ?>
+</select>
+          `;
         } else {
             // Clear additional fields
             document.getElementById('additionalStatusInfo').innerHTML = '';
         }
     }
 
-    // Function to handle staff change
-    function handleStaffChange() {
-        const staffId = staffSelect.value;
-        if (staffId) {
-            // Display additional information for selected staff
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', `getStaffInfo.php?staff_id=${staffId}`, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    document.getElementById('additionalStaffInfo').innerHTML = xhr.responseText;
-                }
-            };
-            xhr.send();
-        } else {
-            document.getElementById('additionalStaffInfo').innerHTML = '';
-        }
-    }
+   
 
     statusSelect.addEventListener('change', handleStatusChange);
-    staffSelect.addEventListener('change', handleStaffChange);
 
     // Initial check on page load
     handleStatusChange();
-    handleStaffChange();
 });
 
 </script>
-<?php
 
-if (isset($_GET['staff_id'])) {
-    $staff_id = $_GET['staff_id'];
-    $conn = connectdb();
-    $query = "SELECT * FROM staff WHERE staff_id = '$staff_id'";
-    $result = mysqli_query($conn, $query);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $staff = mysqli_fetch_assoc($result);
-        echo "<p>Email: " . $staff['email'] . "</p>";
-        echo "<p>Số điện thoại: " . $staff['phone'] . "</p>";
-    } else {
-        echo "<p>Không tìm thấy thông tin nhân viên.</p>";
-    }
-
-    mysqli_close($conn);
-}
-?>
