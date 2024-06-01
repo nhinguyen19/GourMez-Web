@@ -252,7 +252,7 @@
                         
 
             <label style = "color: black; font-family: 'Lalezar'; margin-bottom: 15px;">Chọn ngày giao hàng</label> <br>
-            <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày đặt tiệc*" title="Vui lòng chọn ngày đặt tiệc" required> <br>
+            <input type="date" style="font-size: 15px;" name = "ship_date" value = "12-5-2004" id = "ship_date" value ="Ngày giao hàng*" title="Vui lòng chọn ngày đặt tiệc" required> <br>
 
             <input type="text" name = "address" id="address" placeholder="Địa chỉ giao hàng"> <br>
             <input type="text" name = "note" id = "note" placeholder="Ghi chú"> <br>
@@ -332,20 +332,6 @@ include('../controller/thuvien.php');
             taogiohang_bigdeal($tenmon,$dongia,$soluong,$thanhtien,$id_bill);
         }
 
-        
-
-        //unset giỏ hàng session
-        
-        // echo "<script>
-        // Swal.fire({
-        //     icon: 'success',
-        //     title: 'Đơn hàng đã được ghi nhận. 
-        //     Nhân viên sẽ liên hệ bạn sau.',
-        //     showConfirmButton: false,
-        //     timer: 2500
-        // });
-        // </script>";
-        // header('Location: tranghienthi.php?quanly=2');   
         unset($_SESSION['giohang']);
     }
     

@@ -76,7 +76,7 @@
                     else {
                         // Nếu $_SESSION['role'] == 2, hiển thị nút "Đăng nhập"
                         ?>
-                        <button class="bt_dangnhap" style="height: 40px;font-family: 'Lalezar'">
+                        <button class="bt_dangnhap" style="height: 40px;font-family: 'Lalezar'; margin-top: 5px;">
                             <a href="tranghienthi.php?quanly=dangnhap">Đăng nhập</a>
                         </button>
                         

@@ -2,6 +2,14 @@
 require("../model/connect.php");
 $conn = connectdb();
 ?>
+
+<script>
+  function navigate()
+  {
+    window.location = "tranghienthi.php?quanly=giohangbigdeal";
+  }
+</script>
+
 <style>
     .banner_bigdeal
     {
@@ -11,7 +19,7 @@ $conn = connectdb();
     }
 
     /* Thanh đặt món */
-.food_label
+.food_order
 {
   background-color: rgba(255, 242, 242, 1);
   padding-bottom: 50px;
@@ -64,6 +72,7 @@ h1
     font-size: 20px;
     width: fit-content;
     padding: 5px;
+    margin-bottom: 50px;
 
  }
    
@@ -84,6 +93,18 @@ h1
   text-align: left;
   margin-left: 170px;
 }
+
+.giohangDV
+{
+  background-color: rgba(252, 47, 19, 1);
+  width: fit-content;
+  border-radius: 60px;
+  border: none;
+  padding: 18px;
+  font-size: 24px;
+  float: right;
+}
+
 </style>
         <!-- Thanh đặt món -->
         
@@ -109,7 +130,9 @@ h1
 
             <h1>ĐẶT MÓN ĂN</h1>
             <div class="food_order" style = "font-family: 'Lalezar'">
-
+              <div style = "margin-top: -20px; margin-right: 50px;margin-bottom: 100px;">
+                <button class = "giohangDV" onclick="navigate()"><i class="fas fa-shopping-basket fa-lg" style="color: #ffffff;"></i></button>
+              </div>
             <div class="food_label">
                 
 
@@ -132,8 +155,8 @@ h1
                                 echo '<div class="text_info">';
                                 echo '<p style = "margin-bottom: 0px">'. $row['food_combo'] .'</p>';
                                 echo 'Giá bán: <p style="color:rgba(253, 166, 93, 1); display: inline; id =" ' . $row['price']. '">' . number_format($row['price'], 0, ',', '.') . 'đ</p><br>';
-                                echo '<form action = "tranghienthi.php?quanly=giohangdv" method = "post">';
-                                echo 'Số lượng: <input type="number" name="soluong" id = "quantity"  placeholder="1" value="1" min="1" step="1" max="50" title="Vui lòng nhập số lượng" style = "width: 60px; height: 30px; font-size:18px; margin-bottom:20px "required ><br>';
+                                echo '<form action = "tranghienthi.php?quanly=giohangbigdeal" method = "post">';
+                                echo 'Số lượng: <input type="number" name="soluong" id = "quantity"  placeholder="1" min="1" step="1" max="50" title="Vui lòng nhập số lượng" style = "width: 60px; height: 30px; font-size:18px; margin-bottom:20px "required ><br>';
                                 echo '<input type ="hidden" name = "tenmon" value = "'.$row['food_combo'].'">';
                                 echo '<input type ="hidden" name = "giamon" value = "'.$row['price'].'">';
                                 echo '<input type ="hidden" name = "hinhanh" value = "'.$row['image'].'">';

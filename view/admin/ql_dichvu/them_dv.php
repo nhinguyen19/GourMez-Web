@@ -35,7 +35,7 @@ h2{
     <form method="POST" action="tranghienthi.php?quanly=themdichvu" enctype="multipart/form-data">
             <tr>
                 <th style="text-align: center">Tên dịch vụ </th>
-                <td><input type="text" name="tendichvu" style="width: 400px; height: 30px; background-color: #FFECCB; color: black;border:none"></td>
+                <td><input required type="text" name="tendichvu" style="width: 400px; height: 30px; background-color: #FFECCB; color: black;border:none"></td>
             </tr>
             <tr>
                 <th>Mô tả</th>
@@ -46,14 +46,14 @@ h2{
             <tr>
                 <th>Logo</th>
                 <td>
-                    <input type="file" name = "hinhanhdv" id ="hinhanhdv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
+                    <input required type="file" name = "hinhanhdv" id ="hinhanhdv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
                 </td>
             </tr>
 
             <tr>
                 <th>Banner</th>
                 <td>
-                    <input type="file" name = "bannerdv" id ="bannerdv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
+                    <input required type="file" name = "bannerdv" id ="bannerdv" style="width: 400px; background-color: #FFECCB; color: black;border:none">
                 </td>
             </tr>
 

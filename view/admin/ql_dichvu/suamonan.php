@@ -19,7 +19,7 @@
 <h2 class = "title"> Sửa món ăn </h2>
 <div class="insert_food" >
     <table>
-        <form method="POST" action="tranghienthi.php?quanly=suamonandichvu&idmonan=<?php echo $_GET['idmonan']?>" enctype="multipart/form-data">
+    <form method="POST" action="tranghienthi.php?quanly=suamonandichvu&idmonan=<?php echo $_GET['idmonan']?>" enctype="multipart/form-data">
             <tr>
                 <th style="text-align: center">ID</th>
                 <td name="idmonanDV"><?php echo $_GET['idmonan'] ?></td>
@@ -33,7 +33,7 @@
             <tr>
                 <th style="text-align: center">Giá </th>
                 <td>
-                <input type = "number" name = "giamonandv" min = "10000" step = "1000"style=" height:40px; font-size: 15px;background-color: #FFECCB; color: black;border:none"></>
+                <input type = "number" name = "giamonandv" min = "10000" step = "1000"style=" height:40px; font-size: 15px;background-color: #FFECCB; color: black;border:none"></t>
                 </td>
             </tr>
             
