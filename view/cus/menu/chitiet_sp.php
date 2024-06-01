@@ -90,22 +90,23 @@ if (isset($_POST['themgiohang'])) {
     $soluong = mysqli_real_escape_string($conn, $_POST['soluong']);
 
     // Kiểm tra xem session user_id có tồn tại không
-    if (isset($_SESSION['user_id'])) {
-        $user_id = mysqli_real_escape_string($conn, $_SESSION['user_id']);
+    if (isset($_SESSION['id'])) {
+        $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
+        echo $user_id;
     } else {
         // Nếu session user_id không tồn tại, gán user_id = null
         $user_id = "NULL";
     }
 
     // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng của user này chưa
-    $sql_check_existing = "SELECT * FROM cart WHERE food_id = '$idsanpham' AND (user_id = '$user_id' OR user_id IS NULL)";
+    $sql_check_existing = "SELECT * FROM cart WHERE food_id = '$idsanpham' AND user_id = '$user_id'";
     $query_check_existing = mysqli_query($conn, $sql_check_existing);
     $row_check_existing = mysqli_fetch_assoc($query_check_existing);
 
     if ($row_check_existing) {
         // Nếu sản phẩm đã tồn tại, cập nhật số lượng
         $newQuantity = $row_check_existing['quantity'] + $soluong;
-        $sql_update_quantity = "UPDATE cart SET quantity = '$newQuantity' WHERE food_id = '$idsanpham' AND (user_id = '$user_id' OR user_id IS NULL)";
+        $sql_update_quantity = "UPDATE cart SET quantity = '$newQuantity' WHERE food_id = '$idsanpham' AND user_id = '$user_id'";
         mysqli_query($conn, $sql_update_quantity);
     } else {
         // Nếu sản phẩm chưa tồn tại, thêm sản phẩm mới vào giỏ hàng

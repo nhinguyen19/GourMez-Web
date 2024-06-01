@@ -27,22 +27,29 @@
     ?>
 <?php
     $conn = connectdb();
+    if (isset($_SESSION['id'])) {
+        $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
+    } else {
+        // Nếu session user_id không tồn tại, gán user_id = null
+        $user_id = "NULL";
+    }
     if (isset($_POST['update'])) {
         $foodId = $_POST['food_id'];
         $quantity = $_POST['quantity'];
 
-        $updateQuantityQuery = "UPDATE cart SET quantity = $quantity WHERE food_id = $foodId";
+        $updateQuantityQuery = "UPDATE cart SET quantity = $quantity WHERE food_id = $foodId and user_id=' $user_id'";
         mysqli_query($conn, $updateQuantityQuery);
     }
 
     if (isset($_POST['delete'])) {
         $foodId = $_POST['food_id'];
 
-        $deleteQuery = "DELETE FROM cart WHERE food_id = $foodId";
+        $deleteQuery = "DELETE FROM cart WHERE food_id = $foodId and user_id=' $user_id'";
         mysqli_query($conn, $deleteQuery);
     }
 
-    $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id";
+
+    $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id and user_id=' $user_id'";
     $query_cart = mysqli_query($conn, $sql_cart);
 ?>
 </head>
