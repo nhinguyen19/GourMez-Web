@@ -1,34 +1,30 @@
-
 <link rel="stylesheet" href="../view/cus/giohang/giohang.css">
-
 <?php
-function connectdb()
-{
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "gourmez_web";
-    $conn = new mysqli($host, $username, $password, $database);
+    function connectdb()
+    {
+        $host = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "gourmez_web";
+        $conn = new mysqli($host, $username, $password, $database);
 
-    if ($conn->connect_error) {
-        die('Kết nối không thành công: ' . $conn->connect_error);
+        if ($conn->connect_error) {
+            die('Kết nối không thành công: ' . $conn->connect_error);
+        }
+        return $conn;
     }
-    return $conn;
-}
 ?>
-
 <?php
-function get_random_food($conn, $limit = 2) {
-    $sql_random = "SELECT * FROM food ORDER BY RAND() LIMIT $limit";
-    $query_random = mysqli_query($conn, $sql_random);
-    $foods = array();
-    while ($row_random = mysqli_fetch_array($query_random)) {
-        $foods[] = $row_random;
+    function get_random_food($conn, $limit = 2) {
+        $sql_random = "SELECT * FROM food ORDER BY RAND() LIMIT $limit";
+        $query_random = mysqli_query($conn, $sql_random);
+        $foods = array();
+        while ($row_random = mysqli_fetch_array($query_random)) {
+            $foods[] = $row_random;
+        }
+        return $foods;
     }
-    return $foods;
-}
-?>
-
+    ?>
 <?php
 $conn = connectdb();
 

@@ -117,16 +117,15 @@ if (isset($_POST['themgiohang'])) {
         }
     
         $found = false;
-    
-        foreach ($_SESSION['cart'] as &$item) {
-            if ($item['food_id'] == $idsanpham) {
+        for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
+            if ($_SESSION['cart'][$i]['food_id'] == $idsanpham) {
                 // Món ăn đã tồn tại trong giỏ hàng, cập nhật số lượng
-                $item['quantity'] += $soluong;
+                $_SESSION['cart'][$i]['quantity'] += $soluong;
                 $found = true;
                 break;
             }
         }
-    
+        
         if (!$found) {
             // Món ăn chưa tồn tại trong giỏ hàng, thêm mới
             $item = [
@@ -138,6 +137,10 @@ if (isset($_POST['themgiohang'])) {
             ];
             $_SESSION['cart'][] = $item;
         }
+        
+        // Sau khi thêm hoặc cập nhật sản phẩm, cập nhật giá trị session cart
+        $_SESSION['cart'] = array_values($_SESSION['cart']); // Cập nhật lại chỉ số mảng
+        
     }
     
     if (isset($_SESSION['cart'])) {
