@@ -42,7 +42,7 @@ $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
 <div id="container">
   <div>
     <div id="header_tt">
-      <img id="img_header" src="../view/admin/ql_tintuc/img_tintuc/tintuc.png">
+      <img id="img_header" src="../view/admin/ql_tintuc/img_tintuc/HeaderTinTuc.png">
     </div>
     <!-- view\admin\ql_tintuc\img_tintuc\anhchotintuc.png -->
     <div id="lead">
@@ -60,8 +60,11 @@ $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
                 <br>
                 <div class="text-container">
                   <a class="font-family " href="<?php echo $row['link'] ?>"><?php echo $row['title'] ?></a>
-                  <p style="padding-right : 15%;"><?php echo $row['description'] ?></p>
+                  <p style="padding-right : 15%; color:white;"><?php echo $row['description'] ?></p>
                 </div>
+                <a href="<?php echo $row['link'] ?>"><button id="xemchitiet" type="button"><b>Xem chi tiết</b>
+                  </button></a>
+
               </div>
               <?php
             }
@@ -75,9 +78,9 @@ $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
               ?>
               <div class="item-container">
                 <img class="bigger-image" src="../view/admin/ql_tintuc/<?php echo $row['img_title'] ?>">
-                <div class="text-container">
+                <div id="right-textContainer" class="text-container">
                   <a class="font-family " href="<?php echo $row['link'] ?>"><?php echo $row['title'] ?></a>
-                  <p><?php echo $row['description'] ?></p>
+                  <p style="color:white;"><?php echo $row['description'] ?></p>
                 </div>
               </div>
               <?php
@@ -86,7 +89,7 @@ $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
             <div class="list_trang" style="clear:both;">
               <?php
               for ($page = 1; $page <= $trang; $page++) {
-                echo '<a href="tranghienthi.php?quanly=tintuc&trang=' . $page . '">' . $page . '</a> ';
+                echo '<b><a href="tranghienthi.php?quanly=tintuc&trang=' . $page . '">' . $page . '</a></b> ';
               }
               ?>
             </div>

@@ -1,182 +1,176 @@
 #container {
-    background-color: #feeaca;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .font-family {
-    font-family: "Lalezar", sans-serif;
-  }
-  
-  #img_header {
-    width: 100%;
-    height: 500px;
-  }
-  
-  #thaydoi {
-    background-color: #159c33;
-    color: azure;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  .chinhsua {
-    background-color: #ae2108;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 10px;
-  }
-  
-  #xemchitiet {
-    background-color: white;
-    border-color: orange;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 10px;
-    margin-right: 10px;
-    padding: 5px 10px;
-  }
-  
-  #td1 {
-    padding-right: 5px;
-    padding-left: 5px;
-    width: 45%;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .td1-buttons {
-    justify-content: space-between;
-  }
-  
-  #addButton {
-    padding: 0px 10px;
-    border-radius: 50%;
-    font-size: 20px;
-    background-color: rgb(255, 102, 0);
-    color: white;
-    border: 0px none;
-  }
-  
-  #addNewArticle span {
-    padding-left: 10px;
-    font-size: 20px;
-    color: green;
-  }
-  
-  #lead {
-    margin-top: 30px;
-  }
-  
-  #lead table {
-    width: 100%;
-  }
-  
-  #lead td {
-    vertical-align: top;
-  }
-  
-  #lead td:first-child {
-    width: 50%;
-  }
-  
-  #lead td:last-child {
-    width: 50%;
-  }
-  
-  .main-image {
-    border-radius: 5px;
-    box-shadow: 7px 7px 7px grey;
-    width: 100%;
-    height: auto;
-    max-width: 650px;
-    max-height: 500px;
-    margin-right: 90px;
-    padding-left: 0;
-  }
-  
-  .bigger-image {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    max-height: 300px;
-    border-radius: 5px;
-    box-shadow: 7px 7px 7px grey;
-    padding-left: 0;
-  }
-  
-  .item-container {
-    display: flex;
-    align-items: flex-start;
-    /* Căn chỉnh các phần tử con theo chiều dọc, từ trên xuống dưới */
-    margin-bottom: 30px;
-  }
-  
-  .text-container {
-    margin-left: 10px;
-    flex: 1;
-    text-align: left;
-    /* Căn chỉnh văn bản bên trong theo chiều ngang */
-  }
-  
-  .text-container a {
-    font-size: 1.2em;
-    color: #000;
-    display: block;
-    margin-bottom: 5px;
-    font-size: 30px;
-  }
-  
-  .text-container p {
-    margin: 5px 0;
-  }
-  
-  .text-container button {
-    display: block;
-    margin-top: 5px;
-  }
-  
-  #box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* Căn chỉnh các phần tử con theo chiều ngang, từ trái sang phải */
-  }
-  
-  #img_header {
-    padding-left: 0;
-  }
-  
-  .list_trang {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .list_trang a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    margin: 0 5px;
-    text-align: center;
-    border-radius: 50%;
-    text-decoration: none;
-    color: #555;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .list_trang a:hover {
-    background-color: #ddd;
-    color: #333;
-  }
-  
+  background-color: #252525;
+  text-align: center;
+}
+
+
+.font-family {
+  font-family: "Lalezar", sans-serif;
+}
+
+#img_header {
+  width: 100%;
+  height: 500px;
+}
+
+
+
+#xemchitiet {
+  background-color: white;
+  border: 4px solid orange;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+  padding: 5px 10px;
+} 
+
+#td1 {
+  padding-right: 5px;
+  padding-left: 5px;
+  width: 45%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.td1-buttons {
+  justify-content: space-between;
+}
+
+#addButton {
+  padding: 0px 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: rgb(255, 102, 0);
+  color: white;
+  border: 0px none;
+}
+
+#addNewArticle span {
+  padding-left: 10px;
+  font-size: 20px;
+  color: green;
+}
+
+#lead {
+  margin-top: 30px;
+  padding-left: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+
+}
+
+#lead table {
+  width: 100%;
+}
+
+#lead td {
+  vertical-align: top;
+}
+
+#lead td:first-child {
+  width: 50%;
+}
+
+#lead td:last-child {
+  width: 50%;
+}
+
+.main-image {
+  border-radius: 5px;
+  box-shadow: 15px 15px 15px black;
+  width: 100%;
+  height: auto;
+  max-width: 650px;
+  max-height: 500px;
+  margin-right: 90px;
+  padding-left: 0;
+}
+
+.bigger-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 15px 15px 15px black;
+  padding-left: 0;
+}
+
+.item-container {
+  display: flex;
+  align-items: flex-start;
+  /* Căn chỉnh các phần tử con theo chiều dọc, từ trên xuống dưới */
+  margin-bottom: 30px;
+}
+
+.text-container {
+  flex: 1;
+  text-align: left;
+  /* Căn chỉnh văn bản bên trong theo chiều ngang */
+}
+
+
+#right-textContainer 
+{
+  margin-left: 30px;
+}
+
+
+.text-container a {
+  font-size: 1.2em;
+  color: #FFCB00;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
+.text-container p {
+  margin: 5px 0;
+}
+
+.text-container button {
+  display: block;
+  margin-top: 5px;
+}
+
+#box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Căn chỉnh các phần tử con theo chiều ngang, từ trái sang phải */
+}
+
+#img_header {
+  padding-left: 0;
+}
+
+.list_trang {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.list_trang a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 5px;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #555;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.list_trang a:hover {
+  background-color: #ddd;
+  color: black;
+
+}
