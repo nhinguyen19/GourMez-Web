@@ -1,4 +1,4 @@
-<?php include("../view/cus/header/header.php");?>
+
 <?php
     $conn = connectdb();
     $sql_danhmuc = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.cate_id='$_GET[id]' ORDER BY food.food_id ASC";

@@ -1,4 +1,3 @@
-<?php include("../view/cus/header/header.php");?>
 <?php
 $conn = connectdb();
 $sql_chitiet = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.food_id='$_GET[id]'";
@@ -149,14 +148,14 @@ if (isset($_POST['themgiohang'])) {
     } else {
         echo "Session cart không tồn tại hoặc không có dữ liệu.";
     }
-    // echo "<script>
-    //     Swal.fire({
-    //         icon: 'success',
-    //         title: 'Sản phẩm đã được thêm vào giỏ hàng',
-    //         showConfirmButton: false,
-    //         timer: 1500
-    //     });
-    // </script>";
+    echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Sản phẩm đã được thêm vào giỏ hàng',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>";
 }
 ?>
 
