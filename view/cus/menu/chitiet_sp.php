@@ -143,20 +143,20 @@ if (isset($_POST['themgiohang'])) {
         
     }
     
-    if (isset($_SESSION['cart'])) {
-        var_dump($found);
-        var_dump($_SESSION['cart']);
-    } else {
-        echo "Session cart không tồn tại hoặc không có dữ liệu.";
-    }
-    // echo "<script>
-    //     Swal.fire({
-    //         icon: 'success',
-    //         title: 'Sản phẩm đã được thêm vào giỏ hàng',
-    //         showConfirmButton: false,
-    //         timer: 1500
-    //     });
-    // </script>";
+    // if (isset($_SESSION['cart'])) {
+    //     var_dump($found);
+    //     var_dump($_SESSION['cart']);
+    // } else {
+    //     echo "Session cart không tồn tại hoặc không có dữ liệu.";
+    // }
+    echo "<script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Sản phẩm đã được thêm vào giỏ hàng',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>";
 }
 ?>
 
