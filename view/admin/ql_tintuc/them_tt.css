@@ -1,97 +1,15 @@
-html,
-body {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Lalezar;
+.insert 
+{
+  padding-left: 300px;
+
 }
 
-#container {
-  background-color: #feeaca;
-  padding: 0 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng mờ nhẹ để tăng độ sâu */
-}
-h2 {
-  color: #e2742c;
-  text-align: center;
-}
-/* chỉnh cho button thêm ảnh */
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
 
-/* nút thêm ảnh */
-.btn {
-  border: 2px solid #e2742c;
-  color: white;
-  background-color: #e2742c;
-  /* padding: 8px 20px; */
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-left: 75px;
-  cursor: pointer;
-}
 
-.upload-btn-wrapper input[type="file"] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-#imageDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  border: 1px solid;
-  height: 200px;
-  width: 200px;
-  margin-left: 20px;
-}
-#imageDiv div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e8e5e5;
-  border-radius: 5px;
-  height: 190px;
-  width: 190px;
-  color: #e2742c;
-}
-
-/* nút thêm  */
-#secondTd button {
-  width: 25%;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 2px 10px;
-
- 
-}
 #them {
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  background-color: #159c33;
-  margin-left: 95px;
-}
-
-input[type="text"],
-input[type="url"] {
-  background-color: #e8e5e5;
-  color: black;
-  border: none;
-  margin-right: 20px;
-  height: 40px;
-}
-
-.textbox{
-  margin-left: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* Đảm bảo nút sửa được hiển thị dưới dạng khối */
+  text-align: center; /* Canh giữa nút sửa */
 }

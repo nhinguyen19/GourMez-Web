@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="tranghienthi.css">
-<link rel="stylesheet" href="them_tt.css">
+<link rel="stylesheet" href="ql_tintuc/them_tt.css">
 <style>
 
 
@@ -73,6 +73,8 @@
                     img.src = e.target.result;
                     img.style.width = '195px'; // Đặt kích thước tối đa cho ảnh
                     img.style.height = '195px'; // Đặt kích thước tối đa cho ảnh
+                    img.style.marginLeft = '45px';
+
                     innerDiv.remove();
                     imageDiv.appendChild(img);
                 };

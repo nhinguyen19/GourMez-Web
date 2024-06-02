@@ -75,6 +75,7 @@
 
 #lead td:first-child {
   width: 50%;
+  padding-right:30px;
 }
 
 #lead td:last-child {
@@ -84,11 +85,11 @@
 .main-image {
   border-radius: 5px;
   box-shadow: 15px 15px 15px black;
-  width: 100%;
-  height: auto;
-  max-width: 650px;
-  max-height: 500px;
-  margin-right: 90px;
+  width: 80%;
+  height: 500px;
+  display: block;
+   width: 100%;
+  /* margin-right: 90px; */
   padding-left: 0;
 }
 
