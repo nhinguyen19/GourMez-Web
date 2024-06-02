@@ -1,14 +1,8 @@
 <?php
 function thanhtoandonhang() {
     if (isset($_POST['guithanhtoan'])) {
-
         $conn = connectdb();
-        if (isset($_SESSION['id'])) {
-            $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
-        } else {
-            // Nếu session user_id không tồn tại, gán user_id = null
-            $user_id = "NULL";
-        }
+        
         $tenkhachhang = $_POST['cusname'];
         $sodienthoai = $_POST['cusphone'];
         $email = $_POST['cusemail'];
@@ -22,24 +16,36 @@ function thanhtoandonhang() {
         $diachi = $city . ', ' . $ward . ', ' . $diachideli;
         $date = date('Y-m-d H:i:s');
 
+        // Determine if the user is logged in
+        if (isset($_SESSION['id'])) {
+            $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
+            $sql_cart = "SELECT * FROM cart WHERE user_id='$user_id' AND orderid IS NULL";
+            $query_cart = mysqli_query($conn, $sql_cart);
+        } else {
+            $user_id = "NULL";
+            $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+            $query_cart = false; // We will handle this differently later
+        }
+
         // Insert the order into the database
         $sql_insert = "INSERT INTO orders (name_cus, phone, email, note, address, payment_mode, origin_total_price, date_order, status, user_id) 
-                             VALUES ('$tenkhachhang', '$sodienthoai', '$email', '$ghichu', '$diachi', '$phuongthuc', '$totalPrice', '$date','Ghi nhận','$user_id')";
+                       VALUES ('$tenkhachhang', '$sodienthoai', '$email', '$ghichu', '$diachi', '$phuongthuc', '$totalPrice', '$date', 'Ghi nhận', $user_id)";
         $query_insert = mysqli_query($conn, $sql_insert);
 
         if ($query_insert) {
             // Get the ID of the last inserted order
-            $orderID = mysqli_insert_id($conn);  
-          
-            // Update the cart to associate the items with this order ID
-            $updateCartQuery = "UPDATE cart SET orderid = '$orderID' WHERE orderid IS NULL";
-            mysqli_query($conn, $updateCartQuery);
-            
-            $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id WHERE orderid='$orderID'";
+            $orderID = mysqli_insert_id($conn);
 
-            $query_cart = mysqli_query($conn, $sql_cart);
-            // Thêm thông tin sản phẩm vào bảng order_items
-            while ($row_cart = mysqli_fetch_array($query_cart)) {
+            if (isset($_SESSION['id'])) {
+                // Update the cart to associate the items with this order ID
+                $updateCartQuery = "UPDATE cart SET orderid = '$orderID' WHERE user_id='$user_id' AND orderid IS NULL";
+                mysqli_query($conn, $updateCartQuery);
+
+                $sql_cart = "SELECT * FROM cart INNER JOIN food ON cart.food_id = food.food_id WHERE orderid='$orderID'";
+                $query_cart = mysqli_query($conn, $sql_cart);
+               
+               
+                while ($row_cart = mysqli_fetch_array($query_cart)) {
                 $food_id = $row_cart['food_id'];
                 $quantity = $row_cart['quantity'];
                 $subtotal = $row_cart['selling_price'] * $quantity;
@@ -48,10 +54,25 @@ function thanhtoandonhang() {
                 $insertOrderItemQuery = "INSERT INTO order_item ( food_id,order_id, quantity, price) 
                                          VALUES ( '$food_id', '$orderID','$quantity', '$subtotal')";
                 mysqli_query($conn, $insertOrderItemQuery);
+                 // Clear the cart
+         
+                 $clearCartQuery = "DELETE FROM cart WHERE orderid = '$orderID' AND user_id='$user_id'";
+                 mysqli_query($conn, $clearCartQuery);
             }
-            // Clear the cart items that were just associated with this order
-            $clearCartQuery = "DELETE FROM cart WHERE orderid = '$orderID' and user_id='$user_id'";
-            mysqli_query($conn, $clearCartQuery);
+         }
+        else {
+                foreach ($_SESSION['cart'] as $item) {
+                    $food_id = $item['food_id'];
+                    $productPrice = $item['price'];
+                    $quantity = $item['quantity'];
+                    $subtotal = $productPrice * $quantity;
+                    $insertOrderItemQuery = "INSERT INTO order_item ( food_id,order_id, quantity, price) 
+                                         VALUES ( '$food_id', '$orderID','$quantity', '$subtotal')";
+                mysqli_query($conn, $insertOrderItemQuery);
+                
+                }
+                unset($_SESSION['cart']);
+            }
 
             echo "Order placed successfully!";
         } else {
