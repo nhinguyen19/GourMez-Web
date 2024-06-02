@@ -1,15 +1,9 @@
-
 .box-content{
     width: 40%;
     text-align: center;
     
     margin: 0 auto;
     margin-top: 100px;
-}
-.box-content h2{
-    margin-top: 10%;
-    margin-left: 5%;
-    color: white;
 }
 .form{
     text-align: left;
@@ -28,21 +22,16 @@
 .form input{
     display: block;
     width: 100%;
-    margin-bottom: 5%;
 }
-
+.box-content input[type='submit']{
+    background-color: black;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .box-content h3{
     color: white;
     font-size: 20px;
-}
-
-.input-icon{
-    display: flex;
-}
-.bt-cn{
-    width: 96%;
-    color: white;
-    background-color: #252525;
-    font-size: 18px;
-    font-family:'Times New Roman';
 }

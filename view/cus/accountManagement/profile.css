@@ -1,48 +1,39 @@
+
 .box-content{
-    
-    font-family: 'Lalezar';
+    width: 40%;
     margin: 0 auto;
-    width: 700px;
-    border: 1px solid rgba(255, 236, 203, 1);
-    background-color: rgba(255, 236, 203, 1);
     text-align: center;
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    margin-top: 100px;
+    padding: 5%;
+    margin-top: 20px;
     
 }
-#user_login form{
-    width: 400px;
-    margin: 30px auto;
-}
-#user_login form table{
-    align-items: center;
-    justify-content: center;
-}
-#user_login form input{
-    margin: 5px 0;
-}
-.xinchao{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-
-}
-
-.bang_dn{
-    border: 1px solid rgba(255, 130, 67, 1);
-    background-color: rgba(255, 130, 67, 1);
-    border-radius: 20px;
-    padding: 20px;
+.form{
     text-align: left;
+    /* justify-content: left; */
+    border: 1px solid;
+    background-color: white;
+    color: #252525;
+    margin-bottom: 5%;
+    width: 100%;
+    padding: 5%;
+    font-size: 18px;
 }
-table tr{
-    width: 150px;
-    border-radius: 20px;
+.box-content a{
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    padding: 2%;
+    background-color: #252525;
+    border: 1px solid white;
+    justify-content: space-between;
+    margin-left: 10%;
 }
-.has-error{
-    color: aliceblue;
-    font-weight: normal;
+.info{
+    margin-bottom: 5%;
+}
+
+.box-content h3{
+    color: white;
+    font-size: 20px;
+    margin-left: 10%;
 }

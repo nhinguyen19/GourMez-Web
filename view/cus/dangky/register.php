@@ -134,9 +134,6 @@
                 
             
                 </div>
-                <a href="../view/cus/dangky/register_with_gmail.php">
-                    <button type="button">Register with Gmail</button>
-                </a>
 
         </div>
        

@@ -37,3 +37,10 @@
     align-items: end;
     margin-top: 7px;
 }
+.bt-cn{
+    width: 96%;
+    color: white;
+    background-color: #252525;
+    font-size: 18px;
+    
+}
