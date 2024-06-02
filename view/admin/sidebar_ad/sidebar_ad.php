@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="sidebar_ad/sidebar_ad.css">
     <div id="sidebar_menu">
+    <img class="logoad"src="img/logocus.png">
         <a href="#">Đơn hàng</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=donhang">Tất cả</a>
