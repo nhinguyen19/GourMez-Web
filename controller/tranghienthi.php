@@ -45,7 +45,11 @@
                 include('../view/cus/dichvu/giohang_sinhnhat.php');   
                 break;
         case 'tintuc':
-            include ('../view/cus/tintuc/tintuc.php');
+            if (isset($_GET['id'])) {
+                include ('../view/cus/tintuc/baiviet.php');
+            } else {
+                include ('../view/cus/tintuc/tintuc.php');
+            }
             break;
         case 'lienhe':
             include ('../view/cus/lienhe/lienhe.php');
