@@ -1,7 +1,7 @@
 #all{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 100px;
+    margin-top: 80px;
 }
 .content{
     flex: 1;
@@ -26,26 +26,26 @@
 }
 .menu_categories {
     width: 200px;
-    position: initial;
     transition: all 0.3s ease;
+    z-index: 10;
 }
-
-.menu_categories.fixed {
+.fixed_menu {
+    position: fixed;
+}
+.initial_menu {
+    position: initial;
+}
+/* .menu_categories.fixed {
     z-index: 10;
     width: 260px;
     left: 15px;
     position: fixed;
     top: 140px;
 }
-
+*/
 .menu_categories.scrolled {
-    z-index: 10;
-    width: 260px;
-    left: 15px;
-    position: absolute;
-    top: 100%;
-    transform: translateY(-100%);
-}
+    position: initial;
+} 
 
 .menu_categories a {
     display: block;
@@ -76,7 +76,7 @@ color: #FFA629;
     display: flex;
     justify-content: center;
     text-align: center;
-    color: #E7B037;
+    color: #FFCB00;
     font-family: 'Lalezar';
     text-transform: uppercase;
     padding-top: 20px;
@@ -85,16 +85,26 @@ color: #FFA629;
     background-color: rgba(16, 16, 16, 0.3);
     border: 0.5px solid #F6E7D8;
     border-radius: 10px;
-    display: inline-block;
-    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng */
 }
-
+.food-item{
+    justify-content: center;
+    align-content: center;
+    padding-left: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    overflow: hidden;
+}
 .Ten_mon{
     color: #fd9a29;
     font-weight: bold;
+    font-size: 18px;
 }
 .label {
     color: #ffff;
@@ -105,9 +115,9 @@ color: #FFA629;
     font-weight: bold;
 }
 .btn_xemchitiet{
-    background-image: linear-gradient(45deg, #f12711, #f5af19);
+    background-image: linear-gradient(45deg, #f12711, #e89f00);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 100px;
     height: 23px;
     color: #ffff;
@@ -118,13 +128,6 @@ color: #FFA629;
     background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
     transition: background-color 0.3s ease;
   }
-.food-item {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 20px;
-    overflow: hidden; 
-}
 .anh{
     display: block;
     max-width: fit-content;
@@ -133,20 +136,22 @@ color: #FFA629;
 }
 .content-wrapper {
     display: flex;
-    background: none;
-    background-color: rgba(16, 16, 16, 0.3);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
     border-radius: 10px;
-    width: 50vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Tăng độ dài và độ mờ của bóng */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
 }
 
 .btn_dathang{
-    background-image: linear-gradient(45deg, #f12711, #f5af19);
+    color: #fff;
+    background-color: #e31837;
+    border-color: #e31837;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 150px;
     height:25px;
     color: #F6E7D8;
@@ -154,31 +159,35 @@ color: #FFA629;
     font-size: 16px;
 }
 .btn_dathang:hover:not(.active) {
-    background-image: linear-gradient(45deg, #ffb84d, #ffb84d);
+    background-color: #b80520;
     transition: background-color 0.3s ease;
   }
-#amount{
+#amount {
     width: 30px;
     text-align: center;
-    background-color: #E26A2C;
+    background-color: #2480ED;
+    border-left: 0.5px solid #F6E7D8; /* Increase border thickness */
+    border-right: 0.5px solid #F6E7D8; /* Increase border thickness */
+    border-top: none;
+    border-bottom: none;
     color: #F6E7D8;
 }
+
 #buy-amount{
     padding-right: 20px;
-    padding-left: 30px;;
-
 }
 .button-quantity-container {
     display: flex;
     align-items: center;
+    padding-left: 20px;
 }
 .btn_amount{
     margin-right: 0; 
-    background-image: linear-gradient(45deg, #f12711, #f5af19);
-    border: none; 
+    background-color:  #2480ED;
+    border:none;
     width:40px; 
     height:25px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 5px 5px 0;
     color: #F6E7D8;
 }
 .btn_amount:hover:not(.active) {
@@ -189,7 +198,9 @@ color: #FFA629;
 .list {
     list-style: none;
     padding-top: 30px;
-    margin-left: 430px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .list li {
@@ -208,28 +219,24 @@ color: #FFA629;
     text-decoration: none;
     color: #ffff;
     font-family: Lalezar;
-    transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển màu */
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 .list li a a#active {
     color: #a20b0b;
 }
 
-/* CSS khi rê chuột qua liên kết */
 .list li a:hover:not(#active) {
     color: #910303;
 }
-
-
 .title_datngaynao{
-    margin-left: 50.5%;
-    color: #E7B037;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #FFCB00;
     font-family: 'Lalezar';
     text-transform: uppercase;
-    padding-top: 10px;
-    
 }
-
 .other_food {
   height: 100%;
   overflow: hidden;
@@ -247,9 +254,9 @@ color: #FFA629;
 }
 .descr{
     width:90%; 
-    font-size:16px;
+    font-size:18px;
     padding-bottom: 10px;
-    color: #ffff;
+    color: #000;
 }
 .Thucdon_mon2{
     border-radius: 20px;
@@ -263,4 +270,23 @@ color: #FFA629;
     justify-content: center;
     text-align: center;
     margin: 20px;
+}
+.datnaynao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.onediscount {
+    display: flex;
+    justify-content: center;
+}
+.noidung_chitiet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-top: 10px;
 }

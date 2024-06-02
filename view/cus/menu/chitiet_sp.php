@@ -14,13 +14,13 @@ while ($row_chitiet = mysqli_fetch_array($query_chitiet)) {
     <div class="content">
         <form method="POST" action="">
             <div class="noidung_chitiet">
-                <h1 class="title_chitiet1" style="text-align: center"><?php echo $row_chitiet['food_name'] ?></h1>
+                <h1 class="title_chitiet1"><?php echo $row_chitiet['food_name'] ?></h1>
                 <div class="content-wrapper">
                     <div class="anh">
                         <img src="../view/admin/ql_sanpham/uploads/<?php echo $row_chitiet['img'] ?>" style="width: 250px; height: 250px;">
                     </div>
-                    <div class="mota_sp" style="width: fit-content; padding-left: 40px">
-                        <span class="label" style="font-size:18px">Giá bán:</span>
+                    <div class="mota_sp" style="width: fit-content; padding-left: 40px;font-size:20px">
+                        <span class="label" style="font-size:20px; color:#000">Giá bán:</span>
                         <?php
                         if ($row_chitiet['original_price'] > $row_chitiet['selling_price']) {
                             echo '<span class="price">' . number_format($row_chitiet['selling_price'], 0, ',', '.') . 'vnđ</span>';
@@ -29,13 +29,13 @@ while ($row_chitiet = mysqli_fetch_array($query_chitiet)) {
                             echo '<span class="price">' . number_format($row_chitiet['selling_price'], 0, ',', '.') . 'vnđ</span>';
                         }
                         ?><br>
-                        <p style="line-height: 0.2; color: #ffff; font-weight:bold;width: fit-content;font-size:18px">Mô tả: </p>
+                        <p style="line-height: 0.2; color: #000; font-weight:bold;width: fit-content">Mô tả: </p>
                         <div class="descr"><?php echo $row_chitiet['small_descr'] ?></div>
                         <form action="giohang.php" method="POST">
                             <div class="button-quantity-container">
                                 <div id="buy-amount" style="display: flex; gap: 0;">
-                                    <button class="btn_amount" id="minusBtn" style="border-radius: 10px 0 0 10px;"><i class="fas fa-minus"></i></button>
-                                    <input type="number" name="soluong" id="amount" value="1" min="1" style="margin-right: 0; border: none; font-weight: bold">
+                                    <button class="btn_amount" id="minusBtn" style="border-radius: 5px 0 0 5px;"><i class="fas fa-minus"></i></button>
+                                    <input type="text" name="soluong" id="amount" value="1" min="1" style="margin-right: 0; font-weight: bold; text-align: center;">
                                     <button class="btn_amount" id="plusBtn"><i class="fas fa-plus"></i></button>
                                 </div>
                                 <input class="btn_dathang" type="submit" name="themgiohang" value="Thêm vào giỏ hàng" style="text-decoration: none; color: #ffff;">
@@ -54,7 +54,7 @@ while ($row_chitiet = mysqli_fetch_array($query_chitiet)) {
             $sql_random = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.cate_id = '$cate_id' AND food.food_id != '$food_id' ORDER BY RAND($random_offset) LIMIT 3";
             $query_random = mysqli_query($conn, $sql_random);
         ?>  
-        <ul id="all_dishes1">
+        <div id="all_dishes1">
             <h1 class="title_thucdon1" style="padding-top:10px">Thực đơn liên quan</h1>
             <div class="other_food">
                 <?php
@@ -77,7 +77,7 @@ while ($row_chitiet = mysqli_fetch_array($query_chitiet)) {
                     }
                 ?>
             </div>
-        </ul>
+        </div>
     </div>
 </div>
 

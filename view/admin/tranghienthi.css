@@ -1,12 +1,13 @@
+
 .insert{
     display: flex;
-    justify-content: center; 
-    padding-left: 240px;
+    justify-content: center;
+    padding-left: 200px;
 }
 
 table,tr,th,td{
-    border: 1px solid  #754E39;
-    background-color: #f0ac74;
+    border: 0.5px solid  #000;
+    background-color: #EDEDEB;
     padding: 10px;
 }
 
@@ -16,8 +17,17 @@ table{
 .title{
     display: flex;
     justify-content: center;
+    padding-top: 20px;
     padding-left: 240px;
-    padding-top: 30px;
+    padding-right: 20px; 
+    padding-bottom: 10px;
     font-family: Lalezar;
     color: #E26A2C;
+}
+.insert input[type="submit"] {
+    background-color: #E26A2C; 
+    border: none;font-family: 'Lalezar';  
+    border: 0.5px solid #fbfbfb; 
+    border-radius: 5px;
+    color: #ffff;
 }

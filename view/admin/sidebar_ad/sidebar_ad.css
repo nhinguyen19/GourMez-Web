@@ -1,33 +1,35 @@
 #sidebar_menu {
-  width: 240px;
-  height: 600px;
-  background-color: #a16646;
+  width: 200px;
+  height: 100vh;
+  background-color: #191715;
   position: fixed;
+  top: 0;
   left: 0;
-  padding-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  overflow: hidden; /* Thay đổi thành overflow: hidden */
+  overflow: hidden; 
+  z-index: 1100;
 }
 
 /* CSS cho liên kết trong sidebar */
 #sidebar_menu a {
   text-decoration: none;
   font-size: 18px;
-  color: #ffff;
+  color: #bfbfbf;
   font-family: 'Lalezar';
   display: block;
   text-align: left;
-  padding-left: 25px;
+  padding-left: 15px;
   padding-top: 10px;
+  padding-bottom: 10px;
   transition: background-color 0.3s ease;
 }
 
 /* CSS cho liên kết được chọn */
 #sidebar_menu a#active {
-  color: #FFA629;
+  color: #FF914D;
 }
 
 /* CSS khi rê chuột qua liên kết */
@@ -37,13 +39,11 @@
 
 /* CSS cho thẻ hr */
 #sidebar_menu hr {
-  width: 80%;
+  width: 70%;
   background-color: #ffff;
   height: 0.5px;
   border: none;
-  margin: 0 auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-left: 15px;
 }
 
 .submenu {

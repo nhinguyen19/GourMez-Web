@@ -9,7 +9,6 @@
 
     $query1 = "SELECT * FROM order_item INNER JOIN food ON order_item.food_id = food.food_id WHERE order_id='$id'";
     $result1 = mysqli_query($conn, $query1);
-    $row1 = mysqli_fetch_assoc($result1);
 ?>
 <h2 class="title">Chi tiết đơn hàng</h2>
 <div class="insert">
@@ -25,8 +24,13 @@
         <p>Thành tiền: <?php echo $row['origin_total_price']; ?></p>
        
         <h1> CHI TIẾT HÓA ĐƠN</h1>
-        <p>Món ăn :<?php echo $row1['food_name']; ?></p>
-        <p>Số lượng :<?php echo $row1['quantity']; ?></p>
+       <?php while ($row1 = mysqli_fetch_assoc($result1)) {
+    ?>
+    <p>Món ăn: <?php echo $row1['food_name']; ?></p>
+    <p>Số lượng: <?php echo $row1['quantity']; ?></p>
+    <?php
+}
+?>
         <h1> TRẠNG THÁI ĐƠN HÀNG</h1>
         <label>Nhân viên đảm nhận :</label>
         <select id="staff" name="staff" required>

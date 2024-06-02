@@ -3,8 +3,6 @@
 
     include("xuly_tinnhanKH.php");
     session_start();
-    //unset($_SESSION['cart']);
-         
     include("xuly_thanhtoan.php");
     include("../view/cus/header/header.php");
 
@@ -61,8 +59,12 @@
         case 'giohang':
             include ('../view/cus/giohang/giohang.php');
             break;
+        case 'checkbforder' :
+            include ('../view/cus/thanhtoan/checkbforder.php');
+            checkdiscount();
         case 'thanhtoan': 
             include ('../view/cus/thanhtoan/thanhtoan.php');
+            //checkdiscount();
             thanhtoandonhang();
             break;
         case 'dangnhap':
@@ -108,7 +110,7 @@
     }
 ?>
 <!-- đừng xóa footer nựa -->
-<?php
-    include("../view/cus/footer/footer.php");
+    <?php
+        include("../view/cus/footer/footer.php");
 
-?>
+    ?>

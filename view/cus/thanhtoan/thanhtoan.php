@@ -8,6 +8,7 @@
   
 ?>
   <div class="thanhtoanform">
+    <div class="thongtin">
     <form method="POST" action="tranghienthi.php?quanly=thanhtoan">
       <label>Họ tên của bạn*</label>
       <br>
@@ -79,11 +80,13 @@
       <br>
       <input type="radio" name="pay" value="Tiền mặt"> Thanh toán khi nhận hàng
       <br>
+      </div>
   <div class="giohang_content">
     <div class="noidung">
       <?php 
-        $totalPrice = 0;
         $cartItems = "";
+        $totalPrice = 0;
+
         if (isset($_SESSION['id'])) {
         
           $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
@@ -119,9 +122,7 @@
           echo '</table>';
         } else  
         { 
-          echo 'con gà minh anh';
           if (isset($_SESSION['cart'])) {
-            echo 'con bò minh anh';
           foreach ($_SESSION['cart'] as $item) {
               $hinh_anh_san_pham = $item['img'];
               $productPrice = $item['price'];
@@ -144,24 +145,27 @@
               $cartItems .= '<td colspan="2"><hr style="width:350px"></td>';
               $cartItems .= '</tr>';
             }
+            
             echo '<p style="color:black; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" style="color:#E26A2C"></i> CHI TIẾT ĐƠN HÀNG</p>';
             echo '<table class="tb_noidung" style="font-size: 16px">';
             echo $cartItems;
             echo '<tr>';
-            echo '<td colspan="2" style="text-align: center; font-weight:bold">Tổng cộng: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
+            echo '<td colspan="3" style="text-align: center; font-weight:bold">Tổng cộng : ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
             echo '</tr>';
             echo '</table>';
           }
       }
   
       ?>
+       
+   
       <input type="hidden" name="totalPrice" value="<?php echo $totalPrice; ?>">
     </div>
-  </div>
-  
+    </div>
   <button type="submit" name="guithanhtoan" style="background-color: #2480ED; color: white; font-size:20px; border-radius:10px; width: 50px;font-family: Lalezar;border:none">Thanh toán </button>
+
   </form>
-      </div>
+    </div>
   <script type="text/javascript" src="../view/cus/thanhtoan/thanhtoan.js"></script>
 </body>
-</html>
+

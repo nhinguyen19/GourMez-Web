@@ -2,7 +2,8 @@
 <link rel="stylesheet" href="../view/cus/trangchu/trangchu.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="trangchumain">
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+<img class="postertrangchu" src="../view/cus/img/GM1.png">
+<!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
                 <img class="banner" src="../view/cus/img/bannertrangchu.png" class="d-block w-100" alt="...">
@@ -68,13 +69,13 @@
           </td>
           </tr>
           </table>
-        </div> 
+        </div>  -->
     
         <div class="chuongtrinh">
             <a class="link" href="#" id="displayfood">Hôm nay ăn gì?      </a>
             <a class="link" href="#" id="displaynews">Khuyến mãi siêu hot</a>
         </div>
-        <div id="content">
+        <div class="ctcontent" id="content">
             <!-- Nơi hiển thị danh sách món ăn -->
         </div>
         <script>
@@ -90,89 +91,44 @@
         })
          
         </script>
- 
-       
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script>
-	var citis = document.getElementById("city");
-var districts = document.getElementById("district");
-var wards = document.getElementById("ward");
-var Parameter = {
-  url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json", 
-  method: "GET", 
-  responseType: "application/json", 
-};
-var promise = axios(Parameter);
-promise.then(function (result) {
-  renderCity(result.data);
-});
 
-function renderCity(data) {
-  for (const x of data) {
-    citis.options[citis.options.length] = new Option(x.Name, x.Id);
-  }
-  citis.onchange = function () {
-    district.length = 1;
-    ward.length = 1;
-    if(this.value != ""){
-      const result = data.filter(n => n.Id === this.value);
 
-      for (const k of result[0].Districts) {
-        district.options[district.options.length] = new Option(k.Name, k.Id);
-      }
-    }
-  };
-  district.onchange = function () {
-    ward.length = 1;
-    const dataCity = data.filter((n) => n.Id === citis.value);
-    if (this.value != "") {
-      const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
-
-      for (const w of dataWards) {
-        wards.options[wards.options.length] = new Option(w.Name, w.Id);
-      }
-    }
-  };
-}
-	</script>
- <!-- The Popup -->
- <script>
-  document.getElementById('GuiDeliTC').addEventListener('click', function(event) {
-    event.preventDefault();
-    const city = document.getElementById('city').value;
-    if (city !== 'Đà Lạt') {
-      openPopup();
-    } else {
-      // Submit the form or perform any further actions if necessary
-      window.location.href = '../view/cus/menu/menu.php';
-    }
-  });
-
-  function openPopup() {
-    // Create the popup HTML dynamically
-    const popupHtml = `
-      <div id="popup" class="popup">
-        <div class="popup-content">
-          <p>Xin lỗi quý khách, GOURMEZ chỉ khả dụng giao hàng tại Đà Lạt</p>
-          <button onclick="closePopup()">Đóng</button>
+        <img class="poster" src="../view/cus/img/pic1.png">
+        <div class="memcontain">
+    <div class="member-box">
+        <div class="memgroup">
+            <img src="../view/cus/img/mem2.jpg" alt="Member 1">
+            <h3>Thành viên 1</h3>
+            <button class="detail-btn" data-id="1">Xem chi tiết</button>
+            <div class="member-info" id="info-1"></div>
         </div>
-      </div>
-    `;
-    // Append the popup HTML to the body
-    document.body.insertAdjacentHTML('beforeend', popupHtml);
-    // Show the popup
-    document.getElementById('popup').style.display = 'flex';
-  }
-
-  function closePopup() {
-    // Remove the popup from the DOM
-    const popup = document.getElementById('popup');
-    if (popup) {
-      popup.remove();
-    }
-  }
-</script>
-  <img class="postertrangchu" src="../view/cus/img/postertrangchu.png">
+        <div class="memgroup">
+            <img src="../view/cus/img/mem1.jpg" alt="Member 2">
+            <h3>Thành viên 2</h3>
+            <button class="detail-btn" data-id="2">Xem chi tiết</button>
+            <div class="member-info" id="info-2"></div>
+        </div>
+        <div class="memgroup">
+            <img src="path_to_image3.jpg" alt="Member 3">
+            <h3>Thành viên 3</h3>
+            <button class="detail-btn" data-id="3">Xem chi tiết</button>
+            <div class="member-info" id="info-3"></div>
+        </div>
+        <div class="memgroup">
+            <img src="path_to_image4.jpg" alt="Member 4">
+            <h3>Thành viên 4</h3>
+            <button class="detail-btn" data-id="4">Xem chi tiết</button>
+            <div class="member-info" id="info-4"></div>
+        </div>
+        <div class="memgroup">
+            <img src="path_to_image5.jpg" alt="Member 5">
+            <h3>Thành viên 5</h3>
+            <button class="detail-btn" data-id="5">Xem chi tiết</button>
+            <div class="member-info" id="info-5"></div>
+        </div>
+    </div>
+</div>
+  //<img class="postertrangchu" src="../view/cus/img/postertrangchu.png">
             </script>
            
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>

@@ -13,6 +13,7 @@
 
     include("header_ad/header_ad.php");
     include("sidebar_ad/sidebar_ad.php");
+
   
     if(isset($_GET['quanly']))
     { 

@@ -46,7 +46,7 @@ function connectdb()
         padding-left:5px; 
         width: 50px;
         font-family: Lalezar;
-        border:none"
+        border:none;
     }
     .btn_gui:hover:not(.active) {
     background-color: #ffb84d;

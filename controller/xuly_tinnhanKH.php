@@ -9,9 +9,27 @@ function insertMessage()
         $tinnhan = $_POST['tinnhan'];
     
         if (empty($tenkhachhang) || empty($sodienthoai) || empty($mailkhachhang) || empty($tinnhan)) {
-            echo "Vui lòng điền đầy đủ thông tin.";
+            echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Vui lòng điền đầy đủ thông tin.',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(function() {
+                        window.location.href = 'tranghienthi.php?quanly=lienhe'
+                    });
+                  </script>";
         } elseif (!filter_var($mailkhachhang, FILTER_VALIDATE_EMAIL)) {
-            echo "Vui lòng nhập một địa chỉ email hợp lệ.";
+            echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Vui lòng nhập một địa chỉ email hợp lệ.',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(function() {
+                window.location.href = 'tranghienthi.php?quanly=lienhe'
+            });
+          </script>";
         } else {
             $tenkhachhang = mysqli_real_escape_string($conn, $tenkhachhang);
             $sodienthoai = mysqli_real_escape_string($conn, $sodienthoai);
@@ -22,7 +40,16 @@ function insertMessage()
             $query_insert_message = $conn->query($sql_insert_message);
     
             if ($query_insert_message) {
-                echo "Tin nhắn đã được gửi thành công!";
+                echo "<script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tin nhắn của bạn đã được gửi đến Gourmez',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(function() {
+                    window.location.href = 'tranghienthi.php?quanly=tatcathongtin'
+                });
+              </script>";
             } else {
                 echo "Đã xảy ra lỗi. Vui lòng thử lại sau.";
             }

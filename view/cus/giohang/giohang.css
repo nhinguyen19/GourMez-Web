@@ -41,7 +41,7 @@ body{
 .btn_thanhtoan{
   background-image: linear-gradient(45deg, #f12711, #f5af19);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 150px;
     height:25px;
     color: #ffff;
@@ -56,7 +56,7 @@ body{
   background-color: #14942c; 
   color: white; 
   border: 0.1px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: 'Lalezar';
   font-size: 12px;
 }
@@ -64,7 +64,7 @@ body{
   background-color: #b32400; 
   color: white; 
   border: 0.5px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: 'Lalezar';
   font-size: 12px;
 }
@@ -107,7 +107,7 @@ body{
 .btn_xemchitiet{
   background-image: linear-gradient(45deg, #f12711, #f5af19);
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 100px;
   height: 23px;
   color: #ffff;

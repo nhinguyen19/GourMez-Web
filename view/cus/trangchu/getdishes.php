@@ -56,18 +56,20 @@
 }
 
 .food-item {
-    display: grid;
+   display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: 30px; 
     justify-items: center;
     align-items: center;
     height: 100%;
     overflow: hidden; 
-    margin-top : 30px;
+    /* margin-top : 30px;  */
 }
 
-
+.dishes{
+    margin-top : 0px;
+}
 </style>
 <?php
 include('../../../model/connect.php');
@@ -75,6 +77,7 @@ $conn = connectdb();
     $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id and food.food_id between 1 and 8 ORDER BY food_id ASC";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
 ?>
+
 <ul id="all_dishes">
     <div class="food-item">
         <?php
@@ -82,7 +85,7 @@ $conn = connectdb();
             while ($row = mysqli_fetch_array($query_lietke_sanpham)) {
                 $i++;
         ?>
-        <li class="Thucdon_mon">  
+        <li class="Thucdon_mon" style="margin-top : 20px;">  
             <img src="../view/admin/ql_sanpham/uploads/<?php echo $row['img'] ?>" style="width: 150px; height: 150px;">
             <p class="Ten_mon"><?php echo $row['food_name'] ?></p>
             <p>
@@ -98,8 +101,9 @@ $conn = connectdb();
         ?>
     </div>
 </ul>
-<div class="xemthembutton">
-<button class="btn_xemthem">
-                <a href="tranghienthi.php?quanly=thucdon" style="text-decoration: none; color: #ffff;">XEM THÊM</a>
+<div class="xemthembutton" >
+<button class="btn_xemthem" style="margin-top : 10px; margin-bottom: 10px; size : 20px;">
+                <a href="tranghienthi.php?quanly=thucdon" style="text-decoration: none; color: #ffff; ">XEM THÊM</a>
             </button>
             </div>
+       
