@@ -1,5 +1,6 @@
+<script src="../cus/dangnhap/hienthi_mk.js"></script>
 <?php
-   // session_start();
+   session_start();
     //if(isset($_SESSION['role'])){
     include_once("../../model/connect.php");
     include_once("../../model/admin/xuly_danhmucsp.php");  
@@ -135,18 +136,30 @@
        xoaTinTuc();
         break;
 
-<<<<<<< HEAD
       // test
       case 'donhang1':
         include('ql_donhang/donhang_1.php');
 
+      //tai khoan
+      case 'themadmin';
+      include('ql_taikhoan/themadmin.php');
+      break;
 
-=======
+      case 'thongtintaikhoan';
+      include('ql_taikhoan/thongtintaikhoan.php');
+      break;
+
+      case 'chinhsuathongtin';
+      include('ql_taikhoan/chinhsuathongtin.php');
+      break;
+
+      case 'doimatkhau';
+      include('ql_taikhoan/doimatkhau.php');
+      break;
+
         case 'thoat';
         include('ADdangxuat.php');
-        
         break;
->>>>>>> c7204de74d2433c98df5ec0256b910176b522bfc
         default :
           include ('tranghienthi.php');
           break;
@@ -157,7 +170,7 @@
      }
   
   // else{
-  // //  header('Location: ../cus/dangnhap/login.php');
+  // //  header('Location: tranghienthi.php?quanly='dangnhap');
   // include ('tranghienthi.php');
   // }
   ?>

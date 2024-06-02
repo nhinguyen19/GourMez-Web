@@ -16,6 +16,7 @@
 
 .menu_header{
     display: flex;
+    font-family: 'Lalezar';
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -32,9 +33,11 @@
     list-style: none;
     /* margin-bottom: 30px; */
     color: white;
+    
 }
 .menu_header a{
     justify-content: space-between;
+    font-family: 'Lalezar';
 }
 .menu_header  a:hover{
     color:rgb(245, 214, 175);
