@@ -41,14 +41,15 @@ if (isset($_POST['update'])) {
         $updateQuantityQuery = "UPDATE cart SET quantity = $quantity WHERE food_id = $foodId AND user_id = $user_id";
         mysqli_query($conn, $updateQuantityQuery);
     } else {
-        foreach ($_SESSION['cart'] as &$item) {
-            if ($item['food_id'] == $foodId) {
-                $item['quantity'] = $quantity;
+        for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
+            if ($_SESSION['cart'][$i]['food_id'] == $foodId) {
+                // Món ăn đã tồn tại trong giỏ hàng, cập nhật số lượng
+                $_SESSION['cart'][$i]['quantity'] = $quantity;
                 break;
             }
         }
+        }
     }
-}
 
 if (isset($_POST['delete'])) {
     $foodId = $_POST['food_id'];
