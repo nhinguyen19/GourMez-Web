@@ -1,15 +1,5 @@
 <style>
 
-
-
-.title{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: #E26A2C;
-    font-family: 'Lalezar';
-    text-transform: uppercase;
-}
 .khuyenmaigroup{
     background-color: #ffffff;
     border-radius: 20px;
@@ -28,6 +18,22 @@
 .label {
     color: black;
     font-weight: bold;
+}
+.btn_xemthem
+{
+    background-color: #E26A2C;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 23px;
+    color: #ffff;
+    font-family: 'Lalezar';
+    font-size: 16px;
+}
+.xemthembutton
+{
+    display : flex;
+    justify-content: center;
 }
 
 .btn_xemchitiet{
@@ -54,50 +60,10 @@
     align-items: center;
     height: 100%;
     overflow: hidden; 
-    margin-top : 30px;
+    /* margin-top : 30px; */
 }
 
 
-.btn_dathang{
-    background-color: #E26A2C;
-    border: none;
-    border-radius: 10px;
-    width: 150px;
-    height:25px;
-    color: #ffff;
-    font-family: 'Lalezar';
-    font-size: 16px;
-}
-.btn_dathang:active {
-    background-color: #ffb84d; 
-}
-#amount{
-    width: 30px;
-    text-align: center;
-    background-color: #E26A2C;
-    color: #ffff;
-}
-#buy-amount{
-    padding-right: 20px;
-    padding-left: 30px;;
-
-}
-.button-quantity-container {
-    display: flex;
-    align-items: center;
-}
-.btn_amount{
-    margin-right: 0; 
-    background-color: #E26A2C; 
-    border: none; 
-    width:40px; 
-    height:25px;
-    border-radius: 0 10px 10px 0;
-    color: #ffff;
-}
-#buy-amount button:active {
-    background-color: #ffb84d; 
-}
 
 </style>
 <?php
@@ -113,7 +79,7 @@ include('../../../model/connect.php');
             while ($row = mysqli_fetch_array($query_lietke)) {
                 $i++;
         ?>
-        <li class="khuyenmaigroup">  
+        <li class="khuyenmaigroup" style="margin-top : 20px; margin-bottom:20px;">  
             <img src="../view/admin/<?php echo $row['img'] ?>" style="width: 150px; height: 150px;">
             <p class="discount_name"><?php echo $row['discount_name'] ?></p>
             <button class="btn_xemchitiet">
@@ -125,3 +91,9 @@ include('../../../model/connect.php');
         ?>
     </div>
 </ul>
+<div class="xemthembutton" >
+<button class="btn_xemthem" style="margin-top : 10px; margin-bottom: 10px; size : 20px;">
+                <a href="tranghienthi.php?quanly=khuyenmai" style="text-decoration: none; color: #ffff; ">XEM THÊM</a>
+            </button>
+            </div>
+       

@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="sidebar_ad/sidebar_ad.css">
     <div id="sidebar_menu">
-    <img class="logoad"src="img/logocus.png">
+        <a href="#">Tài khoản</a>
+        <div class="submenu">
+            <a href="tranghienthi.php?quanly=themadmin">Thêm admin</a>
+            <a href = "tranghienthi.php?quanly=thongtintaikhoan">Thông tin tài khoản</a>
+            <a href="#">Quản lý tài khoản</a>
+        </div>
+        <hr> 
         <a href="#">Đơn hàng</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=donhang">Tất cả</a>

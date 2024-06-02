@@ -96,8 +96,8 @@ if (isset($_POST['send']) && ($_POST['send'])=='Gửi email') {
 <link rel="stylesheet" href="../view/cus/quenmatkhau/requestReset.css">
 <div class="box-content">
     <h3>QUÊN MẬT KHẨU?</h3>
-    <form method="post">
-        <label for="email">Email</label>
+    <form class="form" method="post">
+       
         <br><input type="email" name="email" placeholder="Email" required>
         <br><input type="submit" name="send" value="Gửi email">
     </form>

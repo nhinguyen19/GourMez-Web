@@ -1,0 +1,102 @@
+<?php
+// session_start();
+ // Include your database connection file
+ $host = "localhost";
+ $username = "root";
+ $password = "";
+ $database = "gourmez_web";
+ $conn = new mysqli($host, $username, $password, $database);
+
+ if ($conn->connect_error) {
+     die('Kết nối không thành công: ' . $conn->connect_error);
+ } 
+
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_SESSION['id'];
+    $old_password = $_POST['old_password'];
+    $new_password = $_POST['new_password'];
+    $confirm_password = $_POST['confirm_password'];
+
+    // Fetch the old password from the database
+    $stmt = $conn->prepare("SELECT password FROM user WHERE user_id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->bind_result($db_password);
+    $stmt->fetch();
+    $stmt->close();
+
+    // Validate old password
+    if (!password_verify($old_password, $db_password)) {
+        $error = "Mật khẩu cũ chưa đúng.";
+    } elseif ($new_password !== $confirm_password) {
+        $error = "Mật khẩu nhập lại không đúng.";
+    } else {
+        // Hash the new password and update it in the database
+        $new_password_hashed = password_hash($new_password, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("UPDATE user SET password = ? WHERE user_id = ?");
+        $stmt->bind_param("si", $new_password_hashed, $id);
+        
+        if ($stmt->execute()) {
+            // $success = "Your password has been successfully updated.";
+            echo "<script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Đổi mật khẩu thành công',
+                    showConfirmButton: true,
+                });
+                </script>";
+        } else {
+            // $error = "There was an error updating your password. Please try again.";
+            echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Thất bại.<b>Vui lòng thử lại.',
+                    showConfirmButton: true,
+                });
+                </script>";
+        }
+
+        $stmt->close();
+    }
+}
+?>
+
+    <link rel="stylesheet" href="ql_taikhoan/doimatkhau.css">
+    <!-- <script src="../view/cus/dangnhap/hienthi_mk.js"></script> -->
+    <div class="box-content">
+        <h2>ĐỔI MẬT KHẨU</h2>
+        <div class="form">
+            <form method="POST">
+                <div>
+                    <label for="old_password">Mật khẩu cũ:</label>
+                    <div class="input-icon">
+                        <input type="password" id="old_password" name="old_password" >
+                        <span id="old_nosee" style="cursor: pointer;" onclick="showOldpass()" ><i class="fas fa-eye-slash icon" ></i></span>
+                    </div>
+                    
+                </div>
+                <div>
+                    <label for="password">Mật khẩu mới:</label>
+                    <div class="input-icon">
+                        <input type="password" id="password" name="new_password" >
+                        <span id="nosee" style="cursor: pointer;" onclick="showpass()" ><i class="fas fa-eye-slash icon" ></i></span>
+                    </div>
+                </div>
+                <div>
+                    <label for="re_enter_password">Nhập lại mật khẩu mới:</label>
+                    <div class="input-icon">
+                        <input type="password" id="re_enter_password" name="confirm_password" >
+                        <span id="noseeRe" style="cursor: pointer;" onclick="showRepass()"><i class="fas fa-eye-slash icon" ></i></span>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" >Cập nhật</button>
+                </div>
+            </form>
+
+        </div>
+        
+        
+    </div>
