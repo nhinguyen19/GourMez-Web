@@ -59,10 +59,12 @@ $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
                 <img class="main-image" src="../view/admin/ql_tintuc/<?php echo $row['img_title'] ?>">
                 <br>
                 <div class="text-container">
-                  <a class="font-family " href="<?php echo $row['link'] ?>"><?php echo $row['title'] ?></a>
-                  <p style="padding-right : 15%; color:white;"><?php echo $row['description'] ?></p>
+                  <a class="font-family "
+                    href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>"><?php echo $row['title'] ?></a>
+                  <p style="padding-right : 15%; color:white;"><?php echo $row['summary'] ?></p>
                 </div>
-                <a href="<?php echo $row['link'] ?>"><button id="xemchitiet" type="button"><b>Xem chi tiết</b>
+                <a href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>"><button id="xemchitiet"
+                    type="button"><b>Xem chi tiết</b>
                   </button></a>
 
               </div>
@@ -79,7 +81,8 @@ $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
               <div class="item-container">
                 <img class="bigger-image" src="../view/admin/ql_tintuc/<?php echo $row['img_title'] ?>">
                 <div id="right-textContainer" class="text-container">
-                  <a class="font-family " href="<?php echo $row['link'] ?>"><?php echo $row['title'] ?></a>
+                  <a class="font-family "
+                    href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>"><?php echo $row['title'] ?></a>
                   <p style="color:white;"><?php echo $row['description'] ?></p>
                 </div>
               </div>

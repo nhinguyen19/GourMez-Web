@@ -4,9 +4,11 @@ function themTinTuc()
     $conn = connectdb();
 
     if (isset($_POST['themTinTuc'])) {
+        echo "enter themtintuc";
+
         $title = $_POST['title'];
-        $link = $_POST['link'];
-        $description = $_POST['description'];
+        $tomtat = $_POST['tomtat'];
+        $description = mysqli_real_escape_string($conn, $_POST['description']);
         $hinhanh = $_FILES['hinhanh']['name'];
         $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
         $hinhanh = 'uploads/' . time() . '_' . $hinhanh;
@@ -33,8 +35,9 @@ function themTinTuc()
                         });
                       </script>";
         } else {
+
             // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
-            $sql_them = "INSERT INTO tintuc(title, link ,img_title,description) VALUES ('$title','$link', '$hinhanh','$description')";
+            $sql_them = "INSERT INTO tintuc(title, summary ,img_title,description) VALUES ('$title','$tomtat', '$hinhanh','$description')";
             move_uploaded_file($hinhanh_tmp, '../../view/admin/ql_tintuc/' . $hinhanh);
 
             if (mysqli_query($conn, $sql_them)) {
@@ -109,8 +112,8 @@ function suaTinTuc()
     if (isset($_POST['suaTinTuc'])) {
         $tintucId = $_GET['tintucId'];
         $title = $_POST['title'];
-        $link = $_POST['link'];
-        $description = $_POST['description'];
+        $tomtat = $_POST['tomtat'];
+        $description = mysqli_real_escape_string($conn, $_POST['description']);
         $hinhanh = $_FILES['hinhanh']['name'];
         $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
 
@@ -135,10 +138,10 @@ function suaTinTuc()
         }
 
         if ($_FILES['hinhanh']) {
-            $sql_sua = "UPDATE tintuc SET title = '$title', link = '$link',description='$description',img_title='$hinhanh' WHERE tintuc_id = '$tintucId'";
+            $sql_sua = "UPDATE tintuc SET title = '$title', summary = '$tomtat',description='$description',img_title='$hinhanh' WHERE tintuc_id = '$tintucId'";
             move_uploaded_file($hinhanh_tmp, '../../view/admin/ql_tintuc/' . $hinhanh);
         } else {
-            $sql_sua = "UPDATE tintuc SET title = '$title', link = '$link',description='$description' WHERE tintuc_id = '$tintucId'";
+            $sql_sua = "UPDATE tintuc SET title = '$title', summary = '$tomtat',description='$description' WHERE tintuc_id = '$tintucId'";
         }
         if (mysqli_query($conn, $sql_sua)) {
             echo "<script>

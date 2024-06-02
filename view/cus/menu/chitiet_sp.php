@@ -141,13 +141,12 @@ if (isset($_POST['themgiohang'])) {
         $_SESSION['cart'] = array_values($_SESSION['cart']); // Cập nhật lại chỉ số mảng
         
     }
-    
-    if (isset($_SESSION['cart'])) {
-        var_dump($found);
-        var_dump($_SESSION['cart']);
-    } else {
-        echo "Session cart không tồn tại hoặc không có dữ liệu.";
-    }
+    // if (isset($_SESSION['cart'])) {
+    //     var_dump($found);
+    //     var_dump($_SESSION['cart']);
+    // } else {
+    //     echo "Session cart không tồn tại hoặc không có dữ liệu.";
+    // }
     echo "<script>
         Swal.fire({
             icon: 'success',
