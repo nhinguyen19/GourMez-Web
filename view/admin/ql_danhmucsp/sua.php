@@ -9,11 +9,11 @@
             </tr> 
             <tr>
                 <td style="text-align: center; font-family: 'Lalezar'">Tên danh mục </td>
-                <td><input type="text" name="tendanhmuc" style="width: 350px; background-color: #F5EAD7; border: none"></td>
+                <td><input type="text" name="tendanhmuc" style="width: 500px; background-color: #CFCBCB; border: none"></td>
             </tr>
             
             <tr>
-                <td style="text-align: center;" colspan="2"><input type="submit" name="sua"  style= " background-color: #F5EAD7; border: 0.5px solid black;font-family: 'Lalezar'; color: #E26A2C" value="Cập nhật"></td>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="sua"  value="Cập nhật"></td>
             </tr>
         </form>
     </table>

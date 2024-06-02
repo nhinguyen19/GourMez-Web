@@ -5,15 +5,15 @@
         <form method="POST" action="tranghienthi.php?quanly=themsanpham" enctype="multipart/form-data">
             <tr>
                 <th style="text-align: center">Tên sản phẩm</th>
-                <td><input type="text" name="tensanpham" style="width: 350px; background-color: #FFECCB; color: black;border:none"></td>
+                <td><input type="text" name="tensanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none"></td>
             </tr>
             <tr>
                 <th style="text-align: center">Giá bán</th>
-                <td><input type="text" name="giasanpham" style="width: 350px; background-color: #FFECCB; color: black;border:none"></td>
+                <td><input type="text" name="giasanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none"></td>
             </tr>
             <tr>
                 <th style="text-align: center">Giá gốc</th>
-                <td><input type="text" name="giagoc_sanpham" style="width: 350px; background-color: #FFECCB; color: black;border:none"></td>
+                <td><input type="text" name="giagoc_sanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none"></td>
             </tr>
             <tr>
                 <th style="text-align: center">Danh mục sản phẩm</th>

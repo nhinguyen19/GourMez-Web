@@ -29,7 +29,7 @@
         <tr>
             <td style="text-align: center" colspan="3">
                 <form action="../admin/tranghienthi.php?quanly=themdanhmuc" method="post">
-                    <input type="submit" style= " background-color: #F5EAD7; border: 0.5px solid black;font-family: 'Lalezar'; color: #E26A2C" value="Thêm danh mục sản phẩm">
+                    <input type="submit" value="Thêm danh mục sản phẩm">
                 </form>
             </td>
         </tr>

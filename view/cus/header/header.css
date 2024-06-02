@@ -9,7 +9,7 @@
     text-align: center;
     height: 80px;
     background-color: #252525;
-    z-index: 999; 
+    z-index: 1; 
     
 }
 
@@ -17,18 +17,20 @@
 .menu_header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    text-align: center;
     width: 90%; 
-    margin: 20px 20px auto;
+    margin:  20px auto;
 }
 
 .menu_header a{
     display: flex;
     text-align: center;
     align-items: center;
-    
+    justify-content: center;
     text-decoration: none;
     list-style: none;
-    
+    /* margin-bottom: 30px; */
     color: white;
 }
 .menu_header a{
@@ -62,7 +64,7 @@
     background-color: white;
     width: 15vw;
     right: 0;
-    z-index: 1000;/* xác định thứ tự lớp của menu, lớp càng lớn sẽ hiện trc */
+    /* z-index: 1000;xác định thứ tự lớp của menu, lớp càng lớn sẽ hiện trc */
 }
 .dropdown_content a{
     text-align: left;
@@ -71,12 +73,15 @@
     text-decoration: none;
     display: block;
 }
+.user_dropdown:hover .dropdown_content{
+    display: block;
+}
+
 .dropdown_content a:hover{
-    
     background-color: #252525;
     color: rgb(255, 255, 255);
     width: 15vw;
-    z-index: 1000;
+    /* z-index: 1000; */
     text-align: left;
     display: block;
 }

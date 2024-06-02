@@ -40,7 +40,7 @@
         <tr>
             <td style="text-align: center" colspan="8">
                 <form action="../admin/tranghienthi.php?quanly=themsanpham" method="post">
-                    <input type="submit" value="Thêm sản phẩm" style= " background-color: #F5EAD7; border: 0.5px solid black;font-family: 'Lalezar'; color: #E26A2C">
+                    <input type="submit" value="Thêm sản phẩm">
                 </form>
             </td>
         </tr>
