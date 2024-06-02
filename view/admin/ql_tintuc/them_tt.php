@@ -18,7 +18,7 @@
                     </div>
                     <div class="upload-btn-wrapper">
                         <button class="btn"></button>
-                        <input type="file" name="hinhanh" id="fileToUpload" />
+                        <input type="file" name="hinhanh" id="fileToUpload" required />
                     </div>
 
                 </td>
@@ -34,14 +34,11 @@
 
                     <div class="textbox">
                         <label style="font-family: 'Lalezar'" for="description">Mô tả</label> <br>
-                        <!-- <input type="text" name="description" size="30" required><br><br> -->
-                        <!-- <textarea name="description" id="mota" required rows="7"></textarea> -->
-                        <textarea name="description" id="description" rows="7"></textarea>
+                        <textarea name="description" id="description" rows="7" required></textarea>
 
                     </div>
 
                     <button id="them" value="Upload Image" name="themTinTuc" type="submit">Thêm</button>
-                    <!-- <input style="margin-top : 10px;" type="submit" name="themTinTuc" value="Thêm tin tức"> -->
 
             </tr>
 
@@ -83,5 +80,14 @@
         });
     });
 
-    CKEDITOR.replace('description');
+    // CKEDITOR.replace('description');
+    var editor = CKEDITOR.replace('description', {
+        language: 'en',
+        extraPlugins: 'notification'
+    });
+
+    editor.on('required', function (evt) {
+        editor.showNotification('This field is required.', 'warning');
+        evt.cancel();
+    });
 </script>
