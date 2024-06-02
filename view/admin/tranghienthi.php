@@ -1,5 +1,6 @@
 <script src="../cus/dangnhap/hienthi_mk.js"></script>
 <?php
+    ob_start();
    session_start();
     //if(isset($_SESSION['role'])){
     include_once("../../model/connect.php");
