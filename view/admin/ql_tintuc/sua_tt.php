@@ -17,7 +17,7 @@ $imgTitle = "default_image.jpg"; // Path to a default image if no image found
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $title = isset($row["title"]) ? $row["title"] : "";
-    $link = isset($row["link"]) ? $row["link"] : "";
+    $summary = isset($row["summary"]) ? $row["summary"] : "";
     $imgTitle = isset($row["img_title"]) ? $row["img_title"] : $imgTitle;
     $description = isset($row["description"]) ? $row["description"] : "";
 }
@@ -51,13 +51,17 @@ if ($result->num_rows > 0) {
                         <input type="text" name="title" value="<?php echo $title; ?>" size="30"><br><br>
                     </div>
                     <div class="textbox">
-                        <label for="link">Link</label> <br>
-                        <input type="url" name="link" value="<?php echo $link; ?>" size="30"><br><br>
+                        <label for="tomtat">Tóm tắt</label> <br>
+                        <input type="text" name="tomtat" value="<?php echo $summary; ?>" size="30"><br><br>
                     </div>
                     <div class="textbox">
-                        <label for="description">Description</label> <br>
-                        <input type="text" name="description" value="<?php echo $description; ?>" size="30"><br><br>
+                        <label for="description">Mô tả</label> <br>
+                        <!-- <input type="text" name="description" value="<?php echo $description; ?>" size="30"><br><br> -->
+                        <textarea name="description" id="description" rows="7"><?php echo $description; ?></textarea>
                     </div>
+
+
+
                     <button id="sua" name="suaTinTuc" type="submit" value="CSS">Thay đổi</button>
                 </td>
             </tr>
@@ -65,6 +69,7 @@ if ($result->num_rows > 0) {
     </form>
 </div>
 
+<script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const fileInput = document.getElementById('fileToUpload');
@@ -86,7 +91,7 @@ if ($result->num_rows > 0) {
                         img.src = e.target.result;
                         img.style.width = '200px'; // Đặt kích thước tối đa cho ảnh
                         img.style.height = '200px'; // Đặt kích thước tối đa cho ảnh
-                        img.style.marginLeft ='45px';
+                        img.style.marginLeft = '45px';
                         innerDiv.appendChild(img);
                     };
                     reader.readAsDataURL(file);
@@ -96,4 +101,7 @@ if ($result->num_rows > 0) {
             }
         });
     });
+
+    CKEDITOR.replace('description');
+
 </script>
