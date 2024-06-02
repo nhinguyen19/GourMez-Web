@@ -140,6 +140,7 @@
       case 'donhang1':
         include('ql_donhang/donhang_1.php');
 
+
       //tai khoan
       case 'themadmin';
       include('ql_taikhoan/themadmin.php');
@@ -157,9 +158,10 @@
       include('ql_taikhoan/doimatkhau.php');
       break;
 
-        case 'thoat';
-        include('ADdangxuat.php');
-        break;
+      case 'thoat';
+      include('ADdangxuat.php');
+      break;
+        
         default :
           include ('tranghienthi.php');
           break;
