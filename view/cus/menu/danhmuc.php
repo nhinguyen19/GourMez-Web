@@ -2,7 +2,6 @@
  session_start();
   include("../view/cus/header/header.php");
  ?>
->>>>>>> 6185c9ec9764d69ac7f4257ccdd352e99e2c32d9
 <?php
     $conn = connectdb();
     $sql_danhmuc = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.cate_id='$_GET[id]' ORDER BY food.food_id ASC";

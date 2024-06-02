@@ -1,5 +1,5 @@
 <?php 
- session_start();
+session_start();
 include("../view/cus/header/header.php");
 ?>
 <?php
@@ -92,8 +92,7 @@ if (isset($_POST['themgiohang'])) {
     $sql = "SELECT * FROM food WHERE food_id = '$idsanpham'";
     $result = mysqli_query($conn, $sql);
     $food = mysqli_fetch_assoc($result);
-
-    // Kiểm tra đăng nhập
+    
     if (isset($_SESSION['id'])) {
         // Nếu đã đăng nhập, lưu thông tin vào bảng cart
         $user_id = $_SESSION['id'];
