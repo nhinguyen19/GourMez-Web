@@ -1,3 +1,7 @@
+<?php 
+ session_start();
+include("../view/cus/header/header.php");
+?>
 <?php
 $conn = connectdb();
 $sql_chitiet = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id AND food.food_id='$_GET[id]'";
