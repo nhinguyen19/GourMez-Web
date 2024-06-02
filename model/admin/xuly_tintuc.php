@@ -24,8 +24,8 @@ function themTinTuc()
             echo "<script>
                         Swal.fire({
                             icon: 'error',
-                            title: 'Không thể thêm danh mục',
-                            text: 'Tên danh mục đã tồn tại.',
+                            title: 'Không thể thêm tin tức',
+                            text: 'Tên tin tức đã tồn tại.',
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK'
                         }).then((result) => {
@@ -45,7 +45,7 @@ function themTinTuc()
 
                     Swal.fire({
                         icon: 'success',
-                        title: 'Thêm danh mục thành công',
+                        title: 'Thêm tin tức thành công',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     }).then((result) => {
@@ -96,7 +96,7 @@ function xoaTinTuc()
             echo "<script>
                     Swal.fire({
                         icon: 'success',
-                        title: 'Xóa sản phẩm thành công!',
+                        title: 'Xóa tin tức thành công!',
                         showConfirmButton: false,
                         timer: 1500
                     }).then(function() {
@@ -147,7 +147,7 @@ function suaTinTuc()
             echo "<script>
             Swal.fire({
                 icon: 'success',
-                title: 'Cập nhật danh mục thành công',
+                title: 'Cập nhật tin tức thành công',
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
             }).then((result) => {
