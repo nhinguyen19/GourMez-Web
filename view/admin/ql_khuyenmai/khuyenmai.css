@@ -1,5 +1,5 @@
 .insert {
-    border: 1px solid #2bcd53;
+    /* border: 1px solid #2bcd53; */
     margin-bottom: 20px;
     width : 1200px;
     padding : 10px;
@@ -7,7 +7,7 @@
   .main1 {
     clear : both;
     width: 1200px;
-    border : 1px solid #4b13d8;
+    /* border : 1px solid #4b13d8; */
     margin-left : 300px;
   float : left;
   height : 350px;

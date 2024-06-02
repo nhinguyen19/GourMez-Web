@@ -1,13 +1,13 @@
-.insert {
-    border: 1px solid #2bcd53;
-    margin-bottom: 20px;
-    width : 1200px;
-    padding : 10px;
-  }
+
+.insert{
+  display: flex;
+  justify-content: center;
+  padding-left: 200px;
+}
   .main1 {
     clear : both;
     width: 1200px;
-    border : 1px solid #13d81d;
+    /* border : 1px solid #13d81d; */
     margin-left : 300px;
     margin-top : 100px;
   float : left;
@@ -15,15 +15,20 @@
   
   }
   
-table,tr,th,td{
-    border: 1px solid  #754E39;
-    background-color: #f0ac74;
-    padding: 10px;
+  table,tr,th,td{
+    /* border: 0.5px solid  #c9acac; */
+    background-color: #EDEDEB;
+    padding: 15px;
+}
+
+.danhsach
+{
+  display : flex; 
+  justify-content: center;
 }
 
 table{
-    width: 1200px;
-    margin-left : 0;
+  width: 90%;
 }
 .title{
     display: flex;
@@ -32,4 +37,41 @@ table{
     padding-top: 30px;
     font-family: Lalezar;
     color: #E26A2C;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.main1 {
+  padding: 20px;
+}
+.nagivation {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.link:hover {
+  background-color: #575f68;
+}
+.link.active {
+  background-color: #E26A2C;
+}
+#content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

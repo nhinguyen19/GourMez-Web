@@ -74,7 +74,17 @@ function thanhtoandonhang() {
                 unset($_SESSION['cart']);
             }
 
-            echo "Order placed successfully!";
+            echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Đơn hàng đã được gửi đi thành công',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(function() {
+                window.location.href = 'tranghienthi.php?quanly=donethanhtoan&id=$orderID';
+            });
+        </script>";
+        
         } else {
             echo "Error: " . mysqli_error($conn);
         }

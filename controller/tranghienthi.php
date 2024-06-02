@@ -59,14 +59,14 @@
         case 'giohang':
             include ('../view/cus/giohang/giohang.php');
             break;
-        case 'checkbforder' :
-            include ('../view/cus/thanhtoan/checkbforder.php');
-            checkdiscount();
         case 'thanhtoan': 
             include ('../view/cus/thanhtoan/thanhtoan.php');
             //checkdiscount();
             thanhtoandonhang();
             break;
+            case 'donethanhtoan' :
+                include ('../view/cus/thanhtoan/donethanhtoan.php');
+             break;
         case 'dangnhap':
             include ('../view/cus/dangnhap/login.php');
             break;
