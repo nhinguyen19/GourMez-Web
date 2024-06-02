@@ -1,35 +1,58 @@
-/* Đặt kiểu chung cho trang */
-body {
-  margin-top : 100px;
-}
-label 
+
+.label 
 {
   font-family: 'Lalezar';
+  color : #E26A2C;
+  font-weight : normal;
+  font-size : 20px;
+
+}
+.label1
+{
+  font-family: 'Lalezar';
+  color : #000000;
+  font-weight : normal;
+
 }
 .thanhtoanform {
   width: 100%;
-  overflow: hidden;
-  padding: 20px;
+  background-color :#ffffff;
+  margin-top : 80px;
 }
 
-.thongtin, .giohang_content {
+.giohang_content {
   width: 48%;
   float: left;
   margin-right: 2%;
+  background-color :rgb(255, 255, 255);
 }
 
+.thongtin
+{
+width: 48%;
+float: left;
+padding: 20px;
+background-color :rgb(255, 255, 255);
+}
 .giohang_content {
   margin-right: 0;
 }
 
 .inputform, .inputdeli, .inputdeliform select, .inputdeliform textarea {
-  width: 100%;
-  padding: 10px;
+  width: 300px;
+  padding: 5px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  font-family : 'Lalezar';
+  height : 30px;
 }
+.inputdeli
+{
+  width : 605px;
+}
+
 
 .buttonguideli, .buttonxem button {
   background-color: #2480ED;
@@ -46,26 +69,19 @@ label
   float: left;
 }
 
-thongtin label, .giohang_content p {
-  font-weight: bold;
-  color: #E26A2C;
-}
+
 
 .tb_noidung {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid #000000;
 }
 
 .tb_noidung td {
   padding: 10px;
-  border: 1px solid #ccc;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
 
 .buttonguideli, .buttonxem button {
   display: block;
@@ -73,19 +89,98 @@ thongtin label, .giohang_content p {
   text-align: center;
 }
 
-button[name="checkdiscount"] {
-  background-color: #2480ED;
-  color: white;
-  font-size: 20px;
-  border-radius: 10px;
-  width: 100px;
-  font-family: Lalezar;
-  border: none;
-}
 
 .buttonxem {
-  margin-top: 100px;
-  border : 1px solid #2480ED;
+  margin-bottom : 10px;
   display : flex; 
   justify-content: center;
+  clear : both;
+
+}
+.confirmation-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.confirmation-container h1 {
+  color: #E26A2C;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+.confirmation-container p {
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.confirmation-container .order-details {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.confirmation-container .order-details h2 {
+  color: #E26A2C;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.confirmation-container .order-details p {
+  color: #000000;
+  font-size: 16px;
+  margin: 5px 0;
+}
+.confirmation-container .back-to-home,
+.confirmation-container .track-order {
+  background-color: #2480ED;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 5px;
+}
+/* Popup CSS */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+}
+.modal-content h2 {
+  color: #E26A2C;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.modal-content button {
+  background-color: #2480ED;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px 5px;
 }

@@ -7,26 +7,27 @@
 
   
 ?>
+<body>
   <div class="thanhtoanform">
     <div class="thongtin">
     <form method="POST" action="tranghienthi.php?quanly=thanhtoan">
-      <label>Họ tên của bạn*</label>
+      <label class="label">Họ tên của bạn*</label>
       <br>
       <input type="text" id="cusname" name="cusname" class="inputform" required>
       <br>
-      <label>Số điện thoại*</label>
+      <label class="label">Số điện thoại*</label>
       <br>
       <input type="number" id="cusphone" name="cusphone" class="inputform" required>
       <br>
-      <label>Email*</label>
+      <label class="label">Email*</label>
       <br>
       <input type="email" id="cusemail" name="cusemail" class="inputform" required>
       <br>
-      <label>Ghi chú</label>
+      <label class="label">Ghi chú</label>
       <br>
       <textarea id="ghichu" name="ghichu"></textarea>
       <br>
-      <label>Địa chỉ nhận hàng*</label>
+      <label class="label">Địa chỉ nhận hàng*</label>
       <br>
       <div class="deliform">
         <table class="formdeli">
@@ -54,13 +55,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="3">
+                    <td colspan="2">
                       <input class="inputdeli" type="text" id="diachideli" name="diachideli" placeholder="Nhập địa chỉ cụ thể của bạn" required>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="3">
-                      <button class="buttonguideli" id="GuiDeliTC" type="submit">Đặt giao hàng</button>
                     </td>
                   </tr>
                 </table>
@@ -70,16 +66,18 @@
         </table>
       </div>
       <br>
-      <label>Phương thức thanh toán*</label>
+   
+      <label class="label" >Phương thức thanh toán*</label>
       <br>
-      <input type="radio" name="pay" value="MOMO" required> Thanh toán qua Momo
+      <input class="input1" type="radio" name="pay" value="MOMO" required> <label class="label1">Thanh toán qua Momo</label>
       <br>
-      <input type="radio" name="pay" value="VNPAY"> Thanh toán qua VNpay
+      <input type="radio" name="pay" value="VNPAY"><label  class="label1"> Thanh toán qua VNpay</label>
       <br>
-      <input type="radio" name="pay" value="VIETQR"> Thanh toán qua VietQR
+      <input type="radio" name="pay" value="VIETQR"> <label  class="label1">Thanh toán qua VietQR</label>
       <br>
-      <input type="radio" name="pay" value="Tiền mặt"> Thanh toán khi nhận hàng
+      <input type="radio" name="pay" value="Tiền mặt"> <label  class="label1">Thanh toán khi nhận hàng</label>
       <br>
+   
       </div>
   <div class="giohang_content">
     <div class="noidung">
@@ -110,14 +108,14 @@
             $cartItems .= '</td>';
             $cartItems .= '</tr>';
             $cartItems .= '<tr>';
-            $cartItems .= '<td colspan="2"><hr style="width:350px"></td>';
+            $cartItems .= '<td colspan="3"><hr style="width:350px"></td>';
             $cartItems .= '</tr>';
           }
           echo '<p style="color:black; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" style="color:#E26A2C"></i> CHI TIẾT ĐƠN HÀNG</p>';
           echo '<table class="tb_noidung" style="font-size: 16px">';
           echo $cartItems;
           echo '<tr>';
-          echo '<td colspan="2" style="text-align: center; font-weight:bold">Tổng cộng: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
+          echo '<td colspan="3" style="text-align: center; font-weight:bold">Tổng cộng: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
           echo '</tr>';
           echo '</table>';
         } else  
@@ -142,7 +140,7 @@
               $cartItems .= '</td>';
               $cartItems .= '</tr>';
               $cartItems .= '<tr>';
-              $cartItems .= '<td colspan="2"><hr style="width:350px"></td>';
+              $cartItems .= '<td colspan="4"><hr style="width:350px"></td>';
               $cartItems .= '</tr>';
             }
             
@@ -162,10 +160,14 @@
       <input type="hidden" name="totalPrice" value="<?php echo $totalPrice; ?>">
     </div>
     </div>
-  <button type="submit" name="guithanhtoan" style="background-color: #2480ED; color: white; font-size:20px; border-radius:10px; width: 50px;font-family: Lalezar;border:none">Thanh toán </button>
-
+    <div class="buttonxem">
+  <button type="submit" name="guithanhtoan" class="buttonxem" style="background-color: #E26A2C; color: white; font-size:20px; border-radius:40px; height : 50px; width: 200px;font-family: Lalezar;border:none">Thanh toán </button>
+  </div>
   </form>
+  <div class="buttonxem">
+  <button type="submit" name="quaylai" class="buttonxem" style="background-color: #575f68; color: white; font-size:20px; border-radius:40px;height : 50px; width: 200px;font-family: Lalezar;border:none"><a href="tranghienthi.php?quanly=giohang" style="text-decoration: none; color: #ffff;">Quay lại</a> </button>
+    </div>
     </div>
   <script type="text/javascript" src="../view/cus/thanhtoan/thanhtoan.js"></script>
-</body>
 
+  </body>

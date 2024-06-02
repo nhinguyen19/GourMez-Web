@@ -121,8 +121,16 @@ function deldiscountnews()
                 $sql_reset_auto_increment = "ALTER TABLE discount_news AUTO_INCREMENT = 1";
                 mysqli_query($conn, $sql_reset_auto_increment);
 
-                header('Location: tranghienthi.php?quanly=tatcakm');
-                exit();
+                echo "<script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Xóa sản phẩm thành công!',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(function() {
+                    window.location.href = 'tranghienthi.php?quanly=tatcakm'
+                });
+                </script>";
             } 
 }
 
@@ -153,8 +161,17 @@ function delcodedis()
                 $sql_reset_auto_increment = "ALTER TABLE discount AUTO_INCREMENT = 1";
                 mysqli_query($conn, $sql_reset_auto_increment);
 
-                header('Location: tranghienthi.php?quanly=tatcakm');
-                exit();
+                echo "<script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Xóa sản phẩm thành công!',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(function() {
+                    window.location.href = 'tranghienthi.php?quanly=tatcakm'
+                });
+                </script>";
+         
             } 
 }
 
