@@ -128,7 +128,7 @@
         </div>
     </div>
 </div>
-  //<img class="postertrangchu" src="../view/cus/img/postertrangchu.png">
+  <!-- //<img class="postertrangchu" src="../view/cus/img/postertrangchu.png"> -->
             </script>
            
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
