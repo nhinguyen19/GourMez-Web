@@ -169,12 +169,16 @@
       break;
         
         default :
-          include ('tranghienthi.php');
+          include ('trangchu.php');
           break;
         
         
           
       }
+     }
+     else
+     {
+      include ('trangchu.php');
      }
   
   // else{
