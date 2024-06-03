@@ -7,7 +7,7 @@
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
 ?>
-<h2 class="title">Sửa sản phẩm</h2>
+<h2 class="title">Sửa thông tin món ăn</h2>
 <div class="insert">
     <table>
         <form method="POST" action="tranghienthi.php?quanly=suasp&idsanpham=<?php echo $_GET['idsanpham'] ?>" enctype="multipart/form-data">

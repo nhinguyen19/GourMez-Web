@@ -13,19 +13,17 @@
             $hinhanh_tmp = $_FILES['hinhanh']['tmp_name']; 
             $hinhanh = time().'_'.$hinhanh;
     
-            // Kiểm tra xem tên danh mục đã tồn tại hay chưa
             $sql_check = "SELECT COUNT(*) as count FROM food WHERE food_name = '$tensanpham'";
             $result_check = mysqli_query($conn, $sql_check);
             $row_check = mysqli_fetch_assoc($result_check);
             $count = $row_check['count'];
     
             if($count > 0) {
-                // Tên danh mục đã tồn tại, hiển thị thông báo bằng JavaScript
                 echo "<script>
                         Swal.fire({
                             icon: 'error',
-                            title: 'Không thể thêm danh mục',
-                            text: 'Tên danh mục đã tồn tại.',
+                            title: 'Không thể thêm món ăn',
+                            text: 'Tên món ăn đã tồn tại.',
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK'
                         }).then((result) => {
@@ -35,7 +33,6 @@
                         });
                       </script>";
             } else {
-                // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO food(food_name, cate_id ,original_price, selling_price, small_descr, img) VALUES ('$tensanpham','$danhmuc', '$giagoc', '$giasanpham', '$mota', '$hinhanh')";
                 move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_sanpham/uploads/'.$hinhanh); 
     
@@ -43,7 +40,7 @@
                     echo "<script>
                     Swal.fire({
                         icon: 'success',
-                        title: 'Thêm danh mục thành công!',
+                        title: 'Thêm món ăn thành công!',
                         showConfirmButton: false,
                         timer: 1500
                     });

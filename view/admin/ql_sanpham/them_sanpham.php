@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="tranghienthi.css">
-<h2 class="title">Thêm sản phẩm</h2>
+<h2 class="title">Thêm món ăn</h2>
 <div class="insert">
     <table>
         <form method="POST" action="tranghienthi.php?quanly=themsanpham" enctype="multipart/form-data">
@@ -43,7 +43,7 @@
                 <td style="width:400px"><textarea name="mota" id="mota" rows="7"></textarea></td>
             </tr>
             <tr>
-                <td style="text-align: center;" colspan="2"><input type="submit" name="themsanpham" value="Thêm sản phẩm"></td>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="themsanpham" value="Thêm"></td>
             </tr>
         </form>
     </table>
