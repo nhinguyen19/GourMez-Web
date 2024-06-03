@@ -4,7 +4,7 @@
     $sql_lietke_sanpham = "SELECT * FROM food, category WHERE food.cate_id = category.cate_id ORDER BY food_id ASC";
     $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
 ?>
-<h2 class="title">Tất cả sản phẩm</h2>
+<h2 class="title">Tất cả món ăn</h2>
 <div class="insert">
     <table>
         <tr style="font-family: 'Lalezar'">

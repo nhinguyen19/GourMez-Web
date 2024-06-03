@@ -67,6 +67,7 @@ if (isset($_POST['delete'])) {
     }
 }
 
+
 // Hiển thị giỏ hàng từ session hoặc cơ sở dữ liệu
 $cartItems = "";
 $totalPrice = 0;
