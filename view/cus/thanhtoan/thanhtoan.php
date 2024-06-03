@@ -69,11 +69,8 @@
    
       <label class="label" >Phương thức thanh toán*</label>
       <br>
-      <input class="input1" type="radio" name="pay" value="MOMO" required> <label class="label1">Thanh toán qua Momo</label>
-      <br>
-      <input type="radio" name="pay" value="VNPAY"><label  class="label1"> Thanh toán qua VNpay</label>
-      <br>
-      <input type="radio" name="pay" value="VIETQR"> <label  class="label1">Thanh toán qua VietQR</label>
+    
+      <input type="radio" name="pay" value="VIETQR" required> <label  class="label1">Thanh toán qua VietQR</label>
       <br>
       <input type="radio" name="pay" value="Tiền mặt"> <label  class="label1">Thanh toán khi nhận hàng</label>
       <br>
