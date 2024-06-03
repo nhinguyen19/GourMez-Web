@@ -184,3 +184,16 @@ background-color :rgb(255, 255, 255);
   text-decoration: none;
   margin: 10px 5px;
 }
+
+.close {
+  color: #cd0000;
+  margin-left : 20px; 
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
