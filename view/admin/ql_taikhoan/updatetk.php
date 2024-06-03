@@ -1,6 +1,5 @@
 <?php
-// session_start();
-ob_start();
+
 $host = "localhost";
 $username = "root";
 $password = "";
@@ -22,16 +21,22 @@ if (isset($_POST['luu']) && $_POST['luu']=="Lưu") {
     $fullname=htmlspecialchars($_POST['fullname']);
     $address=htmlspecialchars($_POST['address']);
 
-    if ($stmt = $conn->prepare("UPDATE user SET user_name = ?, email = ?, phone = ?, fullname = ?, address = ? WHERE user_id = ?")) {
-        $stmt->bind_param("sssssi", $user_name, $email, $phone, $fullname, $address,$id);
+    date_default_timezone_set('Asia/Ho_Chi_Minh'); 
+    $now = date('Y-m-d H:i:s');
+
+    if ($stmt = $conn->prepare("UPDATE user SET user_name = ?, email = ?, phone = ?, fullname = ?, address = ?, last_updated = ? WHERE user_id = ?")) {
+        $stmt->bind_param("ssssssi", $user_name, $email, $phone, $fullname, $address, $now, $id);
         if ($stmt->execute()) {
             echo "<script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Cập nhật thành công',
+                    title: 'Cập nhật thành công.',
                     showConfirmButton: true,
+                }).then(() => {
+                    window.location.href = 'tranghienthi.php?quanly=thongtintaikhoan';
                 });
                 </script>";
+            exit();
         } else {
             echo "Error updating profile: " . $stmt->error;
         }
@@ -43,7 +48,7 @@ if (isset($_POST['luu']) && $_POST['luu']=="Lưu") {
     $conn->close();
 
     // Redirect back to profile page or some confirmation page
-    header("Location: tranghienthi.php?quanly=thongtintaikhoan");
+    // header("Location: tranghienthi.php?quanly=thongtintaikhoan");
     ob_end_flush();
     exit();
 }

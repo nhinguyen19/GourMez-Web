@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="tranghienthi.css">
+<link rel="stylesheet" href="ql_tintuc/sua_tt.css">
+
 <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
 <?php
 // Kết nối đến cơ sở dữ liệu

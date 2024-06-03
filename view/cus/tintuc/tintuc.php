@@ -56,12 +56,18 @@ $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
               $i++;
               ?>
               <div id="box">
-                <img class="main-image" src="../view/admin/ql_tintuc/<?php echo $row['img_title'] ?>">
+                <a style="width:90%" href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>"><img class="main-image"
+                    src="../view/admin/ql_tintuc/<?php echo $row['img_title'] ?>"></a>
+
                 <br>
                 <div class="text-container">
-                  <a class="font-family "
+                  
+                  <a  class="font-family "
                     href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>"><?php echo $row['title'] ?></a>
-                  <p style="padding-right : 15%; color:white;"><?php echo $row['summary'] ?></p>
+                  <a style="font-size:22px;" href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>">
+                    <p style="padding-right : 15%; color:white;"><?php echo $row['summary'] ?></p>
+                  </a>
+
                 </div>
                 <a href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>"><button id="xemchitiet"
                     type="button"><b>Xem chi tiết</b>
@@ -79,11 +85,16 @@ $query_tinTucBenTrai = mysqli_query($conn, $tinTucBenTrai_sql);
               $i++;
               ?>
               <div class="item-container">
-                <img class="bigger-image" src="../view/admin/ql_tintuc/<?php echo $row['img_title'] ?>">
+                <a href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>"><img class="bigger-image"
+                    src="../view/admin/ql_tintuc/<?php echo $row['img_title'] ?>"></a>
+
                 <div id="right-textContainer" class="text-container">
                   <a class="font-family "
                     href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>"><?php echo $row['title'] ?></a>
-                  <p style="color:white;"><?php echo $row['description'] ?></p>
+                  <a style="font-size:22px;" href="tranghienthi.php?quanly=tintuc&id=<?php echo $row['tintuc_id'] ?>">
+                    <p style="color:white;"><?php echo $row['summary'] ?></p>
+                  </a>
+
                 </div>
               </div>
               <?php

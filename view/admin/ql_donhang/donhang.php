@@ -15,6 +15,11 @@
 
 </div>
 <script>
+      $(document).ready(function() {
+        // Automatically trigger click on "displayall" link when page loads
+        $("#displayall").trigger("click");
+    });
+
     $("#displayall").click(function(e) {
         e.preventDefault();
         $("#content").load("ql_donhang/allorder.php");

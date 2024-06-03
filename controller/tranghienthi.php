@@ -45,7 +45,11 @@
                 include('../view/cus/dichvu/giohang_sinhnhat.php');   
                 break;
         case 'tintuc':
-            include ('../view/cus/tintuc/tintuc.php');
+            if (isset($_GET['id'])) {
+                include ('../view/cus/tintuc/baiviet.php');
+            } else {
+                include ('../view/cus/tintuc/tintuc.php');
+            }
             break;
         case 'lienhe':
             include ('../view/cus/lienhe/lienhe.php');
@@ -59,14 +63,14 @@
         case 'giohang':
             include ('../view/cus/giohang/giohang.php');
             break;
-        case 'checkbforder' :
-            include ('../view/cus/thanhtoan/checkbforder.php');
-            checkdiscount();
         case 'thanhtoan': 
             include ('../view/cus/thanhtoan/thanhtoan.php');
             //checkdiscount();
             thanhtoandonhang();
             break;
+            case 'donethanhtoan' :
+                include ('../view/cus/thanhtoan/donethanhtoan.php');
+             break;
         case 'dangnhap':
             include ('../view/cus/dangnhap/login.php');
             break;
