@@ -39,6 +39,8 @@
 
 #backgroundHeader {
     position: relative; /* Thêm thuộc tính này để tạo vị trí tương đối */
+    z-index: 0; /* Đảm bảo logo hiển thị dưới nền */
+
 }
 
 #logoTong {
@@ -46,13 +48,15 @@
     top: 50%; /* Di chuyển logo đến giữa theo chiều dọc */
     left: 50%; /* Di chuyển logo đến giữa theo chiều ngang */
     transform: translate(-50%, 0%); /* Dịch chuyển logo để nằm ở chính giữa */
-    z-index: 2; /* Đảm bảo logo hiển thị trên nền */
+    z-index: 0; /* Đảm bảo logo hiển thị dưới nền */
+    width: 30%;
+    height: auto;
 }
 
 
 #giatri img {
-    width: 100%;
     max-height: 78.6vh;
+    width: 100%;
      /* Ensure it doesn't exceed the viewport height */
     padding: 0px;
 }
@@ -67,11 +71,7 @@
 
 }
 
-#logoTong
-{
-    width: 30%;
-    height: auto;
-}
+
 
 
 #logoNho
