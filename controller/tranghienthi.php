@@ -44,6 +44,12 @@
         case 'giohangsn':
                 include('../view/cus/dichvu/giohang_sinhnhat.php');   
                 break;
+        case 'dathang_bigdeal':
+            include('../view/cus/dichvu/dathang_bigdeal.php');
+            break;
+        case 'dathang_sn':
+                include('../view/cus/dichvu/dathang_sn.php');
+                break;
         case 'tintuc':
             if (isset($_GET['id'])) {
                 include ('../view/cus/tintuc/baiviet.php');
