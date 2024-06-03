@@ -1,11 +1,6 @@
 <link href='https://fonts.googleapis.com/css?family=Lalezar' rel='stylesheet'>
 <link rel="stylesheet" href="../view/cus/vechungtoi/vechungtoi.css">
-<style>
 
-</style>
-<?php
-// include "../../cus/header/header_trcDN.php";
-?>
 <div id="container">
 <div id="intro">
     <div id="backgroundHeader">
@@ -32,7 +27,7 @@
         </table>
     </div>
     <div id="giatri">
-        <img style="width:auto;" src="../view/cus/vechungtoi/img_vechungtoi/GiaTri.png">
+        <img  src="../view/cus/vechungtoi/img_vechungtoi/GiaTri.png">
     </div>
     <div id="tamNhinSuMenhContainer">
         <table>
