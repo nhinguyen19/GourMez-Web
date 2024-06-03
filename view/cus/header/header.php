@@ -49,6 +49,7 @@
                     </button>
                     <div class="dropdown_content" >
                         <a href="tranghienthi.php?quanly=quanlytaikhoan">Quản lý tài khoản</a>
+                        <a href="#">Quản lý đơn hàng</a>
                         <a href="tranghienthi.php?quanly=dangxuat">Đăng xuất</a>
                     </div>
                 

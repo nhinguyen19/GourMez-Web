@@ -159,7 +159,18 @@
       case 'doimatkhau';
       include('ql_taikhoan/doimatkhau.php');
       break;
+      
+      case 'quanlytaikhoanuser';
+      include('ql_tk_user/danhsach_user.php');
+      break;
 
+      case 'edit_user';
+      include('ql_tk_user/edit_user.php');
+      break;
+
+      case 'delete_user';
+      include('ql_tk_user/delete_user.php');
+      break;
       case 'thoat';
       include('ADdangxuat.php');
       break;

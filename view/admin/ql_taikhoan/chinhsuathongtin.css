@@ -10,10 +10,12 @@
     text-align: left;
     justify-content: left;
     border: 1px solid;
-    background-color: #a16646;
-    color: white;
+    
+    color: black;
     margin-bottom: 5%;
     width: 100%;
+    padding: 5%;
+    box-shadow:1px 1px 5px 5px rgba(0, 0, 0, 0.163);
     padding: 5%;
     display: block;
 }

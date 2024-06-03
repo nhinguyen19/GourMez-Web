@@ -58,19 +58,19 @@ else {
     <h3>Chỉnh sửa thông tin</h3>
     <div class="form">
         <form method="Post">
-            <label for="user_name">Tên đăng nhập:</label>
+            <label for="user_name">Tên đăng nhập</label>
             <input type="text" id="user_name" name="username" value="<?php echo htmlspecialchars($row['user_name']); ?>"><br>
 
-            <label for="user_name">Họ và tên:</label>
+            <label for="user_name">Họ và tên</label>
             <input type="text" id="full_name" name="fullname" value="<?php echo htmlspecialchars($row['fullname']); ?>"><br>
 
-            <label for="email">Email:</label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($row['email']); ?>"><br>
 
-            <label for="phone">Số điện thoại:</label>
+            <label for="phone">Số điện thoại</label>
             <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($row['phone']); ?>"><br>
 
-            <label for="phone">Địa chỉ:</label>
+            <label for="phone">Địa chỉ</label>
             <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($row['address']); ?>"><br>
 
             <input type="submit" value="Lưu" name="luu">

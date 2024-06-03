@@ -11,12 +11,14 @@
 
     text-align: left;
     justify-content: left;
-    border: 1px solid;
-    background-color: #a16646;
-    color: white;
+    border: 1px solid black;
+   
+    color: black;
     margin-bottom: 5%;
     width: 100%;
     padding: 5%;
+    
+    box-shadow:1px 1px 5px 5px rgba(0, 0, 0, 0.163);
     display: block;
 }
 .form input{

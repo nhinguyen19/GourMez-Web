@@ -96,7 +96,13 @@
             include ('../view/cus/accountManagement/changePass/changePass.php');
             break;
         case 'lammoimatkhau':
+            $token=$_GET['token'];
             include ('../view/cus/quenmatkhau/resetPassword.php');
+            break;
+
+        case 'xacthucotp':
+            
+            include ('../view/cus/quenmatkhau/verifyOtp.php');
             break;
         
         case 'trangchu':
