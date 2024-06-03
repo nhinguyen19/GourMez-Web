@@ -42,11 +42,33 @@ function taodonhang($id,$name, $phone, $email, $booking_date, $address, $total_p
     $conn = connectdb();
     $sql = "INSERT INTO bigdeal_service(id_bill,name, phone, email, booking_date, address, total_price, note)
                 VALUES ('$id','$name','$phone','$email','$booking_date','$address', '$total_price', '$note')";
-    mysqli_query($conn,$sql);
 
-    $last_id = $id;
-    mysqli_close($conn);
-    return $last_id;
+    if ($total_price != 0)
+    {
+        mysqli_query($conn,$sql);
+        $last_id = $id;
+        mysqli_close($conn);
+        return $last_id;
+
+    }
+    else if ($total_price == 0)
+    {
+        echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Không thể đặt dịch vụ',
+            text: 'Vui lòng đặt lại',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'tranghienthi.php?quanly=2';
+            }
+        });
+      </script>";
+        exit();
+    }
+    
 }
 
 function taogiohang_bigdeal($tenmon,$dongia,$soluong,$thanhtien,$idbill)

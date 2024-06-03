@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header style = "background-color: black">
         <nav>
             <div class="menu">
                 <div>

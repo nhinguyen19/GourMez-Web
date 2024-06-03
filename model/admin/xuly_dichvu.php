@@ -25,7 +25,7 @@
     
             if($count > 0) {
                 // Tên danh mục đã tồn tại, hiển thị thông báo bằng JavaScript
-                echo "<script>alert('Không thể thêm dịch vụ. Dịch vụ đã tồn tại.'); window.location='tranghienthi.php?quanly=themdichvu';</script>";
+                echo "<script>alert('Không thể thêm dịch vụ. Tên dịch vụ đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO service(service_name, small_descript, image, banner) VALUES ('$tendichvu', '$mota', '$hinhanh','$hinhanh_banner')";
@@ -36,7 +36,7 @@
                     echo "<script>alert('Thêm dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
                     exit();
                 } else {
-                    echo "Lỗi: " . mysqli_error($conn);
+                    echo "<script>alert('Lỗi thêm dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
                 }
             }
         }
@@ -81,8 +81,8 @@
                         exit();
                     } else 
                     {
-                        echo "<script>alert('Sửa dịch vụ thất bại'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
-                        echo mysqli_error($conn);
+                        echo "<script>alert('Lỗi sửa dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
+                        // echo mysqli_error($conn);
                     }
                                 
                 }
@@ -97,7 +97,7 @@
                         exit();
                     } else 
                     {
-                        echo "Lỗi: " . mysqli_error($conn);
+                        echo "<script>alert('Lỗi sửa dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
                     }
                 }
                 else if($hinhanh != "")
@@ -149,7 +149,7 @@
                         exit();
                     } else 
                     {
-                        echo "Lỗi: " . mysqli_error($conn);
+                        echo "<script>alert('Lỗi sửa dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
                     }
                 }
             }
@@ -200,10 +200,10 @@
                     echo "<script>alert('Xóa dịch vụ thành công.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
                     exit();
                 }
-                // else
-                // {
-                //     echo "<script>alert('Dịch vụ không tồn tại.');</script>";
-                // }
+                else
+                {
+                    echo "<script>alert('Lỗi xóa dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
+                }
         }
     }
 
@@ -235,7 +235,7 @@
     
                 if(mysqli_query($conn, $sql_them)) {
                     echo $hinhanh;
-                    echo "<script>alert('Thêm món thành công'); window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$id';</script>";
+                    echo "<script>alert('Thêm món ăn thành công'); window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$id';</script>";
                     exit();
                 } else {
                     echo "Lỗi: " . mysqli_error($conn);
@@ -266,7 +266,7 @@
             if ($count > 0)
             {
                 // Tên món ăn đã tồn tại, hiển thị thông báo bằng JavaScript
-                echo "<script>alert('Không thể sửa món ăn. Món ăn đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                echo "<script>alert('Không thể sửa món ăn. Tên món ăn đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
             }
             else
             {
@@ -280,7 +280,7 @@
                         echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=tatcadichvu' ;</script>";
                     } else 
                     {
-                        echo "Lỗi: " . mysqli_error($conn);
+                        echo "<script>alert('Lỗi sửa món ăn.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
                     }
             }
 
@@ -294,7 +294,7 @@
                         echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=tatcadichvu' ;</script>";
                     } else 
                     {
-                        echo "Lỗi: " . mysqli_error($conn);
+                        echo "<script>alert('Lỗi sửa món ăn.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
                     }
             }
 
@@ -320,7 +320,7 @@
                     exit();
                 } else 
                 {
-                    echo "Lỗi: " . mysqli_error($conn);
+                    echo "<script>alert('Lỗi sửa món ăn.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
                 }
 
             }
@@ -366,12 +366,12 @@
                 $sql_reset_auto_increment = "ALTER TABLE food_for_service AUTO_INCREMENT = 1";
                 mysqli_query($conn, $sql_reset_auto_increment);
 
-                echo "<script>alert('Xóa thành công.');window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$iddichvu'</script>";
+                echo "<script>alert('Xóa món ănthành công.');window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$iddichvu'</script>";
                 exit();
             }
             else
             {
-                echo "<script>alert('Sản phẩm không tồn tại.');</script>";
+                echo "<script>alert('Lỗi xóa món ăn.');window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$iddichvu</script>";
             }
             
         }

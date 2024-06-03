@@ -1,4 +1,5 @@
 <script src="../cus/dangnhap/hienthi_mk.js"></script>
+
 <?php
     ob_start();
    session_start();
@@ -106,6 +107,9 @@
         include ('ql_dichvu/sua_dv.php');
         suaDichVu();
         break;
+        case 'thucdondv':
+          include('ql_dichvu/thucdondichvu.php');
+          break;
 
         case 'suadichvu':
           include('ql_dichvu/sua_dv.php');
@@ -178,3 +182,4 @@
   // include ('tranghienthi.php');
   // }
   ?>
+

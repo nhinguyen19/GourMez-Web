@@ -7,25 +7,26 @@
         padding-left: 200px;
     }
 
-    table
+    table,th, td
     {
-        width: 800px;
+        width: fit-content;
     } 
     
     .insert_dv td,th
     {
         border: 1px solid black;
     }
+
     
 </style>
 
-<h2 class = "title" style="padding-left: 0px"> Sửa dịch vụ </h2>
+<h2 class = "title1" style="margin-top: 100px;"> Sửa dịch vụ </h2>
 <div class="insert_dv" >
     <table>
         <form method="POST" action="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $_GET['iddichvu']?>" enctype="multipart/form-data">
             <tr>
                 <th style="text-align: center;border: 1px solid black">ID</th>
-                <td name="iddichvu"><?php echo $_GET['iddichvu'] ?></td>
+                <td id = "iddichvu" name="iddichvu"><?php echo $_GET['iddichvu'] ?></td>
             </tr> 
 
             <tr>
@@ -55,7 +56,10 @@
             </tr>
             
             <tr>
-                <td style="text-align: center;border: 1px solid black" colspan="2"><input type="submit" name="sua" value="Cập nhật" style = "font-size: 18px"></td>
+                <td style="text-align: center;border: 1px solid black" colspan="2">
+                    <input type="submit" name="sua" value="Cập nhật" style = "font-size: 18px">
+                    <input type="reset" name = "reset_suamon" value = "Xóa thay đổi"style = "font-size: 18px; margin-left:30px">
+                </td>
             </tr>
         </form>
     </table>
@@ -66,58 +70,3 @@
 
 <!-- ------------------------------------------------------Món ăn ---------------------------------------------------------------------------------- -->
 
-<h2 class = "title">Món ăn</h2>
-<div class = "food_service" style="display: flex; justify-content:center; padding-left: 200px;">
-
-
-
-
-
-    <table>
-     <form method="POST" action="tranghienthi.php?quanly=themmonan&iddichvu=<?php echo $_GET['iddichvu']?>">
-            <tr>
-                <th style="text-align:center;border: 1px solid black">Tên Combo</th>
-                <th style="text-align:center;border: 1px solid black">Giá</th>
-                <th style="text-align:center;border: 1px solid black">Hình ảnh</th>
-                <th style="text-align:center;border: 1px solid black " >Quản lý món ăn</th>
-            </tr>
-            <?php
-            $conn = connectdb();
-            $id_service = $_GET['iddichvu'];
-            $sql_lietke_mon = "SELECT * FROM food_for_service WHERE ID_service = $id_service";
-            $result_lietke_mon = mysqli_query($conn, $sql_lietke_mon);
-            $i = 0;
-            while ($row = mysqli_fetch_array($result_lietke_mon)) {
-                $i++;
-             ?>     
-
-            <tr>
-                <td style = "text-align: center; border: 1px solid black" ><?php echo $row['food_combo']?></td>
-                <td style = "text-align: center; border: 1px solid black"><?php echo $row['price']?></td>
-                <td style="text-align: center; border: 1px solid black"><img src="../../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" width="100" height="100"></td>
-                <td style="text-align: center;border: 1px solid black"><a href="tranghienthi.php?quanly=xoamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></td>     
-            
-            </tr>
-             
-            
-                
-
-            <?php 
-            }
-            ?>
-
-            <tr>
-            <td style="text-align: center" colspan="4">
-                <form action="../admin/tranghienthi.php?quanly=themmonan&iddichvu= <?php echo $_GET['iddichvu']?>" method="post">
-                    <input type="submit" value="Thêm món ăn">
-                </form>
-            </td>
-            </tr>
-
-            
-
-
-
-        </form>
-    </table>
-</div>
