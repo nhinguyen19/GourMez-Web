@@ -55,7 +55,8 @@
 
 
 #giatri img {
-    max-height: 78.6vh;
+    /* max-height: 78.6vh; */
+    height: 500px;
     width: 100%;
      /* Ensure it doesn't exceed the viewport height */
     padding: 0px;
