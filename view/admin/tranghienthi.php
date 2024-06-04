@@ -92,6 +92,10 @@
           include ('ql_thongtin/suathongtin.php');
           suaThongTin();
           break;
+        case 'tinnhan':
+          include ('ql_thongtin/lietke_tinnhanKH.php');
+          break;
+
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           themDichVu();

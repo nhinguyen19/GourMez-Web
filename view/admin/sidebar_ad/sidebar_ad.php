@@ -44,6 +44,7 @@
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatcathongtin">Tất cả</a>
             <a href="tranghienthi.php?quanly=suathongtin">Sửa thông tin</a>
+            <a href="tranghienthi.php?quanly=tinnhan">Tin nhắn khách hàng</a>
         </div>
         <hr>
         <a href="#">Quản lý tin tức</a>
