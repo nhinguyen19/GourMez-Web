@@ -1,4 +1,5 @@
 <script src="../cus/dangnhap/hienthi_mk.js"></script>
+
 <?php
     ob_start();
    session_start();
@@ -110,6 +111,9 @@
         include ('ql_dichvu/sua_dv.php');
         suaDichVu();
         break;
+        case 'thucdondv':
+          include('ql_dichvu/thucdondichvu.php');
+          break;
 
         case 'suadichvu':
           include('ql_dichvu/sua_dv.php');
@@ -163,18 +167,33 @@
       case 'doimatkhau';
       include('ql_taikhoan/doimatkhau.php');
       break;
+      
+      case 'quanlytaikhoanuser';
+      include('ql_tk_user/danhsach_user.php');
+      break;
 
+      case 'edit_user';
+      include('ql_tk_user/edit_user.php');
+      break;
+
+      case 'delete_user';
+      include('ql_tk_user/delete_user.php');
+      break;
       case 'thoat';
       include('ADdangxuat.php');
       break;
         
         default :
-          include ('tranghienthi.php');
+          include ('trangchu.php');
           break;
         
         
           
       }
+     }
+     else
+     {
+      include ('trangchu.php');
      }
   
   // else{
@@ -182,3 +201,4 @@
   // include ('tranghienthi.php');
   // }
   ?>
+

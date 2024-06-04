@@ -5,7 +5,7 @@
         <div class="submenu">
             <a href="tranghienthi.php?quanly=themadmin">Thêm admin</a>
             <a href = "tranghienthi.php?quanly=thongtintaikhoan">Thông tin tài khoản</a>
-            <!-- <a href="#">Quản lý tài khoản</a> -->
+            <a href="tranghienthi.php?quanly=quanlytaikhoanuser">Quản lý người dùng</a>
         </div>
         <hr> 
         <a href="#">Đơn hàng</a>

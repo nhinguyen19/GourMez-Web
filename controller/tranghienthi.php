@@ -44,6 +44,12 @@
         case 'giohangsn':
                 include('../view/cus/dichvu/giohang_sinhnhat.php');   
                 break;
+        case 'dathang_bigdeal':
+            include('../view/cus/dichvu/dathang_bigdeal.php');
+            break;
+        case 'dathang_sn':
+                include('../view/cus/dichvu/dathang_sn.php');
+                break;
         case 'tintuc':
             if (isset($_GET['id'])) {
                 include ('../view/cus/tintuc/baiviet.php');
@@ -96,7 +102,17 @@
             include ('../view/cus/accountManagement/changePass/changePass.php');
             break;
         case 'lammoimatkhau':
+            $token=$_GET['token'];
             include ('../view/cus/quenmatkhau/resetPassword.php');
+            break;
+
+        case 'xacthucotp':
+            
+            include ('../view/cus/quenmatkhau/verifyOtp.php');
+            break;
+
+        case 'quanlydonhang':
+            include('../view/cus/accountManagement/qlidonhang.php');
             break;
         
         case 'trangchu':

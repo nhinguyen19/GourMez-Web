@@ -103,25 +103,25 @@
             <div class="member-info" id="info-1"></div>
         </div>
         <div class="memgroup">
-            <img src="../view/cus/img/mem1.jpg" alt="Member 2">
+            <img src="../view/cus/img/tubi.jpg" alt="Member 2">
             <h3>Thành viên 2</h3>
             <button class="detail-btn" data-id="2">Xem chi tiết</button>
             <div class="member-info" id="info-2"></div>
         </div>
         <div class="memgroup">
-            <img src="path_to_image3.jpg" alt="Member 3">
+            <img src="../view/cus/img/chau.jpg" alt="Member 3">
             <h3>Thành viên 3</h3>
             <button class="detail-btn" data-id="3">Xem chi tiết</button>
             <div class="member-info" id="info-3"></div>
         </div>
         <div class="memgroup">
-            <img src="path_to_image4.jpg" alt="Member 4">
+            <img src="../view/cus/img/nhicho.jpg" alt="Member 4">
             <h3>Thành viên 4</h3>
             <button class="detail-btn" data-id="4">Xem chi tiết</button>
             <div class="member-info" id="info-4"></div>
         </div>
         <div class="memgroup">
-            <img src="path_to_image5.jpg" alt="Member 5">
+            <img src="../view/cus/img/nhi4p.jpg" alt="Member 5">
             <h3>Thành viên 5</h3>
             <button class="detail-btn" data-id="5">Xem chi tiết</button>
             <div class="member-info" id="info-5"></div>

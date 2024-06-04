@@ -69,16 +69,17 @@
    
       <label class="label" >Phương thức thanh toán*</label>
       <br>
-      <input class="input1" type="radio" name="pay" value="MOMO" required> <label class="label1">Thanh toán qua Momo</label>
-      <br>
-      <input type="radio" name="pay" value="VNPAY"><label  class="label1"> Thanh toán qua VNpay</label>
-      <br>
-      <input type="radio" name="pay" value="VIETQR"> <label  class="label1">Thanh toán qua VietQR</label>
+    
+      <input type="radio" name="pay" value="VIETQR" required> <label  class="label1">Thanh toán qua VietQR</label>
       <br>
       <input type="radio" name="pay" value="Tiền mặt"> <label  class="label1">Thanh toán khi nhận hàng</label>
       <br>
-   
+  
+      <div id="qrcode"></div>
+
+
       </div>
+   
   <div class="giohang_content">
     <div class="noidung">
       <?php 
@@ -161,13 +162,111 @@
     </div>
     </div>
     <div class="buttonxem">
-  <button type="submit" name="guithanhtoan" class="buttonxem" style="background-color: #E26A2C; color: white; font-size:20px; border-radius:40px; height : 50px; width: 200px;font-family: Lalezar;border:none">Thanh toán </button>
+  <button type="submit" name="guithanhtoan" class="buttonxem" style="background-color: #E26A2C; color: white; font-size:20px; border-radius:40px; height : 50px; width: 200px;font-family: Lalezar;border:none">Xác nhận </button>
   </div>
   </form>
   <div class="buttonxem">
   <button type="submit" name="quaylai" class="buttonxem" style="background-color: #575f68; color: white; font-size:20px; border-radius:40px;height : 50px; width: 200px;font-family: Lalezar;border:none"><a href="tranghienthi.php?quanly=giohang" style="text-decoration: none; color: #ffff;">Quay lại</a> </button>
     </div>
     </div>
+   
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>GOURMEZ đã nhận được thanh toán từ bạn !</h2>
+            <p>Thanh toán thành công</p>
+        </div>
+    </div>
+
+    <script>
+        let isSuccess = false;
+
+        // Replace this with your actual values
+        const totalPrice = <?php echo $totalPrice; ?>;
+        const BANK_ID = "MB";
+        const ACCOUNT_NO = "020410046823";
+
+        // Function to generate random string
+        function generateRandomString(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            const charactersLength = characters.length;
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+        // Function to handle payment selection
+        function handlePaymentSelection() {
+            const radioButtons = document.querySelectorAll('input[name="pay"]');
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    const qrCodeDiv = document.getElementById('qrcode');
+                    if (this.value === 'VIETQR') {
+                        // Generate random content for paid_content
+                        const paid_content = generateRandomString(10); // Adjust the length as needed
+                        const imgUrl = `https://img.vietqr.io/image/${BANK_ID}-${ACCOUNT_NO}-qr_only.png?amount=2000&addInfo=${paid_content}`;
+                        qrCodeDiv.innerHTML = `<img src="${imgUrl}" alt="QR Code">`;
+                        
+                        setTimeout(()=>{
+                            const intervalId = setInterval(()=>{
+                                checkPaid(2000, paid_content, intervalId);
+                            }, 1000);
+                        }, 20000);
+                    } else {
+                        // Clear QR code if other payment method is selected
+                        qrCodeDiv.innerHTML = '';
+                    }
+                });
+            });
+        }
+
+        // Function to check payment
+        async function checkPaid(price, content, intervalId) {
+            if (isSuccess) {
+                return;
+            } else {
+                try {
+                    const response = await fetch("https://script.google.com/macros/s/AKfycbz25gxpgsa2VDy_3My22rzsp9o8lZDK2A2rYJ4oYf4E96Kr6rAwmI00bQ_SsN4y1B1Y/exec");
+                    const data = await response.json();
+                    const lastPaid = data.data[data.data.length - 1];
+                    const lastPrice = lastPaid["Giá trị"];
+                    const lastContent = lastPaid["Mô tả"];
+                    if (lastPrice >= price && lastContent.includes(content)) {
+                        showModal();
+                        isSuccess = true;
+                        clearInterval(intervalId);
+                    } else {
+                        console.log("Không thành công");
+                    }
+                } catch (error) {
+                    console.error("Lỗi", error);
+                }
+            }
+        }
+
+        // Function to show the modal
+        function showModal() {
+            const modal = document.getElementById("myModal");
+            const span = document.getElementsByClassName("close")[0];
+            modal.style.display = "block";
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+        // Attach event listener to radio buttons on page load
+        document.addEventListener('DOMContentLoaded', handlePaymentSelection);
+    </script>
+
   <script type="text/javascript" src="../view/cus/thanhtoan/thanhtoan.js"></script>
 
   </body>

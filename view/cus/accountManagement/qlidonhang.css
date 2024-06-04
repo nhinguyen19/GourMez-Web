@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin-top : 100px;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #ee551d;
+    margin-top: 20px;
+}
+
+.thanhcong {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.thanhcong p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.thanhcong h2 {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.thanhcong .order-header {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.thanhcong .order-details {
+    border-top: 1px solid #ddd;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+.thanhcong .item {
+    margin-top: 10px;
+}
+
+.thanhcong .item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.thanhcong .total-price {
+    font-weight: bold;
+    font-size: 16px;
+    color: #e67e22;
+    margin-top: 10px;
+}
