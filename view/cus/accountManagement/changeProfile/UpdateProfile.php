@@ -25,6 +25,15 @@ if (isset($_POST['luu']) && $_POST['luu'] == "Lưu") {
     }
     $id = $_SESSION['id'];
     $user_name = htmlspecialchars($_POST['username']);
+    if (strlen($user_name)<3) {
+        echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Tên đăng nhập phải tối thiểu 3 ký tự.',
+                    showConfirmButton: true,
+                });
+                </script>";
+    }
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
     $fullname = htmlspecialchars($_POST['fullname']);
