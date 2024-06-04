@@ -1,118 +1,18 @@
-#container {
-  background-color: #feeaca;
-  text-align: center;
-  padding: 20px;
-  font-family: "Lalezar", sans-serif;
-}
-
-#img_header {
-  width: 100%;
-  height: 500px;
-}
-
-#thaydoi {
-  background-color: #159c33;
-  color: azure;
-  border-radius: 5px;
-  border: none;
-}
-
-.chinhsua {
-  background-color: #ae2108;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 10px;
-}
-
-#xemchitiet {
-  background-color: white;
-  border-color: orange;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 10px;
-  margin-right: 10px;
-  padding: 5px 10px;
-}
-
-.main-image {
-  width: 90%;
-  height: 100%;
-  border-radius: 5px;
-  box-shadow: 10px 10px 10px grey;
-}
-
-.bigger-image {
-  width: 28%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 7px 7px 7px grey;
-}
-
-.item-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.text-container {
-  margin-left: 10px;
-  flex: 1;
-}
-
-.text-container a {
-  font-size: 1.2em;
-  color: #000;
-  display: block;
-  margin-bottom: 5px;
-  font-size: 30px;
-}
-
-.text-container p {
-  margin: 5px 0;
-}
-
-.text-container button {
-  display: block;
-  margin-top: 5px;
-}
-
-#td1 {
-  padding-right: 5px;
-  padding-left: 5px;
-  width: 45%;
-}
-
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.td1-buttons {
-  justify-content: space-between;
-}
-#lead {
-  margin-top: 30px;
-}
-
-
-#addButton {
-  padding: 0px 10px;
-  border-radius: 50%;
-  font-size: 20px;
-  background-color: rgb(255, 102, 0);
-  color : white;
-  border :0px none;
-}
-
-
-#addNewArticle span
+#sua
 {
-  padding-left : 10px;
-  font-size: 20px;
-  color : green;
+  background-color: #14942c; 
+  border: none;
+  font-family: "Lalezar";
+  border: 0.5px solid #fbfbfb;
+  border-radius: 5px;
+  color: #ffff;
+}
+#xoa
+{
+  background-color: #b32400;
+  border: none;
+  font-family: "Lalezar";
+  border: 0.5px solid #fbfbfb;
+  border-radius: 5px;
+  color: #ffff;
 }
