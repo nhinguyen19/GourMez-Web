@@ -1,9 +1,12 @@
 <link rel="stylesheet" href="tranghienthi.css">
+<link rel="stylesheet" href="ql_tintuc/trangtintuc.css">
 <?php
 $conn = connectdb();
 $tatCaTinTuc = "SELECT * FROM tintuc ";
 $query_trangtintuc = mysqli_query($conn, $tatCaTinTuc);
 ?>
+
+
 <h2 class="title">Tất cả tin tức</h2>
 <div class="insert">
     <table>
@@ -29,12 +32,12 @@ $query_trangtintuc = mysqli_query($conn, $tatCaTinTuc);
                 <td style="text-align: center"><?php echo $row['summary'] ?></td>
                 <td style="text-align: center"><?php echo ($row['description']) ?></td>
                 <td style="text-align: center; width: 90px">
-                    <button> <a style="text-decoration: none;color: inherit;"
-                            href="../admin/tranghienthi.php?quanly=suatintuc&tintucId=<?php echo $row['tintuc_id'] ?>">Sửa</a>
-                    </button>
-                    <button> <a style="text-decoration: none;color: inherit;"
-                            href="../admin/tranghienthi.php?quanly=xoatintuc&tintucId=<?php echo $row['tintuc_id'] ?>">Xóa</a>
-                    </button>
+                    <a href="../admin/tranghienthi.php?quanly=suatintuc&tintucId=<?php echo $row['tintuc_id'] ?>"> <button
+                            id="sua">Sửa</button> </a>
+
+                    <a href="../admin/tranghienthi.php?quanly=xoatintuc&tintucId=<?php echo $row['tintuc_id'] ?>"><button
+                            id="xoa">Xóa</button></a>
+
 
                 </td>
             </tr>
