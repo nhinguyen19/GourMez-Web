@@ -35,6 +35,15 @@ if (isset($_POST['luu']) && $_POST['luu'] == "Lưu") {
                 </script>";
     }
     $email = htmlspecialchars($_POST['email']);
+    if ($email=='') {
+        echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Email không được để trống.',
+                    showConfirmButton: true,
+                });
+                </script>";
+    }
     $phone = htmlspecialchars($_POST['phone']);
     $fullname = htmlspecialchars($_POST['fullname']);
     $address = htmlspecialchars($_POST['address']);
