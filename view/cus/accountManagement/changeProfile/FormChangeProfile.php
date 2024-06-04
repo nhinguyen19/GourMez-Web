@@ -22,19 +22,18 @@ if (!$stmt) {
     die("Preparation failed: " . $conn->error);
 }
 else {
+    echo 1;
     $stmt->bind_param("s", $user);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        include('../view/cus/accountManagement/changeProfile/UpdateProfile.php');
 
     } else {
         echo "User not found";
         exit();
 }
-    
 }
 
 ?>
@@ -46,6 +45,7 @@ else {
         <form method="Post">
             <label for="user_name">Tên đăng nhập:</label>
             <input type="text" id="user_name" name="username" value="<?php echo htmlspecialchars($row['user_name']); ?>"><br>
+            
 
             <label for="user_name">Họ và tên:</label>
             <input type="text" id="full_name" name="fullname" value="<?php echo htmlspecialchars($row['fullname']); ?>"><br>
@@ -66,5 +66,6 @@ else {
     
 
 </div>
-    
+    <?php
+    include('../view/cus/accountManagement/changeProfile/UpdateProfile.php');?>
 
