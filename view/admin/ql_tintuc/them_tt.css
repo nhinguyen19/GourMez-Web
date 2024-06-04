@@ -1,15 +1,17 @@
-.insert 
-{
+.insert {
   padding-left: 300px;
-
 }
-
-
 
 #them {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   display: block; /* Đảm bảo nút sửa được hiển thị dưới dạng khối */
-  text-align: center; /* Canh giữa nút sửa */
+   text-align: center; /*Canh giữa nút sửa */
+  background-color: #e26a2c;
+  border: none;
+  font-family: "Lalezar";
+  border: 0.5px solid #fbfbfb;
+  border-radius: 5px;
+  color: #ffff;
 }
