@@ -110,6 +110,10 @@
             
             include ('../view/cus/quenmatkhau/verifyOtp.php');
             break;
+
+        case 'quanlydonhang':
+            include('../view/cus/accountManagement/qlidonhang.php');
+            break;
         
         case 'trangchu':
             include ('../view/cus/trangchu/trangchu.php');
