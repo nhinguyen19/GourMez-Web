@@ -26,6 +26,14 @@ if (isset($_POST['updateorder']) && $_POST['updateorder']) {
     // } else {
     //     echo "Có lỗi xảy ra khi cập nhật đơn hàng: " . mysqli_error($conn);
     // }
+    echo "<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Cập nhật thành công',
+        showConfirmButton: false,
+        timer: 1500
+    });
+    </script>";
 
     mysqli_close($conn);
 

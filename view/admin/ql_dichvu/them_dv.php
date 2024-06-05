@@ -5,22 +5,27 @@
     display: flex;
     justify-content: center;
     padding-left: 50px;
-
-
 }
-
-table,tr,th,td{
-    border: 1px solid black;
-    background-color: #f0ac74;
-    border-collapse: collapse;
+th
+    {
+        background-color: rgba(73, 169, 111, 1);
+        color: white;
+        font-weight: bolder;
+    }
+table,tr,th,td
+{
     padding: 15px;
     font-size: 20px;
+    border: 1px solid black;
 }
 
-table{
+table
+{
     width: fit-content;
 }
-h2{
+
+h2
+{
     padding-left: 700px;
     padding-top: 30px;
     font-family: Lalezar;
@@ -28,6 +33,18 @@ h2{
     text-transform: uppercase;
     color: #E26A2C;
 }
+input[type = 'submit']
+    {
+        background-color: rgba(73, 169, 111, 1);
+        border-radius: 8px;
+        border: none; 
+        color: white;
+        font-size: 22px;
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px 5px 10px;
+        font-family: 'Lalezar';
+    }
 </style>
 <h2> Thêm dịch vụ </h2>
 <div class="insert_service" >

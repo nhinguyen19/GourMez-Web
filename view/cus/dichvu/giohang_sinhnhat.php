@@ -7,6 +7,7 @@
     if (isset($_GET['delcart']) && ($_GET['delcart'] == 1)) {
         unset($_SESSION['giohangsn']);
         $message = "Đơn hàng trống. Đặt hàng thôi nào!";
+        
     }
     //xóa sp
     if(isset($_GET['delid'])&&($_GET['delid']>=0)) 

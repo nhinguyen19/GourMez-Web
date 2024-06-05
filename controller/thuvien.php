@@ -37,11 +37,11 @@ function tongdonhang()
     return $tong;
 }
 
-function taodonhang($id,$name, $phone, $email, $booking_date, $address, $total_price, $note)
+function taodonhang($id,$name, $phone, $email, $booking_date, $address, $total_price, $note,$order_day)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO bigdeal_service(id_bill,name, phone, email, booking_date, address, total_price, note)
-                VALUES ('$id','$name','$phone','$email','$booking_date','$address', '$total_price', '$note')";
+    $sql = "INSERT INTO bigdeal_service(id_bill,name, phone, email, booking_date, address, total_price, note,order_day)
+                VALUES ('$id','$name','$phone','$email','$booking_date','$address', '$total_price', '$note','$order_day')";
 
     if ($total_price != 0)
     {
@@ -128,11 +128,11 @@ function tongdonhang_sinhnhat()
     }
     return $tong;
 }
-function taodonhang_sinhnhat($id,$name, $phone, $email, $order_name,$gender,$booking_date, $address, $total_price, $note)
+function taodonhang_sinhnhat($id,$name, $phone, $email, $order_name,$gender,$booking_date, $address, $total_price, $note,$order_day)
 {
     $conn = connectdb();
-    $sql = "INSERT INTO birthday_service(id_bill,name, phone, email,order_name, gender , booking_date, address, total_price, note)
-                VALUES ('$id','$name','$phone','$email','$order_name','$gender','$booking_date','$address', '$total_price', '$note')";
+    $sql = "INSERT INTO birthday_service(id_bill,name, phone, email,order_name, gender , booking_date, address, total_price, note,order_day)
+                VALUES ('$id','$name','$phone','$email','$order_name','$gender','$booking_date','$address', '$total_price', '$note','$order_day')";
     if ($total_price != 0)
     {
         mysqli_query($conn,$sql);

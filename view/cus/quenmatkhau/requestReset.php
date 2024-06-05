@@ -10,7 +10,14 @@ if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
     $email = $_POST['email'];
 
     if (empty($email)) {
-        echo "Email is required.";
+        // echo "Bạn chưa nhập email.";
+        echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Bạn chưa nhập email.',
+                showConfirmButton: true,
+            });
+            </script>";
         exit;
     }
 

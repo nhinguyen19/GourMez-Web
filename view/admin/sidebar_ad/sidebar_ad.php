@@ -11,8 +11,13 @@
         <a href="#">Đơn hàng</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=donhang">Tất cả</a>
-            <a href = "tranghienthi.php?quanly=donhang1">Test</a>
             <a href="#">Cài đặt vận chuyển</a>
+        </div>
+        <hr> 
+        <a href="#">Báo cáo và thống kê</a>
+        <div class="submenu">
+            <a href="tranghienthi.php?quanly=bieudo">Báo cáo</a>
+            <!-- <a href="tranghienthi.php?quanly=themsanpham">Thêm món ăn</a> -->
         </div>
         <hr> 
         <a href="#">Quản lý món ăn</a>
@@ -27,11 +32,11 @@
             <a href="tranghienthi.php?quanly=themdanhmuc">Thêm danh mục</a>
         </div>
         <hr>
-        <a href="#">Quản lí khuyến mãi</a>
+        <a href="#">Quản lý khuyến mãi</a>
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatcakm">Tất cả</a>
-            <a href="tranghienthi.php?quanly=themkmnews">Tạo mã khuyến mãi</a>
-            <a href="#">Quản lý mã giảm</a>
+            <a href="tranghienthi.php?quanly=themkmnews">Tạo tin tức khuyến mãi</a>
+            <a href="tranghienthi.php?quanly=themcodedis">Tạo mã khuyến mãi</a>
         </div>
         <hr>
         <a href="#">Quản lý dịch vụ</a>

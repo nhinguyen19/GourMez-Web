@@ -146,6 +146,12 @@
        xoaTinTuc();
         break;
 
+      // báo cáo thống kê
+      case 'bieudo':
+        include('statistic/chart.php');
+        break;
+        
+
       // test
       case 'donhang1':
         include('ql_donhang/donhang_1.php');
@@ -182,7 +188,8 @@
       case 'thoat';
       include('ADdangxuat.php');
       break;
-        
+
+      
         default :
           include ('trangchu.php');
           break;
