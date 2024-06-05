@@ -53,21 +53,36 @@
         if (isset($_POST['sua'])) {
             $tenloaisp = $_POST['tendanhmuc'];
             $id = $_GET['id'];
-    
-            $sql_sua = "UPDATE category SET cate_name = '$tenloaisp' WHERE cate_id = '$id'";
-            if (mysqli_query($conn, $sql_sua)) {
+
+            // Check if the category name already exists
+            $sql_check = "SELECT * FROM category WHERE cate_name = '$tenloaisp' AND cate_id != '$id'";
+            $result_check = mysqli_query($conn, $sql_check);
+
+            if (mysqli_num_rows($result_check) > 0) {
                 echo "<script>
                         Swal.fire({
-                            icon: 'success',
-                            title: 'Cập nhật thành công!',
-                            showConfirmButton: false,
-                            timer: 1500
-                        }).then(function() {
-                            window.location.href = 'tranghienthi.php?quanly=tatca';
+                            icon: 'error',
+                            title: 'Tên danh mục đã tồn tại!',
+                            text: 'Vui lòng chọn tên khác.',
+                            showConfirmButton: true
                         });
-                      </script>";
+                    </script>";
             } else {
-                echo "Error: " . mysqli_error($conn);
+                $sql_sua = "UPDATE category SET cate_name = '$tenloaisp' WHERE cate_id = '$id'";
+                if (mysqli_query($conn, $sql_sua)) {
+                    echo "<script>
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Cập nhật thành công!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            }).then(function() {
+                                window.location.href = 'tranghienthi.php?quanly=tatca';
+                            });
+                        </script>";
+                } else {
+                    echo "Error: " . mysqli_error($conn);
+                }
             }
         }
     }
