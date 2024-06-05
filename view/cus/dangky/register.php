@@ -123,7 +123,7 @@
                                 // Hiển thị thông báo lỗi
                                 foreach ($errors as $error) //trong mỗi vòng lặp qua mảng $errors thì sẽ gán mỗi ptu mảng vào biến $error
                                 {
-                                    echo "<p style='color:red'>".$error . "</p><br>";
+                                    echo "<p style='color:red; margin-bottom: 0;'>".$error. "</p>";
                                 }
                             }
                         }

@@ -4,21 +4,24 @@
     text-align: center;
 
 }
-.box-content h2{
+.box-content p{
     margin-top: 10%;
+    font-size: 35px;
+    font-family: 'Lalezar';
 }
 .form{
-
+    font-family: 'Times New Roman';
+    font-size: 20px;
     text-align: left;
     justify-content: left;
     border: 1px solid black;
-   
+    background-color:#CFCBCB;
     color: black;
     margin-bottom: 5%;
     width: 100%;
     padding: 5%;
     
-    box-shadow:1px 1px 5px 5px rgba(0, 0, 0, 0.163);
+    /* box-shadow:1px 1px 5px 5px rgba(0, 0, 0, 0.163); */
     display: block;
 }
 .form input{

@@ -86,25 +86,25 @@ $conn->close();
 ?>
 <link rel="stylesheet" href="ql_taikhoan/doimatkhau.css">
     <div class="box-content">
-        <h2>ĐỔI MẬT KHẨU</h2>
+        <p>ĐỔI MẬT KHẨU</p>
         <div class="form">
             <form method="POST">
                 <div>
-                    <label for="old_password">Mật khẩu cũ:</label>
+                    <label for="old_password">Mật khẩu cũ</label>
                     <div class="input-icon">
                         <input type="password" id="old_password" name="old_password">
                         <span id="old_nosee" style="cursor: pointer;" onclick="showOldpass()"><i class="fas fa-eye-slash icon"></i></span>
                     </div>
                 </div>
                 <div>
-                    <label for="new_password">Mật khẩu mới:</label>
+                    <label for="new_password">Mật khẩu mới</label>
                     <div class="input-icon">
                         <input type="password" id="new_password" name="new_password">
                         <span id="nosee" style="cursor: pointer;" onclick="showpass()"><i class="fas fa-eye-slash icon"></i></span>
                     </div>
                 </div>
                 <div>
-                    <label for="confirm_password">Nhập lại mật khẩu mới:</label>
+                    <label for="confirm_password">Nhập lại mật khẩu mới</label>
                     <div class="input-icon">
                         <input type="password" id="confirm_password" name="confirm_password">
                         <span id="noseeRe" style="cursor: pointer;" onclick="showRepass()"><i class="fas fa-eye-slash icon"></i></span>
