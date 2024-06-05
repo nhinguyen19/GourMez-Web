@@ -1,27 +1,39 @@
 .box-content{
-    width: 40%;
-    margin-left: 40%;
+    width: 50%;
+    margin-left: 35%;
     text-align: center;
-    padding: 5%;
+    /* padding: 5%; */
     
 }
 .form{
     text-align: left;
+    font-size: 20px;
+    font-family: 'Times New Roman';
     justify-content: left;
     border: 1px solid black;
     /* background-color: #a16646; */
+    background-color:#CFCBCB;
     color: white;
     margin-bottom: 5%;
     width: 100%;
     padding: 5%;
-    box-shadow:1px 1px 5px 5px rgba(0, 0, 0, 0.163);
+    
+    /* box-shadow:1px 1px 5px 5px rgba(0, 0, 0, 0.163); */
+}
+.box-content p{
+    font-family: 'Lalezar';
+    font-size: 35px;
 }
 .box-content a{
     text-decoration: none;
+    font-size: 20px;
     color: white;
     display: inline-flex;
-    padding: 2%;
-    background-color: #a16646;
+    padding: 1%;
+    background-color: #E26A2C;
+    border: 1px solid white;
+    font-family: 'Lalezar';
+    border-radius: 5px;
     justify-content: space-between;
 }
 .info{
