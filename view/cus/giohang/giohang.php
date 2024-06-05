@@ -29,7 +29,6 @@
 $conn = connectdb();
 $user_id = isset($_SESSION['id']) ? mysqli_real_escape_string($conn, $_SESSION['id']) : null;
 
-
 if (isset($_POST['update'])) {
     $foodId = $_POST['food_id'];
     $quantity = $_POST['quantity'];
@@ -38,6 +37,7 @@ if (isset($_POST['update'])) {
     if ($user_id) {
         $updateQuantityQuery = "UPDATE cart SET quantity = $quantity WHERE food_id = $foodId AND user_id = $user_id";
         mysqli_query($conn, $updateQuantityQuery);
+        $isUpdated = true;
     } else {
         for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
             if ($_SESSION['cart'][$i]['food_id'] == $foodId) {
