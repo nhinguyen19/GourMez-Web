@@ -11,13 +11,14 @@ include('../controller/thuvien.php');
         $ship_day = $_POST['ship_date'];
         $diachi = $_POST['address'];
         $ghichu = $_POST['note'];
+        $ngaydathang = date('Y-m-d');
 
         $total = tongdonhang();
 
         $new_id = uniqid('bigdeal_');
 
         //insert đơn hàng -  tạo đơn hàng mới
-        $id_bill = taodonhang($new_id,$ten,$sdt,$email,$ship_day,$diachi,$total,$ghichu);
+        $id_bill = taodonhang($new_id,$ten,$sdt,$email,$ship_day,$diachi,$total,$ghichu,$ngaydathang);
 
         //insert vào order_item
         for($i=0; $i < sizeof($_SESSION['giohang']); $i++)

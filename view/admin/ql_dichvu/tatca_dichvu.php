@@ -6,19 +6,38 @@
 
     th,td
     {
-        width: 170px;
+        width: 150px;
     }
 
     th
     {
         padding: 15px;
+        background-color: #333;
+        color: white;
+        font-weight: bolder;
+    }
+
+    td
+    {
+        padding: 10px;
+    }
+
+    a
+    {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover
+    {
+        color: white;
     }
 
     .dv_container
     {
         display: flex;
         justify-content: center;
-        margin-left: 150px;
+        margin-left: 220px;
     }
 
     .title
@@ -51,10 +70,9 @@
         font-family: 'Lalezar';
     }
 
-    .body
+.body
   {
-    background-image: url('/project/GourMez-Web/view/admin/ql_dichvu/uploads/background.png');
-    height: 690px;
+    height: 650px;
     margin-top: -50px;
     margin-bottom: -70px;
     padding-top: 40px;
@@ -62,10 +80,24 @@
   table
     {
         background-color: rgba(255,255,255,0.8);
-        border-radius: 20px;
         margin-bottom: 50px;
         
     }
+
+    button
+    {
+        background-color: rgba(73, 169, 111, 1);
+        font-family: 'Lalezar';
+        border-radius: 10px;
+        border: none; 
+        color: white;
+        font-size: 15px;
+        width: fit-content;
+        padding: 5px;
+        margin-bottom: 50px;
+    }
+
+    
 </style>
 <?php
     $conn = connectdb();
@@ -106,9 +138,11 @@
                     <img src = "../../view/admin/ql_dichvu/uploads/<?php echo $row['banner']?>" style = "width: 200px; height: 100px;">
                 </td>
                 <td>
-                    <button><a href="tranghienthi.php?quanly=thucdondv&iddichvu=<?php echo $row['id_service']; ?>">Xem thực đơn</a></button>
+                    <button style = "margin-left: 10px;"><a href="tranghienthi.php?quanly=thucdondv&iddichvu=<?php echo $row['id_service']; ?>">Xem thực đơn</a></button>
                 </td>
-                <td style="text-align: center"><a href="tranghienthi.php?quanly=xoaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Sửa</a></td>     
+                <td style="text-align: center">
+                    <button><a href="tranghienthi.php?quanly=xoaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Xóa</a></button> <button><a href="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Sửa</a></button>
+                </td>     
             </tr>
             <?php
                 }

@@ -1,14 +1,14 @@
 <style>
-    .th
+    th
     {
         padding-left: 10px;
         font-weight: bold;
+        color: white;
+        background-color: #222;
     }
 
     table
     {
-        background-color: rgba(255,255,255,0.8);
-        border-radius: 20px;
         margin-bottom: 50px;
     }
     th, td
@@ -16,6 +16,18 @@
         width: 150px;
         padding: 15px;
     }
+
+    a
+    {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover
+    {
+        color: white;
+    }
+
     
     input[type = 'submit'], input[type = 'reset']
     {
@@ -38,6 +50,7 @@
         font-family: 'Lalezar';
         margin-left: 150px;
         color:#fd7e14;
+        font-size: 40px;
     }
     #iddichvu
     {
@@ -46,12 +59,20 @@
         font-size: 22px;
     }
 
-    .body
-  {
-    background-image: url('/project/GourMez-Web/view/admin/ql_dichvu/uploads/background.png');
-    height: fit-content;
-    padding-top: -20px;
-  }
+    button
+    {
+        background-color: rgba(73, 169, 111, 1);
+        font-family: 'Lalezar';
+        border-radius: 10px;
+        border: none; 
+        color: white;
+        font-size: 15px;
+        width: fit-content;
+        padding: 5px;
+        margin-bottom: 50px;
+    }
+
+
 
 </style>
 
@@ -80,7 +101,9 @@
                 <td style = "text-align: center; border: 1px solid black" ><?php echo $row['food_combo']?></td>
                 <td style = "text-align: center; border: 1px solid black"><?php echo $row['price']?></td>
                 <td style="text-align: center; border: 1px solid black"><img src="../../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" width="100" height="100"></td>
-                <td style="text-align: center;border: 1px solid black"><a href="tranghienthi.php?quanly=xoamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a> | <a href="tranghienthi.php?quanly=suamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></td>     
+                <td style="text-align: center;border: 1px solid black">
+                    <button><a href="tranghienthi.php?quanly=xoamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a></button> <button><a href="tranghienthi.php?quanly=suamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></button> 
+                </td>     
             
             </tr>
              
@@ -98,11 +121,6 @@
                 </form>
             </td>
             </tr>
-
-            
-
-
-
         </form>
     </table>
 </div>

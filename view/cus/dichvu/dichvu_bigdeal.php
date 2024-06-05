@@ -147,9 +147,8 @@ h1
                         }
 
                         if (mysqli_num_rows($result) > 0) {
-                            $counter = 0; // Counter to generate unique identifiers for radio buttons
+      
                             while ($row = mysqli_fetch_assoc($result)) {
-                                $counter++;
                                 echo '<div class="option">';
                                 echo '<img name = "image" src="../view/admin/ql_dichvu/uploads/' . $row['image'] . '">';
                                 echo '<div class="text_info">';

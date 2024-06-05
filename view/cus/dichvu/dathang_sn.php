@@ -13,13 +13,14 @@ include('../controller/thuvien.php');
         $party_day = $_POST['party_date'];
         $diachi = $_POST['address'];
         $ghichu = $_POST['note'];
+        $ngaydathang = date('Y-m-d');
 
         $total = tongdonhang_sinhnhat();
 
         $new_id = uniqid('sinhnhat_');
 
         //insert đơn hàng -  tạo đơn hàng mới
-        $id_bill = taodonhang_sinhnhat($new_id,$ten,$sdt,$email,$name_sn,$gioitinh,$party_day,$diachi,$total,$ghichu);
+        $id_bill = taodonhang_sinhnhat($new_id,$ten,$sdt,$email,$name_sn,$gioitinh,$party_day,$diachi,$total,$ghichu,$ngaydathang);
 
         //insert vào order_item
         for($i=0; $i < sizeof($_SESSION['giohangsn']); $i++)

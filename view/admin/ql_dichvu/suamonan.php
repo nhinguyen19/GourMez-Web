@@ -6,23 +6,19 @@
         font-size: 20px;
         padding-left: 200px;
     }
-
-    table
+    th
     {
-        width: 800px;
-    } 
-    
-    .th
-    {
-        padding-left: 10px;
-        font-weight: bold;
+        padding: 15px;
+        background-color: rgba(73, 169, 111, 1);
+        color: white;
+        font-weight: bolder;
     }
 
     table
     {
         background-color: rgba(255,255,255,0.8);
-        border-radius: 20px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+        width: 800px;
         
     }
 
@@ -60,16 +56,20 @@
         margin-left: 150px;
         color:#fd7e14;
     }
-
-    .body
-  {
-    background-image: url('/project/GourMez-Web/view/admin/ql_dichvu/uploads/background.png');
-    height: 660px;
-    margin-top: -30px;
-    margin-bottom: -50px;
-  }
-
     
+    #idmonanDV
+    {
+        font-weight: bolder;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .con_button
+    {
+        display: flex;
+        justify-content: center;
+        margin-left: 150px;
+    }
 </style>
 
 <div class = "body">
@@ -80,8 +80,8 @@
     <table>
     <form method="POST" action="tranghienthi.php?quanly=suamonandichvu&idmonan=<?php echo $_GET['idmonan']?>" enctype="multipart/form-data">
             <tr>
-                <th style="text-align: center">ID</th>
-                <td name="idmonanDV"><?php echo $_GET['idmonan'] ?></td>
+                <th style="text-align: center">ID món ăn</th>
+                <td id="idmonanDV" name="idmonanDV"><?php echo $_GET['idmonan'] ?></td>
             </tr> 
 
             <tr>
@@ -102,16 +102,14 @@
                     <input type="file" name = "hinhanhmonandvmoi" id ="hinhanhmonandvmoi" style="width: 400px; background-color: #FFECCB; color: black;border:none">
                 </td>
             </tr>
-            <tr>
-                <td style="text-align: center;" colspan="4">
-                    <input type="submit" name="suamonanDV" value="Cập nhật" style = "font-size: 18px">
-                    <input type="reset" name = "reset_suamon" value = "Xóa thay đổi"style = "font-size: 18px; margin-left:30px">
-                </td>
-            </tr>
+            
         </form>
     </table>
 </div>
-
+    <div class = "con_button">
+        <input type="submit" name="suamonanDV" value="Cập nhật" style = "font-size: 18px">
+        <input type="reset" name = "reset_suamon" value = "Xóa thay đổi"style = "font-size: 18px; margin-left:30px">
+    </div>
 
 
 </div>
