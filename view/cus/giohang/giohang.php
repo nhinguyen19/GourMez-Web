@@ -27,15 +27,13 @@
     ?>
 <?php
 $conn = connectdb();
+$user_id = isset($_SESSION['id']) ? mysqli_real_escape_string($conn, $_SESSION['id']) : null;
 
-// Kiểm tra xem người dùng đã đăng nhập hay chưa
-if (isset($_SESSION['id'])) {
-    $user_id = mysqli_real_escape_string($conn, $_SESSION['id']);
-}
 
 if (isset($_POST['update'])) {
     $foodId = $_POST['food_id'];
     $quantity = $_POST['quantity'];
+    $isUpdated = false;
 
     if ($user_id) {
         $updateQuantityQuery = "UPDATE cart SET quantity = $quantity WHERE food_id = $foodId AND user_id = $user_id";
@@ -45,30 +43,84 @@ if (isset($_POST['update'])) {
             if ($_SESSION['cart'][$i]['food_id'] == $foodId) {
                 // Món ăn đã tồn tại trong giỏ hàng, cập nhật số lượng
                 $_SESSION['cart'][$i]['quantity'] = $quantity;
+                $isUpdated = true;
                 break;
             }
         }
-        }
     }
+    if ( $isUpdated) {
+        echo '<script>
+            Swal.fire({
+                icon: "success",
+                title: "Thành công",
+                text: "Cập nhật số lượng thành công.",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(function() {
+                window.location.href = "tranghienthi.php?quanly=giohang"; 
+            });
+        </script>';
+    } else {
+        echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Thất bại",
+                text: "Không thể cập nhật số lượng.",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(function() {
+                window.location.href = "tranghienthi.php?quanly=giohang"; 
+            });
+        </script>';
+    }
+}
 
 if (isset($_POST['delete'])) {
     $foodId = $_POST['food_id'];
+    $isDeleted = false;
 
     if ($user_id) {
         $deleteQuery = "DELETE FROM cart WHERE food_id = $foodId AND user_id = $user_id";
-        mysqli_query($conn, $deleteQuery);
+        if (mysqli_query($conn, $deleteQuery)) {
+            $isDeleted = true;
+        }
     } else {
         foreach ($_SESSION['cart'] as $key => $item) {
             if ($item['food_id'] == $foodId) {
                 unset($_SESSION['cart'][$key]);
+                $isDeleted = true;
                 break;
             }
         }
     }
+
+    if ($isDeleted) {
+        echo '<script>
+            Swal.fire({
+                icon: "success",
+                title: "Thành công",
+                text: "Xóa thành công món ăn khỏi giỏ hàng.",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(function() {
+                window.location.href = "tranghienthi.php?quanly=giohang"; 
+            });
+        </script>';
+    } else {
+        echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Thất bại",
+                text: "Không thể xóa món ăn khỏi giỏ hàng.",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(function() {
+                window.location.href = "tranghienthi.php?quanly=giohang"; 
+            });
+        </script>';
+    }
 }
 
-
-// Hiển thị giỏ hàng từ session hoặc cơ sở dữ liệu
 $cartItems = "";
 $totalPrice = 0;
 
