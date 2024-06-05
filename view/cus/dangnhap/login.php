@@ -93,7 +93,6 @@
                         }
                 ?>
 
-
                 <!-- //dangky/quenmatkhau -->
                 <div class="dk-qmk">
                     <a href="tranghienthi.php?quanly=dangky">Đăng ký/</a>
@@ -102,21 +101,9 @@
                    
 
                 </div>
-                
-                <!-- //logo dang nhap -->
-                <div id="login-with-social">
-                
-                    <?php if(isset($authUrl)){ ?>
-                    <a href="<?= $authUrl ?>"><img src="../img/google.png" alt='google login' title="Google Login" height="40" width="160" /></a>
-                    <!-- <a href="<?= $authUrl ?>"><img src="../view/cus/img/google.png" alt='google login' title="Google Login" height="50" width="250" /></a> -->
-                    <?php } ?>
-                </div>
-
-
 
             </div>
-                
-                
+                              
         </div>
        
     

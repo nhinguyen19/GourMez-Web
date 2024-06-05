@@ -9,7 +9,7 @@ if (isset($_POST['update']) && $_POST['update'] == "Cập nhật") {
         echo "<script>
         Swal.fire({
             icon: 'error',
-            title: 'Token không hợp lệ hoặc đã hết hạn.',
+            title: 'Mã thông báo không hợp lệ hoặc đã hết hạn.',
             showConfirmButton: true,
         });
         </script>";
