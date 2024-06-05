@@ -13,17 +13,17 @@
     if (!isset($_SESSION['user'])) {
         die("User not logged in");
     }
-$user =  $_SESSION['user'];
+$id =  $_SESSION['id'];
 // echo $user;
 
-$sql = "SELECT user_name, email, fullname,phone, address FROM user WHERE user_name = ?";
+$sql = "SELECT user_name, email, fullname,phone, address FROM user WHERE user_id = ?";
 $stmt = $conn->prepare($sql);
 if (!$stmt) {
     die("Preparation failed: " . $conn->error);
 }
 else {
-    echo 1;
-    $stmt->bind_param("s", $user);
+    // echo 1;
+    $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
 
