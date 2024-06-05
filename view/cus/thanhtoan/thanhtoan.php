@@ -7,7 +7,7 @@ $conn = connectdb();
 <body>
 <div class="thanhtoanform">
     <div class="thongtin">
-        <form method="POST" action="tranghienthi.php?quanly=thanhtoan" onsubmit="return validateForm()">
+        <form method="POST" action="tranghienthi.php?quanly=thanhtoan" >
             <label class="label">Họ tên của bạn*</label>
             <br>
             <input type="text" id="cusname" name="cusname" class="inputform" required>
@@ -268,13 +268,13 @@ $conn = connectdb();
             }
         }
 
-        function validateForm() {
-            if (document.querySelector('input[name="pay"]:checked').value === 'VIETQR' && !isSuccess) {
-                alert('Bạn chưa thanh toán mã QR');
-                return false;
-            }
-            return true;
-        }
+        // function validateForm() {
+        //     if (document.querySelector('input[name="pay"]:checked').value === 'VIETQR' && !isSuccess) {
+        //         alert('Bạn chưa thanh toán mã QR');
+        //         return false;
+        //     }
+        //     return true;
+        // }
 
         document.addEventListener('DOMContentLoaded', handlePaymentSelection);
     </script>
