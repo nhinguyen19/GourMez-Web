@@ -124,7 +124,7 @@ function deldiscountnews()
                 echo "<script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Xóa sản phẩm thành công!',
+                    title: 'Xóa tin tức thành công!',
                     showConfirmButton: false,
                     timer: 1500
                 }).then(function() {

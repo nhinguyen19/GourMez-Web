@@ -14,6 +14,7 @@
 <div id="content">
 
 </div>
+</div>
 <script>
       $(document).ready(function() {
         // Automatically trigger click on "displayall" link when page loads
