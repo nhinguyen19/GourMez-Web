@@ -147,7 +147,7 @@
 
 
 
-      .memcontain {
+      /* .memcontain {
         background-image: url('../img/infomem.png');
         background-size: cover;
         width: 100%;
@@ -155,34 +155,94 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    } */
+    .memcontain {
+      background-image: url('../img/infomem.png');
+      background-size: cover;
+      width: 100%;
+      height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px; /* Tăng khoảng cách giữa các thành viên */
+        justify-content: center;
     }
     .member-box {
         display: flex;
-        justify-content: space-around;
         flex-wrap: wrap;
-        width: 100%;
-        padding: 20px;
+        gap: 50px; /* Tăng khoảng cách giữa các thành viên */
+        justify-content: center;
+        margin-top : 20px;
+
     }
     .memgroup {
-        background-color: #ffffff;
-        border-radius: 20px;
-        border: 1px solid #000000;
-        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.09);
-        display: inline-block;
-        width: 200px;
-        height: 300px;
-        padding: 15px;
-        justify-content: center;
+        position: relative;
         text-align: center;
-        margin: 10px;
+        width: 200px;
+        background-color: #000000; /* Thêm nền trắng */
+        margin : 30px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        padding : 20px;
+        width : 200px;
+        height : 300px;
     }
-    .memgroup img {
-        width: 100px;
-        height: 100px;
+    .image-container {
+        position: relative;
+        width: 150px; /* Đảm bảo ảnh hình tròn có kích thước cố định */
+        height: 150px; /* Đảm bảo ảnh hình tròn có kích thước cố định */
+        margin: 0 auto;
+        background-color: #fff; /* Thêm nền trắng */
         border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ để nổi bật */
+    }
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .memgroup:hover .overlay {
+        opacity: 1;
+    }
+    .memgroup h3 {
+        margin: 10px 0;
+        cursor: pointer;
+        color :#fff;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .memgroup a {
+        color: #3b5998;
+        text-decoration: none;
+        font-size: 24px;
+    }
+    .memgroup a:hover {
+        color: #2d4373;
     }
     .member-info {
         display: none;
-        margin-top: 10px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
     }
-   
+    .memgroup:hover .member-info {
+        display: block;
+    }
