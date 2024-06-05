@@ -27,7 +27,6 @@
     ?>
 <?php
 $conn = connectdb();
-session_start();
 $user_id = isset($_SESSION['id']) ? mysqli_real_escape_string($conn, $_SESSION['id']) : null;
 
 
