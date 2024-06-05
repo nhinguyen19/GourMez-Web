@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Gourmez Admin</title>
     <link rel="stylesheet" href="../view/admin/tranghienthi.css">
     <link rel="stylesheet" href="header_ad/header_ad.css">
     <link rel="stylesheet" href="../LIB/bootstrap/css/bootstrap.min.css">
