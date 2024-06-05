@@ -27,9 +27,9 @@
             {
                 $err['rpass'] ='Mật khẩu nhập lại không khớp';
             }
-            // if (strlen($user_name) < 3) {
-            //     $err['countname']='Tên đăng nhập tối thiểu 3 kí tự';
-            // }
+            if (strlen($user_name) < 3) {
+                $err['countname']='Tên đăng nhập tối thiểu 3 kí tự';
+            }
             if (strlen($pass) < 6) {
                 $err['countpass']='Mật khẩu tối thiểu 6 kí tự';
             }
