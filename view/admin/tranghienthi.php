@@ -93,6 +93,10 @@
           include ('ql_thongtin/suathongtin.php');
           suaThongTin();
           break;
+        case 'tinnhan':
+          include ('ql_thongtin/lietke_tinnhanKH.php');
+          break;
+
         case 'themdichvu' :
           include ('ql_dichvu/them_dv.php');
           themDichVu();
@@ -169,19 +173,34 @@
       case 'doimatkhau';
       include('ql_taikhoan/doimatkhau.php');
       break;
+      
+      case 'quanlytaikhoanuser';
+      include('ql_tk_user/danhsach_user.php');
+      break;
 
+      case 'edit_user';
+      include('ql_tk_user/edit_user.php');
+      break;
+
+      case 'delete_user';
+      include('ql_tk_user/delete_user.php');
+      break;
       case 'thoat';
       include('ADdangxuat.php');
       break;
 
       
         default :
-          include ('tranghienthi.php');
+          include ('trangchu.php');
           break;
         
         
           
       }
+     }
+     else
+     {
+      include ('trangchu.php');
      }
   
   // else{

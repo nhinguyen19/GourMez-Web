@@ -93,6 +93,8 @@ if (isset($_POST['themgiohang'])) {
     $result = mysqli_query($conn, $sql);
     $food = mysqli_fetch_assoc($result);
     
+    $isUpdated = false; // Biến cờ để theo dõi việc cập nhật số lượng
+
     if (isset($_SESSION['id'])) {
         // Nếu đã đăng nhập, lưu thông tin vào bảng cart
         $user_id = $_SESSION['id'];
@@ -107,57 +109,63 @@ if (isset($_POST['themgiohang'])) {
             $newQuantity = $row_check_existing['quantity'] + $soluong;
             $sql_update_quantity = "UPDATE cart SET quantity = $newQuantity WHERE user_id = '$user_id' AND food_id = '$idsanpham'";
             mysqli_query($conn, $sql_update_quantity);
+            $isUpdated = true; // Đánh dấu rằng số lượng đã được cập nhật
         } else {
             // Nếu sản phẩm chưa tồn tại, thêm sản phẩm mới
             $sql_insert = "INSERT INTO cart (user_id, food_id, quantity) VALUES ('$user_id', '$idsanpham', '$soluong')";
             mysqli_query($conn, $sql_insert);
         }
-    } else  {
+    } else {
         // Nếu chưa đăng nhập, lưu thông tin vào session cart
         if (!isset($_SESSION['cart'])) {
             $_SESSION['cart'] = [];
         }
-    
+
         $found = false;
         for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
             if ($_SESSION['cart'][$i]['food_id'] == $idsanpham) {
                 // Món ăn đã tồn tại trong giỏ hàng, cập nhật số lượng
                 $_SESSION['cart'][$i]['quantity'] += $soluong;
                 $found = true;
+                $isUpdated = true; // Đánh dấu rằng số lượng đã được cập nhật
                 break;
             }
         }
-        
+
         if (!$found) {
-            // Món ăn chưa tồn tại trong giỏ hàng, thêm mới
             $item = [
                 'food_id' => $idsanpham,
                 'name' => $food['food_name'],
-                'price' => $food['selling_price'], // Đảm bảo lấy đúng giá trị bán
+                'price' => $food['selling_price'], 
                 'quantity' => $soluong,
-                'img' => $food['img'] // Thêm img vào session
+                'img' => $food['img'] 
             ];
             $_SESSION['cart'][] = $item;
         }
-        
-        // Sau khi thêm hoặc cập nhật sản phẩm, cập nhật giá trị session cart
-        $_SESSION['cart'] = array_values($_SESSION['cart']); // Cập nhật lại chỉ số mảng
-        
+        $_SESSION['cart'] = array_values($_SESSION['cart']);
     }
-    // if (isset($_SESSION['cart'])) {
-    //     var_dump($found);
-    //     var_dump($_SESSION['cart']);
-    // } else {
-    //     echo "Session cart không tồn tại hoặc không có dữ liệu.";
-    // }
-    echo "<script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Sản phẩm đã được thêm vào giỏ hàng',
-            showConfirmButton: false,
-            timer: 1500
-        });
-    </script>";
+
+    if ($isUpdated) {
+        // Hiển thị thông báo cập nhật số lượng
+        echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Số lượng món ăn đã được cập nhật trong giỏ hàng',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>";
+    } else {
+        // Hiển thị thông báo thêm sản phẩm mới
+        echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sản phẩm đã được thêm vào giỏ hàng',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>";
+    }
 }
 ?>
 

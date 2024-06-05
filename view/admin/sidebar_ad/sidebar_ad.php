@@ -5,7 +5,7 @@
         <div class="submenu">
             <a href="tranghienthi.php?quanly=themadmin">Thêm admin</a>
             <a href = "tranghienthi.php?quanly=thongtintaikhoan">Thông tin tài khoản</a>
-            <!-- <a href="#">Quản lý tài khoản</a> -->
+            <a href="tranghienthi.php?quanly=quanlytaikhoanuser">Quản lý người dùng</a>
         </div>
         <hr> 
         <a href="#">Đơn hàng</a>
@@ -49,6 +49,7 @@
         <div class="submenu">
             <a href="tranghienthi.php?quanly=tatcathongtin">Tất cả</a>
             <a href="tranghienthi.php?quanly=suathongtin">Sửa thông tin</a>
+            <a href="tranghienthi.php?quanly=tinnhan">Tin nhắn khách hàng</a>
         </div>
         <hr>
         <a href="#">Quản lý tin tức</a>
