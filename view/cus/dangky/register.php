@@ -1,6 +1,6 @@
 <?php
         // session_start();
-        // include 'google_source.php';
+        
         
         $err=array();
         if(isset($_POST['dangky']) && ($_POST['dangky'])=='Đăng ký')
@@ -68,7 +68,8 @@
                     </div>
                     
                     <div class="has-error">
-                        <span><?php echo (isset($err['name']))?$err['name']:''?></span>
+                        <span><?php echo (isset($err['name']))?$err['name'].'<br>':''?></span>
+                        <span><?php echo (isset($err['countname']))?$err['countname']:''?></span>
                     </div> 
 
                             <!-- email -->
