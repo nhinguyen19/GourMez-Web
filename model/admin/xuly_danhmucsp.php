@@ -12,6 +12,22 @@
             $row_check = mysqli_fetch_assoc($result_check);
             $count = $row_check['count'];
             
+            if (empty($tenloaisp)) {
+                echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi',
+                            text: 'Tên danh mục không được để trống.',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=themdanhmuc';
+                            }
+                        });
+                      </script>";
+                return;
+            }
             if ($count > 0) {
                 echo "<script>
                         Swal.fire({
@@ -58,6 +74,22 @@
             $sql_check = "SELECT * FROM category WHERE cate_name = '$tenloaisp' AND cate_id != '$id'";
             $result_check = mysqli_query($conn, $sql_check);
 
+            if (empty($tenloaisp)) {
+                echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi',
+                            text: 'Tên danh mục không được để trống.',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=themdanhmuc';
+                            }
+                        });
+                      </script>";
+                return;
+            }
             if (mysqli_num_rows($result_check) > 0) {
                 echo "<script>
                         Swal.fire({
