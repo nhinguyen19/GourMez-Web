@@ -94,57 +94,34 @@
         </script>
 
 
-        <img class="poster" src="../view/cus/img/pic1.png">
-<!--      
-        <div class="memcontain">
-        <div class="member-box">
-            <div class="memgroup">
-                <div class="image-container">
-                    <img src="../view/cus/img/mem2.jpg" alt="Member 1">
-                    <div class="overlay"></div>
-                </div>
-                <h3 data-id="1">Nguyễn Bảo Minh Anh</h3>
-                <a href="https://www.facebook.com/member1" target="_blank" class="fab fa-facebook"></a>
-                <div class="member-info" id="info-1">Thông tin chi tiết về thành viên 1</div>
-            </div>
-            <div class="memgroup">
-                <div class="image-container">
-                    <img src="../view/cus/img/tubi.jpg" alt="Member 2">
-                    <div class="overlay"></div>
-                </div>
-                <h3 data-id="2">Nguyễn Phan Tú Bình</h3>
-                <a href="https://www.facebook.com/member2" target="_blank" class="fab fa-facebook"></a>
-                <div class="member-info" id="info-2">Thông tin chi tiết về thành viên 2</div>
-            </div>
-            <div class="memgroup">
-                <div class="image-container">
-                    <img src="../view/cus/img/chau.jpg" alt="Member 3">
-                    <div class="overlay"></div>
-                </div>
-                <h3 data-id="3">Phạm Hoàng Châu</h3>
-                <a href="https://www.facebook.com/member3" target="_blank" class="fab fa-facebook"></a>
-                <div class="member-info" id="info-3">Thông tin chi tiết về thành viên 3</div>
-            </div>
-            <div class="memgroup">
-                <div class="image-container">
-                    <img src="../view/cus/img/nhicho.jpg" alt="Member 4">
-                    <div class="overlay"></div>
-                </div>
-                <h3 data-id="4">Dương Yến Nhi</h3>
-                <a href="https://www.facebook.com/member4" target="_blank" class="fab fa-facebook"></a>
-                <div class="member-info" id="info-4">Thông tin chi tiết về thành viên 4</div>
-            </div>
-            <div class="memgroup">
-                <div class="image-container">
-                    <img src="../view/cus/img/nhi4p.jpg" alt="Member 5">
-                    <div class="overlay"></div>
-                </div>
-                <h3 data-id="5">Nguyễn Ngọc Yến Nhi</h3>
-                <a href="https://www.facebook.com/member5" target="_blank" class="fab fa-facebook"></a>
-                <div class="member-info" id="info-5">Thông tin chi tiết về thành viên 5</div>
-            </div>
-        </div>
-    </div> -->
+        <img class="poster" src="../view/cus/img/pic1.png">   
+        <img class="poster" src="../view/cus/img/poster3.png">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../view/cus/img/gif1cut.gif" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../view/cus/img/gif3.gif" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
   <!-- //<img class="postertrangchu" src="../view/cus/img/postertrangchu.png"> -->
             </script>
            
