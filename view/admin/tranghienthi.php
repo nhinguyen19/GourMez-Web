@@ -77,7 +77,10 @@
           include ('ql_khuyenmai/capnhatkmnews.php');
           updatekmnews();
           break;
-        
+          case 'updatecodedis' :
+            include ('ql_khuyenmai/capnhatcodedis.php');
+            updatecodedis();
+            break;
         case 'themcodedis':
           insertcodedis();
           include('ql_khuyenmai/themcodedis.php');

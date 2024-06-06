@@ -65,7 +65,7 @@ if (isset($codedis)&&(count($codedis)>0))
             <td>'.$code['id'].' </td>
             <td> '.$code['code_dis'].'</td> 
             <td>'.$code['qtt_of_dis'].' </td> 
-             <td><a href="tranghienthi.php?quanly=updatecodediscount&id='.$code['id'].'"> Sửa</a> | <a href="tranghienthi.php?quanly=delcodedis&id='.$code['id'].'"> Xóa</a>  </td> 
+             <td><a href="tranghienthi.php?quanly=updatecodedis&id='.$code['id'].'"> Sửa</a> | <a href="tranghienthi.php?quanly=delcodedis&id='.$code['id'].'"> Xóa</a>  </td> 
                 </tr> ';
         $i++;
     }
