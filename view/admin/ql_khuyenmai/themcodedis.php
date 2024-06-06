@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="ql_khuyenmai/khuyenmai.css">
+<link rel ="stylesheet" href="tranghienthi.css">
 <div class="main">
 <h2 class="title"> Thêm mã khuyến mãi </h2>
 <div class ="main1">
@@ -13,8 +13,9 @@
                 <th> <input type="number" name="qttcode" id=""></th>
             </tr>
             
+            
             <tr>
-                <th colspan="2"><input type="submit" name="themcodedis1" value="Thêm mới"></th>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="themcodedis1" value="Thêm khuyến mãi"></td>
             </tr>
         </form>
     </table>

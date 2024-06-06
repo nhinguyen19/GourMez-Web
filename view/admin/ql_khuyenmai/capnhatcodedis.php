@@ -24,9 +24,8 @@
                 <td><input type="number"  name="qtt" id="qtt" rows="7"><?php echo $row['qtt_of_dis'] ?></td>
             </tr>
           
-          
             <tr>
-                <td style="text-align: center;" colspan="2"><input type="submit" name="suacodedis" style= " background-color: #F5EAD7; border: 0.5px solid black;font-family: 'Lalezar'; color: #E26A2C" value="Cập nhật"></td>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="suacodedis" value="Cập nhật"></td>
             </tr>
         </form>
     </table>
