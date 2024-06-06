@@ -86,11 +86,11 @@ if (!isset($_SESSION['user'])) {
     die("User not logged in");
 }
 
-$user = $_SESSION['user'];
-$sql = "SELECT user_name, email, fullname, phone, address FROM user WHERE user_name = ?";
+$id = $_SESSION['id'];
+$sql = "SELECT user_name, email, fullname, phone, address FROM user WHERE user_id = ?";
 $stmt = $conn->prepare($sql);
 if ($stmt) {
-    $stmt->bind_param("s", $user);
+    $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows == 1) {

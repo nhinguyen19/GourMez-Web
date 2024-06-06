@@ -1,6 +1,6 @@
 <?php
 
-function get_info($user){
+function get_info($id){
     
     $host = "localhost";
     $username = "root";
@@ -12,7 +12,7 @@ function get_info($user){
         die('Kết nối không thành công: ' . $conn->connect_error);
     } 
     $array= array();
-    $sql="SELECT * FROM user WHERE user_name ='$user'";
+    $sql="SELECT * FROM user WHERE user_id ='$id'";
 
     $kq=$conn->query($sql);
 

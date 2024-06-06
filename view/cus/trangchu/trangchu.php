@@ -95,7 +95,7 @@
 
 
         <img class="poster" src="../view/cus/img/pic1.png">
-     
+<!--      
         <div class="memcontain">
         <div class="member-box">
             <div class="memgroup">
@@ -144,7 +144,7 @@
                 <div class="member-info" id="info-5">Thông tin chi tiết về thành viên 5</div>
             </div>
         </div>
-    </div>
+    </div> -->
   <!-- //<img class="postertrangchu" src="../view/cus/img/postertrangchu.png"> -->
             </script>
            
