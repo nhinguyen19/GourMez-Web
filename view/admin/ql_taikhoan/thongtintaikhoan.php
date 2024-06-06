@@ -57,7 +57,7 @@
 <div id="user_login" class="box-content" >
                 
 
-    <H3><b>THÔNG TIN TÀI KHOẢN</b></H3>
+    <p>THÔNG TIN TÀI KHOẢN</p>
     <div class="form">
         <form method="Post" autocomplete="off" >
             

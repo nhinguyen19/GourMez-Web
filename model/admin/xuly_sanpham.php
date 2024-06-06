@@ -98,41 +98,56 @@
         }
     }
     function suaSanPham()
+{
+    $conn = connectdb();
+    if(isset($_POST['suaspham'])) 
     {
-        $conn = connectdb();
-        if(isset($_POST['suaspham'])) 
-        {
-            $id = $_GET['idsanpham'];
-            $tensp = $_POST['tensanpham'];
-            $giaban = $_POST['giasanpham'];
-            $giagoc = $_POST['giagoc_sanpham'];
-            $mota = $_POST['mota'];
-            $hinhanh = $_FILES['hinhanh']['name'];
-            $hinhanh_tmp = $_FILES['hinhanh']['tmp_name']; 
-            $hinhanh = time().'_'.$hinhanh;
-            
-            if($_FILES['hinhanh'])
-            {
-                $sql_sua = "UPDATE food SET food_name = '$tensp', selling_price = '$giaban',original_price='$giagoc',small_descr='$mota',img='$hinhanh' WHERE food_id = '$id'";
-                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_sanpham/uploads/'.$hinhanh); 
-            }
-            else{
-                $sql_sua = "UPDATE food SET food_name = '$tensp', selling_price = '$giaban',original_price='$giagoc',small_descr='$mota' WHERE food_id = '$id'";
-            }
-            if(mysqli_query($conn, $sql_sua)) {
-                echo "<script>
+        $id = $_GET['idsanpham'];
+        $tensp = $_POST['tensanpham'];
+        $giaban = $_POST['giasanpham'];
+        $giagoc = $_POST['giagoc_sanpham'];
+        $mota = $_POST['mota'];
+        $hinhanh = $_FILES['hinhanh']['name'];
+        $hinhanh_tmp = $_FILES['hinhanh']['tmp_name']; 
+        $hinhanh = time().'_'.$hinhanh;
+        
+        // Check if the product name already exists
+        $sql_check = "SELECT * FROM food WHERE food_name = '$tensp' AND food_id != '$id'";
+        $result_check = mysqli_query($conn, $sql_check);
+
+        if (mysqli_num_rows($result_check) > 0) {
+            echo "<script>
                     Swal.fire({
-                        icon: 'success',
-                        title: 'Cập nhật danh mục thành công!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then(function() {
-                        window.location.href = 'tranghienthi.php?quanly=tatcasp'
+                        icon: 'error',
+                        title: 'Tên sản phẩm đã tồn tại!',
+                        text: 'Vui lòng chọn tên khác.',
+                        showConfirmButton: true
                     });
                   </script>";
+        } else {
+            if($_FILES['hinhanh']['name'] != '') {
+                $sql_sua = "UPDATE food SET food_name = '$tensp', selling_price = '$giaban', original_price='$giagoc', small_descr='$mota', img='$hinhanh' WHERE food_id = '$id'";
+                move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_sanpham/uploads/'.$hinhanh); 
+            } else {
+                $sql_sua = "UPDATE food SET food_name = '$tensp', selling_price = '$giaban', original_price='$giagoc', small_descr='$mota' WHERE food_id = '$id'";
+            }
+
+            if(mysqli_query($conn, $sql_sua)) {
+                echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Cập nhật sản phẩm thành công!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=tatcasp';
+                        });
+                      </script>";
             } else {
                 echo "Error: " . mysqli_error($conn);
             }
         }
     }
+}
+
 ?>

@@ -29,7 +29,6 @@
 $conn = connectdb();
 $user_id = isset($_SESSION['id']) ? mysqli_real_escape_string($conn, $_SESSION['id']) : null;
 
-
 if (isset($_POST['update'])) {
     $foodId = $_POST['food_id'];
     $quantity = $_POST['quantity'];
@@ -38,12 +37,12 @@ if (isset($_POST['update'])) {
     if ($user_id) {
         $updateQuantityQuery = "UPDATE cart SET quantity = $quantity WHERE food_id = $foodId AND user_id = $user_id";
         mysqli_query($conn, $updateQuantityQuery);
+        $isUpdated = true;
     } else {
         for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
             if ($_SESSION['cart'][$i]['food_id'] == $foodId) {
                 // Món ăn đã tồn tại trong giỏ hàng, cập nhật số lượng
                 $_SESSION['cart'][$i]['quantity'] = $quantity;
-                $isUpdated = true;
                 break;
             }
         }
@@ -194,16 +193,17 @@ if ($user_id) {
 }
 ?>
 <div class="giohang_content">
+<div class="giohang_content">
     <div class="noidung">
         <?php
-        echo '<p style="color: #E7B037;; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" color: #E7B037;></i> Giỏ hàng của bạn</p>';
+        echo '<p style="color: #E7B037; font-family: Lalezar; font-size: 30px;"><i class="fas fa-shopping-cart" style="color: #E7B037;"></i> Giỏ hàng của bạn</p>';
         echo '<table class="tb_noidung" style="font-size: 16px">';
         echo $cartItems;
         echo '<tr>';
         echo '<td colspan="2" style="text-align: center; font-weight:bold">Thành tiền: ' . number_format($totalPrice, 0, '.', '.') . ' đ</td>';
         echo '</tr>';
         echo '<tr>';
-        echo '<td colspan="2" style="text-align: center;"> <button class="btn_thanhtoan" type="button" style="margin-top: 5px;"> <a href="tranghienthi.php?quanly=thanhtoan" style="text-decoration: none; color: #ffff;">Thanh toán</a></button> </td>';
+        echo '<td colspan="2" style="text-align: center;"> <button class="btn_thanhtoan" type="button" style="margin-top: 5px;" onclick="handleCheckout()">Thanh toán</button> </td>';
         echo '</tr>';
         echo '</table>';
         ?>
@@ -237,3 +237,17 @@ if ($user_id) {
 </div>
 </body>
 </html>
+<script>
+    function handleCheckout() {
+        var totalPrice = <?php echo $totalPrice; ?>;
+        if (totalPrice > 0) {
+            window.location.href = 'tranghienthi.php?quanly=thanhtoan';
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Lỗi',
+                text: 'Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm để thanh toán.'
+            });
+        }
+    }
+</script>

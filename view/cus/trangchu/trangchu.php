@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../view/LIB/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="../view/cus/trangchu/trangchu.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <div class="trangchumain">
 <img class="postertrangchu" src="../view/cus/img/GM1.png">
 <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -94,40 +95,56 @@
 
 
         <img class="poster" src="../view/cus/img/pic1.png">
+<!--      
         <div class="memcontain">
-    <div class="member-box">
-        <div class="memgroup">
-            <img src="../view/cus/img/mem2.jpg" alt="Member 1">
-            <h3>Thành viên 1</h3>
-            <button class="detail-btn" data-id="1">Xem chi tiết</button>
-            <div class="member-info" id="info-1"></div>
+        <div class="member-box">
+            <div class="memgroup">
+                <div class="image-container">
+                    <img src="../view/cus/img/mem2.jpg" alt="Member 1">
+                    <div class="overlay"></div>
+                </div>
+                <h3 data-id="1">Nguyễn Bảo Minh Anh</h3>
+                <a href="https://www.facebook.com/member1" target="_blank" class="fab fa-facebook"></a>
+                <div class="member-info" id="info-1">Thông tin chi tiết về thành viên 1</div>
+            </div>
+            <div class="memgroup">
+                <div class="image-container">
+                    <img src="../view/cus/img/tubi.jpg" alt="Member 2">
+                    <div class="overlay"></div>
+                </div>
+                <h3 data-id="2">Nguyễn Phan Tú Bình</h3>
+                <a href="https://www.facebook.com/member2" target="_blank" class="fab fa-facebook"></a>
+                <div class="member-info" id="info-2">Thông tin chi tiết về thành viên 2</div>
+            </div>
+            <div class="memgroup">
+                <div class="image-container">
+                    <img src="../view/cus/img/chau.jpg" alt="Member 3">
+                    <div class="overlay"></div>
+                </div>
+                <h3 data-id="3">Phạm Hoàng Châu</h3>
+                <a href="https://www.facebook.com/member3" target="_blank" class="fab fa-facebook"></a>
+                <div class="member-info" id="info-3">Thông tin chi tiết về thành viên 3</div>
+            </div>
+            <div class="memgroup">
+                <div class="image-container">
+                    <img src="../view/cus/img/nhicho.jpg" alt="Member 4">
+                    <div class="overlay"></div>
+                </div>
+                <h3 data-id="4">Dương Yến Nhi</h3>
+                <a href="https://www.facebook.com/member4" target="_blank" class="fab fa-facebook"></a>
+                <div class="member-info" id="info-4">Thông tin chi tiết về thành viên 4</div>
+            </div>
+            <div class="memgroup">
+                <div class="image-container">
+                    <img src="../view/cus/img/nhi4p.jpg" alt="Member 5">
+                    <div class="overlay"></div>
+                </div>
+                <h3 data-id="5">Nguyễn Ngọc Yến Nhi</h3>
+                <a href="https://www.facebook.com/member5" target="_blank" class="fab fa-facebook"></a>
+                <div class="member-info" id="info-5">Thông tin chi tiết về thành viên 5</div>
+            </div>
         </div>
-        <div class="memgroup">
-            <img src="../view/cus/img/tubi.jpg" alt="Member 2">
-            <h3>Thành viên 2</h3>
-            <button class="detail-btn" data-id="2">Xem chi tiết</button>
-            <div class="member-info" id="info-2"></div>
-        </div>
-        <div class="memgroup">
-            <img src="../view/cus/img/chau.jpg" alt="Member 3">
-            <h3>Thành viên 3</h3>
-            <button class="detail-btn" data-id="3">Xem chi tiết</button>
-            <div class="member-info" id="info-3"></div>
-        </div>
-        <div class="memgroup">
-            <img src="../view/cus/img/nhicho.jpg" alt="Member 4">
-            <h3>Thành viên 4</h3>
-            <button class="detail-btn" data-id="4">Xem chi tiết</button>
-            <div class="member-info" id="info-4"></div>
-        </div>
-        <div class="memgroup">
-            <img src="../view/cus/img/nhi4p.jpg" alt="Member 5">
-            <h3>Thành viên 5</h3>
-            <button class="detail-btn" data-id="5">Xem chi tiết</button>
-            <div class="member-info" id="info-5"></div>
-        </div>
-    </div>
-</div>
+    </div> -->
   <!-- //<img class="postertrangchu" src="../view/cus/img/postertrangchu.png"> -->
             </script>
            

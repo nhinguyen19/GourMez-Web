@@ -32,7 +32,7 @@ $conn = connectdb();
                 <td><?php echo $row['origin_total_price'] ?></td>
                 <td><?php echo $row['user_id'] ?></td>
                 <td><?php echo $row['staff_id'] ?></td>
-                <td><a href="tranghienthi.php?quanly=updateorder&id=<?php echo $row['order_id']; ?>"> Sửa</a></td>
+                <td><a href="tranghienthi.php?quanly=updateorder&id=<?php echo $row['order_id']; ?>"> Xem chi tiết</a></td>
             </tr>
             <?php
                 }

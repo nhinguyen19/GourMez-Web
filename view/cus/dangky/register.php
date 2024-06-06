@@ -1,6 +1,6 @@
 <?php
         // session_start();
-        // include 'google_source.php';
+        
         
         $err=array();
         if(isset($_POST['dangky']) && ($_POST['dangky'])=='Đăng ký')
@@ -68,7 +68,8 @@
                     </div>
                     
                     <div class="has-error">
-                        <span><?php echo (isset($err['name']))?$err['name']:''?></span>
+                        <span><?php echo (isset($err['name']))?$err['name'].'<br>':''?></span>
+                        <span><?php echo (isset($err['countname']))?$err['countname']:''?></span>
                     </div> 
 
                             <!-- email -->
@@ -122,7 +123,7 @@
                                 // Hiển thị thông báo lỗi
                                 foreach ($errors as $error) //trong mỗi vòng lặp qua mảng $errors thì sẽ gán mỗi ptu mảng vào biến $error
                                 {
-                                    echo "<p style='color:red'>".$error . "</p><br>";
+                                    echo "<p style='color:red; margin-bottom: 0;'>".$error. "</p>";
                                 }
                             }
                         }

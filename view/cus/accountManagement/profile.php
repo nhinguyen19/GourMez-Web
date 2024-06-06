@@ -2,9 +2,9 @@
     // session_start();
     include('../view/cus/accountManagement/lay_tttk.php');
 
-    $user=$_SESSION['user'];
+    $id=$_SESSION['id'];
 
-    $array=get_info($user);
+    $array=get_info($id);
 
 ?>
 

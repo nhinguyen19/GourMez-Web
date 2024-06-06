@@ -64,6 +64,14 @@ function insertdiscountnews()
             $sql = "INSERT INTO discount_news (discount_name, description, img)
             VALUES ('$tenkmnews', ' $mota', '$img')";
             $conn->query($sql);
+            echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Thêm tin tức khuyến mãi thành công!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+          </script>";
 
             }
 
@@ -81,6 +89,14 @@ function insertcodedis()
             $sql = "INSERT INTO discount (code_dis, qtt_of_dis)
             VALUES ('$code', ' $qtt')";
             $conn->query($sql);
+            echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Thêm mã khuyến mãi thành công!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+          </script>";
 
 
     }
@@ -124,7 +140,7 @@ function deldiscountnews()
                 echo "<script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Xóa sản phẩm thành công!',
+                    title: 'Xóa tin tức thành công!',
                     showConfirmButton: false,
                     timer: 1500
                 }).then(function() {
@@ -164,7 +180,7 @@ function delcodedis()
                 echo "<script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Xóa sản phẩm thành công!',
+                    title: 'Xóa mã khuyến mãi thành công!',
                     showConfirmButton: false,
                     timer: 1500
                 }).then(function() {

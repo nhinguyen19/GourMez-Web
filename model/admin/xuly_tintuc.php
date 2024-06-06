@@ -55,7 +55,17 @@ function themTinTuc()
                     });
                   </script>";
             } else {
-                echo "Lỗi: " . mysqli_error($conn);
+                echo "<script>
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Không thể thêm tin tức. Tên tin tức đã tồn tại.',
+                        confirmButtonColor: 'red',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        window.location.href = 'tranghienthi.php?quanly=themtintuc';
+                    });
+                  </script>";
             }
         }
     }
@@ -157,7 +167,17 @@ function suaTinTuc()
             });
                   </script>";
         } else {
-            echo "Error: " . mysqli_error($conn);
+            echo "<script>
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Không thể sửa tin tức. Tên tin tức đã tồn tại.',
+                        confirmButtonColor: 'red',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        window.location.href = 'tranghienthi.php?quanly=suatintuc&tintucId=$tintucId';
+                    });
+                  </script>";
         }
     }
 }
