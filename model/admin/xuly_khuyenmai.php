@@ -45,6 +45,22 @@ function insertdiscountnews()
         $img = $target_file;
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        if (empty($tenkmnews||$mota||$img)) {
+            echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: 'Tên khuyến mãi không được để trống.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'tranghienthi.php?quanly=themkmnews';
+                        }
+                    });
+                  </script>";
+            return;
+        }
        
       // Allow certain file formats
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
