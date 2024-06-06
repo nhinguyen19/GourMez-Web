@@ -33,10 +33,32 @@
                 move_uploaded_file($hinhanhBanner_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh_banner); 
     
                 if(mysqli_query($conn, $sql_them)) {
-                    echo "<script>alert('Thêm dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                    echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thêm dịch vụ thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                        });
+                        </script>";
                     exit();
                 } else {
-                    echo "<script>alert('Lỗi thêm dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
+                   
+                    echo "<script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Không thể thêm dịch vụ',
+                                text: 'Vui lòng thêm sau',
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'OK'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                                }
+                            });
+                        </script>";
                 }
             }
         }
@@ -66,7 +88,16 @@
 
              if ($count > 0)
              {
-                echo "<script>alert('Không thể sửa dịch vụ. Tên dịch vụ đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sửa dịch vụ thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                        });
+                        </script>";
              }
              else
              {
@@ -77,12 +108,32 @@
                                 WHERE id_service = '$id'";
                     if(mysqli_query($conn, $sql_sua)) 
                     {
-                        echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sửa dịch vụ thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                        });
+                        </script>";
                         exit();
                     } else 
                     {
-                        echo "<script>alert('Lỗi sửa dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
-                        // echo mysqli_error($conn);
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi sửa dịch vụ',
+                            text: '',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                            }
+                        });
+                    </script>";
                     }
                                 
                 }
@@ -93,11 +144,32 @@
                                 WHERE id_service = '$id'";
                     if(mysqli_query($conn, $sql_sua)) 
                     {
-                        echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sửa dịch vụ thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                        });
+                        </script>";
                         exit();
                     } else 
                     {
-                        echo "<script>alert('Lỗi sửa dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi sửa dịch vụ',
+                            text: '',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                            }
+                        });
+                    </script>";
                     }
                 }
                 else if($hinhanh != "")
@@ -119,10 +191,31 @@
 
                     if(mysqli_query($conn, $sql_sua)) 
                     {
-                        echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sửa dịch vụ thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                        });
+                        </script>";
                     } else 
                     {
-                        echo "Lỗi: " . mysqli_error($conn);
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi sửa dịch vụ',
+                            text: '',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                            }
+                        });
+                    </script>";
                     }
                 }
                 
@@ -145,11 +238,32 @@
 
                     if(mysqli_query($conn, $sql_sua)) 
                     {
-                        echo "<script>alert('Sửa dịch vụ thành công'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sửa dịch vụ thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                        });
+                        </script>";
                         exit();
                     } else 
                     {
-                        echo "<script>alert('Lỗi sửa dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi sửa dịch vụ',
+                            text: '',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                            }
+                        });
+                    </script>";
                     }
                 }
             }
@@ -197,12 +311,33 @@
                     $sql_reset_auto_increment = "ALTER TABLE service AUTO_INCREMENT = 1";
                     mysqli_query($conn, $sql_reset_auto_increment);
 
-                    echo "<script>alert('Xóa dịch vụ thành công.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
+                    echo "<script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Sửa dịch vụ thành công',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(function() {
+                        window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                    });
+                    </script>";
                     exit();
                 }
                 else
                 {
-                    echo "<script>alert('Lỗi xóa dịch vụ.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
+                    echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi xóa dịch vụ',
+                            text: '',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                            }
+                        });
+                    </script>";
                 }
         }
     }
@@ -227,7 +362,19 @@
     
             if($count > 0) {
                 // Tên món ăn đã tồn tại, hiển thị thông báo bằng JavaScript
-                echo "<script>alert('Không thể thêm món. Món ăn đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi thêm món ăn',
+                            text: 'Tên món ăn đã tồn tại',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$id';
+                            }
+                        });
+                    </script>";
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO food_for_service(ID_service, food_combo, price, image) VALUES ('$id', '$tenmon_dv', '$giamon_dv','$hinhanh')";
@@ -235,10 +382,32 @@
     
                 if(mysqli_query($conn, $sql_them)) {
                     echo $hinhanh;
-                    echo "<script>alert('Thêm món ăn thành công'); window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$id';</script>";
+                    // echo "<script>alert('Thêm món ăn thành công'); window.location='tranghienthi.php?quanly=themonan';</script>";
+                    echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thêm món ăn thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$id';
+                        });
+                        </script>";
                     exit();
                 } else {
-                    echo "Lỗi: " . mysqli_error($conn);
+                    echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi thêm món ăn',
+                        text: '',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$id';
+                        }
+                    });
+                </script>";
                 }
             }
         }
@@ -252,7 +421,7 @@
             $id = $_GET['idmonan'];
             $tenmonan_DV = $_POST['tenmonandv'];
             $giamonan_DV = $_POST['giamonandv'];
-            // $iddichvu = $_POST['iddichvu'];
+            $iddichvu = $_GET['iddichvu'];
             $hinhanh = $_FILES['hinhanhmonandvmoi']['name'];
             $hinhanh_tmp = $_FILES['hinhanhmonandvmoi']['tmp_name']; 
             $hinhanh = time().'_'.$hinhanh;
@@ -266,7 +435,19 @@
             if ($count > 0)
             {
                 // Tên món ăn đã tồn tại, hiển thị thông báo bằng JavaScript
-                echo "<script>alert('Không thể sửa món ăn. Tên món ăn đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi sửa món ăn',
+                            text: 'Tên món ăn đã tồn tại',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$iddichvu';
+                            }
+                        });
+                    </script>";
             }
             else
             {
@@ -277,7 +458,16 @@
                         Where ID_food = '$id'";
                 if(mysqli_query($conn, $sql_sua)) 
                     {
-                        echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=tatcadichvu' ;</script>";
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sửa món ăn thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$iddichvu';
+                        });
+                        </script>";
                     } else 
                     {
                         echo "<script>alert('Lỗi sửa món ăn.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
@@ -291,7 +481,16 @@
                         Where ID_food = '$id'";
                 if(mysqli_query($conn, $sql_sua)) 
                     {
-                        echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=tatcadichvu' ;</script>";
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sửa món ăn thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$iddichvu';
+                        });
+                        </script>";
                     } else 
                     {
                         echo "<script>alert('Lỗi sửa món ăn.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
@@ -300,7 +499,7 @@
 
             else if ($hinhanh != "")
             {
-                $sql_select_image = "SELECT image FROM food_for_service WHERE ID_food = '$id' ";
+                $sql_select_image = "SELECT image FROM food_for_service WHERE ID_food = '$iddichvu' ";
                 $result = mysqli_query($conn, $sql_select_image);
                 $row = mysqli_fetch_assoc($result);
                 $old_image = $row['image'];
@@ -316,11 +515,32 @@
                 move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh); 
                 if(mysqli_query($conn, $sql_sua)) 
                 {
-                    echo "<script>alert('Sửa món ăn thành công'); window.location='tranghienthi.php?quanly=tatcadichvu' ;</script>";
+                    echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sửa món ăn thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$iddichvu';
+                        });
+                        </script>";
                     exit();
                 } else 
                 {
-                    echo "<script>alert('Lỗi sửa món ăn.');window.location='tranghienthi.php?quanly=tatcadichvu'</script>";
+                    echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi sửa món ăn',
+                        text: 'Tên món ăn đã tồn tại',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$iddichvu';
+                        }
+                    });
+                </script>";
                 }
 
             }
@@ -366,12 +586,33 @@
                 $sql_reset_auto_increment = "ALTER TABLE food_for_service AUTO_INCREMENT = 1";
                 mysqli_query($conn, $sql_reset_auto_increment);
 
-                echo "<script>alert('Xóa món ănthành công.');window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$iddichvu'</script>";
+                echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Xóa món ăn thành công',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$iddichvu';
+                        });
+                        </script>";
                 exit();
             }
             else
             {
-                echo "<script>alert('Lỗi xóa món ăn.');window.location='tranghienthi.php?quanly=suaDichVu&iddichvu=$iddichvu</script>";
+                echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi xóa món ăn',
+                        text: '',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'tranghienthi.php?quanly=thucdondv&iddichvu=$iddichvu';
+                        }
+                    });
+                </script>";
             }
             
         }

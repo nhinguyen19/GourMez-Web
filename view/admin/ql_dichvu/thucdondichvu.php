@@ -31,7 +31,7 @@
     
     input[type = 'submit'], input[type = 'reset']
     {
-        background-color: rgba(73, 169, 111, 1);
+        background-color: #E26A2C;
         border-radius: 8px;
         border: none; 
         color: white;
@@ -61,7 +61,7 @@
 
     button
     {
-        background-color: rgba(73, 169, 111, 1);
+        background-color: #14942c;
         font-family: 'Lalezar';
         border-radius: 10px;
         border: none; 
@@ -102,7 +102,7 @@
                 <td style = "text-align: center; border: 1px solid black"><?php echo $row['price']?></td>
                 <td style="text-align: center; border: 1px solid black"><img src="../../view/admin/ql_dichvu/uploads/<?php echo $row['image'] ?>" width="100" height="100"></td>
                 <td style="text-align: center;border: 1px solid black">
-                    <button><a href="tranghienthi.php?quanly=xoamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a></button> <button><a href="tranghienthi.php?quanly=suamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></button> 
+                    <button  style = "background-color:#BB0000;"><a href="tranghienthi.php?quanly=xoamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Xóa</a></button> <button><a href="tranghienthi.php?quanly=suamonandichvu&iddichvu=<?php echo $_GET['iddichvu']?>&idmonan=<?php echo $row['ID_food']; ?>">Sửa</a></button> 
                 </td>     
             
             </tr>

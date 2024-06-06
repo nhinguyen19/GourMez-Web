@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
 include_once('../view/cus/dichvu/function_dv.php');
-include('../controller/thuvien.php');
+include('../controller/xuly_dichvu.php');
     if(isset($_POST['dathangdv'])&&($_POST['dathangdv']))
     {
         //lấy thông tin KH

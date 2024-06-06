@@ -270,4 +270,35 @@ function updatekmnews()
         
         }
     }
+    
+function updatecodedis()
+{
+    $conn = connectdb();
+    if((isset($_POST['suacodedis'])) &&($_POST['suacodedis']))
+    {
+        $id = $_GET['id'];
+        $ten = $_POST['discount_name'];
+        $qtt = $_POST['qtt'];
+       
+    
+                $sql_sua = "UPDATE discount SET code_dis = '$ten', qtt_of_dis ='$qtt'WHERE id = '$id'";
+                   
+                
+                if(mysqli_query($conn, $sql_sua))
+                {
+                   echo "<script>
+                       Swal.fire({
+                           icon: 'success',
+                           title: 'Cập nhật mã khuyến mãi thành công!',
+                           showConfirmButton: false,
+                           timer: 1500
+                       })
+                     </script>";
+               } else {
+                   echo "Error: " . mysqli_error($conn);
+               }
+
+        
+        }
+    }
 ?>

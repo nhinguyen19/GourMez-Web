@@ -1,10 +1,10 @@
 <?php
     include_once("C:/xampp/htdocs/project/GourMez-Web/model/connect.php");
     $conn = connectdb();
-    $sql = "SELECT order_day, COUNT(id_bill) AS total_quantity_service
-    FROM birthday_service
-    GROUP BY order_day
-            ORDER BY order_day"; 
+    $sql = "SELECT date_order, COUNT(order_id) AS total_order
+    FROM orders
+    GROUP BY date_order
+            ORDER BY date_order"; 
   
     $kq = mysqli_query($conn,$sql);
 

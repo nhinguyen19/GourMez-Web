@@ -43,7 +43,7 @@
         $host = "localhost";
         $username = "root";
         $password = "";
-        $database = "gourmez_web";
+        $database = "database";
         $conn = new mysqli($host, $username, $password, $database);
         
         if ($conn->connect_error) {

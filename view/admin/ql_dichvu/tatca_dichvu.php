@@ -49,6 +49,7 @@
         font-family: 'Lalezar';
         margin-left: 150px;
         color:#fd7e14;
+        font-size: 35px;
     }
 
     .small_descript, .banner_col
@@ -58,7 +59,7 @@
 
     input[type = 'submit']
     {
-        background-color: rgba(73, 169, 111, 1);
+        background-color: #E26A2C;
         border-radius: 8px;
         border: none; 
         color: white;
@@ -86,7 +87,7 @@
 
     button
     {
-        background-color: rgba(73, 169, 111, 1);
+        background-color: #14942c;
         font-family: 'Lalezar';
         border-radius: 10px;
         border: none; 
@@ -141,7 +142,7 @@
                     <button style = "margin-left: 10px;"><a href="tranghienthi.php?quanly=thucdondv&iddichvu=<?php echo $row['id_service']; ?>">Xem thực đơn</a></button>
                 </td>
                 <td style="text-align: center">
-                    <button><a href="tranghienthi.php?quanly=xoaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Xóa</a></button> <button><a href="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Sửa</a></button>
+                    <button style = "background-color:#BB0000;"><a href="tranghienthi.php?quanly=xoaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Xóa</a></button> <button><a href="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $row['id_service']; ?>">Sửa</a></button>
                 </td>     
             </tr>
             <?php
