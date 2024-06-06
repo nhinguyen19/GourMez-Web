@@ -15,7 +15,7 @@ $conn = connectdb();
     {
         width: 100%;
         height: 90%;
-        margin-top: 100px;
+        margin-top: 80px;
     }
 
     /* Thanh đặt món */

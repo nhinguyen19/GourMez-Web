@@ -9,14 +9,13 @@
     th
     {
         padding: 15px;
-        background-color: rgba(73, 169, 111, 1);
-        color: white;
         font-weight: bolder;
+        font-family: 'Lalezar';
+        font-size: 20px;
     }
 
     table
     {
-        background-color: rgba(255,255,255,0.8);
         margin-bottom: 30px;
         width: 800px;
         
@@ -34,7 +33,7 @@
 
     input[type = 'submit'], input[type = 'reset']
     {
-        background-color: rgba(73, 169, 111, 1);
+        background-color:#14942c;
         border-radius: 8px;
         border: none; 
         color: white;
@@ -45,15 +44,32 @@
         font-family: 'Lalezar';
         margin: 10px 0 10px 0;
     }
+
+    input[type = 'reset']
+    {
+        background-color:#BB0000;
+    }
+
     #iddichvu
     {
         font-weight: bolder;
         font-size: 20px;
         text-align: center;
     }
+
+    .title1
+    {
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+        font-family: 'Lalezar';
+        margin-left: 150px;
+        color:#ff5722;
+    }
+    
 </style>
 
-<h2 class = "title1" style="margin-top: 100px;"> Sửa dịch vụ </h2>
+<h2 class = "title1"> Sửa dịch vụ </h2>
 <div class="insert_dv" >
     <table>
         <form method="POST" action="tranghienthi.php?quanly=suaDichVu&iddichvu=<?php echo $_GET['iddichvu']?>" enctype="multipart/form-data">
@@ -65,26 +81,26 @@
             <tr>
                 <th style = "text-align:center">Logo mới</th>
                 <td>
-                    <input type = "file" name = "logodichvumoi" style="width: 600px;font-size: 18px;background-color: #FFECCB; color: black;border:none">
+                    <input type = "file" name = "logodichvumoi" style="width: 600px;font-size: 18px;background-color:#d9dad7; color: black;border:none">
                 </td>
             </tr>
 
             <tr>
                 <th style = "text-align:center">Banner mới</th>
                 <td>
-                    <input type = "file" name = "bannerdichvumoi" style="width: 600px;font-size: 18px;background-color: #FFECCB; color: black;border:none">
+                    <input type = "file" name = "bannerdichvumoi" style="width: 600px;font-size: 18px;background-color:#d9dad7; color: black;border:none">
                 </td>
             </tr>
 
             <tr>
                 <th style="text-align: center;border: 1px solid black">Tên dịch vụ mới</th>
-                <td><input type="text" name="tendichvu" style="width: 600px; height: 40px;font-size: 18px;background-color: #FFECCB; color: black;border:none"></td>
+                <td><input type="text" name="tendichvu" style="width: 600px; height: 40px;font-size: 18px;background-color:#d9dad7; color: black;border:none"></td>
             </tr>
 
             <tr>
                 <th style="text-align: center;border: 1px solid black">Mô tả </th>
                 <td>
-                <textarea name = "mota" style="width: 600px; height:40px; font-size: 18px;background-color: #FFECCB; color: black;border:none"></textarea>
+                <textarea name = "mota" style="width: 600px; height:40px; font-size: 18px;background-color:#d9dad7; color: black;border:none"></textarea>
                 </td>
             </tr>
             

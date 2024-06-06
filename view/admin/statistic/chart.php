@@ -17,7 +17,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin-top: 200px;
  }
 
@@ -29,16 +28,25 @@
  h2
  {
     font-family: 'Lalezar';
+    color: orangered;
+ }
+
+ .line2
+ {
+    margin-bottom: 50px;
  }
 
 </style>
 
 <body>
+    
     <div class="chart-container">
-        <h2>Thống kê đơn hàng dịch vụ</h2>
-        <canvas id="line1" style = "width: 700px"></canvas>
         <h2>Thống kê tổng đơn hàng</h2>
-        <canvas id="line2" style = "width: 700px"></canvas>
+        <canvas id="line2" style = "width: 700px; margin-bottom: 70px;"></canvas>
+        
+        <h2>Thống kê đơn hàng dịch vụ</h2>
+        <canvas id="line1" style = "width: 700px; margin-bottom:90px;"></canvas>
+        
     </div>
     
 </body>
@@ -74,8 +82,8 @@
                             scaleLabel: {
                                 display: true,
                                 labelString: 'Ngày Đặt Hàng',
-                                fontSize: 20,
-                                fontColor: 'rgba(252, 47, 19, 1)', 
+                                fontSize: 17,
+                                fontColor: 'black', 
                                 fontStyle: 'bold',
                             },
                             
@@ -91,8 +99,8 @@
                             scaleLabel: {
                                 display: true,
                                 labelString: 'Tổng đơn hàng dịch vụ',
-                                fontSize: 20,
-                                fontColor: 'rgba(252, 47, 19, 1)', 
+                                fontSize: 17,
+                                fontColor: 'black', 
                                 fontStyle: 'bold'
                             },
                             
@@ -108,8 +116,8 @@
                     datasets: [
                         {
                             label: 'Tổng đơn hàng',
-                            backgroundColor: 'rgba(255, 165, 0, 0.2)', // Màu cam với độ trong suốt
-                            borderColor: '#FFA500', 
+                            backgroundColor: 'rgba(0, 0, 255, 0.2)',
+                            borderColor: 'blue', 
                             borderWidth: 2,
                             data: Total
                         }
@@ -138,7 +146,7 @@
                 {
                     var formattedDate = moment(data[i].order_day).format('DD/MM/YYYY');
                     Order_date.push(formattedDate);
-                    Total.push(data[i].total_quantity_service);
+                    Total.push(data[i].total_order);
                 }
 
                 var options = {
@@ -151,8 +159,8 @@
                             scaleLabel: {
                                 display: true,
                                 labelString: 'Ngày Đặt Hàng',
-                                fontSize: 20,
-                                fontColor: 'rgba(252, 47, 19, 1)', 
+                                fontSize: 16,
+                                fontColor: 'black', 
                                 fontStyle: 'bold',
                             },
                             
@@ -167,9 +175,9 @@
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Tổng đơn hàng dịch vụ',
-                                fontSize: 20,
-                                fontColor: 'rgba(252, 47, 19, 1)', 
+                                labelString: 'Tổng đơn hàng',
+                                fontSize: 16,
+                                fontColor: 'black', 
                                 fontStyle: 'bold'
                             },
                             
@@ -185,8 +193,8 @@
                     datasets: [
                         {
                             label: 'Tổng đơn hàng',
-                            backgroundColor: 'rgba(255, 165, 0, 0.2)', // Màu cam với độ trong suốt
-                            borderColor: '#FFA500', 
+                            backgroundColor: 'rgba(0, 0, 255, 0.2)',
+                            borderColor: 'blue', 
                             borderWidth: 2,
                             data: Total
                         }

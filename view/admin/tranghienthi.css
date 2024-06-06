@@ -27,7 +27,7 @@ table{
 .insert input[type="submit"] {
     background-color: #E26A2C; 
     border: none;font-family: 'Lalezar';  
-    border: 0.5px solid #fbfbfb; 
+    border: none; 
     border-radius: 5px;
     color: #ffff;
 }
