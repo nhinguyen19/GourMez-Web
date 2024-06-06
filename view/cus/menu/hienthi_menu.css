@@ -35,14 +35,7 @@
 .initial_menu {
     position: initial;
 }
-/* .menu_categories.fixed {
-    z-index: 10;
-    width: 260px;
-    left: 15px;
-    position: fixed;
-    top: 140px;
-}
-*/
+
 .menu_categories.scrolled {
     position: initial;
 } 
@@ -55,8 +48,8 @@
     font-family: 'Lalezar';
     text-align: left;
     padding-left: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .menu_categories a:hover {
 color: #FFA629;
