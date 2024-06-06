@@ -45,12 +45,12 @@ function insertdiscountnews()
         $img = $target_file;
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        if (empty($tenkmnews||$mota||$img)) {
+        if (empty($tenkmnews) || empty($mota) || empty($img) ) {
             echo "<script>
                     Swal.fire({
                         icon: 'error',
                         title: 'Lỗi',
-                        text: 'Tên khuyến mãi không được để trống.',
+                        text: 'Lỗi thông tin, không được để trống.',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK'
                     }).then((result) => {
@@ -65,7 +65,7 @@ function insertdiscountnews()
       // Allow certain file formats
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             $uploadOk = 0;
             }
             if($uploadOk ==1)

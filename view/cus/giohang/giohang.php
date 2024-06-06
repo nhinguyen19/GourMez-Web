@@ -43,6 +43,7 @@ if (isset($_POST['update'])) {
             if ($_SESSION['cart'][$i]['food_id'] == $foodId) {
                 // Món ăn đã tồn tại trong giỏ hàng, cập nhật số lượng
                 $_SESSION['cart'][$i]['quantity'] = $quantity;
+                $isUpdated = true;
                 break;
             }
         }
