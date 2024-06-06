@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <td style="text-align: center;font-family: 'Lalezar'">Hình ảnh</td>
-                <td><input type="file" name="img" style="width: 350px; font-family: Lalezar"></td>
+                <td><input type="file" name="img" style="width: 350px; font-family: Lalezar"><?php echo $row['img'] ?></td>
             </tr>
           
             <tr>
