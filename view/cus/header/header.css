@@ -83,7 +83,7 @@
 .dropdown_content a:hover{
     background-color: #252525;
     color: rgb(255, 255, 255);
-    width: 15vw;
+    
     /* z-index: 1000; */
     text-align: left;
     display: block;
