@@ -51,6 +51,7 @@ if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
 
         // Sending the email using PHPMailer
         $mail = new PHPMailer(true);
+        echo("abc");
 
         try {
             //Server settings

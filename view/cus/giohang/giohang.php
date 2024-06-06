@@ -5,7 +5,7 @@
         $host = "localhost";
         $username = "root";
         $password = "";
-        $database = "Gourmez_web";
+        $database = "gourmez_web";
         $conn = new mysqli($host, $username, $password, $database);
 
         if ($conn->connect_error) {
@@ -43,6 +43,7 @@ if (isset($_POST['update'])) {
             if ($_SESSION['cart'][$i]['food_id'] == $foodId) {
                 // Món ăn đã tồn tại trong giỏ hàng, cập nhật số lượng
                 $_SESSION['cart'][$i]['quantity'] = $quantity;
+                $isUpdated = true;
                 break;
             }
         }
