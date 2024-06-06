@@ -104,7 +104,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../view/cus/img/gif1cut.gif" class="d-block w-100" alt="...">
+      <img  src="../view/cus/img/gif1.gif" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
       <img src="..." class="d-block w-100" alt="...">

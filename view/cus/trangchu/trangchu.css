@@ -246,3 +246,9 @@
     .memgroup:hover .member-info {
         display: block;
     }
+
+    .gif
+     {
+      width : 80%;
+      height : 80%;
+     }
