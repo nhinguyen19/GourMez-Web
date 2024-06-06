@@ -17,7 +17,23 @@
             $result_check = mysqli_query($conn, $sql_check);
             $row_check = mysqli_fetch_assoc($result_check);
             $count = $row_check['count'];
-    
+            
+            if (empty($tensanpham) || empty($giasanpham) || empty($giagoc) || empty($mota) || empty($danhmuc) || empty($hinhanh)) {
+                echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Lỗi',
+                            text: 'Vui lòng điền đầy đủ thông tin.',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'tranghienthi.php?quanly=themsanpham';
+                            }
+                        });
+                      </script>";
+                return;
+            }
             if($count > 0) {
                 echo "<script>
                         Swal.fire({
@@ -115,6 +131,22 @@
         $sql_check = "SELECT * FROM food WHERE food_name = '$tensp' AND food_id != '$id'";
         $result_check = mysqli_query($conn, $sql_check);
 
+        if (empty($tensanpham) || empty($giasanpham) || empty($giagoc) || empty($mota) || empty($danhmuc) || empty($hinhanh)) {
+            echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: 'Vui lòng điền đầy đủ thông tin.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'tranghienthi.php?quanly=themsanpham';
+                        }
+                    });
+                  </script>";
+            return;
+        }
         if (mysqli_num_rows($result_check) > 0) {
             echo "<script>
                     Swal.fire({
