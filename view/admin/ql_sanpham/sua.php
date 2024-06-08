@@ -21,11 +21,11 @@
             </tr>
             <tr>
                 <td style="text-align: center;font-family: 'Lalezar'">Giá bán </td>
-                <td><input type="text" name="giasanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none" value="<?php echo $row['selling_price']; ?>"></td>
+                <td><input type="number" name="giasanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none" value="<?php echo $row['selling_price']; ?>"></td>
             </tr>
             <tr>
                 <td style="text-align: center;font-family: 'Lalezar'">Giá gốc </td>
-                <td><input type="text" name="giagoc_sanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none" value="<?php echo $row['original_price']; ?>"></td>
+                <td><input type="number" name="giagoc_sanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none" value="<?php echo $row['original_price']; ?>"></td>
             </tr>
             <tr>
                 <td style="text-align: center;font-family: 'Lalezar'">Hình ảnh</td>

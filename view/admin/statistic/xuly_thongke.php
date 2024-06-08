@@ -1,6 +1,14 @@
 <?php
-    include_once("C:/xampp/htdocs/project/GourMez-Web/model/connect.php");
-    $conn = connectdb();
+   $host = "localhost";
+   $username = "root";
+   $password = "";
+   $database = "database";
+   $conn = new mysqli($host, $username, $password, $database);
+
+   if ($conn->connect_error) {
+    die('Kết nối không thành công: ' . $conn->connect_error);
+} 
+
     $sql = "SELECT order_day, SUM(total_quantity_service) AS total_quantity
             FROM (
                     (SELECT order_day, COUNT(id_bill) AS total_quantity_service

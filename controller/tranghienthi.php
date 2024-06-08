@@ -129,7 +129,7 @@
         include ('../view/cus/trangchu/trangchu.php');
     }
 ?>
-<!-- đừng xóa footer nựa -->
+
     <?php
         include("../view/cus/footer/footer.php");
 
