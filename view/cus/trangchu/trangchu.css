@@ -246,3 +246,18 @@
     .memgroup:hover .member-info {
         display: block;
     }
+
+    .container1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-image: url('../img/poster3-1.png');
+      background-size: cover;
+  }
+  .poster1 {
+      width: 50%;
+  }
+  .carousel {
+      width: 50%;
+      height: 60%;
+  }

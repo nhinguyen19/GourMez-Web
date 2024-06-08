@@ -45,11 +45,27 @@ function insertdiscountnews()
         $img = $target_file;
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        if (empty($tenkmnews) || empty($mota) || empty($img) ) {
+            echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi',
+                        text: 'Lỗi thông tin, không được để trống.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'tranghienthi.php?quanly=themkmnews';
+                        }
+                    });
+                  </script>";
+            return;
+        }
        
       // Allow certain file formats
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             $uploadOk = 0;
             }
             if($uploadOk ==1)
@@ -259,6 +275,37 @@ function updatekmnews()
                        Swal.fire({
                            icon: 'success',
                            title: 'Cập nhật tin tức khuyến mãi thành công!',
+                           showConfirmButton: false,
+                           timer: 1500
+                       })
+                     </script>";
+               } else {
+                   echo "Error: " . mysqli_error($conn);
+               }
+
+        
+        }
+    }
+    
+function updatecodedis()
+{
+    $conn = connectdb();
+    if((isset($_POST['suacodedis'])) &&($_POST['suacodedis']))
+    {
+        $id = $_GET['id'];
+        $ten = $_POST['discount_name'];
+        $qtt = $_POST['qtt'];
+       
+    
+                $sql_sua = "UPDATE discount SET code_dis = '$ten', qtt_of_dis ='$qtt'WHERE id = '$id'";
+                   
+                
+                if(mysqli_query($conn, $sql_sua))
+                {
+                   echo "<script>
+                       Swal.fire({
+                           icon: 'success',
+                           title: 'Cập nhật mã khuyến mãi thành công!',
                            showConfirmButton: false,
                            timer: 1500
                        })

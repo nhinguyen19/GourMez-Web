@@ -56,6 +56,7 @@ label, a
 
 footer
 {
+
     background-color: black;
     color: white;
 }

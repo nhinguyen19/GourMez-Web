@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="ql_khuyenmai/khuyenmai.css">
+<link rel ="stylesheet" href="tranghienthi.css">
 <div class="main">
 <h2 class="title"> Thêm tin tức khuyến mãi </h2>
 <div class ="main1">
@@ -18,7 +18,7 @@
             </tr>
             
             <tr>
-                <th colspan="2"><input type="submit" name="themkmnews1" value="Thêm mới"></th>
+                <td style="text-align: center;" colspan="2"><input type="submit" name="themkmnews1" value="Thêm khuyến mãi"></td>
             </tr>
         </form>
     </table>

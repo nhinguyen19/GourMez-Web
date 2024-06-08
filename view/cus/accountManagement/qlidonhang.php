@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="../view/cus/accountManagement/qlidonhang.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
-<body>
+<div class="main1">
     <h2>LỊCH SỬ ĐƠN HÀNG CỦA BẠN</h2>
+    <div class="container">
     <?php
     include('../model/connect.php');
     $conn = connectdb();
@@ -38,24 +39,28 @@
             'quantity' => $row['quantity']
         ];
     }
-    
-    foreach ($orders as $order) {
-        echo '<div class="thanhcong">';
-        echo '<p>ID đơn hàng: ' . $order['order_id'] . '</p>';
-        echo '<p>Trạng thái: ' . $order['status'] . '</p>';
-        echo '<p>Thời gian ghi nhận: ' . $order['date_order'] . '</p>';
-        echo '<p>Họ tên người nhận: ' . $order['name_cus'] . '</p>';
-        echo '<p>Địa chỉ người nhận: ' . $order['address'] . '</p>';
-        echo '<p>Số điện thoại người nhận: ' . $order['phone'] . '</p>';
-        echo '<p>Phương thức thanh toán: ' . $order['payment_mode'] . '</p>';
-        echo '<p>Thành tiền: ' . $order['origin_total_price'] . '</p>';
-        echo '<h2>CHI TIẾT HÓA ĐƠN</h2>';
-        foreach ($order['items'] as $item) {
-            echo '<p>Món ăn: ' . $item['food_name'] . '</p>';
-            echo '<p>Số lượng: ' . $item['quantity'] . '</p>';
+
+    if (empty($orders)) {
+        echo '<h3>Bạn chưa có bất kì đơn hàng nào !</h3>';
+    } else {
+        foreach ($orders as $order) {
+            echo '<div class="thanhcong">';
+            echo '<p>ID đơn hàng: ' . $order['order_id'] . '</p>';
+            echo '<p>Trạng thái: ' . $order['status'] . '</p>';
+            echo '<p>Thời gian ghi nhận: ' . $order['date_order'] . '</p>';
+            echo '<p>Họ tên người nhận: ' . $order['name_cus'] . '</p>';
+            echo '<p>Địa chỉ người nhận: ' . $order['address'] . '</p>';
+            echo '<p>Số điện thoại người nhận: ' . $order['phone'] . '</p>';
+            echo '<p>Phương thức thanh toán: ' . $order['payment_mode'] . '</p>';
+            echo '<p>Thành tiền: ' . $order['origin_total_price'] . '</p>';
+            echo '<h2>CHI TIẾT HÓA ĐƠN</h2>';
+            foreach ($order['items'] as $item) {
+                echo '<p>Món ăn: ' . $item['food_name'] . '</p>';
+                echo '<p>Số lượng: ' . $item['quantity'] . '</p>';
+            }
+            echo '</div>';
         }
-        echo '</div>';
     }
     ?>
-</body>
-</html>
+</div>
+</div>

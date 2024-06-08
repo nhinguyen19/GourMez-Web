@@ -50,7 +50,12 @@ if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
         // Sending the email using PHPMailer
       
         $mail = new PHPMailer(true);
+<<<<<<< HEAD
         
+=======
+        echo("abc");
+
+>>>>>>> 6f3a75928346d017e70aeb7366ba55bdf78b72d6
         try {
             //Server settings
             $mail->isSMTP();

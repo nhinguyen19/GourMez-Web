@@ -36,7 +36,7 @@ if (isset($discount)&&(count($discount)>0))
 <tr>
 <td colspan="5" style="text-align: center; width: 90px">
 <form action="tranghienthi.php?quanly=themkmnews" method="POST"class="tablekhuyenmai">
-<input type="submit" style= " background-color: #F5EAD7; border: 0.5px solid black;font-family: 'Lalezar'; color: #E26A2C" name="themkmnews" value="Thêm mới">
+<input type="submit" name="themkmnews" value="Thêm mới">
     </form>
 </td>
 </tr>
@@ -65,7 +65,7 @@ if (isset($codedis)&&(count($codedis)>0))
             <td>'.$code['id'].' </td>
             <td> '.$code['code_dis'].'</td> 
             <td>'.$code['qtt_of_dis'].' </td> 
-             <td><a href="tranghienthi.php?quanly=updatecodediscount&id='.$code['id'].'"> Sửa</a> | <a href="tranghienthi.php?quanly=delcodedis&id='.$code['id'].'"> Xóa</a>  </td> 
+             <td><a href="tranghienthi.php?quanly=updatecodedis&id='.$code['id'].'"> Sửa</a> | <a href="tranghienthi.php?quanly=delcodedis&id='.$code['id'].'"> Xóa</a>  </td> 
                 </tr> ';
         $i++;
     }
@@ -74,7 +74,7 @@ if (isset($codedis)&&(count($codedis)>0))
 
 <tr><td colspan="4"style="text-align: center; width: 90px">
 <form action="tranghienthi.php?quanly=themcodedis" method="POST"class="tablemakhuyenmai">
-<input type="submit" style= " background-color: #F5EAD7; border: 0.5px solid black;font-family: 'Lalezar'; color: #E26A2C" name="themcodedis" value="Thêm mới">
+<input type="submit"  name="themcodedis" value="Thêm mới">
     </form>
 </td>
 </tr>
