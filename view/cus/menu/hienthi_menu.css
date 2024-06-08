@@ -88,7 +88,7 @@ color: #FFA629;
 .food-item{
     justify-content: center;
     align-content: center;
-    padding-left: 55px;
+    padding-left: 100px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
