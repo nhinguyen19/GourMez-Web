@@ -144,9 +144,9 @@
 
                 for (var i in data)
                 {
-                    var formattedDate = moment(data[i].order_day).format('DD/MM/YYYY');
+                    var formattedDate = moment(data[i].date_order).format('DD/MM/YYYY');
                     Order_date.push(formattedDate);
-                    Total.push(data[i].total_order);
+                    Total.push(data[i].total_orders);
                 }
 
                 var options = {

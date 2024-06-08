@@ -1,16 +1,15 @@
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
+require 'vendor/autoload.php'; 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php'; // Adjust the path to your vendor directory
+
 
 if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
     $email = $_POST['email'];
 
     if (empty($email)) {
-        // echo "Bạn chưa nhập email.";
         echo "<script>
             Swal.fire({
                 icon: 'error',
@@ -24,7 +23,7 @@ if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
     $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "gourmez_web";
+    $database = "database";
     $conn = new mysqli($host, $username, $password, $database);
 
     if ($conn->connect_error) {
@@ -35,7 +34,6 @@ if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
-    
 
     if ($stmt->num_rows > 0) {
         $token = bin2hex(random_bytes(50));
@@ -50,9 +48,14 @@ if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
         $stmt->execute();
 
         // Sending the email using PHPMailer
+      
         $mail = new PHPMailer(true);
+<<<<<<< HEAD
+        
+=======
         echo("abc");
 
+>>>>>>> 6f3a75928346d017e70aeb7366ba55bdf78b72d6
         try {
             //Server settings
             $mail->isSMTP();

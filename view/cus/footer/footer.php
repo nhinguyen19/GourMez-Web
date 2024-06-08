@@ -71,10 +71,10 @@ footer
         <div class = "nav">
             <h3 style = "width: 340px; height: 32.65px; color: #000">GourMéz</h3>
             <div class = "text">
-            <a href="">Trang chủ</a><br>
-            <a href = "">About us</a><br>
-            <a href = "../menu/menu.html">Thực đơn</a> <br>
-            <a href = "../view/cus/dichvu/dichvu.php">Dịch vụ</a> <br>
+            <a href="tranghienthi.php?quanly=trangchu">Trang chủ</a><br>
+            <a href = "tranghienthi.php?quanly=vechungtoi">About us</a><br>
+            <a href = "tranghienthi.php?quanly=thucdon">Thực đơn</a> <br>
+            <a href = "tranghienthi.php?quanly=dichvu">Dịch vụ</a> <br>
             </div>
             
         </div>
