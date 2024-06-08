@@ -10,7 +10,17 @@
     $conn = connectdb();
 
     $sql_orders = "SELECT * FROM orders WHERE status = 'Ghi nhận' ORDER BY date_order DESC";
+    $sql_service = "
+    SELECT id_bill, name, phone, total_price, order_day 
+    FROM bigdeal_service
+    UNION
+    SELECT id_bill, name, phone, total_price, order_day 
+    FROM birthday_service
+    ORDER BY order_day DESC;
+";
+
     $query_orders = mysqli_query($conn, $sql_orders);
+    $query_service = mysqli_query($conn,$sql_service);
     ?>
 </head>
 <div class="main1">
@@ -26,6 +36,23 @@
                 echo '<p><strong>Trạng thái:</strong> ' . $row_order['status'] . '</p>';
                 echo '<p><strong>Tổng tiền:</strong> ' . number_format($row_order['origin_total_price'], 0, '.', '.') . ' đ</p>';
                 echo '<a href="tranghienthi.php?quanly=updateorder&id='.$row_order['order_id'].'"> Xem chi tiết</a>';
+                echo '</div>';
+
+            }
+            ?>
+        </div>
+    </div>
+    <div class="container" style = "margin-top: 50px;">
+        <h1 class="title">Đơn Hàng Dịch Vụ Mới</h1>
+        <div class="orders">
+            <?php
+            while ($row_order = mysqli_fetch_array($query_service)) {
+                echo '<div class="order">';
+                echo '<h2>Đơn hàng #' . $row_order['id_bill'] . '</h2>';
+                echo '<p><strong>Khách hàng:</strong> ' . $row_order['name'] . '</p>';
+                echo '<p><strong>Số điện thoại:</strong> ' .$row_order['phone'] . '</p>';
+                echo '<p><strong>Ngày đặt hàng:</strong> ' . date('d-m-Y H:i', strtotime($row_order['order_day'])) . '</p>';
+                echo '<p><strong>Tổng tiền:</strong> ' . number_format($row_order['total_price'], 0, '.', '.') . ' đ</p>';
                 echo '</div>';
 
             }

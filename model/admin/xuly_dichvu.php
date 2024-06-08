@@ -25,7 +25,19 @@
     
             if($count > 0) {
                 // Tên danh mục đã tồn tại, hiển thị thông báo bằng JavaScript
-                echo "<script>alert('Không thể thêm dịch vụ. Tên dịch vụ đã tồn tại.'); window.location='tranghienthi.php?quanly=tatcadichvu';</script>";
+                echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Lỗi thêm dịch vụ',
+                        text: 'Tên dịch vụ đã tồn tại',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                        }
+                    });
+                </script>";
             } else {
                 // Tên danh mục chưa tồn tại, thực hiện thêm danh mục mới
                 $sql_them = "INSERT INTO service(service_name, small_descript, image, banner) VALUES ('$tendichvu', '$mota', '$hinhanh','$hinhanh_banner')";
@@ -89,15 +101,18 @@
              if ($count > 0)
              {
                 echo "<script>
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Sửa dịch vụ thành công',
-                            showConfirmButton: false,
-                            timer: 2000
-                        }).then(function() {
-                            window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
-                        });
-                        </script>";
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Không thể sửa dịch vụ',
+                    text: 'Tên dịch vụ đã tồn tại',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'tranghienthi.php?quanly=tatcadichvu';
+                    }
+                });
+            </script>";
              }
              else
              {
@@ -314,7 +329,7 @@
                     echo "<script>
                     Swal.fire({
                         icon: 'success',
-                        title: 'Sửa dịch vụ thành công',
+                        title: 'Xóa dịch vụ thành công',
                         showConfirmButton: false,
                         timer: 2000
                     }).then(function() {
@@ -381,8 +396,6 @@
                 move_uploaded_file($hinhanh_tmp,'../../view/admin/ql_dichvu/uploads/'.$hinhanh);
     
                 if(mysqli_query($conn, $sql_them)) {
-                    echo $hinhanh;
-                    // echo "<script>alert('Thêm món ăn thành công'); window.location='tranghienthi.php?quanly=themonan';</script>";
                     echo "<script>
                         Swal.fire({
                             icon: 'success',

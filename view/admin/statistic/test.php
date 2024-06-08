@@ -1,10 +1,19 @@
 <?php
-    include_once("C:/xampp/htdocs/project/GourMez-Web/model/connect.php");
-    $conn = connectdb();
-    $sql = "SELECT date_order, COUNT(order_id) AS total_order
-    FROM orders
-    GROUP BY date_order
-            ORDER BY date_order"; 
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "database";
+    $conn = new mysqli($host, $username, $password, $database);
+ 
+    if ($conn->connect_error) {
+     die('Kết nối không thành công: ' . $conn->connect_error);
+ } 
+
+    $sql = "SELECT date(date_order), COUNT(order_id) AS total_orders
+                        FROM orders
+                        GROUP BY date(date_order)
+                        ORDER BY date(date_order)
+           "; 
   
     $kq = mysqli_query($conn,$sql);
 

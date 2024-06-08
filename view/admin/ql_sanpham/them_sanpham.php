@@ -9,7 +9,7 @@
             </tr>
             <tr>
                 <th style="text-align: center">Giá bán</th>
-                <td><input type="text" name="giasanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none"></td>
+                <td><input type="number" name="giasanpham" style="width: 500px; background-color: #CFCBCB; color: black;border:none"></td>
             </tr>
             <tr>
                 <th style="text-align: center">Giá gốc</th>
