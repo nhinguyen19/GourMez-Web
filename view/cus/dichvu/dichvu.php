@@ -75,7 +75,7 @@ hr
 </style>
 
 <?php
-    require_once("C:/xampp/htdocs/project/GourMez-Web/model/connect.php");
+    require_once("../model/connect.php");
     $conn = connectdb();
     $sql = "SELECT id_service,image,service_name, small_descript FROM service";
     $query = mysqli_query($conn, $sql);

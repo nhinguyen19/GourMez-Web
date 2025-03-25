@@ -125,7 +125,7 @@ h1
            }
            ?>
 
-           <img src="<?php echo htmlspecialchars('/project/GourMez-Web/view/admin/ql_dichvu/uploads/' . $bannerUrl); ?>" class="banner_sinhnhat">
+           <img src="<?php echo htmlspecialchars('../view/admin/ql_dichvu/uploads/' . $bannerUrl); ?>" class="banner_sinhnhat">
 
 
             <h1>ĐẶT MÓN ĂN</h1>

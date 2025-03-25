@@ -45,7 +45,7 @@
                     $i++;
             ?>
             <li class="Thucdon_mon">  
-                <img src="../view/admin/ql_sanpham/uploads/<?php echo $row['img'] ?>" style="width: 150px; height: 150px; margin-bottom: 10px;">
+                <img src="../../admin/ql_sanpham/uploads/<?php echo $row['img'] ?>" style="width: 150px; height: 150px; margin-bottom: 10px;">
                 <span class="Ten_mon" style="margin-bottom: 10px;"><?php echo $row['food_name'] ?></span>
                 <div style="margin-bottom: 10px;">
                     <span class="label">Giá bán:</span> 

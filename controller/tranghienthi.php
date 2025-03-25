@@ -1,6 +1,4 @@
 <?php
-
-
     include("xuly_tinnhanKH.php");
     session_start();
     include("xuly_thanhtoan.php");
