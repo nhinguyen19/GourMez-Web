@@ -1,10 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
-require 'vendor/autoload.php'; 
+require __DIR__ . '/../../../vendor/autoload.php'; // Ensure the correct path to autoload.php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-
 
 if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
     $email = $_POST['email'];
@@ -48,16 +46,10 @@ if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
         $stmt->execute();
 
         // Sending the email using PHPMailer
-      
         $mail = new PHPMailer(true);
-<<<<<<< HEAD
-        
-=======
-        echo("abc");
 
->>>>>>> 6f3a75928346d017e70aeb7366ba55bdf78b72d6
         try {
-            //Server settings
+            // Server settings
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
@@ -66,7 +58,7 @@ if (isset($_POST['send']) && ($_POST['send']) == 'Gửi email') {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
-            //Recipients
+            // Recipients
             $mail->setFrom('gourmezfood123@gmail.com', 'Gourmez Food');
             $mail->addAddress($email);
 

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     if(isset($_SESSION['role'])){
         unset($_SESSION['id']);
         unset($_SESSION['user']);

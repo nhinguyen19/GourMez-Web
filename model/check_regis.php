@@ -13,7 +13,7 @@
         return $conn;
     }
 
-    function reg_uname($name, $user_name, $email, $phone, $pass) {
+    function reg_uname($name, $user_name, $email, $phone, $pass, $created_at) {
         $conn = connectdb();
         $errors = array(); // Mảng để lưu trữ các thông báo lỗi
     
@@ -37,10 +37,11 @@
                 }
             }
         } else {
+            $role = 0;
             // Thêm người dùng mới vào cơ sở dữ liệu
             $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
-            $insert_stmt = $conn->prepare("INSERT INTO user (fullname, user_name, email, phone, password) VALUES (?, ?, ?, ?, ?)");
-            $insert_stmt->bind_param("sssss", $name, $user_name, $email, $phone, $pass_hash);
+            $insert_stmt = $conn->prepare("INSERT INTO user (fullname, user_name, email, phone, password, role, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $insert_stmt->bind_param("sssssis", $name, $user_name, $email, $phone, $pass_hash, $role, $created_at);
     
             if ($insert_stmt->execute()) {
                 header('Location: tranghienthi.php?quanly=dangnhap');
