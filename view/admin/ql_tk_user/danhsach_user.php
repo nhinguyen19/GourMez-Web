@@ -50,7 +50,7 @@
             die('Kết nối không thành công: ' . $conn->connect_error);
         } 
 
-        $sql = "SELECT user_id, user_name, COALESCE(fullname, '') as fullname, email, COALESCE(phone, '') as phone, COALESCE(address, '') as address, create_at, last_updated FROM user WHERE role = 0";
+        $sql = "SELECT user_id, user_name, COALESCE(fullname, '') as fullname, email, COALESCE(phone, '') as phone, COALESCE(address, '') as address, created_at, last_updated FROM user WHERE role = 0";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -62,7 +62,7 @@
                     <td>{$row['email']}</td>
                     <td>{$row['phone']}</td>
                     <td>{$row['address']}</td>
-                    <td>{$row['create_at']}</td>
+                    <td>{$row['created_at']}</td>
                     <td>{$row['last_updated']}</td>
                     <td>
                         <a href='tranghienthi.php?quanly=edit_user&user_id={$row['user_id']}' style='text-decoration: none;color: black;'>Sửa /</a>

@@ -11,12 +11,12 @@
 
     $sql_orders = "SELECT * FROM orders WHERE status = 'Ghi nhận' ORDER BY date_order DESC";
     $sql_service = "
-    SELECT id_bill, name, phone, total_price, order_day 
+    SELECT id, first_name, phone, total_price, booking_date 
     FROM bigdeal_service
     UNION
-    SELECT id_bill, name, phone, total_price, order_day 
+    SELECT id, customer_name, phone, total_price, booking_date 
     FROM birthday_service
-    ORDER BY order_day DESC;
+    ORDER BY booking_date DESC;
 ";
 
     $query_orders = mysqli_query($conn, $sql_orders);

@@ -23,18 +23,18 @@
             // return $row;
             if($row[4]==NULL){
                 $array['fullname']='';
-            }else{$array['fullname']=$row[4];}
+            }else{$array['fullname']=$row[1];}
 
             if($row[5]==NULL){
                 $array['phone']='';
-            }else{$array['phone']=$row[5];}
+            }else{$array['phone']=$row[4];}
 
             if($row[6]==NULL){
                 $array['address']='';
-            }else{$array['address']=$row[6];}
+            }else{$array['address']=$row[5];}
 
-            $array['user']=$row[1];
-            $array['email']=$row[2];
+            $array['user']=$row[2];
+            $array['email']=$row[3];
 
             
 
