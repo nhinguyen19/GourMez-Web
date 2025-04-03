@@ -34,9 +34,9 @@
                 $err['countpass']='Mật khẩu tối thiểu 6 kí tự';
             }
             if(empty($err)){
-                
-                $errors=reg_uname($name,$user_name,$email,$phone,$pass);
-                
+                date_default_timezone_set('Asia/Ho_Chi_Minh'); // Cài đặt múi giờ
+                $created_at = date_create()->format('Y-m-d H:i:s');
+                $errors=reg_uname($name,$user_name,$email,$phone,$pass,$created_at);
             }
             // var_dump($err);hien ra mang cho de nhin va kiem tra
             // die();

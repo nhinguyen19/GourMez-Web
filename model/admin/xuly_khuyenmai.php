@@ -19,7 +19,7 @@ function getall_discountnews()
 function getall_codedis()
 {
     $conn = connectdb();
-    $sql = "SELECT id, code_dis, qtt_of_dis FROM discount";
+    $sql = "SELECT discount_id, name_discount, qtt_of_dis FROM discount";
     $result = $conn->query($sql);
     $kq = array();
 

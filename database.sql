@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 25, 2025 lúc 01:36 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.0.30
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 03, 2025 at 05:10 PM
+-- Server version: 9.1.0
+-- PHP Version: 8.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,79 +18,94 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `database`
+-- Database: `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bigdeal_service`
+-- Table structure for table `bigdeal_service`
 --
 
-CREATE TABLE `bigdeal_service` (
-  `id` int(11) NOT NULL,
-  `food_id` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
-  `first_name` varchar(100) DEFAULT NULL,
-  `last_name` varchar(100) DEFAULT NULL,
-  `phone` varchar(10) DEFAULT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `booking date` datetime DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `note` varchar(191) DEFAULT NULL,
-  `total_price` int(11) DEFAULT NULL,
-  `status` varchar(100) DEFAULT NULL
+DROP TABLE IF EXISTS `bigdeal_service`;
+CREATE TABLE IF NOT EXISTS `bigdeal_service` (
+  `id` int NOT NULL,
+  `food_id` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `first_name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `last_name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `booking_date` datetime DEFAULT NULL,
+  `address` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `note` varchar(191) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `total_price` int DEFAULT NULL,
+  `status` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `birthday_service`
+-- Table structure for table `birthday_service`
 --
 
-CREATE TABLE `birthday_service` (
-  `id` int(11) NOT NULL,
-  `food_id` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
-  `customer_name` varchar(191) DEFAULT NULL,
-  `phone` varchar(10) DEFAULT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `name_order_party` varchar(50) DEFAULT NULL,
+DROP TABLE IF EXISTS `birthday_service`;
+CREATE TABLE IF NOT EXISTS `birthday_service` (
+  `id` int NOT NULL,
+  `food_id` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `customer_name` varchar(191) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `name_order_party` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `birthday` datetime DEFAULT NULL,
-  `booking date` datetime DEFAULT NULL,
-  `gender` varchar(3) DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `note` varchar(191) DEFAULT NULL,
-  `total_price` int(11) DEFAULT NULL,
-  `status` varchar(100) DEFAULT NULL
+  `booking_date` datetime DEFAULT NULL,
+  `gender` varchar(3) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `address` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `note` varchar(191) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `total_price` int DEFAULT NULL,
+  `status` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart`
+-- Table structure for table `cart`
 --
 
-CREATE TABLE `cart` (
-  `cart_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `food_id` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `cart_id` int NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `food_id` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  PRIMARY KEY (`cart_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `food_id`, `quantity`) VALUES
+(0, 4, 19, 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category`
+-- Table structure for table `category`
 --
 
-CREATE TABLE `category` (
-  `cate_id` int(11) NOT NULL,
-  `cate_name` varchar(255) DEFAULT NULL
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE IF NOT EXISTS `category` (
+  `cate_id` int NOT NULL,
+  `cate_name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`cate_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`cate_id`, `cate_name`) VALUES
@@ -103,56 +118,61 @@ INSERT INTO `category` (`cate_id`, `cate_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `contacts`
+-- Table structure for table `contacts`
 --
 
-CREATE TABLE `contacts` (
-  `id` int(11) NOT NULL,
-  `ResName` varchar(255) NOT NULL,
-  `ResPhoneNumber` varchar(20) NOT NULL,
-  `ResAddress` text NOT NULL,
-  `ResEmail` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `contacts`;
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ResName` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `ResPhoneNumber` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `ResAddress` text COLLATE utf8mb4_general_ci NOT NULL,
+  `ResEmail` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `contacts`
+-- Dumping data for table `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `ResName`, `ResPhoneNumber`, `ResAddress`, `ResEmail`) VALUES
 (1, 'Nhà hàng GourMéz', '0123456789', '47 Quang Trung, Phường 9, Đà Lạt, Lâm Đồng', 'gourmez@example.com'),
-(2, 'Chi nhánh Hà Nội', '0987654321', '123 Trần Duy Hưng, Cầu Giấy, Hà Nội', 'hanoi@gourmez.com');
+(2, 'Nhà hàng GourMéz', '0123456789', '47 Quang Trung, Phường 9, Đà Lạt, Lâm Đồng', 'gourmez@example.com');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `discount`
+-- Table structure for table `discount`
 --
 
-CREATE TABLE `discount` (
-  `discount_id` int(11) NOT NULL,
-  `name_discount` varchar(255) DEFAULT NULL,
-  `qtt_of_dis` int(11) DEFAULT NULL
+DROP TABLE IF EXISTS `discount`;
+CREATE TABLE IF NOT EXISTS `discount` (
+  `discount_id` int NOT NULL,
+  `name_discount` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `qtt_of_dis` int DEFAULT NULL,
+  PRIMARY KEY (`discount_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `discount_news`
+-- Table structure for table `discount_news`
 --
 
-CREATE TABLE `discount_news` (
-  `id` int(4) NOT NULL,
-  `discount_name` varchar(50) NOT NULL,
-  `description` varchar(1000) NOT NULL,
-  `img` varchar(100) NOT NULL
+DROP TABLE IF EXISTS `discount_news`;
+CREATE TABLE IF NOT EXISTS `discount_news` (
+  `id` int NOT NULL,
+  `discount_name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
+  `img` varchar(100) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `discount_news`
+-- Dumping data for table `discount_news`
 --
 
 INSERT INTO `discount_news` (`id`, `discount_name`, `description`, `img`) VALUES
-(1, 'GIẢM 15% CHO BURGER BÒ', '<p><strong>Từ ngày 19 tháng 5 năm 2024, cửa hàng GOURMEZ đang có chương trình khuyến mãi đặc biệt dành cho món burger bò. Khách hàng sẽ được hưởng giảm giá 15% khi mua burger bò tại cửa hàng.&nbsp;</strong></p><p>Món burger bò tại GOURMEZ được chế biến từ thịt bò tươi ngon, được gia vị và nấu nướng cẩn thận để mang đến hương vị thơm ngon và độ tươi ngọt của thịt. Burger được phục vụ kèm các loại rau, phô mai và các phụ gia khác để tạo nên một món ăn hoàn chỉnh và cân bằng. Với mức giảm giá 15%, khách hàng có thể thưởng thức trọn vẹn hương vị burger bò chất lượng cao tại GOURMEZ với mức giá hấp dẫn hơn. Đây là cơ hội tuyệt vời để thưởng thức món ăn yêu thích với giá ưu đãi.&nbsp;</p><p>Chương trình khuyến mãi này áp dụng cho các ngày trong tuần và không áp dụng đồng thời với các chương trình khuyến mãi khác. Vì số lượng có hạn, khách hàng nên đến sớm để đảm bảo có cơ hội thưởng thức món ăn này với giá khuyến mãi.</p>', 'ql_khuyenmai/uploads/Giảm giá (6).png'),
+(1, 'GIẢM 15% CHO BURGER BÒ', '<p><strong>Từ ngày 19 tháng 5 năm 2024, cửa hàng GOURMEZ đang có chương trình khuyến mãi đặc biệt dành cho món burger bò. Khách hàng sẽ được hưởng giảm giá 15% khi mua burger bò tại cửa hàng.&nbsp;</strong></p><p>Món burger bò tại GOURMEZ được chế biến từ thịt bò tươi ngon, được gia vị và nấu nướng cẩn thận để mang đến hương vị thơm ngon và độ tươi ngọt của thịt. Burger được phục vụ kèm các loại rau, phô mai và các phụ gia khác để tạo nên một món ăn hoàn chỉnh và cân bằng. Với mức giảm giá 15%, khách hàng có thể thưởng thức trọn vẹn hương vị burger bò chất lượng cao tại GOURMEZ với mức giá hấp dẫn hơn. Đây là cơ hội tuyệt vời để thưởng thức món ăn yêu thích với giá ưu đãi.&nbsp;</p><p>Chương trình khuyến mãi này áp dụng cho các ngày trong tuần và không áp dụng đồng thời với các chương trình khuyến mãi khác. Vì số lượng có hạn, khách hàng nên đến sớm để đảm bảo có cơ hội thưởng thức món ăn này với giá khuyến mãi.</p>', 'ql_khuyenmai/uploads/'),
 (2, 'TẶNG SALAD RAU CỦ CHO HÓA ĐƠN TRÊN 99K', ' Khi quý khách mua bất kỳ combo ăn nào với tổng giá trị 99.000 đồng trở lên, bạn sẽ được tặng ngay 1 salad rau củ miễn phí.\r\n\r\nSalad rau củ được chế biến từ các loại rau tươi, sạch, giàu vitamin và khoáng chất. Món salad này sẽ giúp bữa ăn của quý khách thêm phần cân bằng dinh dưỡng và tăng cường sức khỏe. Với hương vị thanh mát, salad rau củ sẽ là sự kết hợp hoàn hảo cùng các món chính trong combo.\r\n\r\nChương trình khuyến mãi này áp dụng cho cả khách hàng đến trực tiếp tại cửa hàng và khách hàng đặt món ăn để mang về. Chỉ cần thanh toán đơn hàng từ 99.000 đồng trở lên, quý khách sẽ được tặng ngay 1 salad rau củ miễn phí.\r\n\r\nĐừng bỏ lỡ cơ hội thưởng thức bữa ăn ngon miệng cùng món salad bổ dưỡng với mức giá ưu đãi này. Hãy đến ngay cửa hàng hoặc đặt hàng online để nhận ưu đãi hấp dẫn!', 'ql_khuyenmai/uploads/Giảm giá (7).png'),
 (3, 'GÀ GIÒN TẶNG KÈM COMBO HẠNH PHÚC', '<p>Từ ngày <strong>19/5 - 31/5/2024</strong>, khi quý khách mua bất kỳ combo \"Hạnh Phúc\" nào tại cửa hàng hoặc đặt hàng giao tận nơi, sẽ được tặng kèm 1 miếng gà giòn hoàn toàn miễn phí.</p><p>&nbsp;Combo \"Hạnh Phúc\" bao gồm các món ăn đặc trưng của chúng tôi như burger, khoai tây chiên và nước uống. Đây là sự kết hợp hoàn hảo để tạo nên một bữa ăn đầy đủ dinh dưỡng và hấp dẫn về hương vị. Món gà giòn tặng kèm được chế biến từ thịt gà tươi ngon, được ướp gia vị và chiên giòn giòn. Kết hợp cùng combo \"Hạnh Phúc\", món gà giòn sẽ là sự bổ sung hoàn hảo, mang đến cho quý khách một bữa ăn đầy đủ dinh dưỡng và hương vị tuyệt vời. Chương trình khuyến mãi này áp dụng cho cả khách hàng đến trực tiếp tại cửa hàng và khách hàng đặt món ăn để giao tận nơi. Chỉ cần thanh toán combo \"Hạnh Phúc\", quý khách sẽ được tặng ngay 1 miếng gà giòn miễn phí.&nbsp;</p><p>Đừng bỏ lỡ cơ hội thưởng thức bữa ăn ngon miệng cùng món gà giòn bổ dưỡng với mức giá ưu đãi này. Hãy đến ngay cửa hàng hoặc đặt hàng online ', 'ql_khuyenmai/uploads/Giảm giá (8).png'),
 (4, 'GIẢM 40% KHI MUA 5 MIẾNG GÀ SỐT MẮM TỎI', '<p>Từ ngày 1/6, cửa hàng đang áp dụng chương trình khuyến mãi hấp dẫn cho sản phẩm Miếng gà sốt mắm tỏi. Với mức giảm giá lên tới 40%, khách hàng sẽ được hưởng ưu đãi khi mua tối thiểu 5 miếng gà cùng với đi NHÓM 4 người trở lên. Cụ thể, khi mua 5 miếng gà sốt mắm tỏi, khách hàng sẽ được giảm 40% trên tổng giá trị đơn hàng. Ưu đãi này không thể kết hợp với các chương trình khuyến mãi khác đang diễn ra tại cửa hàng. Chương trình ưu đãi này có thời gian áp dụng từ ngày 1/6, tuy nhiên thời điểm kết thúc chưa được xác định. Khách hàng vui lòng liên hệ trực tiếp với cửa hàng để nắm bắt thông tin chi tiết và điều kiện áp dụng của chương trình khuyến mãi này.</p>', 'ql_khuyenmai/uploads/Giảm giá (10).png'),
@@ -161,23 +181,25 @@ INSERT INTO `discount_news` (`id`, `discount_name`, `description`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `food`
+-- Table structure for table `food`
 --
 
-CREATE TABLE `food` (
-  `food_id` int(11) NOT NULL,
-  `cate_id` int(11) DEFAULT NULL,
-  `food_name` varchar(255) DEFAULT NULL,
-  `original_price` int(11) DEFAULT NULL,
-  `selling_price` int(11) DEFAULT NULL,
-  `small_descr` varchar(255) DEFAULT NULL,
-  `trending` int(11) DEFAULT NULL,
-  `img` varchar(191) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+DROP TABLE IF EXISTS `food`;
+CREATE TABLE IF NOT EXISTS `food` (
+  `food_id` int NOT NULL,
+  `cate_id` int DEFAULT NULL,
+  `food_name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `original_price` int DEFAULT NULL,
+  `selling_price` int DEFAULT NULL,
+  `small_descr` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `trending` int DEFAULT NULL,
+  `img` varchar(191) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`food_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `food`
+-- Dumping data for table `food`
 --
 
 INSERT INTO `food` (`food_id`, `cate_id`, `food_name`, `original_price`, `selling_price`, `small_descr`, `trending`, `img`, `created_at`) VALUES
@@ -207,19 +229,20 @@ INSERT INTO `food` (`food_id`, `cate_id`, `food_name`, `original_price`, `sellin
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `food_for_service`
+-- Table structure for table `food_for_service`
 --
 
-CREATE TABLE `food_for_service` (
-  `ID_food` int(11) NOT NULL,
-  `ID_service` int(11) NOT NULL,
-  `food_combo` varchar(255) NOT NULL,
-  `price` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL
+DROP TABLE IF EXISTS `food_for_service`;
+CREATE TABLE IF NOT EXISTS `food_for_service` (
+  `ID_food` int NOT NULL,
+  `ID_service` int NOT NULL,
+  `food_combo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `price` int NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `food_for_service`
+-- Dumping data for table `food_for_service`
 --
 
 INSERT INTO `food_for_service` (`ID_food`, `ID_service`, `food_combo`, `price`, `image`) VALUES
@@ -234,57 +257,62 @@ INSERT INTO `food_for_service` (`ID_food`, `ID_service`, `food_combo`, `price`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Table structure for table `orders`
 --
 
-CREATE TABLE `orders` (
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `staff_id` int(11) DEFAULT NULL,
-  `shipper_id` int(11) DEFAULT NULL,
-  `discount_id` int(11) DEFAULT NULL,
-  `name_cus` varchar(255) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE IF NOT EXISTS `orders` (
+  `order_id` int NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `staff_id` int DEFAULT NULL,
+  `shipper_id` int DEFAULT NULL,
+  `discount_id` int DEFAULT NULL,
+  `name_cus` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `date_order` datetime DEFAULT NULL,
-  `status` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `payment_mode` int(11) DEFAULT NULL,
-  `note` varchar(255) DEFAULT NULL,
-  `origin_total_price` int(11) DEFAULT NULL,
-  `discount_total_price` int(11) DEFAULT NULL
+  `status` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `payment_mode` int DEFAULT NULL,
+  `note` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `origin_total_price` int DEFAULT NULL,
+  `discount_total_price` int DEFAULT NULL,
+  PRIMARY KEY (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `order_item`
+-- Table structure for table `order_item`
 --
 
-CREATE TABLE `order_item` (
-  `id` int(11) NOT NULL,
-  `food_id` int(11) DEFAULT NULL,
-  `order_id` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL
+DROP TABLE IF EXISTS `order_item`;
+CREATE TABLE IF NOT EXISTS `order_item` (
+  `id` int NOT NULL,
+  `food_id` int DEFAULT NULL,
+  `order_id` int DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `price` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `service`
+-- Table structure for table `service`
 --
 
-CREATE TABLE `service` (
-  `id_service` int(11) NOT NULL,
-  `service_name` varchar(50) NOT NULL,
-  `small_descript` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `banner` varchar(100) NOT NULL
+DROP TABLE IF EXISTS `service`;
+CREATE TABLE IF NOT EXISTS `service` (
+  `id_service` int NOT NULL,
+  `service_name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `small_descript` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `banner` varchar(100) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `service`
+-- Dumping data for table `service`
 --
 
 INSERT INTO `service` (`id_service`, `service_name`, `small_descript`, `image`, `banner`) VALUES
@@ -294,43 +322,48 @@ INSERT INTO `service` (`id_service`, `service_name`, `small_descript`, `image`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `shipper`
+-- Table structure for table `shipper`
 --
 
-CREATE TABLE `shipper` (
-  `shipper_id` int(11) NOT NULL,
-  `name_shipper` varchar(255) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL
+DROP TABLE IF EXISTS `shipper`;
+CREATE TABLE IF NOT EXISTS `shipper` (
+  `shipper_id` int NOT NULL,
+  `name_shipper` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`shipper_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `staff`
+-- Table structure for table `staff`
 --
 
-CREATE TABLE `staff` (
-  `staff_id` int(11) NOT NULL,
-  `name_staff` varchar(255) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL
+DROP TABLE IF EXISTS `staff`;
+CREATE TABLE IF NOT EXISTS `staff` (
+  `staff_id` int NOT NULL,
+  `name_staff` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tintuc`
+-- Table structure for table `tintuc`
 --
 
-CREATE TABLE `tintuc` (
-  `tintuc_id` int(6) UNSIGNED NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `summary` mediumtext DEFAULT NULL,
-  `img_title` varchar(255) DEFAULT NULL,
-  `description` longtext NOT NULL
+DROP TABLE IF EXISTS `tintuc`;
+CREATE TABLE IF NOT EXISTS `tintuc` (
+  `tintuc_id` int UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `summary` mediumtext COLLATE utf8mb4_general_ci,
+  `img_title` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tintuc`
+-- Dumping data for table `tintuc`
 --
 
 INSERT INTO `tintuc` (`tintuc_id`, `title`, `summary`, `img_title`, `description`) VALUES
@@ -344,106 +377,36 @@ INSERT INTO `tintuc` (`tintuc_id`, `title`, `summary`, `img_title`, `description
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(255) DEFAULT NULL,
-  `lastname` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `password` varchar(191) DEFAULT NULL,
-  `verify_status` tinyint(4) DEFAULT NULL,
-  `role` int(11) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `user_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `verify_status` tinyint DEFAULT NULL,
+  `role` int DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `last_updated` datetime DEFAULT CURRENT_TIMESTAMP,
+  `reset_token` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `reset_token_expiry` datetime DEFAULT NULL,
+  `otp` int DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Dumping data for table `user`
 --
 
---
--- Chỉ mục cho bảng `bigdeal_service`
---
-ALTER TABLE `bigdeal_service`
-  ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `birthday_service`
---
-ALTER TABLE `birthday_service`
-  ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`cart_id`);
-
---
--- Chỉ mục cho bảng `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`cate_id`);
-
---
--- Chỉ mục cho bảng `contacts`
---
-ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `discount`
---
-ALTER TABLE `discount`
-  ADD PRIMARY KEY (`discount_id`);
-
---
--- Chỉ mục cho bảng `food`
---
-ALTER TABLE `food`
-  ADD PRIMARY KEY (`food_id`);
-
---
--- Chỉ mục cho bảng `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- Chỉ mục cho bảng `order_item`
---
-ALTER TABLE `order_item`
-  ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `shipper`
---
-ALTER TABLE `shipper`
-  ADD PRIMARY KEY (`shipper_id`);
-
---
--- Chỉ mục cho bảng `staff`
---
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`staff_id`);
-
---
--- Chỉ mục cho bảng `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- AUTO_INCREMENT cho các bảng đã đổ
---
-
---
--- AUTO_INCREMENT cho bảng `contacts`
---
-ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+INSERT INTO `user` (`user_id`, `fullname`, `user_name`, `email`, `phone`, `address`, `password`, `verify_status`, `role`, `created_at`, `last_updated`, `reset_token`, `reset_token_expiry`, `otp`) VALUES
+(3, 'Dương Yến Nhi', 'dynnyd', 'duongyennhi270904@gmail.com', '0939883916', 'ktx khu b, đại học quốc gia', '$2y$10$BJaLfS6xGchxTbbQiqsVl.FGVbh6MWB2gbD51vaM1WkVhNGmERXNG', NULL, 1, '2025-03-26 21:26:28', '2025-04-02 20:09:06', '3813ea73ffb66c2b08c875cac7ab45776a35a9e28726b46bb378f51ee348f70a8602c2b389bcfed6911948cedd38554eadd9', '2025-03-26 22:54:34', 421330),
+(4, 'Nguyễn Văn A', 'mii', 'nhiaccphu01@gmail.com', '0939883916', NULL, '$2y$10$739tfCrL.DsB36LPgFwhves6DLWoNP5.4eJPkHwP70vjkWWIxmUlS', NULL, 0, '2025-03-26 21:34:44', '2025-03-26 21:34:44', NULL, NULL, NULL),
+(5, 'Nguyễn Văn A', 'admin', 'nhiaccphu02@gmail.com', '0939883916', NULL, '$2y$10$6Q1Q/fSjoPwqNt0T3Z58h.OLDYcnwt4mU5hb9MmpAMPVskcG3wkCS', NULL, 1, NULL, '2025-04-04 00:08:20', NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

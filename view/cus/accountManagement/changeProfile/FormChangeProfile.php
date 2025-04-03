@@ -16,7 +16,7 @@
 $id =  $_SESSION['id'];
 // echo $user;
 
-$sql = "SELECT user_name, email, fullname,phone, address FROM user WHERE user_id = ?";
+$sql = "SELECT user_name, email, fullname, phone, address FROM user WHERE user_id = ?";
 $stmt = $conn->prepare($sql);
 if (!$stmt) {
     die("Preparation failed: " . $conn->error);
@@ -42,25 +42,24 @@ else {
 <div class="box-content">
     <h3>CHỈNH SỬA THÔNG TIN</h3>
     <div class="form">
-        <form method="Post">
-            <label for="user_name">Tên đăng nhập:</label>
-            <input type="text" id="user_name" name="username" value="<?php echo htmlspecialchars($row['user_name']); ?>"><br>
-            
+    <form method="Post">
+        <label for="user_name">Tên đăng nhập:</label>
+        <input type="text" id="user_name" name="username" value="<?php echo htmlspecialchars($row['user_name'] ?? ''); ?>"><br>
 
-            <label for="user_name">Họ và tên:</label>
-            <input type="text" id="full_name" name="fullname" value="<?php echo htmlspecialchars($row['fullname']); ?>"><br>
+        <label for="full_name">Họ và tên:</label>
+        <input type="text" id="full_name" name="fullname" value="<?php echo htmlspecialchars($row['fullname'] ?? ''); ?>"><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($row['email']); ?>"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($row['email'] ?? ''); ?>"><br>
 
-            <label for="phone">Số điện thoại:</label>
-            <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($row['phone']); ?>"><br>
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($row['phone'] ?? ''); ?>"><br>
 
-            <label for="phone">Địa chỉ:</label>
-            <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($row['address']); ?>"><br>
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($row['address'] ?? ''); ?>"><br>
 
-            <input type="submit" value="Lưu" name="luu">
-        </form>
+        <input type="submit" value="Lưu" name="luu">
+    </form>
 
     </div>
     
